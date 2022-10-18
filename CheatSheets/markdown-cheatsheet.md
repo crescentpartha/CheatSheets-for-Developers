@@ -17,3 +17,21 @@
 | `1.first` or `2.Second`                 | Ordered List    |
 | `---`                                   | Horizontal line |
 | `![alt text](image.jpg)`                | Image           |
+| \`code\`                                | code            |
+| \~\~Strikethrough\~\~                   | Strikethrough   |
+| \#\#\# Heading ID                       | Heading         |
+| H\~2\~0                                 | Subscript       |
+| x\^2\^                                  | Superscript     |
+| \:joy\:                                 | Emoji           |
+| `\| Syntax \| Description \|`           |                 |
+|                                         |                 |
+
+| [](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) | ``{ "firstName": "John", "lastName": "Smith", "age": 25 }`
+
+| `   |     |
+| --- | --- |
+
+| [](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) | ``{ "firstName": "John", "lastName": "Smith", "age": 25 }`
+
+| `   |     |
+| --- | --- |
