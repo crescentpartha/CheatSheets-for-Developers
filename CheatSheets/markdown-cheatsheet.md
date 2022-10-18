@@ -16,4 +16,4 @@
 | `-first` or `-second`                   | unordered list  |
 | `1.first` or `2.Second`                 | Ordered List    |
 | `---`                                   | Horizontal line |
-| ![alt text](image.jpg)                  | Image           |
+| `![alt text](image.jpg)`                | Image           |
