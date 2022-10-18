@@ -35,6 +35,7 @@ Table of Contents
 | `git status` | Check status |
 | `git diff` | Compare and show updated codes |
 | `git add [file name]` | Add file changes in next commit |
+| `git add .` | Add all unstaged changes in next commit |
 | `git commit -m "message about updates"` | Commit changes to current branch |
 
 **[🔼Back to Top](#table-of-contents)**
