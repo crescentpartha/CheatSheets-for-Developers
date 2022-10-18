@@ -32,6 +32,8 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git status` | Check status |
+|`git commit` | Commit staged changes|
+
 
 **[🔼Back to Top](#table-of-contents)**
 
