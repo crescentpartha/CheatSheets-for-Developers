@@ -12,6 +12,8 @@ Table of Contents
 | ------- | ----------- |
 | `npm init` | Initialize a node.js project |
 | `npm install` | Install package.json dependencies |
+| `npm run bar` | Runs the script named bar |
+| `npm test` | Runs the projects tests | 
 | `npm -g uninstall <name> ` | Uninstall global package |
 
 
