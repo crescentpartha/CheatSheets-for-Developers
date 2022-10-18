@@ -10,5 +10,5 @@ Table of Contents
 
 | Command | Description |
 | ------- | ----------- |
-| `Bold` | `**bold text**` or `__bold text__` |
+| `**bold text**` or `__bold text__` | Bold |
 
