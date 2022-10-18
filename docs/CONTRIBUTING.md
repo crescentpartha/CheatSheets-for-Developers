@@ -32,5 +32,5 @@ Everyone is Welcome to `CheatSheets-for-Developers`!
 - Try to ___avoid creating unnecessary issues___.
 - After creating a pull request, ___be patient___ to merge you PR.
 
-> If you new to Open Sources, follow [How-To at a glance](./HOW-TO.md)
+> If you are new to Open Sources, follow [How-To at a glance](./HOW-TO.md)
 

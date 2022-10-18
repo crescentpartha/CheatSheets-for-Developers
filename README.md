@@ -12,6 +12,12 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 
 </div>
 
+## ___Instructions___
+
+- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md)
+- If you are new to Open Source Contributions, checkout [How-To at a glance](docs/HOW-TO.md)
+- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md)
+
 ## ___CheatSheets List___
 
 1. [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
