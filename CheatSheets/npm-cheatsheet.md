@@ -21,3 +21,5 @@
 | `npm outdated -g --depth-0`     | Updated global packages             |
 | `npm alias default 16`          | Make a node version default         |
 | `npm install-latest-npm`        | Update npm                          |
+| `npm run`                       | List available scripts to run       |
+| `npm list`                      | For Local packages                  |
