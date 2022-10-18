@@ -24,4 +24,6 @@
 | `npm run`                       | List available scripts to run       |
 | `npm list`                      | For Local packages                  |
 | `npm i `                        | Alias for npm install               |
-| `npm install --global [package]`| Global install package	            |
+| `npm install --global [package]`| Global install package	        |
+| `npm un <package_name> `        | Uninstall package from project	        |
+
