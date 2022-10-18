@@ -23,8 +23,6 @@
 | H\~2\~0                                 | Subscript       |
 | x\^2\^                                  | Superscript     |
 | \:joy\:                                 | Emoji           |
-| `\| Syntax \| Description \|`           |                 |
-|                                         |                 |
 
 | [](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) | ``{ "firstName": "John", "lastName": "Smith", "age": 25 }`
 
