@@ -37,6 +37,10 @@ Table of Contents
 | `git add [file name]` | Add file changes in next commit |
 | `git add .` | Add all unstaged changes in next commit |
 | `git commit -m "message about updates"` | Commit changes to current branch |
+| `git rm [file]` | Deletes the file from your working directory and stages the deletion |
+| `git pull` | Fetches and merges changes on the remote server to your working directory |
+
+
 
 **[🔼Back to Top](#table-of-contents)**
 

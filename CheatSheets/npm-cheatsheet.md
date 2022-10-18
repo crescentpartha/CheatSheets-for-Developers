@@ -11,4 +11,7 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `npm init` | Initialize a node.js project |
+| `npm install` | Install package.json dependencies |
+| `npm -g uninstall <name> ` | Uninstall global package |
+
 
