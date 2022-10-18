@@ -15,5 +15,6 @@ Table of Contents
 | `npm run bar` | Runs the script named bar |
 | `npm test` | Runs the projects tests | 
 | `npm -g uninstall <name> ` | Uninstall global package |
+| `npm update -g <package_name> ` | Update individual global package(s) |
 
 
