@@ -48,6 +48,7 @@ Table of Contents
 | `git branch -d [branch-name]` | Delete a branch |
 | `git checkout [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
+| `git checkout -b "branch name"` | Create a new branch and switch to that branch |
 
 **[🔼Back to Top](#table-of-contents)**
 
