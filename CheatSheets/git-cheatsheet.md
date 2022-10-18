@@ -16,6 +16,7 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git config` | Check all configuration options |
+| `git clone [https://url]` | Clone source code from a remote repository |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -32,6 +33,9 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git status` | Check status |
+| `git diff` | Compare and show updated codes |
+| `git add [file name]` | Add file changes in next commit |
+| `git commit -m "message about updates"` | Commit changes to current branch |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -40,6 +44,10 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git branch` | List branches |
+| `git branch [branch-name]` | Create a local branch |
+| `git branch -d [branch-name]` | Delete a branch |
+| `git checkout [branch-name]` | Switch to another branch |
+| `git merge [branch-name]` | Merge branchs |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -48,6 +56,7 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git push origin [branch name]` | Push a branch to your remote repository |
+| `git pull origin [branch name]` | Pull a branch from your remote repository |
 
 **[🔼Back to Top](#table-of-contents)**
 
