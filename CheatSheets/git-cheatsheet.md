@@ -8,6 +8,7 @@ Table of Contents
   - [Branching & Merging](#branching--merging)
   - [Sharing & Updating Projects](#sharing--updating-projects)
   - [Inspection & Comparison](#inspection--comparison)
+  - [Setting up Alias](#setting-up-alias)
 
 # Git CheatSheet for Developers
 
@@ -36,10 +37,13 @@ Table of Contents
 | `git diff` | Compare and show updated codes |
 | `git add [file name]` | Add file changes in next commit |
 | `git add .` | Add all unstaged changes in next commit |
+| `git reset [file name]` | Used to unstage the staged files |
+| `git clean -f` | To delete or remove unstaged files forcefully |
 | `git commit -m "message about updates"` | Commit changes to current branch |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
+| `git mv ___(file name) ___(file name to be renamed)` | This is used to rename the files |
 
 
 
@@ -76,3 +80,10 @@ Table of Contents
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Setting up Alias
+
+| Command | Description |
+| ------- | ----------- |
+| `git config --global alias.[short name for command]  [actual command]` | Alias make the commands short and handy | (## ex:- git config --global alias.st status)
+
+**[🔼Back to Top](#table-of-contents)**
