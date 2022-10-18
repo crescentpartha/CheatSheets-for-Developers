@@ -40,6 +40,7 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git branch` | List branches |
+|`git checkout -b "branch name"` | Create a new branch and switch to that branch |
 
 **[🔼Back to Top](#table-of-contents)**
 
