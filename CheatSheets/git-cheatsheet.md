@@ -43,8 +43,6 @@ Table of Contents
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
-| `git mv ___(file name) ___(file name to be renamed)` | This is used to rename the files |
-
 
 
 **[🔼Back to Top](#table-of-contents)**
