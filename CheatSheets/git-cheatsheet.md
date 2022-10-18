@@ -41,7 +41,7 @@ Table of Contents
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
-| `git add remote origin [url]` | Add/set git url |
+| `git remote add origin [url]` | Adding a remote repository | 
 
 
 
