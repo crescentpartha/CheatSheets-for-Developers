@@ -1,0 +1,92 @@
+
+ATTRIBUTES, STRUCTURES(Table, unordered list, Definition list, Forms)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SYNTAX
+<tag attributename="value" />
+- lowecase attributes, quote values
+
+
+Global attributes
+accesskey, class, contenteditable, data-*, dir, draggable, hidden, id, lang, spellcheck, style, tabindex, title
+<div id="demo" class="big" dir="ltr" lang="en" 
+style="color: red;" tabindex="0" title="Tooltip" 
+contenteditable="true" spellcheck="true" 
+data-htmlcheat="99">Hello World!</div>
+
+Internationalization: dir, lang, xml:lang
+<html lang="en-US">
+...
+<p dir="rtl">Right to left (Arabic)</p> 
+...
+</html>
+
+
+Link: download, href, hreflang, media, rel, target, type
+<a href="https://htmlg.com/" target="_blank" rel="external" hreflang="en" type="text/html">
+Link
+</a>
+
+
+Image: src, alt, height, ismap, longdesc, src, srcset, usemap, width
+
+<img src="/demo.jpg" alt="description" 
+height="48" width="100" longdesc="desc.txt" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STRUCTURES (Table, unordered list, ordered list, forms)
+
+TABLE
+
+<table><caption>Phone numbers</caption>
+<thead>
+<tr>
+	<th>Name</th>
+	<th colspan="2">Phone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>John</td>
+	<td>577854</td>
+	<td>577855</td>
+</tr>
+<tr>
+	<td>Jack</td>
+	<td>577856</td>
+	<td>577857</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>&nbsp;</td>
+	<td>Personal</td>
+	<td>Office</td>
+</tr>
+</tfoot>
+</table>
+
+Unordered List
+
+<ul>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ul>
+
+Definition list
+
+<dl>
+<dt>HTML</dt>
+<dd>Hypertext Markup Language</dd>
+<dt>CSS</dt>
+<dd>Cascading Style Sheets </dd>
+</dl>
+
+FORMS
+
+<form action="/action.php" method="post">Name: <input name="name" type="text" /> <br /> Age: <input max="99" min="1" name="age" step="1" type="number" value="18" /> <br /><select name="gender">
+<option selected="selected" value="male">Male</option>
+<option value="female">Female</option>
+</select><br /> <input checked="checked" name="newsletter" type="radio" value="daily" /> Daily <input name="newsletter" type="radio" value="weekly" /> Weekly<br /> <textarea cols="20" name="comments" rows="5">Comment</textarea><br /> <label><input name="terms" type="checkbox" value="tandc" />Accept terms</label> <br /> <input type="submit" value="Submit" /></form>
