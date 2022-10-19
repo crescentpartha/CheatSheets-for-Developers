@@ -32,8 +32,9 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 
 1. [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
 2. [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
-3. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
-4. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
+3. [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
+4. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
+5. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
 
 ## ___Instructions___
 
