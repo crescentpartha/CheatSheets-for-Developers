@@ -104,3 +104,10 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Open Task Manager
+
+| Command | Description |
+| ------- | ----------- |
+| `Ctrl + Shift + End` | Open Task Manager|
+
+**[🔼Back to Top](#table-of-contents)**
