@@ -108,6 +108,6 @@
 
 | Command | Description |
 | ------- | ----------- |
-| `Ctrl + Shift + End` | Open Task Manager|
+| `Ctrl + Shift + Esc` | Open Task Manager|
 
 **[🔼Back to Top](#table-of-contents)**
