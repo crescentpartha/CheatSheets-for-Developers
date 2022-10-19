@@ -21,3 +21,6 @@
 | `nvm exec <version> node app.js`| Run Node app.js with the PATH pointing to given node version|
 | `nvm set-colors cgYmW`          | Set text colors to cyan, green, bold yellow, magenta, and white|
 | `nvm run <version> app.js`      | Run app.js using given Node version |
+| `nvm install-latest-npm`        | Update your version of npm if you use Node installed through nvm |
+| `nvm root <path>`               | Set the directory where nvm should store different versions of node.js.|
+| `nvm proxy [url]`               | Set a proxy to use for downloads. Leave [url] blank to see the current proxy. Set [url] to "none" to remove the proxy.|
