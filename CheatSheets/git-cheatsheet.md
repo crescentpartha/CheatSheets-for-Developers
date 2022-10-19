@@ -43,6 +43,7 @@ Table of Contents
 | `git reset [file name]` | Used to unstage the staged files |
 | `git clean -f` | To delete or remove unstaged files forcefully |
 | `git commit -m "message about updates"` | Commit changes to current branch |
+| `git commit -ammend` | Lets you amend the most recent commit |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
