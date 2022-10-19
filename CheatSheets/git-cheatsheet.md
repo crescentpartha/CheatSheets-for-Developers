@@ -61,6 +61,7 @@ Table of Contents
 | `git branch` | List branches |
 | `git branch [branch-name]` | Create a local branch |
 | `git branch -d [branch-name]` | Delete a branch |
+| `git branch -a` | See all branches (local and remote) |
 | `git checkout [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
 | `git checkout -b "branch name"` | Create a new branch and switch to that branch |
