@@ -9,6 +9,7 @@ Table of Contents
   - [Sharing & Updating Projects](#sharing--updating-projects)
   - [Inspection & Comparison](#inspection--comparison)
   - [Setting up Alias](#setting-up-alias)
+  - [Deletion](#deletion)
 
 # Git CheatSheet for Developers
 
@@ -45,6 +46,8 @@ Table of Contents
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
 | `git remote add origin [url]` | Adding a remote repository | 
+| `git show` | Shows information about any git object |
+| `gitk` | Shows graphical interface for a local repository |
 
 
 **[🔼Back to Top](#table-of-contents)**
@@ -85,5 +88,13 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git config --global alias.[short name for command]  [actual command]` | Alias make the commands short and handy | (## ex:- git config --global alias.st status)
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Deletion
+| Command | Description |
+| ------- | ----------- |
+| `git gc` | Cleans unnecessary files and optimizes the local repository |
+| `git prune` | Deletes objects that don’t have any incoming pointers |
 
 **[🔼Back to Top](#table-of-contents)**
