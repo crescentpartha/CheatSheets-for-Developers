@@ -10,7 +10,7 @@ Table of Contents
   - [Inspection & Comparison](#inspection--comparison)
   - [Setting up Alias](#setting-up-alias)
   - [Deletion](#deletion)
-  - [TEMPORARY COMMITS](#Temporarily store modified)
+  - [Temporary Commits](#Temporary-commits)
 
 # Git CheatSheet for Developers
 
@@ -101,12 +101,12 @@ Table of Contents
 **[🔼Back to Top](#table-of-contents)**
 
 ## Temporary Commits
-| command| Description |
+| command | Description |
 | ------- | ----------- |
-|'git stash'| Save modified and staged changes|
-|'git stash list'| list stack-order of stashed file changes|
-|'git stash pop'| write working from top of stash stack|
-|'git stash drop'| discard the changes from top of stash stack|
+| `git stash`| Save modified and staged changes|
+|`git stash list`| list stack-order of stashed file changes|
+|`git stash pop`| write working from top of stash stack|
+|`git stash drop` | discard the changes from top of stash stack|
 
 
 **[🔼Back to Top](#table-of-contents)**
