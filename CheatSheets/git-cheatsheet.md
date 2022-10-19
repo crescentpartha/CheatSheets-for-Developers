@@ -10,6 +10,7 @@ Table of Contents
   - [Inspection & Comparison](#inspection--comparison)
   - [Setting up Alias](#setting-up-alias)
   - [Deletion](#deletion)
+  - [TEMPORARY COMMITS](#Temporarily store modified)
 
 # Git CheatSheet for Developers
 
@@ -96,5 +97,16 @@ Table of Contents
 | ------- | ----------- |
 | `git gc` | Cleans unnecessary files and optimizes the local repository |
 | `git prune` | Deletes objects that don’t have any incoming pointers |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Temporary Commits
+| command| Description |
+| ------- | ----------- |
+|'git stash'| Save modified and staged changes|
+|'git stash list'| list stack-order of stashed file changes|
+|'git stash pop'| write working from top of stash stack|
+|'git stash drop'| discard the changes from top of stash stack|
+
 
 **[🔼Back to Top](#table-of-contents)**
