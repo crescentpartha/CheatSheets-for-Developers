@@ -55,6 +55,10 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 
 ## Thanks to all contributors ❤
 
+___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on Github, made ___suggestions___, given a ___Star___, and generally helped make this a better repository for developers.
+
+<!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
+
  <a href = "https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors">
    <img src = "https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers"/>
  </a>
