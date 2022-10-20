@@ -24,4 +24,4 @@
 | `<style>...</style>`   | The style tag can be used as an alternative to an external style sheet, or complement it.Includes the webpage’s appearance information.   |
 | `<script>...</script>` | Used to add code snippets, typically in JavaScript,to make webpage dynamic. It can also be used to just link to an external script.       |
 
-
+**[🔼Back to Top](#table-of-contents)**
