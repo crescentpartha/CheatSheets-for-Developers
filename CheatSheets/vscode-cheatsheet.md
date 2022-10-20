@@ -74,6 +74,13 @@
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + P` | Go to File |
+| `Ctrl + J` | Toggle panel (Opens/closes terminal) |
+| `Ctrl + B` | Toggle primary sidebar |
+| `Ctrl + Shift + E` | Go to explorer |
+| `Ctrl + Shift + X` | Go to extensions |
+| `Ctrl + Shift + D` | Go to Run and Debug |
+
+
 
 **[🔼Back to Top](#table-of-contents)**
 
