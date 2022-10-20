@@ -1,8 +1,7 @@
-Python Cheatsheet
-===============================
+# Python Cheatsheet for Developers
 
-Contents
---------
+## Content Outlines
+
 **&nbsp;&nbsp;&nbsp;** **1. Collections:** **&nbsp;** **[`List`](#list)**__,__ **[`Dictionary`](#dictionary)**__,__ **[`Set`](#set)**__,__ **[`Tuple`](#tuple)**__,__ **[`Range`](#range)**__,__ **[`Enumerate`](#enumerate)**__,__ **[`Iterator`](#iterator)**__,__ **[`Generator`](#generator)**__.__  
 **&nbsp;&nbsp;&nbsp;** **2. Types:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Type`](#type)**__,__ **[`String`](#string)**__,__ **[`Regular_Exp`](#regex)**__,__ **[`Format`](#format)**__,__ **[`Numbers`](#numbers-1)**__,__ **[`Combinatorics`](#combinatorics)**__,__ **[`Datetime`](#datetime)**__.__  
 **&nbsp;&nbsp;&nbsp;** **3. Syntax:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Args`](#arguments)**__,__ **[`Inline`](#inline)**__,__ **[`Import`](#imports)**__,__ **[`Decorator`](#decorator)**__,__ **[`Class`](#class)**__,__ **[`Duck_Types`](#duck-types)**__,__ **[`Enum`](#enum)**__,__ **[`Exception`](#exceptions)**__.__  
@@ -20,6 +19,7 @@ if __name__ == '__main__':     # Runs main() if file wasn't imported.
     main()
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 List
 ----
@@ -59,6 +59,9 @@ list_of_chars    = list(<str>)
 <list>.remove(<el>)            # Removes first occurrence of the item or raises ValueError.
 <list>.clear()                 # Removes all items. Also works on dictionary and set.
 ```
+
+**[🔼Back to Top](#content-outlines)**
+
 Dictionary
 ----------
 ```python
@@ -97,6 +100,7 @@ Counter({'blue': 3, 'red': 2, 'yellow': 1})
 ('blue', 3)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Set
 ---
@@ -131,6 +135,7 @@ Set
 <frozenset> = frozenset(<collection>)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Tuple
 -----
@@ -157,6 +162,7 @@ Point(x=1, y=2)
 2
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Range
 -----
@@ -172,6 +178,7 @@ Range
 [0, 1, 2]
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Enumerate
 ---------
@@ -180,6 +187,7 @@ for i, el in enumerate(<collection> [, i_start]):
     ...
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Iterator
 --------
@@ -211,6 +219,7 @@ import itertools as it
 <iter> = it.islice(<coll>, from_inc, …)     # `to_exclusive, +step_size`. Indices can be None.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Generator
 ---------
@@ -230,6 +239,7 @@ def count(start, step):
 (10, 12, 14)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Type
 ----
@@ -289,6 +299,7 @@ True
 +--------------------+----------+----------+----------+----------+----------+
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 String
 ------
@@ -338,6 +349,7 @@ String
 ```
 * **Also: `'isspace()'` checks for `'[ \t\n\r\f\v\x1c-\x1f\x85\u2000…]'`.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Regex
 -----
@@ -379,6 +391,7 @@ import re
 * **As shown above, it restricts all special sequence matches to the first 128 characters and prevents `'\s'` from accepting `'[\x1c-\x1f]'` (the so-called separator characters).**
 * **Use a capital letter for negation (all non-ASCII characters will be matched when used in combination with ASCII flag).**
 
+**[🔼Back to Top](#content-outlines)**
 
 Format
 ------
@@ -474,6 +487,7 @@ Format
 {90:X}                                   # '5A'
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Numbers
 -------
@@ -533,6 +547,7 @@ from random import random, randint, choice        # Also shuffle, gauss, triangu
 <int> = ~<int>                                    # Not. Also -<int> - 1.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Combinatorics
 -------------
@@ -576,6 +591,7 @@ import itertools as it
  ('c', 'a'), ('c', 'b')]                          # c x  x  .
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Datetime
 --------
