@@ -83,6 +83,10 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git log` | View changes |
+| `git log --graph` | Enables you to view your git log as a graph |
+| `git log --decorate` | Makes git log display all of the references (e.g., branches, tags, etc) that point to each commit |
+| `git log --author="name_of_author"` | Search for specific author |
+| `git shortlog` | It groups each commit by author and displays the first line of each commit message |
 
 **[🔼Back to Top](#table-of-contents)**
 
