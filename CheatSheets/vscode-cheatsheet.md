@@ -30,7 +30,7 @@
 | `Ctrl + A` | Select All |
 | `Ctrl + C` | Copy line |
 | `Ctrl + X` | Cut line |
-| `Ctrl + V` | Paste line above |
+| `Ctrl + V` | Paste |
 | `Ctrl + Z` | Undo Changes |
 
 **[🔼Back to Top](#table-of-contents)**
