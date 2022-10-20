@@ -2,6 +2,7 @@
 
 - [Markdown CheatSheet for Developers](#markdown-cheatsheet-for-developers)
   - [Basic Syntax](#basic-syntax)
+  - [Extended Syntax](#extended-syntax)
 
 # Markdown CheatSheet for Developers
 
@@ -18,6 +19,8 @@
 | `---`                                   | Horizontal line                                      |
 | `![alt text](image.jpg)`                | Import Image                                         |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Extended Syntax
 
 | Command                                                                                                   | Description       |
@@ -32,3 +35,5 @@
 | ` - [x] task one` <br /> `- [ ] task two` <br /> `- [ ] task three` <br />                                | Task List         |
 | `\| col1 \| col2 \|` <br /> `\|------\|------\| ` <br /> `\|data1 \|data2 \|` <br /> `\|data3 \|data4 \|` | Table             |
 | `Here's a sentence with a footnote. [^1] ` <br /> `[^1]: This is the footnote.`                           | Footnote          |
+
+**[🔼Back to Top](#table-of-contents)**
