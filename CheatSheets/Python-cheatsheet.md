@@ -660,3 +660,483 @@ from dateutil.tz import UTC, tzlocal, gettz, datetime_exists, resolve_imaginary
 ```
 * **`'%Z'` only accepts `'UTC/GMT'` and local timezone's code. `'%z'` also accepts `'±HH:MM'`.**
 * **For abbreviated weekday and month use `'%a'` and `'%b'`.**
+
+### Arithmetics
+```python
+<D/DT>   = <D/DT>  ± <TD>                   # Returned datetime can fall into missing hour.
+<TD>     = <D/DTn> - <D/DTn>                # Returns the difference, ignoring time jumps.
+<TD>     = <DTa>   - <DTa>                  # Ignores time jumps if they share tzinfo object.
+<TD>     = <TD>    * <real>                 # Also: <TD> = abs(<TD>) and <TD> = <TD> ±% <TD>.
+<float>  = <TD>    / <TD>                   # How many weeks/years there are in TD. Also //.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Arguments
+---------
+### Inside Function Call
+```python
+func(<positional_args>)                           # func(0, 0)
+func(<keyword_args>)                              # func(x=0, y=0)
+func(<positional_args>, <keyword_args>)           # func(0, y=0)
+```
+
+### Inside Function Definition
+```python
+def func(<nondefault_args>): ...                  # def func(x, y): ...
+def func(<default_args>): ...                     # def func(x=0, y=0): ...
+def func(<nondefault_args>, <default_args>): ...  # def func(x, y=0): ...
+```
+* **Default values are evaluated when function is first encountered in the scope.**
+* **Any mutation of a mutable default value will persist between invocations.**
+
+
+Splat Operator
+--------------
+### Inside Function Call
+**Splat expands a collection into positional arguments, while splatty-splat expands a dictionary into keyword arguments.**
+```python
+args   = (1, 2)
+kwargs = {'x': 3, 'y': 4, 'z': 5}
+func(*args, **kwargs)
+```
+
+#### Is the same as:
+```python
+func(1, 2, x=3, y=4, z=5)
+```
+
+### Inside Function Definition
+**Splat combines zero or more positional arguments into a tuple, while splatty-splat combines zero or more keyword arguments into a dictionary.**
+```python
+def add(*a):
+    return sum(a)
+```
+
+```python
+>>> add(1, 2, 3)
+6
+```
+
+#### Legal argument combinations:
+```python
+def f(*args): ...               # f(1, 2, 3)
+def f(x, *args): ...            # f(1, 2, 3)
+def f(*args, z): ...            # f(1, 2, z=3)
+```
+
+```python
+def f(**kwargs): ...            # f(x=1, y=2, z=3)
+def f(x, **kwargs): ...         # f(x=1, y=2, z=3) | f(1, y=2, z=3)
+```
+
+```python
+def f(*args, **kwargs): ...     # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3) | f(1, 2, 3)
+def f(x, *args, **kwargs): ...  # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3) | f(1, 2, 3)
+def f(*args, y, **kwargs): ...  # f(x=1, y=2, z=3) | f(1, y=2, z=3)
+```
+
+```python
+def f(*, x, y, z): ...          # f(x=1, y=2, z=3)
+def f(x, *, y, z): ...          # f(x=1, y=2, z=3) | f(1, y=2, z=3)
+def f(x, y, *, z): ...          # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3)
+```
+
+### Other Uses
+```python
+<list>  = [*<coll.> [, ...]]    # Or: list(<collection>) [+ ...]
+<tuple> = (*<coll.>, [...])     # Or: tuple(<collection>) [+ ...]
+<set>   = {*<coll.> [, ...]}    # Or: set(<collection>) [| ...]
+<dict>  = {**<dict> [, ...]}    # Or: dict(**<dict> [, ...])
+```
+
+```python
+head, *body, tail = <coll.>     # Head or tail can be omitted.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Inline
+------
+### Lambda
+```python
+<func> = lambda: <return_value>                     # A single statement function.
+<func> = lambda <arg_1>, <arg_2>: <return_value>    # Also accepts default arguments.
+```
+
+### Comprehensions
+```python
+<list> = [i+1 for i in range(10)]                   # Or: [1, 2, ..., 10]
+<iter> = (i for i in range(10) if i > 5)            # Or: iter([6, 7, 8, 9])
+<set>  = {i+5 for i in range(10)}                   # Or: {5, 6, ..., 14}
+<dict> = {i: i*2 for i in range(10)}                # Or: {0: 0, 1: 2, ..., 9: 18}
+```
+
+```python
+>>> [l+r for l in 'abc' for r in 'abc']
+['aa', 'ab', 'ac', ..., 'cc']
+```
+
+### Map, Filter, Reduce
+```python
+<iter> = map(lambda x: x + 1, range(10))            # Or: iter([1, 2, ..., 10])
+<iter> = filter(lambda x: x > 5, range(10))         # Or: iter([6, 7, 8, 9])
+<obj>  = reduce(lambda out, x: out + x, range(10))  # Or: 45
+```
+* **Reduce must be imported from the functools module.**
+
+### Any, All
+```python
+<bool> = any(<collection>)                          # Is `bool(el)` True for any element.
+<bool> = all(<collection>)                          # Is True for all elements or empty.
+```
+
+### Conditional Expression
+```python
+<obj> = <exp> if <condition> else <exp>             # Only one expression gets evaluated.
+```
+
+```python
+>>> [a if a else 'zero' for a in (0, 1, 2, 3)]
+['zero', 1, 2, 3]
+```
+
+### Named Tuple, Enum, Dataclass
+```python
+from collections import namedtuple
+Point = namedtuple('Point', 'x y')                  # Creates a tuple's subclass.
+point = Point(0, 0)                                 # Returns its instance.
+```
+
+```python
+from enum import Enum
+Direction = Enum('Direction', 'n e s w')            # Creates an enum.
+direction = Direction.n                             # Returns its member.
+```
+
+```python
+from dataclasses import make_dataclass
+Player = make_dataclass('Player', ['loc', 'dir'])   # Creates a class.
+player = Player(point, direction)                   # Returns its instance.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Imports
+-------
+```python
+import <module>            # Imports a built-in or '<module>.py'.
+import <package>           # Imports a built-in or '<package>/__init__.py'.
+import <package>.<module>  # Imports a built-in or '<package>/<module>.py'.
+```
+* **Package is a collection of modules, but it can also define its own objects.**
+* **On a filesystem this corresponds to a directory of Python files with an optional init script.**
+* **Running `'import <package>'` does not automatically provide access to the package's modules unless they are explicitly imported in its init script.**
+
+
+Closure
+-------
+**We have/get a closure in Python when:**
+* **A nested function references a value of its enclosing function and then**
+* **the enclosing function returns the nested function.**
+
+```python
+def get_multiplier(a):
+    def out(b):
+        return a * b
+    return out
+```
+
+```python
+>>> multiply_by_3 = get_multiplier(3)
+>>> multiply_by_3(10)
+30
+```
+
+* **If multiple nested functions within enclosing function reference the same value, that value gets shared.**
+* **To dynamically access function's first free variable use `'<function>.__closure__[0].cell_contents'`.**
+
+### Partial
+```python
+from functools import partial
+<function> = partial(<function> [, <arg_1>, <arg_2>, ...])
+```
+
+```python
+>>> import operator as op
+>>> multiply_by_3 = partial(op.mul, 3)
+>>> multiply_by_3(10)
+30
+```
+* **Partial is also useful in cases when function needs to be passed as an argument because it enables us to set its arguments beforehand.**
+* **A few examples being: `'defaultdict(<function>)'`, `'iter(<function>, to_exclusive)'` and dataclass's `'field(default_factory=<function>)'`.**
+
+### Non-Local
+**If variable is being assigned to anywhere in the scope, it is regarded as a local variable, unless it is declared as a 'global' or a 'nonlocal'.**
+
+```python
+def get_counter():
+    i = 0
+    def out():
+        nonlocal i
+        i += 1
+        return i
+    return out
+```
+
+```python
+>>> counter = get_counter()
+>>> counter(), counter(), counter()
+(1, 2, 3)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Decorator
+---------
+* **A decorator takes a function, adds some functionality and returns it.**
+* **It can be any [callable](#callable), but is usually implemented as a function that returns a [closure](#closure).**
+
+```python
+@decorator_name
+def function_that_gets_passed_to_decorator():
+    ...
+```
+
+### Debugger Example
+**Decorator that prints function's name every time the function is called.**
+
+```python
+from functools import wraps
+
+def debug(func):
+    @wraps(func)
+    def out(*args, **kwargs):
+        print(func.__name__)
+        return func(*args, **kwargs)
+    return out
+
+@debug
+def add(x, y):
+    return x + y
+```
+* **Wraps is a helper decorator that copies the metadata of the passed function (func) to the function it is wrapping (out).**
+* **Without it `'add.__name__'` would return `'out'`.**
+
+### LRU Cache
+**Decorator that caches function's return values. All function's arguments must be hashable.**
+
+```python
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fib(n):
+    return n if n < 2 else fib(n-2) + fib(n-1)
+```
+* **Default size of the cache is 128 values. Passing `'maxsize=None'` makes it unbounded.**
+* **CPython interpreter limits recursion depth to 1000 by default. To increase it use `'sys.setrecursionlimit(<depth>)'`.**
+
+### Parametrized Decorator
+**A decorator that accepts arguments and returns a normal decorator that accepts a function.**
+```python
+from functools import wraps
+
+def debug(print_result=False):
+    def decorator(func):
+        @wraps(func)
+        def out(*args, **kwargs):
+            result = func(*args, **kwargs)
+            print(func.__name__, result if print_result else '')
+            return result
+        return out
+    return decorator
+
+@debug(print_result=True)
+def add(x, y):
+    return x + y
+```
+* **Using only `'@debug'` to decorate the add() function would not work here, because debug would then receive the add() function as a 'print_result' argument. Decorators can however manually check if the argument they received is a function and act accordingly.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Class
+-----
+```python
+class <name>:
+    def __init__(self, a):
+        self.a = a
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return f'{class_name}({self.a!r})'
+    def __str__(self):
+        return str(self.a)
+
+    @classmethod
+    def get_class_name(cls):
+        return cls.__name__
+```
+* **Return value of repr() should be unambiguous and of str() readable.**
+* **If only repr() is defined, it will also be used for str().**
+* **Methods decorated with `'@staticmethod'` do not receive 'self' nor 'cls' as their first arg.**
+
+#### Str() use cases:
+```python
+print(<el>)
+f'{<el>}'
+logging.warning(<el>)
+csv.writer(<file>).writerow([<el>])
+raise Exception(<el>)
+```
+
+#### Repr() use cases:
+```python
+print/str/repr([<el>])
+f'{<el>!r}'
+Z = dataclasses.make_dataclass('Z', ['a']); print/str/repr(Z(<el>))
+>>> <el>
+```
+
+### Constructor Overloading
+```python
+class <name>:
+    def __init__(self, a=None):
+        self.a = a
+```
+
+### Inheritance
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age  = age
+
+class Employee(Person):
+    def __init__(self, name, age, staff_num):
+        super().__init__(name, age)
+        self.staff_num = staff_num
+```
+
+### Multiple Inheritance
+```python
+class A: pass
+class B: pass
+class C(A, B): pass
+```
+
+**MRO determines the order in which parent classes are traversed when searching for a method or an attribute:**
+```python
+>>> C.mro()
+[<class 'C'>, <class 'A'>, <class 'B'>, <class 'object'>]
+```
+
+### Property
+**Pythonic way of implementing getters and setters.**
+```python
+class Person:
+    @property
+    def name(self):
+        return ' '.join(self._name)
+
+    @name.setter
+    def name(self, value):
+        self._name = value.split()
+```
+
+```python
+>>> person = Person()
+>>> person.name = '\t Guido  van Rossum \n'
+>>> person.name
+'Guido van Rossum'
+```
+
+### Dataclass
+**Decorator that automatically generates init(), repr() and eq() special methods.**
+```python
+from dataclasses import dataclass, field
+
+@dataclass(order=False, frozen=False)
+class <class_name>:
+    <attr_name_1>: <type>
+    <attr_name_2>: <type> = <default_value>
+    <attr_name_3>: list/dict/set = field(default_factory=list/dict/set)
+```
+* **Objects can be made sortable with `'order=True'` and immutable with `'frozen=True'`.**
+* **For object to be hashable, all attributes must be hashable and 'frozen' must be True.**
+* **Function field() is needed because `'<attr_name>: list = []'` would make a list that is shared among all instances. Its 'default_factory' argument can be any [callable](#callable).**
+* **For attributes of arbitrary type use `'typing.Any'`.**
+
+#### Inline:
+```python
+from dataclasses import make_dataclass
+<class> = make_dataclass('<class_name>', <coll_of_attribute_names>)
+<class> = make_dataclass('<class_name>', <coll_of_tuples>)
+<tuple> = ('<attr_name>', <type> [, <default_value>])
+```
+
+#### Rest of type annotations (CPython interpreter ignores them all):
+```python
+def func(<arg_name>: <type> [= <obj>]) -> <type>: ...
+<var_name>: typing.List/Set/Iterable/Sequence/Optional[<type>]
+<var_name>: typing.Dict/Tuple/Union[<type>, ...]
+```
+
+### Slots
+**Mechanism that restricts objects to attributes listed in 'slots' and significantly reduces their memory footprint.**
+
+```python
+class MyClassWithSlots:
+    __slots__ = ['a']
+    def __init__(self):
+        self.a = 1
+```
+
+### Copy
+```python
+from copy import copy, deepcopy
+<object> = copy(<object>)
+<object> = deepcopy(<object>)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Duck Types
+----------
+**A duck type is an implicit type that prescribes a set of special methods. Any object that has those methods defined is considered a member of that duck type.**
+
+### Comparable
+* **If eq() method is not overridden, it returns `'id(self) == id(other)'`, which is the same as `'self is other'`.**
+* **That means all objects compare not equal by default.**
+* **Only the left side object has eq() method called, unless it returns NotImplemented, in which case the right object is consulted. False is returned if both return NotImplemented.**
+* **Ne() automatically works on any object that has eq() defined.**
+
+```python
+class MyComparable:
+    def __init__(self, a):
+        self.a = a
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.a == other.a
+        return NotImplemented
+```
+
+### Hashable
+* **Hashable object needs both hash() and eq() methods and its hash value should never change.**
+* **Hashable objects that compare equal must have the same hash value, meaning default hash() that returns `'id(self)'` will not do.**
+* **That is why Python automatically makes classes unhashable if you only implement eq().**
+
+```python
+class MyHashable:
+    def __init__(self, a):
+        self._a = a
+    @property
+    def a(self):
+        return self._a
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.a == other.a
+        return NotImplemented
+    def __hash__(self):
+        return hash(self.a)
+```
+
+
