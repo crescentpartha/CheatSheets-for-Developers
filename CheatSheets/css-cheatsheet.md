@@ -1,11 +1,13 @@
 ## Table of Contents
 
-  - [Css-properties](#css-properties)
-  - [CSS Selectors & classes](#css-selectors--classes)
+- [CSS Properties](#css-properties)
+- [CSS Selectors](#css-selectors)
+- [CSS Pseudo Classes](#css-pseudo-classes)
+- [CSS Attribute Selectors](#css-attribute-selectors)
 
-# Css CheatSheet for Developers
+# CSS CheatSheet for Developers
 
-## Css properties
+## CSS Properties
 
 | Command                                                       | Description                                                     |
 | ------------------------------------------------------------- | --------------------------------------------------------------- |
@@ -189,47 +191,80 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-## CSS Selectors & classes
+## CSS Selectors
 
-| Command                   | Description                         |
-| ------------------------- | ----------------------------------- |
-| `*`                       | all elements                        |
-| `div`                     | all 'div' tags                      |
-| `div.p`                   | all 'div' and 'p' paragraphs        |
-| `div p`                   | paragraphs inside divs              |
-| `div > p`                 | all 'p' tag one level deep in 'div' |
-| `div + p`                 | p tags immediately after div        |
-| `div ~ p`                 | p tags preceded by div              |
-| `.class-name`             | all elements with class             |
-| `#id-name`                | element with 'id'                   |
-| `div.class-name`          | divs with certain classname         |
-| `div#id-name`             | div with certain 'id'               |
-| `#id-name`                | all elements iside that #id-name    |
-| `a:link`                  | link in normal state                |
-| `a:active`                | link in clicked state               |
-| `a:hover`                 | link with mouse over it             |
-| `a:visited`               | visited link                        |
-| `a[target]`               | links with a target attribute       |
-| `a[target="_blank"]`      | links open in new tab               |
-| `p::after{content:"yo";}` | add content after 'p'               |
-| `p::before`               | add content before 'p'              |
-| `div:empty`               | element without children            |
-| `p::first-letter`         | first letter in 'p'                 |
-| `p::first-line`           | first line in 'p'                   |
-| `p:first-of-type`         | first of some type                  |
-| `p:last-of-type`          | last of some type                   |
-| `:not(span)`              | element that's not a span           |
-| `p:first-child`           | first child of its parent           |
-| `p:last-child`            | last child of its parent            |
-| `p:nth-child(2)`          | second child of its parent          |
-| `p:nth-child(3n+1)`       | nth-child (an + b) formula          |
-| `p:nth-last-child(2)`     | second child from behind            |
-| `p:nth-of-type(2)`        | second p of its parent              |
-| `p:nth-last-of-type(2)`   | second p of its parent from behind  |
-| `p:only-of-type`          | - unique of its parent              |
-| `p:only-child`            | - only child of its parent          |
-| `:root`                   | documents root element              |
-| `::selection`             | portion selected by user            |
-| `:target`                 | highlight active anchor             |
+| Command          | Description                         |
+| ---------------- | ----------------------------------- |
+| `*`              | all elements                        |
+| `div`            | all 'div' tags                      |
+| `div.p`          | all 'div' and 'p' paragraphs        |
+| `div p`          | paragraphs inside divs              |
+| `div > p`        | all 'p' tag one level deep in 'div' |
+| `div + p`        | p tags immediately after div        |
+| `div ~ p`        | p tags preceded by div              |
+| `.class-name`    | all elements with class             |
+| `#id-name`       | element with 'id'                   |
+| `div.class-name` | divs with certain classname         |
+| `div#id-name`    | div with certain 'id'               |
+| `#id-name`       | all elements iside that #id-name    |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## CSS Pseudo Classes
+
+| Command                   | Description                  |
+| ------------------------- | ---------------------------- |
+| `a:link`                  | link in normal state         |
+| `a:active`                | link in clicked state        |
+| `a:hover`                 | link with mouse over it      |
+| `a:visited`               | visited link                 |
+| `p::after{content:"yo";}` | add content after p          |
+| `p::before`               | add content before p         |
+| `input:checked`           | checked inputs               |
+| `input:disabled`          | disabled inputs              |
+| `input:enabled`           | enabled inputs               |
+| `input:focus`             | input has focus              |
+| `input:in-range`          | value in range               |
+| `input:out-of-range`      | input value out of range     |
+| `input:valid`             | input with valid value       |
+| `input:invalid`           | input with invalid value     |
+| `input:optional`          | no required attribute        |
+| `input:required`          | input with requred attribute |
+| `input:read-only`         | with readonly attribute      |
+| `input:read-write`        | no readonly attrib.          |
+| `div:empty`               | element with no children     |
+| `p::first-letter`         | first letter in p            |
+| `p::first-line`           | first line in p              |
+| `p:first-of-type`         | first of some type           |
+| `p:last-of-type`          | last of some type            |
+| `p:lang(en)`              | p with en language attribute |
+| `:not(span)`              | element that's not a span    |
+| `p:first-child`           | first child of its parent    |
+| `p:last-child`            | last child of its parent     |
+| `p:nth-child(2)`          | second child of its parent   |
+| `p:nth-child(3n+1)`       | nth-child (an + b) formula   |
+| `p:nth-last-child(2)`     | second child from behind     |
+| `p:nth-of-type(2)`        | second p of its parent       |
+| `p:nth-last-of-type(2)`   | ...from behind               |
+| `p:only-of-type`          | unique of its parent         |
+| `p:only-child`            | only child of its parent     |
+| `:root`                   | documents root element       |
+| `::selection`             | portion selected by user     |
+| `:target`                 | highlight active anchor      |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## CSS Attribute Selectors
+
+| Command                | Description                      |
+| ---------------------- | -------------------------------- |
+| `a[target]`            | links with a target attribute    |
+| `a[target="_blank"]`   | links which open in new tab      |
+| `[title~="chair"]`     | title element containing a word  |
+| `[class^="chair"]`     | class starts with chair          |
+| `[class="chair"]`      | class starts with the chair word |
+| `[class*="chair"]`     | class contains chair             |
+| `[class$="chair"]`     | class ends with chair            |
+| `input[type="button"]` | specified input type             |
 
 **[🔼Back to Top](#table-of-contents)**
