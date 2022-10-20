@@ -42,9 +42,16 @@
 
 ## File Explorer Shortcuts
 
-| Command | Description |
-| ------- | ----------- |
-| `Ctrl + W` | Close the current window |
+| Command | Description                 |
+|---------|-----------------------------|
+| `Ctrl + W` | Close the current window    |
+| `Shift + Tab`| Set Focus on Side Bar       |
+| `Ctrl + N`| Duplicate the File Explorer |
+| `Crtl + Shift + N`| Create a New Folder         |
+| `Alt + ←`| Navigate to previous folder |
+| `Ctrl + L` | Navigate to the address bar |
+
+
 
 **[🔼Back to Top](#table-of-contents)**
 
