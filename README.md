@@ -38,8 +38,8 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 6. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
 7. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
 8. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-9. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
-10. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+9.  [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+10. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
 11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
 
 ## ___Instructions___
@@ -63,9 +63,9 @@ ___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ 
 
 <!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
 
- <a href = "https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors">
-   <img src = "https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers"/>
- </a>
+<a href = "https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers"/>
+</a>
 
 ## License
 

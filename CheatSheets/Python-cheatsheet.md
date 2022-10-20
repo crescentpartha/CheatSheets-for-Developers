@@ -670,6 +670,7 @@ from dateutil.tz import UTC, tzlocal, gettz, datetime_exists, resolve_imaginary
 <float>  = <TD>    / <TD>                   # How many weeks/years there are in TD. Also //.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Arguments
 ---------
@@ -753,6 +754,7 @@ def f(x, y, *, z): ...          # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=
 head, *body, tail = <coll.>     # Head or tail can be omitted.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Inline
 ------
@@ -818,6 +820,7 @@ Player = make_dataclass('Player', ['loc', 'dir'])   # Creates a class.
 player = Player(point, direction)                   # Returns its instance.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Imports
 -------
@@ -887,6 +890,7 @@ def get_counter():
 (1, 2, 3)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Decorator
 ---------
@@ -953,6 +957,7 @@ def add(x, y):
 ```
 * **Using only `'@debug'` to decorate the add() function would not work here, because debug would then receive the add() function as a 'print_result' argument. Decorators can however manually check if the argument they received is a function and act accordingly.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Class
 -----
@@ -1092,6 +1097,7 @@ from copy import copy, deepcopy
 <object> = deepcopy(<object>)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Duck Types
 ----------
