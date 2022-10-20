@@ -27,7 +27,11 @@
 
 | Command | Description |
 | ------- | ----------- |
+| `Ctrl + A` | Select All |
 | `Ctrl + C` | Copy line |
+| `Ctrl + X` | Cut line |
+| `Ctrl + V` | Paste |
+| `Ctrl + Z` | Undo Changes |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -44,6 +48,8 @@
 | Command | Description |
 | ------- | ----------- |
 | `Alt + Click` | Insert cursor |
+| `Ctrl + Alt + UpArrow` | Add cursor above |
+| `Ctrl + Alt + DownArrow` | Add cursor below |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -76,6 +82,7 @@
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + W` | Close Editor |
+| `Ctrl + Shift + T` | Open Recently Closed Editor |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -83,7 +90,10 @@
 
 | Command | Description |
 | ------- | ----------- |
+| `Ctrl + N` | New Text File |
+| `Ctrl + O` | Open |
 | `Ctrl + S` | Save |
+| `Ctrl + Shift + S` | Save As |
 
 **[🔼Back to Top](#table-of-contents)**
 

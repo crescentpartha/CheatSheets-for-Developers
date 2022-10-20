@@ -24,3 +24,6 @@
 | `nvm install-latest-npm`        | Update your version of npm if you use Node installed through nvm |
 | `nvm root <path>`               | Set the directory where nvm should store different versions of node.js.|
 | `nvm proxy [url]`               | Set a proxy to use for downloads. Leave [url] blank to see the current proxy. Set [url] to "none" to remove the proxy.|
+| `nvm -v`                        | Check if nvm is installed                                                                                              |
+| `nvm uninstall <version>`       | Un-Install a specific version                                                                                          |
+| `nvm ls`                        | Show versions available locally                                                                                        |
