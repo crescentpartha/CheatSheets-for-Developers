@@ -52,6 +52,7 @@
 | `Alt + Click` | Insert cursor |
 | `Shift + Alt + UpArrow` | Copy line up |
 | `Shift + Alt + DownArrow` | Copy line down |
+| `Shift + Alt + Click` | Select text in blocks |
 | `Ctrl + Alt + UpArrow` | Add cursor above |
 | `Ctrl + Alt + DownArrow` | Add cursor below |
 | `Ctrl + Shift + L` | Select all occurrences of current selection |
