@@ -27,7 +27,11 @@
 
 | Command | Description |
 | ------- | ----------- |
+| `Ctrl + A` | Select All |
 | `Ctrl + C` | Copy line |
+| `Ctrl + X` | Cut line |
+| `Ctrl + V` | Paste line above |
+| `Ctrl + Z` | Undo Changes |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -44,8 +48,8 @@
 | Command | Description |
 | ------- | ----------- |
 | `Alt + Click` | Insert cursor |
-| `Ctrl + Alt + UpArrow` | Insert cursor above |
-| `Ctrl + Alt + DownArrow` | Insert cursor below |
+| `Ctrl + Alt + UpArrow` | Add cursor above |
+| `Ctrl + Alt + DownArrow` | Add cursor below |
 
 **[🔼Back to Top](#table-of-contents)**
 
