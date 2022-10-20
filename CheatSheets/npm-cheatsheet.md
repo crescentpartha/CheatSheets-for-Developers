@@ -25,5 +25,11 @@
 | `npm-windows-upgrades`          | Upgrade npm on Windows              |
 | `npm outdated -g --depth-0`     | Updated global packages             |
 | `npm alias default 16`          | Make a node version default         |
+| `npm i <package>`               | Install a package                   |
+| `npm u <package>`               | Update the package                  |
+| `npm rm <package>`              | Remove a package                    |
+| `npm audit`                     | Scan and list all the vulnerabilities in the package |
+| `npm audit fix`                 | Fix found vulnerabilities        |
+
 
 
