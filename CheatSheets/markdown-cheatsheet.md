@@ -28,7 +28,7 @@
 | `That is so funny! :joy:`                                                                                 | Emoji             |
 | `~~The world is flat.~~ `                                                                                 | ~~Strikethrough~~ |
 | `> blockquote`                                                                                            | > Blockquotes     |
-| `'''` <br /> `{ ` <br /> `"First": "1st",` <br /> `"Second": "2nd"` <br /> ` }` <br /> ` ``` `            | Fenced code block |
+| ` ``` ` <br /> `{ ` <br /> `"First": "1st",` <br /> `"Second": "2nd"` <br /> ` }` <br /> ` ``` `            | Fenced code block |
 | ` - [x] task one` <br /> `- [ ] task two` <br /> `- [ ] task three` <br />                                | Task List         |
 | `\| col1 \| col2 \|` <br /> `\|------\|------\| ` <br /> `\|data1 \|data2 \|` <br /> `\|data3 \|data4 \|` | Table             |
 | `Here's a sentence with a footnote. [^1] ` <br /> `[^1]: This is the footnote.`                           | Footnote          |
