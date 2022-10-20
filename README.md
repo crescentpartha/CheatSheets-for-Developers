@@ -40,6 +40,7 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 8. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
 9. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
 10. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
 
 ## ___Instructions___
 
