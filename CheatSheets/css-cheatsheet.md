@@ -1,7 +1,5 @@
 ## Table of Contents
 
-- [Css CheatSheet for Developers]
-  (#css-cheatsheet-for-developers)
   - [Css-properties](#css-properties)
   - [CSS Selectors & classes](#css-selectors--classes)
 
