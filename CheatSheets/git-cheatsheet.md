@@ -52,6 +52,7 @@ Table of Contents
 | `git remote add origin [url]` | Adding a remote repository | 
 | `git show` | Shows information about any git object |
 | `gitk` | Shows graphical interface for a local repository |
+| `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
 
 
 **[🔼Back to Top](#table-of-contents)**
