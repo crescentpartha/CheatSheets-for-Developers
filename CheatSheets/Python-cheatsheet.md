@@ -59,3 +59,10 @@ list_of_chars    = list(<str>)
 <list>.remove(<el>)            # Removes first occurrence of the item or raises ValueError.
 <list>.clear()                 # Removes all items. Also works on dictionary and set.
 ```
+Dictionary
+----------
+```python
+<view> = <dict>.keys()                          # Coll. of keys that reflects changes.
+<view> = <dict>.values()                        # Coll. of values that reflects changes.
+<view> = <dict>.items()                         # Coll. of key-value tuples that reflects chgs.
+```
