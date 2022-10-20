@@ -8,7 +8,9 @@ Table of Contents
   - [Branching & Merging](#branching--merging)
   - [Sharing & Updating Projects](#sharing--updating-projects)
   - [Inspection & Comparison](#inspection--comparison)
+  - [Tracking Path Changes](#tracking-path-changes)
   - [Setting up Alias](#setting-up-alias)
+  - [Rewrite History](#rewrite-history)
   - [Deletion](#deletion)
   - [Temporary Commits](#Temporary-commits)
 
@@ -63,6 +65,7 @@ Table of Contents
 | `git branch -d [branch-name]` | Delete a branch |
 | `git branch -a` | See all branches (local and remote) |
 | `git checkout [branch-name]` | Switch to another branch |
+| `git switch [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
 | `git checkout -b "branch name"` | Create a new branch and switch to that branch |
 
@@ -83,6 +86,9 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git log` | View changes |
+| `git log branchB..branchA` | View changes on branchA that are not on branchB|
+| `git log --follow [file]` | Show the commits that changed file, even across renames |
+| `git diff branchB...branchA` | View the differences of what is in branchA that are not on branchB |
 | `git log --graph` | Enables you to view your git log as a graph |
 | `git log --decorate` | Makes git log display all of the references (e.g., branches, tags, etc) that point to each commit |
 | `git log --author="name_of_author"` | Search for specific author |
@@ -90,11 +96,28 @@ Table of Contents
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Tracking Path Changes
+
+| Command | Description |
+| ------- | ----------- |
+| `git rm [file]` | Delete the file from project and stage the removal for commit |
+| `git mv [existing-path] [new-path]`  | Change an existing file path and stage the move |
+| `git log --stat -M`  | Show all commit logs with indication of any paths that moved |
+
+**[🔼Back to Top](#table-of-contents)**
 ## Setting up Alias
 
 | Command | Description |
 | ------- | ----------- |
-| `git config --global alias.[short name for command]  [actual command]` | Alias make the commands short and handy | (## ex:- git config --global alias.st status)
+| `git config --global alias.[short name for command]  [actual command]` | Alias make the commands short and handy | (## ex:- git config --global alias.st status) |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Rewrite History
+| Command | Description |
+| ------- | ----------- |
+|` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
+| `git reset --hard [commit]`  | Clear staging area, rewrite working tree from specified commit |
 
 **[🔼Back to Top](#table-of-contents)**
 
