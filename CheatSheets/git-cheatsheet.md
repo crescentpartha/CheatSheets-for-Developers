@@ -43,6 +43,7 @@ Table of Contents
 | `git reset [file name]` | Used to unstage the staged files |
 | `git clean -f` | To delete or remove unstaged files forcefully |
 | `git commit -m "message about updates"` | Commit changes to current branch |
+| `git commit -amend` | Amend with last commit but use the previous commit log message |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
@@ -60,6 +61,7 @@ Table of Contents
 | `git branch` | List branches |
 | `git branch [branch-name]` | Create a local branch |
 | `git branch -d [branch-name]` | Delete a branch |
+| `git branch -a` | See all branches (local and remote) |
 | `git checkout [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
 | `git checkout -b "branch name"` | Create a new branch and switch to that branch |
