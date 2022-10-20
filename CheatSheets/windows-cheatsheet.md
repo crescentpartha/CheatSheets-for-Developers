@@ -12,6 +12,8 @@
   - [Remote Desktop Connection Shortcuts](#remote-desktop-connection-shortcuts)
   - [Help Viewer Shortcuts](#help-viewer-shortcuts)
   - [App Rearrangement Shortcuts (Metro)](#app-rearrangement-shortcuts-metro)
+  - [Open Task Manager](#open-task-manager)
+  - [Settings Shortcuts](#settings-shortcuts)
 
 # Windows Keyboard Shortcuts for Developers
 
@@ -20,6 +22,16 @@
 | Command | Description |
 | ------- | ----------- |
 | `F1` | Display Help |
+| `Ctrl + X` | Cut the selected item |
+| `Ctrl + C` | Copy the selected item |
+| `Ctrl + V` | Paste the selected item |
+| `Ctrl + Z` | Undo an action |
+| `Ctrl + Y` | Redo an action |
+| `Ctrl + A` | Select All |
+| `Ctrl + F` | Find |
+| `Ctrl + P` | Print |
+| `Ctrl + S` | Save |
+| `Ctrl + O` | Open |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -117,5 +129,14 @@
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + Shift + Esc` | Open Task Manager|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Settings Shortcuts
+
+| Command | Description |
+| ------- | ----------- |
+| `Win + I` | Open settings |
+| `Backspace` | Go back to the settings home page |
 
 **[🔼Back to Top](#table-of-contents)**
