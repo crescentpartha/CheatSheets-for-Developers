@@ -49,7 +49,7 @@
 | `<sub> … </sub>`               | Used for writing a subscript (smaller font just below the mid-point of normal font).                                           |
 | `<sup> … </sup>`               | Similar to the above tag, but for superscripting.                                                                              |
 | `<small> … </small>`           | Reduces text size. In HTML5, it often refers to redundant or invalid information.                                              |
-| `<aside> … </aside>`           | Its a Block level element that defines content aside from the content it is placed in.                                              |  
+| `<aside> … </aside>`           | Its a Block level element that defines content aside from the content in which it is Placed.                                              |  
 
 
 **[🔼Back to Top](#table-of-contents)**
