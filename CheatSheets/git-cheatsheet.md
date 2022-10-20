@@ -8,9 +8,9 @@ Table of Contents
   - [Branching & Merging](#branching--merging)
   - [Sharing & Updating Projects](#sharing--updating-projects)
   - [Inspection & Comparison](#inspection--comparison)
-  - [Tracking Path Changes](#tracking--path--changes)
+  - [Tracking Path Changes](#tracking-path-changes)
   - [Setting up Alias](#setting-up-alias)
-  - [Rewrite History](#rewrite--history)
+  - [Rewrite History](#rewrite-history)
   - [Deletion](#deletion)
   - [Temporary Commits](#Temporary-commits)
 
