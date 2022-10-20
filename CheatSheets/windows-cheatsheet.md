@@ -76,6 +76,7 @@
 | Command | Description |
 | ------- | ----------- |
 | `Win` + `+` | Zoom in |
+| `Win` + `-` | Zoom out |
 
 **[🔼Back to Top](#table-of-contents)**
 
