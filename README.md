@@ -37,6 +37,7 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 5. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
 6. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
 7. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
+8. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
 
 ## ___Instructions___
 
