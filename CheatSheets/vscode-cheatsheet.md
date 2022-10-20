@@ -20,6 +20,7 @@
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + Shift + P` | Show Command Palette |
+| `Ctrl + Shift + X` | Show Extensions |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -32,6 +33,7 @@
 | `Ctrl + X` | Cut line |
 | `Ctrl + V` | Paste |
 | `Ctrl + Z` | Undo Changes |
+| `Ctrl + Y` | Redo Changes |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -50,6 +52,7 @@
 | `Alt + Click` | Insert cursor |
 | `Ctrl + Alt + UpArrow` | Add cursor above |
 | `Ctrl + Alt + DownArrow` | Add cursor below |
+| `Ctrl + Shift + L` | Select all occurrences of current selection |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -66,6 +69,10 @@
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + F` | Find |
+| `Ctrl + H` | Replace |
+| `Ctrl + Shift + F` | Find in Files |
+| `Ctrl + Shift + H` | Replace in Files |
+| `Ctrl + Shift + Enter` | Replace All |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -79,8 +86,9 @@
 | `Ctrl + Shift + E` | Go to explorer |
 | `Ctrl + Shift + X` | Go to extensions |
 | `Ctrl + Shift + D` | Go to Run and Debug |
-
-
+| `Ctrl + Shift + G` | Go to Source Control |
+| `Ctrl + Shift + H` | Go to Search |
+| `Ctrl + Shift + J` | Go to Problems |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -116,6 +124,7 @@
 
 | Command | Description |
 | ------- | ----------- |
-| ___Ctrl + `___ | Show integrated terminal |
+| `` Ctrl + ` `` | Show integrated terminal |
+| `` Ctrl + Shift + ` `` | Create new integrated terminal |
 
 **[🔼Back to Top](#table-of-contents)**
