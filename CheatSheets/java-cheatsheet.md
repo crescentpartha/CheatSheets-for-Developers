@@ -20,22 +20,22 @@
 ## Data Conversion
 
 ### String to Number
-    ```java
+```java
     int i = Intege­r.p­ars­eInt(_str_);  
 	double d = Double.pa­rse­Double(_str_);
-    ```
+```
 	
 ### Any Type to String
-    ```java
+```java
 	String s = String.va­lueOf(_value_);  
 
-    ```
+```
   
 ### Numeric Conver­sions
-    ```java
+```java
 	int i = (int) _numeric expression_; 
 
-    ```
+```
 
 ## Operators
 | Operator Category | Operators |
@@ -132,3 +132,14 @@ try {
 |trim()  |trims surrou­nding whitespace  |
 |equals(_s2_)  |true if s equals s2  |
 |compa­reTo(_s2_)  | 0 if equal/+ if s > s2/- if s < s2 |
+
+## Math Library Methods
+|Command|Description|
+|--|--|
+|abs(_x_)|abstract value of x|
+|max(a, b|maximum of a and b|
+|min(a, b)|minimum of a and b|
+|E|value of _e (constant)_|
+|sin(theta)| sine of theta|
+|cos(theta|cosine of theta|
+|tan(theta)|tangent of theta|
