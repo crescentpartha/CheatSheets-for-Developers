@@ -1139,4 +1139,256 @@ class MyHashable:
         return hash(self.a)
 ```
 
+### Sortable
+* **With 'total_ordering' decorator, you only need to provide eq() and one of lt(), gt(), le() or ge() special methods and the rest will be automatically generated.**
+* **Functions sorted() and min() only require lt() method, while max() only requires gt(). However, it is best to define them all so that confusion doesn't arise in other contexts.**
+* **When two lists, strings or dataclasses are compared, their values get compared in order until a pair of unequal values is found. The comparison of this two values is then returned. The shorter sequence is considered smaller in case of all values being equal.**
+
+```python
+from functools import total_ordering
+
+@total_ordering
+class MySortable:
+    def __init__(self, a):
+        self.a = a
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.a == other.a
+        return NotImplemented
+    def __lt__(self, other):
+        if isinstance(other, type(self)):
+            return self.a < other.a
+        return NotImplemented
+```
+
+### Iterator
+* **Any object that has methods next() and iter() is an iterator.**
+* **Next() should return next item or raise StopIteration.**
+* **Iter() should return 'self'.**
+```python
+class Counter:
+    def __init__(self):
+        self.i = 0
+    def __next__(self):
+        self.i += 1
+        return self.i
+    def __iter__(self):
+        return self
+```
+
+```python
+>>> counter = Counter()
+>>> next(counter), next(counter), next(counter)
+(1, 2, 3)
+```
+
+#### Python has many different iterator objects:
+* **Sequence iterators returned by the [iter()](#iterator) function, such as list\_iterator and set\_iterator.**
+* **Objects returned by the [itertools](#itertools) module, such as count, repeat and cycle.**
+* **Generators returned by the [generator functions](#generator) and [generator expressions](#comprehensions).**
+* **File objects returned by the [open()](#open) function, etc.**
+
+### Callable
+* **All functions and classes have a call() method, hence are callable.**
+* **When this cheatsheet uses `'<function>'` as an argument, it actually means `'<callable>'`.**
+```python
+class Counter:
+    def __init__(self):
+        self.i = 0
+    def __call__(self):
+        self.i += 1
+        return self.i
+```
+
+```python
+>>> counter = Counter()
+>>> counter(), counter(), counter()
+(1, 2, 3)
+```
+
+### Context Manager
+* **Enter() should lock the resources and optionally return an object.**
+* **Exit() should release the resources.**
+* **Any exception that happens inside the with block is passed to the exit() method.**
+* **If it wishes to suppress the exception it must return a true value.**
+```python
+class MyOpen:
+    def __init__(self, filename):
+        self.filename = filename
+    def __enter__(self):
+        self.file = open(self.filename)
+        return self.file
+    def __exit__(self, exc_type, exception, traceback):
+        self.file.close()
+```
+
+```python
+>>> with open('test.txt', 'w') as file:
+...     file.write('Hello World!')
+>>> with MyOpen('test.txt') as file:
+...     print(file.read())
+Hello World!
+```
+
+
+Iterable Duck Types
+-------------------
+### Iterable
+* **Only required method is iter(). It should return an iterator of object's items.**
+* **Contains() automatically works on any object that has iter() defined.**
+```python
+class MyIterable:
+    def __init__(self, a):
+        self.a = a
+    def __iter__(self):
+        return iter(self.a)
+    def __contains__(self, el):
+        return el in self.a
+```
+
+```python
+>>> obj = MyIterable([1, 2, 3])
+>>> [el for el in obj]
+[1, 2, 3]
+>>> 1 in obj
+True
+```
+
+### Collection
+* **Only required methods are iter() and len(). Len() should return the number of items.**
+* **This cheatsheet actually means `'<iterable>'` when it uses `'<collection>'`.**
+* **I chose not to use the name 'iterable' because it sounds scarier and more vague than 'collection'. The only drawback of this decision is that a reader could think a certain function doesn't accept iterators when it does, since iterators are the only built-in objects that are iterable but are not collections.**
+```python
+class MyCollection:
+    def __init__(self, a):
+        self.a = a
+    def __iter__(self):
+        return iter(self.a)
+    def __contains__(self, el):
+        return el in self.a
+    def __len__(self):
+        return len(self.a)
+```
+
+### Sequence
+* **Only required methods are len() and getitem().**
+* **Getitem() should return an item at the passed index or raise IndexError.**
+* **Iter() and contains() automatically work on any object that has getitem() defined.**
+* **Reversed() automatically works on any object that has len() and getitem() defined.**
+```python
+class MySequence:
+    def __init__(self, a):
+        self.a = a
+    def __iter__(self):
+        return iter(self.a)
+    def __contains__(self, el):
+        return el in self.a
+    def __len__(self):
+        return len(self.a)
+    def __getitem__(self, i):
+        return self.a[i]
+    def __reversed__(self):
+        return reversed(self.a)
+```
+
+#### Discrepancies between glossary definitions and abstract base classes:
+* **Glossary defines iterable as any object with iter() or getitem() and sequence as any object with getitem() and len(). It does not define collection.**
+* **Passing ABC Iterable to isinstance() or issubclass() checks whether object/class has method iter(), while ABC Collection checks for iter(), contains() and len().**
+
+### ABC Sequence
+* **It's a richer interface than the basic sequence.**
+* **Extending it generates iter(), contains(), reversed(), index() and count().**
+* **Unlike `'abc.Iterable'` and `'abc.Collection'`, it is not a duck type. That is why `'issubclass(MySequence, abc.Sequence)'` would return False even if MySequence had all the methods defined. It however recognizes list, tuple, range, str, bytes, bytearray, memoryview and deque, because they are registered as Sequence's virtual subclasses.**
+```python
+from collections import abc
+
+class MyAbcSequence(abc.Sequence):
+    def __init__(self, a):
+        self.a = a
+    def __len__(self):
+        return len(self.a)
+    def __getitem__(self, i):
+        return self.a[i]
+```
+
+#### Table of required and automatically available special methods:
+```text
++------------+------------+------------+------------+--------------+
+|            |  Iterable  | Collection |  Sequence  | abc.Sequence |
++------------+------------+------------+------------+--------------+
+| iter()     |    REQ     |    REQ     |    Yes     |     Yes      |
+| contains() |    Yes     |    Yes     |    Yes     |     Yes      |
+| len()      |            |    REQ     |    REQ     |     REQ      |
+| getitem()  |            |            |    REQ     |     REQ      |
+| reversed() |            |            |    Yes     |     Yes      |
+| index()    |            |            |            |     Yes      |
+| count()    |            |            |            |     Yes      |
++------------+------------+------------+------------+--------------+
+```
+* **Other ABCs that generate missing methods are: MutableSequence, Set, MutableSet, Mapping and MutableMapping.**
+* **Names of their required methods are stored in `'<abc>.__abstractmethods__'`.**
+
+
+Enum
+----
+```python
+from enum import Enum, auto
+```
+
+```python
+class <enum_name>(Enum):
+    <member_name_1> = <value_1>
+    <member_name_2> = <value_2_a>, <value_2_b>
+    <member_name_3> = auto()
+```
+* **If there are no numeric values before auto(), it returns 1.**
+* **Otherwise it returns an increment of the last numeric value.**
+
+```python
+<member> = <enum>.<member_name>                 # Returns a member.
+<member> = <enum>['<member_name>']              # Returns a member or raises KeyError.
+<member> = <enum>(<value>)                      # Returns a member or raises ValueError.
+<str>    = <member>.name                        # Returns member's name.
+<obj>    = <member>.value                       # Returns member's value.
+```
+
+```python
+list_of_members = list(<enum>)
+member_names    = [a.name for a in <enum>]
+member_values   = [a.value for a in <enum>]
+random_member   = random.choice(list(<enum>))
+```
+
+```python
+def get_next_member(member):
+    members = list(member.__class__)
+    index   = (members.index(member) + 1) % len(members)
+    return members[index]
+```
+
+### Inline
+```python
+Cutlery = Enum('Cutlery', 'fork knife spoon')
+Cutlery = Enum('Cutlery', ['fork', 'knife', 'spoon'])
+Cutlery = Enum('Cutlery', {'fork': 1, 'knife': 2, 'spoon': 3})
+```
+
+#### User-defined functions cannot be values, so they must be wrapped:
+```python
+from functools import partial
+LogicOp = Enum('LogicOp', {'AND': partial(lambda l, r: l and r),
+                           'OR':  partial(lambda l, r: l or r)})
+```
+* **Member names are in all caps because trying to access a member that is named after a reserved keyword raises SyntaxError.**
+
+
+Exceptions
+----------
+```python
+try:
+    <code>
+except <exception>:
+    <code>
+```
+
 
