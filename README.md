@@ -39,10 +39,10 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 7. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
 8. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
 9. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-10. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
-11. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
-12. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
-13. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
+10. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
+11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
+12. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
+13. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
 
 ## ___Instructions___
 
