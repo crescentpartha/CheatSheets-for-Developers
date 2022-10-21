@@ -74,6 +74,7 @@ Table of Contents
 | `git switch [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
 | `git checkout -b "branch name"` | Create a new branch and switch to that branch |
+| `git cherry-pick [commit-ID]` | Bring in changes from one (or more) particular commit to the current branch. |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -104,6 +105,9 @@ Table of Contents
 | `git diff branchB...branchA` | View the differences of what is in branchA that are not on branchB |
 | `git blame [file name]` | Display the modification on each line of a file |
 | `git diff --name-only` | Show only names of changed files |
+| `git bisect start` | Starts the bisection search process to find that bad commit which introduced the bug we're facing right now |
+| `git bisect good [Commit ID]` | Takes up the good commit, which is that one where the bug was not there |
+| `git bisect bad [Commit ID]` | Takes up the bad commit, which is that one where the bug was there. If commit ID is not provided, then it takes up the current commit as the bad commit |
 
 
 **[🔼Back to Top](#table-of-contents)**
