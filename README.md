@@ -46,22 +46,22 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 
 ## ___Instructions___
 
-- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md)
-- If you are new to Open Source Contributions, checkout [How-To at a glance](docs/HOW-TO.md)
-- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md)
+- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md).
+- If you are new to open source contributions, check out [How-To at a glance](docs/HOW-TO.md).
+- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md).
 
 ## Contribution
 
-> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets
+> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets.
 
 - Add content to CheatSheets
 - Add new CheatSheets
 - Suggest changes to existing CheatSheets
 - Discuss ideas in issues
 
-## Thanks to all contributors ❤
+## Thanks to all the contributors ❤
 
-___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on Github, made ___suggestions___, given a ___Star___, and generally helped make this a better repository for developers.
+___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on GitHub, made ___suggestions___, given a ___star___, and generally helped make this a better repository for developers.
 
 <!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
 
