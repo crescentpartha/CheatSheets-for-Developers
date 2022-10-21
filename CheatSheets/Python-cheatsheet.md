@@ -1391,4 +1391,336 @@ except <exception>:
     <code>
 ```
 
+### Complex Example
+```python
+try:
+    <code_1>
+except <exception_a>:
+    <code_2_a>
+except <exception_b>:
+    <code_2_b>
+else:
+    <code_2_c>
+finally:
+    <code_3>
+```
+* **Code inside the `'else'` block will only be executed if `'try'` block had no exceptions.**
+* **Code inside the `'finally'` block will always be executed (unless a signal is received).**
+
+### Catching Exceptions
+```python
+except <exception>: ...
+except <exception> as <name>: ...
+except (<exception>, [...]): ...
+except (<exception>, [...]) as <name>: ...
+```
+* **Also catches subclasses of the exception.**
+* **Use `'traceback.print_exc()'` to print the error message to stderr.**
+* **Use `'print(<name>)'` to print just the cause of the exception (its arguments).**
+* **Use `'logging.exception(<message>)'` to log the exception.**
+
+### Raising Exceptions
+```python
+raise <exception>
+raise <exception>()
+raise <exception>(<el> [, ...])
+```
+
+#### Re-raising caught exception:
+```python
+except <exception> as <name>:
+    ...
+    raise
+```
+
+### Exception Object
+```python
+arguments = <name>.args
+exc_type  = <name>.__class__
+filename  = <name>.__traceback__.tb_frame.f_code.co_filename
+func_name = <name>.__traceback__.tb_frame.f_code.co_name
+line      = linecache.getline(filename, <name>.__traceback__.tb_lineno)
+traceback = ''.join(traceback.format_tb(<name>.__traceback__))
+error_msg = ''.join(traceback.format_exception(exc_type, <name>, <name>.__traceback__))
+```
+
+### Built-in Exceptions
+```text
+BaseException
+ +-- SystemExit                   # Raised by the sys.exit() function.
+ +-- KeyboardInterrupt            # Raised when the user hits the interrupt key (ctrl-c).
+ +-- Exception                    # User-defined exceptions should be derived from this class.
+      +-- ArithmeticError         # Base class for arithmetic errors.
+      |    +-- ZeroDivisionError  # Raised when dividing by zero.
+      +-- AssertionError          # Raised by `assert <exp>` if expression returns false value.
+      +-- AttributeError          # Raised when an attribute is missing.
+      +-- EOFError                # Raised by input() when it hits end-of-file condition.
+      +-- LookupError             # Raised when a look-up on a collection fails.
+      |    +-- IndexError         # Raised when a sequence index is out of range.
+      |    +-- KeyError           # Raised when a dictionary key or set element is missing.
+      +-- MemoryError             # Out of memory. Could be too late to start deleting vars.
+      +-- NameError               # Raised when an object is missing.
+      +-- OSError                 # Errors such as “file not found” or “disk full” (see Open).
+      |    +-- FileNotFoundError  # When a file or directory is requested but doesn't exist.
+      +-- RuntimeError            # Raised by errors that don't fall into other categories.
+      |    +-- RecursionError     # Raised when the maximum recursion depth is exceeded.
+      +-- StopIteration           # Raised by next() when run on an empty iterator.
+      +-- TypeError               # Raised when an argument is of wrong type.
+      +-- ValueError              # When an argument is of right type but inappropriate value.
+           +-- UnicodeError       # Raised when encoding/decoding strings to/from bytes fails.
+```
+
+#### Collections and their exceptions:
+```text
++-----------+------------+------------+------------+
+|           |    List    |    Set     |    Dict    |
++-----------+------------+------------+------------+
+| getitem() | IndexError |            |  KeyError  |
+| pop()     | IndexError |  KeyError  |  KeyError  |
+| remove()  | ValueError |  KeyError  |            |
+| index()   | ValueError |            |            |
++-----------+------------+------------+------------+
+```
+
+#### Useful built-in exceptions:
+```python
+raise TypeError('Argument is of wrong type!')
+raise ValueError('Argument is of right type but inappropriate value!')
+raise RuntimeError('None of above!')
+```
+
+### User-defined Exceptions
+```python
+class MyError(Exception): pass
+class MyInputError(MyError): pass
+```
+
+
+Exit
+----
+**Exits the interpreter by raising SystemExit exception.**
+```python
+import sys
+sys.exit()                        # Exits with exit code 0 (success).
+sys.exit(<el>)                    # Prints to stderr and exits with 1.
+sys.exit(<int>)                   # Exits with passed exit code.
+```
+
+
+Print
+-----
+```python
+print(<el_1>, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+```
+* **Use `'file=sys.stderr'` for messages about errors.**
+* **Use `'flush=True'` to forcibly flush the stream.**
+
+### Pretty Print
+```python
+from pprint import pprint
+pprint(<collection>, width=80, depth=None, compact=False, sort_dicts=True)
+```
+* **Levels deeper than 'depth' get replaced by '...'.**
+
+
+Input
+-----
+**Reads a line from user input or pipe if present.**
+
+```python
+<str> = input(prompt=None)
+```
+* **Trailing newline gets stripped.**
+* **Prompt string is printed to the standard output before reading input.**
+* **Raises EOFError when user hits EOF (ctrl-d/ctrl-z⏎) or input stream gets exhausted.**
+
+
+Command Line Arguments
+----------------------
+```python
+import sys
+scripts_path = sys.argv[0]
+arguments    = sys.argv[1:]
+```
+
+### Argument Parser
+```python
+from argparse import ArgumentParser, FileType
+p = ArgumentParser(description=<str>)
+p.add_argument('-<short_name>', '--<name>', action='store_true')  # Flag.
+p.add_argument('-<short_name>', '--<name>', type=<type>)          # Option.
+p.add_argument('<name>', type=<type>, nargs=1)                    # First argument.
+p.add_argument('<name>', type=<type>, nargs='+')                  # Remaining arguments.
+p.add_argument('<name>', type=<type>, nargs='*')                  # Optional arguments.
+args  = p.parse_args()                                            # Exits on error.
+value = args.<name>
+```
+
+* **Use `'help=<str>'` to set argument description that will be displayed in help message.**
+* **Use `'default=<el>'` to set the default value.**
+* **Use `'type=FileType(<mode>)'` for files. Accepts 'encoding', but 'newline' is None.**
+
+
+Open
+----
+**Opens the file and returns a corresponding file object.**
+
+```python
+<file> = open(<path>, mode='r', encoding=None, newline=None)
+```
+* **`'encoding=None'` means that the default encoding is used, which is platform dependent. Best practice is to use `'encoding="utf-8"'` whenever possible.**
+* **`'newline=None'` means all different end of line combinations are converted to '\n' on read, while on write all '\n' characters are converted to system's default line separator.**
+* **`'newline=""'` means no conversions take place, but input is still broken into chunks by readline() and readlines() on every '\n', '\r' and '\r\n'.**
+
+### Modes
+* **`'r'`  - Read (default).**
+* **`'w'`  - Write (truncate).**
+* **`'x'`  - Write or fail if the file already exists.**
+* **`'a'`  - Append.**
+* **`'w+'` - Read and write (truncate).**
+* **`'r+'` - Read and write from the start.**
+* **`'a+'` - Read and write from the end.**
+* **`'t'`  - Text mode (default).**
+* **`'b'`  - Binary mode (`'br'`, `'bw'`, `'bx'`, …).**
+
+### Exceptions
+* **`'FileNotFoundError'` can be raised when reading with `'r'` or `'r+'`.**
+* **`'FileExistsError'` can be raised when writing with `'x'`.**
+* **`'IsADirectoryError'` and `'PermissionError'` can be raised by any.**
+* **`'OSError'` is the parent class of all listed exceptions.**
+
+### File Object
+```python
+<file>.seek(0)                      # Moves to the start of the file.
+<file>.seek(offset)                 # Moves 'offset' chars/bytes from the start.
+<file>.seek(0, 2)                   # Moves to the end of the file.
+<bin_file>.seek(±offset, <anchor>)  # Anchor: 0 start, 1 current position, 2 end.
+```
+
+```python
+<str/bytes> = <file>.read(size=-1)  # Reads 'size' chars/bytes or until EOF.
+<str/bytes> = <file>.readline()     # Returns a line or empty string/bytes on EOF.
+<list>      = <file>.readlines()    # Returns a list of remaining lines.
+<str/bytes> = next(<file>)          # Returns a line using buffer. Do not mix.
+```
+
+```python
+<file>.write(<str/bytes>)           # Writes a string or bytes object.
+<file>.writelines(<collection>)     # Writes a coll. of strings or bytes objects.
+<file>.flush()                      # Flushes write buffer. Runs every 4096/8192 B.
+```
+* **Methods do not add or strip trailing newlines, even writelines().**
+
+### Read Text from File
+```python
+def read_file(filename):
+    with open(filename, encoding='utf-8') as file:
+        return file.readlines()
+```
+
+### Write Text to File
+```python
+def write_to_file(filename, text):
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(text)
+```
+
+
+Paths
+-----
+```python
+from os import getcwd, path, listdir, scandir
+from glob import glob
+```
+
+```python
+<str>  = getcwd()                   # Returns the current working directory.
+<str>  = path.join(<path>, ...)     # Joins two or more pathname components.
+<str>  = path.abspath(<path>)       # Returns absolute path.
+```
+
+```python
+<str>  = path.basename(<path>)      # Returns final component of the path.
+<str>  = path.dirname(<path>)       # Returns path without the final component.
+<tup.> = path.splitext(<path>)      # Splits on last period of the final component.
+```
+
+```python
+<list> = listdir(path='.')          # Returns filenames located at path.
+<list> = glob('<pattern>')          # Returns paths matching the wildcard pattern.
+```
+
+```python
+<bool> = path.exists(<path>)        # Or: <Path>.exists()
+<bool> = path.isfile(<path>)        # Or: <DirEntry/Path>.is_file()
+<bool> = path.isdir(<path>)         # Or: <DirEntry/Path>.is_dir()
+```
+
+```python
+<stat> = os.stat(<path>)            # Or: <DirEntry/Path>.stat()
+<real> = <stat>.st_mtime/st_size/…  # Modification time, size in bytes, …
+```
+
+### DirEntry
+**Unlike listdir(), scandir() returns DirEntry objects that cache isfile, isdir and on Windows also stat information, thus significantly increasing the performance of code that requires it.**
+
+```python
+<iter> = scandir(path='.')          # Returns DirEntry objects located at path.
+<str>  = <DirEntry>.path            # Returns whole path as a string.
+<str>  = <DirEntry>.name            # Returns final component as a string.
+<file> = open(<DirEntry>)           # Opens the file and returns a file object.
+```
+
+### Path Object
+```python
+from pathlib import Path
+```
+
+```python
+<Path> = Path(<path> [, ...])       # Accepts strings, Paths and DirEntry objects.
+<Path> = <path> / <path> [/ ...]    # First or second path must be a Path object.
+```
+
+```python
+<Path> = Path()                     # Returns relative cwd. Also Path('.').
+<Path> = Path.cwd()                 # Returns absolute cwd. Also Path().resolve().
+<Path> = Path.home()                # Returns user's home directory (absolute).
+<Path> = Path(__file__).resolve()   # Returns script's path if cwd wasn't changed.
+```
+
+```python
+<Path> = <Path>.parent              # Returns Path without the final component.
+<str>  = <Path>.name                # Returns final component as a string.
+<str>  = <Path>.stem                # Returns final component without extension.
+<str>  = <Path>.suffix              # Returns final component's extension.
+<tup.> = <Path>.parts               # Returns all components as strings.
+```
+
+```python
+<iter> = <Path>.iterdir()           # Returns directory contents as Path objects.
+<iter> = <Path>.glob('<pattern>')   # Returns Paths matching the wildcard pattern.
+```
+
+```python
+<str>  = str(<Path>)                # Returns path as a string.
+<file> = open(<Path>)               # Also <Path>.read/write_text/bytes().
+```
+
+
+OS Commands
+-----------
+```python
+import os, shutil, subprocess
+```
+
+```python
+os.chdir(<path>)                    # Changes the current working directory.
+os.mkdir(<path>, mode=0o777)        # Creates a directory. Permissions are in octal.
+os.makedirs(<path>, mode=0o777)     # Creates all path's dirs. Also: `exist_ok=False`.
+```
+
+```python
+shutil.copy(from, to)               # Copies the file. 'to' can exist or be a dir.
+shutil.copytree(from, to)           # Copies the directory. 'to' must not exist.
+```
 
