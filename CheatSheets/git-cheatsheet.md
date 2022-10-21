@@ -23,6 +23,11 @@ Table of Contents
 | `git config` | Check all configuration options |
 | `git config --list` | Check all configuration options with name and email |
 | `git clone [https://url]` | Clone source code from a remote repository |
+| `git config --global user.name "Your name"` | Configure username |
+| `git config --global user.email "Your email"` | Configure email | 
+| `git config --global core.editor vim` | Configure editor | 
+| `git config user.name` | List username | 
+| `git config user.email` | List email | 
 
 **[🔼Back to Top](#table-of-contents)**
 
