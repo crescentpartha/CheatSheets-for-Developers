@@ -4,6 +4,7 @@
   - [Basic Tags of HTML](#basic-tags-of-html)
   - [Tags to Structure Document](#tags-to-structure-document)
   - [Semantic Elements](#semantic-elements)
+  - [Formatting](#formatting)
   - [Links](#links)
   - [Images](#images)
   - [Lists](#lists)
@@ -39,19 +40,21 @@
 | `<hr/>`                        | In addition to switching to the next line, this tag also drawsa horizontal bar to indicate the end of the section.             |
 | `<strike>...</strike>`         | Another old tag, this is used to draw a line atthe center of the text, so as to make it appearunimportant or no longer useful. |
 | `<cite>...</cite>`             | Tag for citing author of a quote.                                                                                              |
-| `<del>...</del>`               | Pre-formatted, ‘monospace’ text laid out with whitespace inside the element intact.                                            |
-| `<ins> … </ins>`               | Denotes text that has been inserted into the webpage.                                                                          |
-| `<blockquote> … </blockquote>` | Quotes often go into this tag. Is used in tandem with the <cite> tag.                                                          |
+| `<blockquote> … </blockquote>` | Quotes often go into this tag. Is used in tandem with the `<cite>`tag.                                                         |
 | `<q> … </q>`                   | Similar to the above tag, but for shorter quotes.                                                                              |
 | `<abbr> … </abbr>`             | Denotes abbreviations, along with the full forms.                                                                              |
 | `<address> … </address>`       | Tag for specifying author’s contact details.                                                                                   |
 | `<dfn> … </dfn>`               | Tag dedicated for definitions.                                                                                                 |
 | `<code> … </code>`             | This is used to display code snippets within a paragraph.                                                                      |
+
+| `<aside> … </aside>`           | Its a Block level element that defines content aside from the content in which it is Placed.                                   |
+
 | `<sub> … </sub>`               | Used for writing a subscript (smaller font just below the mid-point of normal font).                                           |
 | `<sup> … </sup>`               | Similar to the above tag, but for superscripting.                                                                              |
 | `<small> … </small>`           | Reduces text size. In HTML5, it often refers to redundant or invalid information.                                              | 
 | `<strong> … </strong>`         | This element indicates that its contents have strong importance or urgency. Browsers usualy render the contents in bold type.  |
 | `<em> … </em>`                 | This tag is used to define emphasized text. The content inside is typically displayed in italic.  |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -67,11 +70,27 @@
 | `<footer> ... </footer>`         | Defines a footer for a document or section                                                  |
 | `<header> ... </header>`         | Specifies a header for a document or section                                                |
 | `<main> ... </main>`             | Specifies the main content of a document                                                    |
-| `<mark> ... </mark>`             | Defines marked/highlighted text                                                             |
 | `<nav> ... </nav>`               | Defines navigation links                                                                    |
 | `<section> ... </section>`       | Defines a section in a document                                                             |
 | `<summary> ... </summary>`       | Defines a visible heading for a `<details>` element                                         |
 | `<time> ... </time>`             | Defines a date/time                                                                         |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Formatting
+
+| Command                  | Description                                          |
+| ------------------------ | ---------------------------------------------------- |
+| `<b> ... </b>`           | Defines bold text                                    |
+| `<em> ... </em>`         | Defines emphasized text                              |
+| `<i> ... </i>`           | Defines a part of text in an alternate voice or mood |
+| `<small> ... </small>`   | Defines smaller text                                 |
+| `<strong> ... </strong>` | Defines important text                               |
+| `<sub> ... </sub>`       | Defines subscripted text                             |
+| `<sup> ... </sup>`       | Defines superscripted text                           |
+| `<ins> ... </i>`         | Defines inserted text                                |
+| `<del> ... </del>`       | Defines deleted text                                 |
+| `<mark> ... </mark>`     | Defines marked/highlighted text                      |
 
 **[🔼Back to Top](#table-of-contents)**
 
