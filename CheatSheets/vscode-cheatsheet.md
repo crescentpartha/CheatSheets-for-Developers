@@ -54,7 +54,7 @@
 | `Shift + Alt + DownArrow` | Copy line down |
 | `Ctrl + Alt + UpArrow` | Add cursor above |
 | `Ctrl + Alt + DownArrow` | Add cursor below |
-| `Ctrl + Alt + K` | Delete line |
+| `Ctrl + Shift + K` | Delete line |
 | `Ctrl + Shift + L` | Select all occurrences of current selection |
 
 **[🔼Back to Top](#table-of-contents)**
