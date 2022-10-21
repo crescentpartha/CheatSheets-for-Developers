@@ -51,6 +51,7 @@
 | `<sup> … </sup>`               | Similar to the above tag, but for superscripting.                                                                              |
 | `<small> … </small>`           | Reduces text size. In HTML5, it often refers to redundant or invalid information.                                              | 
 | `<strong> … </strong>`         | This element indicates that its contents have strong importance or urgency. Browsers usualy render the contents in bold type.  |
+| `<em> … </em>`                 | This tag is used to define emphasized text. The content inside is typically displayed in italic.  |
 
 **[🔼Back to Top](#table-of-contents)**
 
