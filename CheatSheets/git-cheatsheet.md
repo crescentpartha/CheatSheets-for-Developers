@@ -132,7 +132,10 @@ Table of Contents
 | ------- | ----------- |
 | ` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
 | `git reset --hard [commit]`  | Clear staging area, rewrite working tree from specified commit |
-
+| `git reset HEAD "file-name"` | Go back to the pointer I'm already at, remove from staged |
+| `git reset --soft "commit-hash"` | Take my changes and go back/kill the commit I made but the file will be staged with the change ready to be committed again |
+| `git reset --mixed "commit-hash"` | Return/Kill the commit too but it returns the files to before staged i.e. modified but it will still return |
+| `git reset --hard "commit-hash"` | It will simply ignore the existence of this commit and undo everything that was done in this commit. <br /> It is a very rough reset and is normally used before pushing your commit to the remote repository. |
 
 **[🔼Back to Top](#table-of-contents)**
 
