@@ -43,6 +43,7 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
 12. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
 13. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+14. [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
 
 ## ___Instructions___
 
