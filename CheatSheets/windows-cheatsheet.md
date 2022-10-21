@@ -32,6 +32,8 @@
 | `Ctrl + P` | Print |
 | `Ctrl + S` | Save |
 | `Ctrl + O` | Open |
+| `Ctrl` + `+` | to increase the size |
+| `Ctrl` + `-` | to decrease the size |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -41,6 +43,8 @@
 | ------- | ----------- |
 | `Win` | Display or hide the Start screen |
 | `Win + E` | Open File Explorer |
+| `Win + ,` | see your desktop until you hold keys |
+| `Win + v` | to see clipboard and emoji |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -105,6 +109,8 @@
 | Command | Description |
 | ------- | ----------- |
 | `Alt + PgUp` <br /> `Alt + Page Up` | Move between apps, left to right |
+| `Alt + F4` | to close the current program window |
+| `Alt + Tab` | lets you switch between open windows by holding Alt and using tab to change |
 
 **[🔼Back to Top](#table-of-contents)**
 
