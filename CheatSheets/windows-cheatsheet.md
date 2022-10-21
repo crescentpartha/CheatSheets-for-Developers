@@ -35,6 +35,24 @@
 | `Ctrl + O` | Open |
 | `Ctrl` + `+` | to increase the size |
 | `Ctrl` + `-` | to decrease the size |
+|` Ctrl + F4`| Close the active document |
+|` Ctrl + D`| Delete the selected item and move it to the Recycle Bin|
+|` Ctrl + E`| Open Search(in most apps)|
+|` Ctrl + R`| To refresh the active window|
+|` Ctrl + Y`| Redo an action|
+|` Ctrl + Right arrow`| Move the cursor to the beginning of the next word|
+|` Ctrl + Left arrow`| Move the cursor to the beginning of the previous word|
+|` Ctrl + Down arrow `| Move the cursor to the beginning of the next paragraph|
+|` Ctrl + up arrow`| Move the cursor to the beginning of the previous paragraph|
+|` Ctrl + Alt + Tab `| Use the arrow keys to switch between all open apps|
+|` Ctrl + Shift + arrow keys`| When a tile is in focus on the Start menu, move it into another tile to create a folder|
+|` Ctrl + arrow keys`| Resize the Start menu when it's open|
+|` Ctrl + Shift with an arrow key`| Select a block of text|
+|` Ctrl + Esc`| Open Start|
+|` Ctrl + Spacebar`| Turn the Chinese input method editor (IME) on or off|
+|` Ctrl + Shift`| Switch the keyboard layout when multiple keyboard layouts are available|
+|` Ctrl + Shift + Esc`| Open task manager|
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -46,6 +64,15 @@
 | `Win + E` | Open File Explorer |
 | `Win + ,` | see your desktop until you hold keys |
 | `Win + v` | to see clipboard and emoji |
+| `Win + .`| Open Emojis section |
+|` Win + Upper Arrow key`| Maximize windows|
+|` Win + X`| Open the Quick Link menu|
+|` Win + L`| Lock your PC|
+|` Win + PrtScn`| For taking screenshot|
+|` Fn + Win + Spacebar`| For taking screenshots|
+|` Win + Tab`| Open task view|
+|` Win + D`| Display and hide the desktop|
+
 
 **[🔼Back to Top](#table-of-contents)**
 
