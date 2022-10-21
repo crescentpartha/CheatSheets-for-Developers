@@ -14,6 +14,7 @@
   - [App Rearrangement Shortcuts (Metro)](#app-rearrangement-shortcuts-metro)
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
+  - [Touchpad Shortcuts](#touchpad-shortcuts)
 
 # Windows Keyboard Shortcuts for Developers
 
@@ -144,5 +145,21 @@
 | ------- | ----------- |
 | `Win + I` | Open settings |
 | `Backspace` | Go back to the settings home page |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Touchpad Shortcuts
+
+| Gesture | Description |
+| ------- | ----------- |
+| `Single Tap` | Single click |
+| `Tap with two fingers` | Right click |
+| `Tap twice and drag` | Multi Select |
+| `Drag two fingers` | Scroll |
+| `Pinch`🤏 | Zoom |
+| `Drag Three/Four fingers up` | Multitasking view |
+| `Drag Three/Four fingers down` | Show Desktop |
+| `Drag Three fingers left/right` | Switch apps |
+| `Drag Three fingers left/right` | Switch Desktops |
 
 **[🔼Back to Top](#table-of-contents)**
