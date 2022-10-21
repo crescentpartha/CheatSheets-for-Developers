@@ -28,8 +28,8 @@ List
 ```
 
 ```python
-<list>.append(<el>)            # Or: <list> += [<el>]
-<list>.extend(<collection>)    # Or: <list> += <collection>
+<list>.append(<el>)            # Or: <list> += [<el>] | adds a new element to the end of the list
+<list>.extend(<collection>)    # Or: <list> += <collection> | adds all elements of a collection(list,tuples,etc) to the end of the list
 ```
 
 ```python
