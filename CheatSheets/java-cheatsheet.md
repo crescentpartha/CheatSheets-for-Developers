@@ -1,11 +1,25 @@
-# Table of Content
+## Table of Contents
 
- - [Data Types](#data-types)
- - [Data Conversion](#data-conversion)
- - [Operators](#operators)
- - [Statements](#statements)
- - [String Methods](#string-methods)
- 
+- [Java CheatSheet for Developers](#java-cheatsheet-for-developers)
+	- [Data Types](#data-types)
+	- [Data Conversion](#data-conversion)
+		- [String to Number](#string-to-number)
+		- [Any Type to String](#any-type-to-string)
+		- [Numeric Conversions](#numeric-conversions)
+	- [Operators](#operators)
+	- [Statements](#statements)
+		- [If Statement](#if-statement)
+		- [While Loop](#while-loop)
+		- [Do-While Loop](#do-while-loop)
+		- [For Loop](#for-loop)
+		- [For Each Loop](#for-each-loop)
+		- [Switch Statement](#switch-statement)
+		- [Exception Handling](#exception-handling)
+	- [String Methods](#string-methods)
+	- [Math Library Methods](#math-library-methods)
+
+# Java CheatSheet for Developers
+
 ## Data Types
 | Data Type | Size |
 |--|--|
@@ -17,27 +31,39 @@
 |float|4 byte|
 |double|8 byte |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Data Conversion
 
 ### String to Number
+
 ```java
     int i = Intege­r.p­ars­eInt(_str_);  
 	double d = Double.pa­rse­Double(_str_);
 ```
-	
+
+**[🔼Back to Top](#table-of-contents)**
+
 ### Any Type to String
+
 ```java
 	String s = String.va­lueOf(_value_);  
 
 ```
-  
-### Numeric Conver­sions
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Numeric Conversions
+
 ```java
 	int i = (int) _numeric expression_; 
 
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Operators
+
 | Operator Category | Operators |
 |--|--|
 | Arithmetic operators |+, -, /, *, %  |
@@ -49,8 +75,12 @@
 |Bitwise operators|^, &, \||
 |Special operators|. (dot operator to access methods of class)|
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Statements
+
 ### If Statement
+
 ```java
 if ( _expression_ ) {  
 ­ _statements_  
@@ -60,38 +90,51 @@ if ( _expression_ ) {
 ­ _statements_  
 }  
 ```
+
+**[🔼Back to Top](#table-of-contents)**
+
 ### While Loop 
+
 ```java
 while ( _expression_ ) {  
 ­ _statements_  
 }  
 ```
 
-  
+**[🔼Back to Top](#table-of-contents)**
+
 ### Do-While Loop 
+
 ```java
 do {  
 ­ _statements_  
 } while ( _expression_ ); 
 ```
-  
-### For Loop 
+
+**[🔼Back to Top](#table-of-contents)**
+
+### For Loop
+
 ```java
 for ( int i = 0; i < _max_; ++i) {  
 ­ _statements_  
 }  
 ```
 
-  
+**[🔼Back to Top](#table-of-contents)**
+
 ### For Each Loop
+
 ```java
 for ( _var_ : _collection_ ) {  
 ­ _statements_  
 } 
 ```
- 
-  
-### Switch Statement 
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Switch Statement
+
 ```java
 switch ( _expression_ ) {  
 ­ case _value_:  
@@ -104,8 +147,11 @@ switch ( _expression_ ) {
 ­ ­ ­ _statements_  
 } 
 ```
-  
+
+**[🔼Back to Top](#table-of-contents)**
+
 ### Exception Handling
+
 ```java
 try {  
 ­ ­sta­tem­ents;  
@@ -118,7 +164,10 @@ try {
 }
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## String Methods
+
 | Command |Description  |
 |--|--|
 |length | length of string |
@@ -126,14 +175,17 @@ try {
 |subst­ring(_start_, _end_) |substring from _start_ to _end_-1  |
 |toUpp­erC­ase() |returns copy of _s_ in ALL CAPS  |
 |toLow­erC­ase() |returns copy of _s_ in lowercase  |
-|indexOf(_x_) |index of first occurence of _x_  |
+|indexOf(_x_) |index of first occurrence of _x_  |
 |replace(_old_, _new_)|search and replace  |
 |split(_regex_) |splits string into tokens  |
-|trim()  |trims surrou­nding whitespace  |
+|trim()  |trims surrounding whitespace  |
 |equals(_s2_)  |true if s equals s2  |
-|compa­reTo(_s2_)  | 0 if equal/+ if s > s2/- if s < s2 |
+|compareTo(_s2_)  | 0 if equal/+ if s > s2/- if s < s2 |
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Math Library Methods
+
 |Command|Description|
 |--|--|
 |abs(_x_)|abstract value of x|
@@ -143,3 +195,5 @@ try {
 |sin(theta)| sine of theta|
 |cos(theta|cosine of theta|
 |tan(theta)|tangent of theta|
+
+**[🔼Back to Top](#table-of-contents)**
