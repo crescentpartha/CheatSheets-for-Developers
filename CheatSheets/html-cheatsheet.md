@@ -49,8 +49,27 @@
 | `<sub> … </sub>`               | Used for writing a subscript (smaller font just below the mid-point of normal font).                                           |
 | `<sup> … </sup>`               | Similar to the above tag, but for superscripting.                                                                              |
 | `<small> … </small>`           | Reduces text size. In HTML5, it often refers to redundant or invalid information.                                              |
-| `<aside> … </aside>`           | Its a Block level element that defines content aside from the content in which it is Placed.                                              |  
+| `<aside> … </aside>`           | Its a Block level element that defines content aside from the content in which it is Placed.                                   |
 
+**[🔼Back to Top](#table-of-contents)**
+
+## Semantic Elements
+
+| Command                          | Description                                                                                 |
+| -------------------------------- | ------------------------------------------------------------------------------------------- |
+| `<article> ... </article>`       | Defines independent, self-contained content                                                 |
+| `<aside> ... </aside>`           | Defines content aside from the page content                                                 |
+| `<details> ... </details>`       | Defines additional details that the user can view or hide                                   |
+| `<figcaption> ... </figcaption>` | Defines a caption for a `<figure>` element webpage.                                         |
+| `<figure> ... </figure>`         | Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc. |
+| `<footer> ... </footer>`         | Defines a footer for a document or section                                                  |
+| `<header> ... </header>`         | Specifies a header for a document or section                                                |
+| `<main> ... </main>`             | Specifies the main content of a document                                                    |
+| `<mark> ... </mark>`             | Defines marked/highlighted text                                                             |
+| `<nav> ... </nav>`               | Defines navigation links                                                                    |
+| `<section> ... </section>`       | Defines a section in a document                                                             |
+| `<summary> ... </summary>`       | Defines a visible heading for a `<details>` element                                         |
+| `<time> ... </time>`             | Defines a date/time                                                                         |
 
 **[🔼Back to Top](#table-of-contents)**
 
