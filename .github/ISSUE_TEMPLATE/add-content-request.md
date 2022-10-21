@@ -18,6 +18,7 @@ assignees: ''
 
 ---
 
-Please, fill free to contribute to this project. Anyone including `newcomers` can make a contribution to this repo by adding `basic Commands` or `Keyboard Shortcuts` or `tags, attributes, and properties` etc. Please, give a `star` to support this project.
+Please, fill free to contribute to this project. Anyone including `newcomers` can make a contribution to this repo by adding `basic Commands` or `Keyboard Shortcuts` or `tags, attributes, and properties` and take a part in an `open-source project`. 
+Please, give a `star` to support this project.
 <br />
 
