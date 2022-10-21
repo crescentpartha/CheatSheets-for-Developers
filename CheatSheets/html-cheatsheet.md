@@ -3,6 +3,7 @@
 - [HTML CheatSheet for Developers](#html-cheatsheet-for-developers)
   - [Basic Tags of HTML](#basic-tags-of-html)
   - [Tags to Structure Document](#tags-to-structure-document)
+  - [Semantic Elements](#semantic-elements)
   - [Links](#links)
   - [Images](#images)
   - [Lists](#lists)
