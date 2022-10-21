@@ -42,7 +42,8 @@ Table of Contents
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
 | `git remote add origin [url]` | Adding a remote repository | 
-
+| `git show commit-id` | Replace commit-id with the id of the commit that you find in the commit log after the word commit.|
+| `git log -p` | Shows the commit's history including all files and their changes |
 
 
 **[🔼Back to Top](#table-of-contents)**
