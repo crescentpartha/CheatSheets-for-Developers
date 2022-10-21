@@ -15,9 +15,9 @@
       - [Break](#break)
     - [Strings](#strings)
     - [String Methods](#string-methods)
-    - [Numbers and Math](#numbers-and-math)
-      - [Number Properties](#number-properties)
-      - [Dealing with Dates](#dealing-with-dates)
+  - [Numbers and Math](#numbers-and-math)
+    - [Number Properties](#number-properties)
+    - [Dealing with Dates](#dealing-with-dates)
       - [Setting Dates](#setting-dates)
       - [Pulling Date and Time Values](#pulling-date-and-time-values)
       - [Setting Part of a Date](#setting-part-of-a-date)
@@ -169,9 +169,9 @@ var event = "Hacktoberfest 2022";
 
 **[🔼Back to Top](#table-of-contents)**
 
-### Numbers and Math
+## Numbers and Math
 
-#### Number Properties
+### Number Properties
 
 | Method            | Description                                                 |
 | ----------------- | ----------------------------------------------------------- |
@@ -183,7 +183,7 @@ var event = "Hacktoberfest 2022";
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Dealing with Dates
+### Dealing with Dates
 
 > `Contents need to be added in this section.`  
 
