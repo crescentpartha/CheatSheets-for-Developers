@@ -51,6 +51,7 @@ Table of Contents
 | `git clean -f` | To delete or remove unstaged files forcefully |
 | `git commit -m "message about updates"` | Commit changes to current branch |
 | `git commit -amend` | Amend with last commit but use the previous commit log message |
+| `git rm --cached [file]` | Removes the file from the staging area (Unstage) |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
@@ -58,6 +59,7 @@ Table of Contents
 | `git show` | Shows information about any git object |
 | `gitk` | Shows graphical interface for a local repository |
 | `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
+| `git checkout [file]` | Matches the file with last commit |
 
 
 **[🔼Back to Top](#table-of-contents)**
