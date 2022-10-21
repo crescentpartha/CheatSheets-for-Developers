@@ -1328,6 +1328,7 @@ class MyAbcSequence(abc.Sequence):
 * **Other ABCs that generate missing methods are: MutableSequence, Set, MutableSet, Mapping and MutableMapping.**
 * **Names of their required methods are stored in `'<abc>.__abstractmethods__'`.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Enum
 ----
@@ -1381,6 +1382,7 @@ LogicOp = Enum('LogicOp', {'AND': partial(lambda l, r: l and r),
 ```
 * **Member names are in all caps because trying to access a member that is named after a reserved keyword raises SyntaxError.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Exceptions
 ----------
@@ -1495,6 +1497,7 @@ class MyError(Exception): pass
 class MyInputError(MyError): pass
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Exit
 ----
@@ -1506,6 +1509,7 @@ sys.exit(<el>)                    # Prints to stderr and exits with 1.
 sys.exit(<int>)                   # Exits with passed exit code.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Print
 -----
@@ -1522,6 +1526,7 @@ pprint(<collection>, width=80, depth=None, compact=False, sort_dicts=True)
 ```
 * **Levels deeper than 'depth' get replaced by '...'.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Input
 -----
@@ -1534,6 +1539,7 @@ Input
 * **Prompt string is printed to the standard output before reading input.**
 * **Raises EOFError when user hits EOF (ctrl-d/ctrl-z⏎) or input stream gets exhausted.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Command Line Arguments
 ----------------------
@@ -1560,6 +1566,7 @@ value = args.<name>
 * **Use `'default=<el>'` to set the default value.**
 * **Use `'type=FileType(<mode>)'` for files. Accepts 'encoding', but 'newline' is None.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Open
 ----
@@ -1625,6 +1632,7 @@ def write_to_file(filename, text):
         file.write(text)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Paths
 -----
@@ -1706,6 +1714,7 @@ from pathlib import Path
 <file> = open(<Path>)               # Also <Path>.read/write_text/bytes().
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 OS Commands
 -----------
