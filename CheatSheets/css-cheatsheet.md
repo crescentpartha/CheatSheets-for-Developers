@@ -146,6 +146,7 @@
 | `<overflow>..</overflow>`                                     | Hide, display or scroll if the content overflows its container  |
 | `<overflow-x>..</overflow-x>`                                 | Horizontal overflow                                             |
 | `<overflow-y>..</overflow-y>`                                 | Vertical overflow                                               |
+| `<object-fit>..</object-fit>`                                 | Content of element resized to fit its container                 |
 | `<padding>..</padding>`                                       | Padding between the element border and content                  |
 | `<padding-bottom>..</padding-bottom>`                         | Padding bottom                                                  |
 | `<padding-left>..</padding-left>`                             | Padding left                                                    |
