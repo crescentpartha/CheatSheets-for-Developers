@@ -33,14 +33,15 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 1. [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
 2. [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
 3. [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
-4. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
-5. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
-6. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
-7. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
-8. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-9.  [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
-10. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
-11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
+4. [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
+5. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
+6. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
+7. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
+8. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
+9. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
+10.  [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+11. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
+12. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
 
 ## ___Instructions___
 
