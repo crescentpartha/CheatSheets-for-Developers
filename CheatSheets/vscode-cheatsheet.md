@@ -55,6 +55,7 @@
 | `Shift + Alt + Click` | Select text in blocks |
 | `Ctrl + Alt + UpArrow` | Add cursor above |
 | `Ctrl + Alt + DownArrow` | Add cursor below |
+| `Ctrl + Shift + K` | Delete line |
 | `Ctrl + Shift + L` | Select all occurrences of current selection |
 
 **[🔼Back to Top](#table-of-contents)**
