@@ -35,6 +35,14 @@
 | `Ctrl + O` | Open |
 | `Ctrl` + `+` | to increase the size |
 | `Ctrl` + `-` | to decrease the size |
+|` Ctrl + D`| Delete the selected item and move it to the Recycle Bin|
+|` Ctrl + E`| Open Search(in most apps)|
+|` Ctrl + R`| To refresh the active window|
+|` Ctrl + Right arrow`| Move the cursor to the beginning of the next word|
+|` Ctrl + Left arrow`| Move the cursor to the beginning of the previous word|
+|` Ctrl + Down arrow `| Move the cursor to the beginning of the next paragraph|
+|` Ctrl + up arrow`| Move the cursor to the beginning of the previous paragraph|
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -46,6 +54,12 @@
 | `Win + E` | Open File Explorer |
 | `Win + ,` | see your desktop until you hold keys |
 | `Win + v` | to see clipboard and emoji |
+|` Win + Upper Arrow key`| Maximize windows|
+|` Win + X`| Open the Quick Link menu|
+|` Win + L`| Lock your PC|
+|` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
+|` Win + Tab`| Open task view|
+|` Win + D`| Display and hide the desktop|
 
 **[🔼Back to Top](#table-of-contents)**
 
