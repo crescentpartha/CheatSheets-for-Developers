@@ -1,5 +1,5 @@
 # CheatSheets-for-Developers
-A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to quick review while working.
+A Collection of programming [Cheat Sheets](./CheatSheets/) for developers to review quickly while working.
 
 <div align="center">
 
