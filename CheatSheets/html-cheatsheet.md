@@ -128,6 +128,20 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Inputs
+
+| Command                                       | Description                                                                      |
+| -------------------------------------------   | -------------------------------------------------------------------------------- |
+| `<input type="email" name=?>`                 | Sets a single-line textbox for email addresses.                                  |
+| `<input type="url" name=?>`                   | Sets a single-line textbox for URLs.                                             |
+| `<input type="number" name=?>`                | Sets a single-line textbox for a number.                                         |
+| `<input type="range" name=?>`                 | Sets a single-line text box for a range numbers.                                 |
+| `<input type="date/month/week/time" name=?>`  | Sets a single-line text box with a calendar showing the date/month/week/time .   |
+| `<input type="search" name=?>`                | Sets a single-line text box for searching .                                      |
+| `<input type="color" name=?>`                 | Sets a single-line text box for picking a color.                                 |
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## Tables
 
 | Command                    | Description                                                        |
