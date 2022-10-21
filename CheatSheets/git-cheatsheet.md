@@ -88,14 +88,18 @@ Table of Contents
 | ------- | ----------- |
 | `git log` | View changes |
 | `git log --summary` | View changes (detailed) |
+| `git log --follow [file]` | Show the commits that changed file, even across renames |
 | `git log --oneline` | View changes (briefly) |
+| `git log branchB..branchA` | View changes on branchA that are not on branchB|
 | `git log --graph` | Enables you to view your git log as a graph |
 | `git log --decorate` | Makes git log display all of the references (e.g., branches, tags, etc) that point to each commit |
 | `git log --author="name_of_author"` | Search for specific author |
 | `git shortlog` | It groups each commit by author and displays the first line of each commit message |
 | `git reflog ` | Git keeps track of updates to the tip of branches using a mechanism called reflog. This allows you to go back to changesets even though they are not referenced by any branch or tag |
+| `git diff branchB...branchA` | View the differences of what is in branchA that are not on branchB |
+| `git blame [file name]` | Display the modification on each line of a file |
 | `git diff --name-only` | Show only names of changed files |
-| `git diff --name-only` | Diff of what is staged but not yet committed |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
