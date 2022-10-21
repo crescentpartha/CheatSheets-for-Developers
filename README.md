@@ -1,5 +1,5 @@
 # CheatSheets-for-Developers
-A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to quick review while working.
+A Collection of programming [CheatSheets](./CheatSheets/) for developers to quick review while working.
 
 <div align="center">
 
@@ -33,33 +33,36 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 1. [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
 2. [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
 3. [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
-4. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
-5. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
-6. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
-7. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
-8. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-9.  [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+4. [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
+5. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
+6. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
+7. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
+8. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
+9. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
 10. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
 11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
+12. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
+13. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+14. [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
 
 ## ___Instructions___
 
-- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md)
-- If you are new to Open Source Contributions, checkout [How-To at a glance](docs/HOW-TO.md)
-- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md)
+- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md).
+- If you are new to open source contributions, check out [How-To at a glance](docs/HOW-TO.md).
+- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md).
 
 ## Contribution
 
-> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets
+> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets.
 
 - Add content to CheatSheets
 - Add new CheatSheets
 - Suggest changes to existing CheatSheets
 - Discuss ideas in issues
 
-## Thanks to all contributors ❤
+## Thanks to all the contributors ❤
 
-___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on Github, made ___suggestions___, given a ___Star___, and generally helped make this a better repository for developers.
+___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on GitHub, made ___suggestions___, given a ___star___, and generally helped make this a better repository for developers.
 
 <!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
 

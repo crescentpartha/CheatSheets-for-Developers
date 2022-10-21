@@ -1139,4 +1139,597 @@ class MyHashable:
         return hash(self.a)
 ```
 
+### Sortable
+* **With 'total_ordering' decorator, you only need to provide eq() and one of lt(), gt(), le() or ge() special methods and the rest will be automatically generated.**
+* **Functions sorted() and min() only require lt() method, while max() only requires gt(). However, it is best to define them all so that confusion doesn't arise in other contexts.**
+* **When two lists, strings or dataclasses are compared, their values get compared in order until a pair of unequal values is found. The comparison of this two values is then returned. The shorter sequence is considered smaller in case of all values being equal.**
+
+```python
+from functools import total_ordering
+
+@total_ordering
+class MySortable:
+    def __init__(self, a):
+        self.a = a
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.a == other.a
+        return NotImplemented
+    def __lt__(self, other):
+        if isinstance(other, type(self)):
+            return self.a < other.a
+        return NotImplemented
+```
+
+### Iterator
+* **Any object that has methods next() and iter() is an iterator.**
+* **Next() should return next item or raise StopIteration.**
+* **Iter() should return 'self'.**
+```python
+class Counter:
+    def __init__(self):
+        self.i = 0
+    def __next__(self):
+        self.i += 1
+        return self.i
+    def __iter__(self):
+        return self
+```
+
+```python
+>>> counter = Counter()
+>>> next(counter), next(counter), next(counter)
+(1, 2, 3)
+```
+
+#### Python has many different iterator objects:
+* **Sequence iterators returned by the [iter()](#iterator) function, such as list\_iterator and set\_iterator.**
+* **Objects returned by the [itertools](#itertools) module, such as count, repeat and cycle.**
+* **Generators returned by the [generator functions](#generator) and [generator expressions](#comprehensions).**
+* **File objects returned by the [open()](#open) function, etc.**
+
+### Callable
+* **All functions and classes have a call() method, hence are callable.**
+* **When this cheatsheet uses `'<function>'` as an argument, it actually means `'<callable>'`.**
+```python
+class Counter:
+    def __init__(self):
+        self.i = 0
+    def __call__(self):
+        self.i += 1
+        return self.i
+```
+
+```python
+>>> counter = Counter()
+>>> counter(), counter(), counter()
+(1, 2, 3)
+```
+
+### Context Manager
+* **Enter() should lock the resources and optionally return an object.**
+* **Exit() should release the resources.**
+* **Any exception that happens inside the with block is passed to the exit() method.**
+* **If it wishes to suppress the exception it must return a true value.**
+```python
+class MyOpen:
+    def __init__(self, filename):
+        self.filename = filename
+    def __enter__(self):
+        self.file = open(self.filename)
+        return self.file
+    def __exit__(self, exc_type, exception, traceback):
+        self.file.close()
+```
+
+```python
+>>> with open('test.txt', 'w') as file:
+...     file.write('Hello World!')
+>>> with MyOpen('test.txt') as file:
+...     print(file.read())
+Hello World!
+```
+
+
+Iterable Duck Types
+-------------------
+### Iterable
+* **Only required method is iter(). It should return an iterator of object's items.**
+* **Contains() automatically works on any object that has iter() defined.**
+```python
+class MyIterable:
+    def __init__(self, a):
+        self.a = a
+    def __iter__(self):
+        return iter(self.a)
+    def __contains__(self, el):
+        return el in self.a
+```
+
+```python
+>>> obj = MyIterable([1, 2, 3])
+>>> [el for el in obj]
+[1, 2, 3]
+>>> 1 in obj
+True
+```
+
+### Collection
+* **Only required methods are iter() and len(). Len() should return the number of items.**
+* **This cheatsheet actually means `'<iterable>'` when it uses `'<collection>'`.**
+* **I chose not to use the name 'iterable' because it sounds scarier and more vague than 'collection'. The only drawback of this decision is that a reader could think a certain function doesn't accept iterators when it does, since iterators are the only built-in objects that are iterable but are not collections.**
+```python
+class MyCollection:
+    def __init__(self, a):
+        self.a = a
+    def __iter__(self):
+        return iter(self.a)
+    def __contains__(self, el):
+        return el in self.a
+    def __len__(self):
+        return len(self.a)
+```
+
+### Sequence
+* **Only required methods are len() and getitem().**
+* **Getitem() should return an item at the passed index or raise IndexError.**
+* **Iter() and contains() automatically work on any object that has getitem() defined.**
+* **Reversed() automatically works on any object that has len() and getitem() defined.**
+```python
+class MySequence:
+    def __init__(self, a):
+        self.a = a
+    def __iter__(self):
+        return iter(self.a)
+    def __contains__(self, el):
+        return el in self.a
+    def __len__(self):
+        return len(self.a)
+    def __getitem__(self, i):
+        return self.a[i]
+    def __reversed__(self):
+        return reversed(self.a)
+```
+
+#### Discrepancies between glossary definitions and abstract base classes:
+* **Glossary defines iterable as any object with iter() or getitem() and sequence as any object with getitem() and len(). It does not define collection.**
+* **Passing ABC Iterable to isinstance() or issubclass() checks whether object/class has method iter(), while ABC Collection checks for iter(), contains() and len().**
+
+### ABC Sequence
+* **It's a richer interface than the basic sequence.**
+* **Extending it generates iter(), contains(), reversed(), index() and count().**
+* **Unlike `'abc.Iterable'` and `'abc.Collection'`, it is not a duck type. That is why `'issubclass(MySequence, abc.Sequence)'` would return False even if MySequence had all the methods defined. It however recognizes list, tuple, range, str, bytes, bytearray, memoryview and deque, because they are registered as Sequence's virtual subclasses.**
+```python
+from collections import abc
+
+class MyAbcSequence(abc.Sequence):
+    def __init__(self, a):
+        self.a = a
+    def __len__(self):
+        return len(self.a)
+    def __getitem__(self, i):
+        return self.a[i]
+```
+
+#### Table of required and automatically available special methods:
+```text
++------------+------------+------------+------------+--------------+
+|            |  Iterable  | Collection |  Sequence  | abc.Sequence |
++------------+------------+------------+------------+--------------+
+| iter()     |    REQ     |    REQ     |    Yes     |     Yes      |
+| contains() |    Yes     |    Yes     |    Yes     |     Yes      |
+| len()      |            |    REQ     |    REQ     |     REQ      |
+| getitem()  |            |            |    REQ     |     REQ      |
+| reversed() |            |            |    Yes     |     Yes      |
+| index()    |            |            |            |     Yes      |
+| count()    |            |            |            |     Yes      |
++------------+------------+------------+------------+--------------+
+```
+* **Other ABCs that generate missing methods are: MutableSequence, Set, MutableSet, Mapping and MutableMapping.**
+* **Names of their required methods are stored in `'<abc>.__abstractmethods__'`.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Enum
+----
+```python
+from enum import Enum, auto
+```
+
+```python
+class <enum_name>(Enum):
+    <member_name_1> = <value_1>
+    <member_name_2> = <value_2_a>, <value_2_b>
+    <member_name_3> = auto()
+```
+* **If there are no numeric values before auto(), it returns 1.**
+* **Otherwise it returns an increment of the last numeric value.**
+
+```python
+<member> = <enum>.<member_name>                 # Returns a member.
+<member> = <enum>['<member_name>']              # Returns a member or raises KeyError.
+<member> = <enum>(<value>)                      # Returns a member or raises ValueError.
+<str>    = <member>.name                        # Returns member's name.
+<obj>    = <member>.value                       # Returns member's value.
+```
+
+```python
+list_of_members = list(<enum>)
+member_names    = [a.name for a in <enum>]
+member_values   = [a.value for a in <enum>]
+random_member   = random.choice(list(<enum>))
+```
+
+```python
+def get_next_member(member):
+    members = list(member.__class__)
+    index   = (members.index(member) + 1) % len(members)
+    return members[index]
+```
+
+### Inline
+```python
+Cutlery = Enum('Cutlery', 'fork knife spoon')
+Cutlery = Enum('Cutlery', ['fork', 'knife', 'spoon'])
+Cutlery = Enum('Cutlery', {'fork': 1, 'knife': 2, 'spoon': 3})
+```
+
+#### User-defined functions cannot be values, so they must be wrapped:
+```python
+from functools import partial
+LogicOp = Enum('LogicOp', {'AND': partial(lambda l, r: l and r),
+                           'OR':  partial(lambda l, r: l or r)})
+```
+* **Member names are in all caps because trying to access a member that is named after a reserved keyword raises SyntaxError.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Exceptions
+----------
+```python
+try:
+    <code>
+except <exception>:
+    <code>
+```
+
+### Complex Example
+```python
+try:
+    <code_1>
+except <exception_a>:
+    <code_2_a>
+except <exception_b>:
+    <code_2_b>
+else:
+    <code_2_c>
+finally:
+    <code_3>
+```
+* **Code inside the `'else'` block will only be executed if `'try'` block had no exceptions.**
+* **Code inside the `'finally'` block will always be executed (unless a signal is received).**
+
+### Catching Exceptions
+```python
+except <exception>: ...
+except <exception> as <name>: ...
+except (<exception>, [...]): ...
+except (<exception>, [...]) as <name>: ...
+```
+* **Also catches subclasses of the exception.**
+* **Use `'traceback.print_exc()'` to print the error message to stderr.**
+* **Use `'print(<name>)'` to print just the cause of the exception (its arguments).**
+* **Use `'logging.exception(<message>)'` to log the exception.**
+
+### Raising Exceptions
+```python
+raise <exception>
+raise <exception>()
+raise <exception>(<el> [, ...])
+```
+
+#### Re-raising caught exception:
+```python
+except <exception> as <name>:
+    ...
+    raise
+```
+
+### Exception Object
+```python
+arguments = <name>.args
+exc_type  = <name>.__class__
+filename  = <name>.__traceback__.tb_frame.f_code.co_filename
+func_name = <name>.__traceback__.tb_frame.f_code.co_name
+line      = linecache.getline(filename, <name>.__traceback__.tb_lineno)
+traceback = ''.join(traceback.format_tb(<name>.__traceback__))
+error_msg = ''.join(traceback.format_exception(exc_type, <name>, <name>.__traceback__))
+```
+
+### Built-in Exceptions
+```text
+BaseException
+ +-- SystemExit                   # Raised by the sys.exit() function.
+ +-- KeyboardInterrupt            # Raised when the user hits the interrupt key (ctrl-c).
+ +-- Exception                    # User-defined exceptions should be derived from this class.
+      +-- ArithmeticError         # Base class for arithmetic errors.
+      |    +-- ZeroDivisionError  # Raised when dividing by zero.
+      +-- AssertionError          # Raised by `assert <exp>` if expression returns false value.
+      +-- AttributeError          # Raised when an attribute is missing.
+      +-- EOFError                # Raised by input() when it hits end-of-file condition.
+      +-- LookupError             # Raised when a look-up on a collection fails.
+      |    +-- IndexError         # Raised when a sequence index is out of range.
+      |    +-- KeyError           # Raised when a dictionary key or set element is missing.
+      +-- MemoryError             # Out of memory. Could be too late to start deleting vars.
+      +-- NameError               # Raised when an object is missing.
+      +-- OSError                 # Errors such as “file not found” or “disk full” (see Open).
+      |    +-- FileNotFoundError  # When a file or directory is requested but doesn't exist.
+      +-- RuntimeError            # Raised by errors that don't fall into other categories.
+      |    +-- RecursionError     # Raised when the maximum recursion depth is exceeded.
+      +-- StopIteration           # Raised by next() when run on an empty iterator.
+      +-- TypeError               # Raised when an argument is of wrong type.
+      +-- ValueError              # When an argument is of right type but inappropriate value.
+           +-- UnicodeError       # Raised when encoding/decoding strings to/from bytes fails.
+```
+
+#### Collections and their exceptions:
+```text
++-----------+------------+------------+------------+
+|           |    List    |    Set     |    Dict    |
++-----------+------------+------------+------------+
+| getitem() | IndexError |            |  KeyError  |
+| pop()     | IndexError |  KeyError  |  KeyError  |
+| remove()  | ValueError |  KeyError  |            |
+| index()   | ValueError |            |            |
++-----------+------------+------------+------------+
+```
+
+#### Useful built-in exceptions:
+```python
+raise TypeError('Argument is of wrong type!')
+raise ValueError('Argument is of right type but inappropriate value!')
+raise RuntimeError('None of above!')
+```
+
+### User-defined Exceptions
+```python
+class MyError(Exception): pass
+class MyInputError(MyError): pass
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Exit
+----
+**Exits the interpreter by raising SystemExit exception.**
+```python
+import sys
+sys.exit()                        # Exits with exit code 0 (success).
+sys.exit(<el>)                    # Prints to stderr and exits with 1.
+sys.exit(<int>)                   # Exits with passed exit code.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Print
+-----
+```python
+print(<el_1>, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+```
+* **Use `'file=sys.stderr'` for messages about errors.**
+* **Use `'flush=True'` to forcibly flush the stream.**
+
+### Pretty Print
+```python
+from pprint import pprint
+pprint(<collection>, width=80, depth=None, compact=False, sort_dicts=True)
+```
+* **Levels deeper than 'depth' get replaced by '...'.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Input
+-----
+**Reads a line from user input or pipe if present.**
+
+```python
+<str> = input(prompt=None)
+```
+* **Trailing newline gets stripped.**
+* **Prompt string is printed to the standard output before reading input.**
+* **Raises EOFError when user hits EOF (ctrl-d/ctrl-z⏎) or input stream gets exhausted.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Command Line Arguments
+----------------------
+```python
+import sys
+scripts_path = sys.argv[0]
+arguments    = sys.argv[1:]
+```
+
+### Argument Parser
+```python
+from argparse import ArgumentParser, FileType
+p = ArgumentParser(description=<str>)
+p.add_argument('-<short_name>', '--<name>', action='store_true')  # Flag.
+p.add_argument('-<short_name>', '--<name>', type=<type>)          # Option.
+p.add_argument('<name>', type=<type>, nargs=1)                    # First argument.
+p.add_argument('<name>', type=<type>, nargs='+')                  # Remaining arguments.
+p.add_argument('<name>', type=<type>, nargs='*')                  # Optional arguments.
+args  = p.parse_args()                                            # Exits on error.
+value = args.<name>
+```
+
+* **Use `'help=<str>'` to set argument description that will be displayed in help message.**
+* **Use `'default=<el>'` to set the default value.**
+* **Use `'type=FileType(<mode>)'` for files. Accepts 'encoding', but 'newline' is None.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Open
+----
+**Opens the file and returns a corresponding file object.**
+
+```python
+<file> = open(<path>, mode='r', encoding=None, newline=None)
+```
+* **`'encoding=None'` means that the default encoding is used, which is platform dependent. Best practice is to use `'encoding="utf-8"'` whenever possible.**
+* **`'newline=None'` means all different end of line combinations are converted to '\n' on read, while on write all '\n' characters are converted to system's default line separator.**
+* **`'newline=""'` means no conversions take place, but input is still broken into chunks by readline() and readlines() on every '\n', '\r' and '\r\n'.**
+
+### Modes
+* **`'r'`  - Read (default).**
+* **`'w'`  - Write (truncate).**
+* **`'x'`  - Write or fail if the file already exists.**
+* **`'a'`  - Append.**
+* **`'w+'` - Read and write (truncate).**
+* **`'r+'` - Read and write from the start.**
+* **`'a+'` - Read and write from the end.**
+* **`'t'`  - Text mode (default).**
+* **`'b'`  - Binary mode (`'br'`, `'bw'`, `'bx'`, …).**
+
+### Exceptions
+* **`'FileNotFoundError'` can be raised when reading with `'r'` or `'r+'`.**
+* **`'FileExistsError'` can be raised when writing with `'x'`.**
+* **`'IsADirectoryError'` and `'PermissionError'` can be raised by any.**
+* **`'OSError'` is the parent class of all listed exceptions.**
+
+### File Object
+```python
+<file>.seek(0)                      # Moves to the start of the file.
+<file>.seek(offset)                 # Moves 'offset' chars/bytes from the start.
+<file>.seek(0, 2)                   # Moves to the end of the file.
+<bin_file>.seek(±offset, <anchor>)  # Anchor: 0 start, 1 current position, 2 end.
+```
+
+```python
+<str/bytes> = <file>.read(size=-1)  # Reads 'size' chars/bytes or until EOF.
+<str/bytes> = <file>.readline()     # Returns a line or empty string/bytes on EOF.
+<list>      = <file>.readlines()    # Returns a list of remaining lines.
+<str/bytes> = next(<file>)          # Returns a line using buffer. Do not mix.
+```
+
+```python
+<file>.write(<str/bytes>)           # Writes a string or bytes object.
+<file>.writelines(<collection>)     # Writes a coll. of strings or bytes objects.
+<file>.flush()                      # Flushes write buffer. Runs every 4096/8192 B.
+```
+* **Methods do not add or strip trailing newlines, even writelines().**
+
+### Read Text from File
+```python
+def read_file(filename):
+    with open(filename, encoding='utf-8') as file:
+        return file.readlines()
+```
+
+### Write Text to File
+```python
+def write_to_file(filename, text):
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(text)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Paths
+-----
+```python
+from os import getcwd, path, listdir, scandir
+from glob import glob
+```
+
+```python
+<str>  = getcwd()                   # Returns the current working directory.
+<str>  = path.join(<path>, ...)     # Joins two or more pathname components.
+<str>  = path.abspath(<path>)       # Returns absolute path.
+```
+
+```python
+<str>  = path.basename(<path>)      # Returns final component of the path.
+<str>  = path.dirname(<path>)       # Returns path without the final component.
+<tup.> = path.splitext(<path>)      # Splits on last period of the final component.
+```
+
+```python
+<list> = listdir(path='.')          # Returns filenames located at path.
+<list> = glob('<pattern>')          # Returns paths matching the wildcard pattern.
+```
+
+```python
+<bool> = path.exists(<path>)        # Or: <Path>.exists()
+<bool> = path.isfile(<path>)        # Or: <DirEntry/Path>.is_file()
+<bool> = path.isdir(<path>)         # Or: <DirEntry/Path>.is_dir()
+```
+
+```python
+<stat> = os.stat(<path>)            # Or: <DirEntry/Path>.stat()
+<real> = <stat>.st_mtime/st_size/…  # Modification time, size in bytes, …
+```
+
+### DirEntry
+**Unlike listdir(), scandir() returns DirEntry objects that cache isfile, isdir and on Windows also stat information, thus significantly increasing the performance of code that requires it.**
+
+```python
+<iter> = scandir(path='.')          # Returns DirEntry objects located at path.
+<str>  = <DirEntry>.path            # Returns whole path as a string.
+<str>  = <DirEntry>.name            # Returns final component as a string.
+<file> = open(<DirEntry>)           # Opens the file and returns a file object.
+```
+
+### Path Object
+```python
+from pathlib import Path
+```
+
+```python
+<Path> = Path(<path> [, ...])       # Accepts strings, Paths and DirEntry objects.
+<Path> = <path> / <path> [/ ...]    # First or second path must be a Path object.
+```
+
+```python
+<Path> = Path()                     # Returns relative cwd. Also Path('.').
+<Path> = Path.cwd()                 # Returns absolute cwd. Also Path().resolve().
+<Path> = Path.home()                # Returns user's home directory (absolute).
+<Path> = Path(__file__).resolve()   # Returns script's path if cwd wasn't changed.
+```
+
+```python
+<Path> = <Path>.parent              # Returns Path without the final component.
+<str>  = <Path>.name                # Returns final component as a string.
+<str>  = <Path>.stem                # Returns final component without extension.
+<str>  = <Path>.suffix              # Returns final component's extension.
+<tup.> = <Path>.parts               # Returns all components as strings.
+```
+
+```python
+<iter> = <Path>.iterdir()           # Returns directory contents as Path objects.
+<iter> = <Path>.glob('<pattern>')   # Returns Paths matching the wildcard pattern.
+```
+
+```python
+<str>  = str(<Path>)                # Returns path as a string.
+<file> = open(<Path>)               # Also <Path>.read/write_text/bytes().
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+OS Commands
+-----------
+```python
+import os, shutil, subprocess
+```
+
+```python
+os.chdir(<path>)                    # Changes the current working directory.
+os.mkdir(<path>, mode=0o777)        # Creates a directory. Permissions are in octal.
+os.makedirs(<path>, mode=0o777)     # Creates all path's dirs. Also: `exist_ok=False`.
+```
+
+```python
+shutil.copy(from, to)               # Copies the file. 'to' can exist or be a dir.
+shutil.copytree(from, to)           # Copies the directory. 'to' must not exist.
+```
 

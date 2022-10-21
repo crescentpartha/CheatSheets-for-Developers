@@ -51,15 +51,17 @@
 | Command | Description |
 | ------- | ----------- |
 | `Win` | Display or hide the Start screen |
-| `Win + E` | Open File Explorer |
 | `Win + ,` | see your desktop until you hold keys |
-| `Win + v` | to see clipboard and emoji |
-|` Win + Upper Arrow key`| Maximize windows|
-|` Win + X`| Open the Quick Link menu|
-|` Win + L`| Lock your PC|
-|` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
-|` Win + Tab`| Open task view|
 |` Win + D`| Display and hide the desktop|
+| `Win + E` | Open File Explorer |
+|` Win + L`| Lock your PC|
+| `Win + V` | to see clipboard and emoji |
+|` Win + X`| Open the Quick Link menu|
+|` Win + Tab`| Open task view|
+|` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
+|` Win + Upper Arrow key`| Maximize windows|
+| `Win + number key` | to open application from taskbar with numbered key position
+
 
 **[🔼Back to Top](#table-of-contents)**
 
