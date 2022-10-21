@@ -46,6 +46,7 @@
 | `Win + E` | Open File Explorer |
 | `Win + ,` | see your desktop until you hold keys |
 | `Win + v` | to see clipboard and emoji |
+| `Win + d` | to display and hide the desktop |
 
 **[🔼Back to Top](#table-of-contents)**
 
