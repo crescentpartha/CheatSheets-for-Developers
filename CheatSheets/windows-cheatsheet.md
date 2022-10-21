@@ -156,12 +156,10 @@
 | `Tap with two fingers` | Right click |
 | `Tap twice and drag` | Multi Select |
 | `Drag two fingers` | Scroll |
-| `Pinch` | Zoom |
-| `Drag Three fingers up` | Multitasking view |
-| `Drag Three fingers down` | Show Desktop |
+| `Pinch`🤏 | Zoom |
+| `Drag Three/Four fingers up` | Multitasking view |
+| `Drag Three/Four fingers down` | Show Desktop |
 | `Drag Three fingers left/right` | Switch apps |
-| `Drag Four fingers up` | Multitasking view |
-| `Drag Four fingers down` | Show Desktop |
 | `Drag Three fingers left/right` | Switch Desktops |
 
 **[🔼Back to Top](#table-of-contents)**
