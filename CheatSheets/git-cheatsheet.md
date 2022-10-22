@@ -68,6 +68,7 @@ Table of Contents
 | `git push origin [branch name]` | Push a branch to your remote repository |
 | `git pull origin [branch name]` | Pull a branch from your remote repository |
 | `git remote origin [branch name]` | Connect repository to local server |
+| `git rebase -i main` | Clean up a branches commits before rebasing onto main |
 
 **[🔼Back to Top](#table-of-contents)**
 
