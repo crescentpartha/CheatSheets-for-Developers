@@ -48,7 +48,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 15. [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheetsheet.md)
 16. [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
 17. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
-17. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
+18. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
 ## ___Instructions___
 
 - Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md).
