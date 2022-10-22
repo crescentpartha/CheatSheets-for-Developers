@@ -1770,6 +1770,7 @@ CompletedProcess(args=['bc', '-s'], returncode=0)
 '2\n'
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 JSON
 ----
@@ -1795,6 +1796,7 @@ def write_to_json_file(filename, an_object):
         json.dump(an_object, file, ensure_ascii=False, indent=2)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Pickle
 ------
@@ -1820,6 +1822,7 @@ def write_to_pickle_file(filename, an_object):
         pickle.dump(an_object, file)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 CSV
 ---
@@ -1887,6 +1890,7 @@ def write_to_csv_file(filename, rows, dialect='excel'):
         writer.writerows(rows)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 SQLite
 ------
@@ -1959,6 +1963,7 @@ with <conn>.begin(): ...                        # Exits the block with commit or
 +------------+--------------+-----------+-----------------------------------+
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Bytes
 -----
@@ -2001,6 +2006,7 @@ def write_bytes(filename, bytes_obj):
         file.write(bytes_obj)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Struct
 ------
@@ -2041,6 +2047,7 @@ b'\x00\x01\x00\x02\x00\x00\x00\x03'
 * **`'f'` - float (4/4)**
 * **`'d'` - double (8/8)**
 
+**[🔼Back to Top](#content-outlines)**
 
 Array
 -----
@@ -2055,6 +2062,7 @@ from array import array
 <file>.write(<array>)                          # Writes array to the binary file.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Memory View
 -----------
@@ -2087,6 +2095,7 @@ Memory View
 '<hex>' = <mview>.hex()                        # Treats mview as a bytes object.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Deque
 -----
@@ -2104,6 +2113,7 @@ from collections import deque
 <deque>.rotate(n=1)                            # Rotates elements to the right.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Threading
 ---------
