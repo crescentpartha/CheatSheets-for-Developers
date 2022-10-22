@@ -1,139 +1,134 @@
-# contents
-**1** [**Introduction: What is SQL?**](#Introduction-What-is-SQL?)
+## Table of Contents
 
-**2** [**SQL features?**](#SQL-Features?)
+- [SQL CheatSheet for Developers](#sql-cheatsheet-for-developers)
+- [Introduction-What-is-SQL?](#introduction-what-is-sql)
+- [SQL-Features?](#sql-features)
+- [Basic SQL](#basic-sql)
+  - [Create Database and drop database](#create-database-and-drop-database)
+  - [String Datatype](#string-datatype)
+  - [Numeric Datatype:](#numeric-datatype)
+  - [Date/Time Datatype:](#datetime-datatype)
+- [Tables](#tables)
+  - [Alter Table](#Alter-Table)
+  - [Insert Table](#Insert-Table)
+  - [Update Table](#Update-Table)
+  - [Delete Table](#Delete-Table)
+- [Important-Sql-Keywords](#Important-Sql-Keywords)
+- [clauses in SQL](#clauses-in-SQL)
+- [SQL-Operators](#SQL-Operators)
+  - [Arithmetic Operators](#Arithmetic-Operators)
+  - [Bitwise Operators](#Bitwise-Operators)
+  - [Relational Operators](#Relational-Operators)
+  - [Compound Operators](#Compound-Operators)
+  - [Logical Operators](#Logical-Operators)
+- [Function in sql](#Function-in-sql)
+  - [SQL Server Numeric Functions](#SQL-Server-Numeric-Functions)
+  - [SQL Server Date Functions](#SQL-Server-Date-Functions)
+  - [SQL Server Advanced Functions](#SQL Server Advanced Functions)
+- [Joins in SQL](#Joins-in-SQL)
+  
+  
 
-**3** [**Basic SQL**](#Basic-SQL?)
-
-**4** [**important SQL keywords**](#important-sql-keywords)
-
-**5** [**clauses in SQL**](#clauses-in-SQL)
-
-**6** [**SQL Operators**](#SQL-Operators)
-
-**7** [**Functions in sql**](#Function-in-sql)
-
-**8** [**Joins In sql**](#joins-in-sql)
-
+# SQL CheatSheet for Developers
 
 # Introduction-What-is-SQL?
 
-To get introduced to **SQL**, we first need to know about Databases and **Database Management Systems(DBMS)**.
-Data is basically a collection of facts related to some object. A **Database** is a collection of small units of data arranged in a systematic manner.
-A **Relational Database Management System** is a collection of tools that allows the users to **manipulate, organize and visualize** the contents of a database while following some standard rules that facilitate fast response between the database and the user side.
+> To get introduced to **SQL**, we first need to know about Databases and **Database Management Systems(DBMS)**. Data is basically a collection of facts related to some object. A **Database** is a collection of small units of data arranged in a systematic manner. A **Relational Database Management System** is a collection of tools that allows the users to **manipulate, organize and visualize** the contents of a database while following some standard rules that facilitate fast response between the database and the user side.
 
-After getting introduced to the concept of data, databases and **DBMS/RDBMS**, we can finally learn about SQL.
-SQL or **Structured Query Language** is basically the language that we (the user) use to communicate with the Databases and get our required interpretation of data out of it. 
-It is used for **storing, manipulating and retrieving** data out of a database.
+> After getting introduced to the concept of data, databases and **DBMS/RDBMS**, we can finally learn about SQL. SQL or **Structured Query Language** is basically the language that we (the user) use to communicate with the Databases and get our required interpretation of data out of it. It is used for **storing, manipulating and retrieving** data out of a database.
 
-
+**[🔼Back to Top](#table-of-contents)**
 
 # SQL-Features?
 
+> The following functionalities can be performed on a database using SQL:
 
-The following functionalities can be performed on a database using SQL:
-
-	
-```sql
-  1 Create or Delete a Database.
-```
-
-```sql
-  2 Create or Alter or Delete some tables in a Database.
-```
-```sql
-  3 SELECT data from tables.
- ```
-```sql
-  4 INSERT data into tables.
-```
-```sql
-  5 UPDATE data in tables.
-```
-``` sql
-  6 DELETE data from tables.
-```
-``` sql 
-  7 Create Views in the database.
-```
-``` sql 
-  8 Execute various aggregate functions.
-```
-
+1. `Create a Database` or `Delete a Database`
+2. `Create a table` or `Alter a table` or `Delete a table` from a ___Database___
+3. `SELECT data from tables`
+4. `INSERT data into tables`
+5. `UPDATE data in tables`
+6. `DELETE data from tables`
+7. `Create Views in the database`
+8. `Execute various aggregate functions`
 
 # Basic SQL
 
-**1 Create Database and drop database**
-
+## Create Database and drop database
 
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
-|CREATE DATABASE| CREATE DATABASE databasename  | Used to create new SQL database in the server        |
-|DROP DATABASE  | CREATE DATABASE databasename  | Used to drop the existing database   |
+| CREATE DATABASE| CREATE DATABASE database-name  | Used to create new SQL database in the server        |
+| DROP DATABASE  | CREATE DATABASE database-name  | Used to drop the existing database   |
 
-# 2 String-Datatype
+**[🔼Back to Top](#table-of-contents)**
 
+## String Datatype
 
-The table below lists all the String type datatypes available in SQL, along with their descriptions:
+> The table below lists all the String datatype available in SQL, along with their descriptions:
 
 |Datatype |	Description|
 |---------|---------------|
-|CHAR(size) |	A fixed-length string containing numbers, letters or special characters. Length may vary from 0-255.|
-|VARCHAR(size)	|Variable-length string where the length may vary from 0-65535. Similar to CHAR.|
-|TEXT(size)|	Can contain a string of size up to 65536 bytes. |
-|TINY TEXT	|Can contain a string of up to 255 characters.|
-|MEDIUM TEXT |	Can contain a string of up to 16777215 characters.|
-|LONG TEXT|	Can contain a string of up to 4294967295 characters.|
-|BINARY(size)|	Similar to CHAR() but stores binary byte strings.|
-|VARBINARY(size)|	Similar to VARCHAR() but stores binary byte strings.|
-|BLOB(size)|	Holds blobs up to 65536 bytes.|
-|TINYBLOB|	It is used for Binary Large Objects and has a maximum size of 255bytes.|
-|MEDIUMBLOB|	Holds blobs up to 16777215 bytes.|
-|LONGBLOB	|Holds blobs upto 4294967295 bytes.|
-|ENUM(val1,val2) |	String object that can have only 1 possible value from a list of size at most 65536 values in an ENUM list. If no value is inserted, a blank value is inserted.|
-|SET(val1,val2,…)	|String object with 0 or more values, chosen from a list of possible values with a maximum limit of 64 values.|
+| CHAR(size) |	A fixed-length string containing numbers, letters or special characters. Length may vary from 0-255.|
+| VARCHAR(size)	|Variable-length string where the length may vary from 0-65535. Similar to CHAR.|
+| TEXT(size)|	Can contain a string of size up to 65536 bytes. |
+| TINY TEXT	|Can contain a string of up to 255 characters.|
+| MEDIUM TEXT |	Can contain a string of up to 16777215 characters.|
+| LONG TEXT|	Can contain a string of up to 4294967295 characters.|
+| BINARY(size)|	Similar to CHAR() but stores binary byte strings.|
+| VARBINARY(size)|	Similar to VARCHAR() but stores binary byte strings.|
+| BLOB(size)|	Holds blobs up to 65536 bytes.|
+| TINYBLOB|	It is used for Binary Large Objects and has a maximum size of 255bytes.|
+| MEDIUMBLOB|	Holds blobs up to 16777215 bytes.|
+| LONGBLOB	| Holds blobs upto 4294967295 bytes.|
+| ENUM(val1,val2) |	String object that can have only 1 possible value from a list of size at most 65536 values in an ENUM list. If no value is inserted, a blank value is inserted.|
+| SET(val1,val2,…)	|String object with 0 or more values, chosen from a list of possible values with a maximum limit of 64 values.|
 
+**[🔼Back to Top](#table-of-contents)**
 
+## Numeric Datatype:
 
-# Numeric Datatypes:
-The table below lists all the Numeric Datatypes in SQL along with their descriptions:
+> The table below lists all the Numeric Datatype in SQL along with their descriptions:
 
 |Datatype	|Description|
 |-------|-------------|
-|BIT(size) |	Bit-value type, where size varies from 1 to 64. Default value: 1|
-|INT(size)	|Integer with values in the signed range of -2147483648 to 2147483647 and values in the unsigned range of 0 to 4294967295.|
-|TINYINT(size)	|Integer with values in the signed range of -128 to 127 and values in the unsigned range of 0 to 255.|
-|SMALLINT(size)|	Integer with values in the signed range of -32768 to 32767 and values in the unsigned range of 0 to 65535.|
-|MEDIUMINT(size)	|Integer with values in the signed range of -8388608 to 8388607 and values in the unsigned range of 0 to 16777215.|
-|BIGINT(size) |	Integer with values in the signed range of 9223372036854775808 to 9223372036854775807 and values in the unsigned range of 0 to 18446744073709551615.|
-|BOOLEAN	|Boolean values where 0 is considered as FALSE and non-zero values are considered TRUE.|
-|FLOAT (p)	|The floating-point number is stored. If the precision parameter is set between 0 to 24, the type is FLOAT() else if it lies between 25 to 53, the datatype is DOUBLE().|
-|DECIMAL(size,d) |	Decimal number with a number of digits before decimal place set by size parameter, and a number of digits after the decimal point set by d parameter. Default values: size = 10, d = 10. Maximum Values: size = 65, d = 30.|
+| BIT(size) |	Bit-value type, where size varies from 1 to 64. Default value: 1|
+| INT(size)	|Integer with values in the signed range of -2147483648 to 2147483647 and values in the unsigned range of 0 to 4294967295.|
+| TINYINT(size)	|Integer with values in the signed range of -128 to 127 and values in the unsigned range of 0 to 255.|
+| SMALLINT(size)|	Integer with values in the signed range of -32768 to 32767 and values in the unsigned range of 0 to 65535.|
+| MEDIUMINT(size)	|Integer with values in the signed range of -8388608 to 8388607 and values in the unsigned range of 0 to 16777215.|
+| BIGINT(size) |	Integer with values in the signed range of 9223372036854775808 to 9223372036854775807 and values in the unsigned range of 0 to 18446744073709551615.|
+| BOOLEAN	|Boolean values where 0 is considered as FALSE and non-zero values are considered TRUE.|
+| FLOAT (p)	|The floating-point number is stored. If the precision parameter is set between 0 to 24, the type is FLOAT() else if it lies between 25 to 53, the datatype is DOUBLE().|
+| DECIMAL(size,d) |	Decimal number with a number of digits before decimal place set by size parameter, and a number of digits after the decimal point set by d parameter. Default values: size = 10, d = 10. Maximum Values: size = 65, d = 30.|
 
-# Date/Time Datatypes:
-The datatypes available in SQL to handle Date/Time operations effectively are called the Date/Time datatypes. The below table lists all the Date/Time variables in SQL along with their description:
+**[🔼Back to Top](#table-of-contents)**
+
+## Date/Time Datatype:
+
+> The datatype available in SQL to handle Date/Time operations effectively are called the Date/Time datatype. <br /> The table listed below all the Date/Time variables in SQL along with their description:
 
 |Datatype|	Description|
 |-------|---------|
-|DATE	|Stores date in YYYY-MM-DD format with dates in the range of ‘1000-01-01’ to ‘9999-12-31’.|
-|TIME(fsp)	|Stores time in hh:mm:ss format with times in the range of ‘-838:59:59’ to ‘838:59:59’.|
-|DATETIME(fsp)	|Stores a combination of date and time in YYYY-MM-DD and hh:mm:ss format, with values in the range of ‘1000-01-01 00:00:00’ to ‘9999-12-31 23:59:59’.|
-|TIMESTAMP(fsp)	|It stores values relative to the Unix Epoch, basically a Unix Timestamp. Values lie in the range of ‘1970-01-01 00:00:01’ UTC to ‘2038-01-09 03:14:07’ UTC.|
-|YEAR	|Stores values of years as a 4digit number format, with a range lying between -1901 to 2155.|
+| DATE	|Stores date in YYYY-MM-DD format with dates in the range of ‘1000-01-01’ to ‘9999-12-31’.|
+| TIME(fsp)	|Stores time in hh:mm:ss format with times in the range of ‘-838:59:59’ to ‘838:59:59’.|
+| DATETIME(fsp)	|Stores a combination of date and time in YYYY-MM-DD and hh:mm:ss format, with values in the range of ‘1000-01-01 00:00:00’ to ‘9999-12-31 23:59:59’.|
+| TIMESTAMP(fsp)	|It stores values relative to the Unix Epoch, basically a Unix Timestamp. Values lie in the range of ‘1970-01-01 00:00:01’ UTC to ‘2038-01-09 03:14:07’ UTC.|
+| YEAR	|Stores values of years as a 4digit number format, with a range lying between -1901 to 2155.|
 
+**[🔼Back to Top](#table-of-contents)**
 
-
-
-# 2 Tables
+# Tables
 
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
 | CREATE TABLE| CREATE TABLE table_name (column1 datatype,column2 datatype,column3 datatype)  | Used to create new table        |
-| DROP TABLE  | DROP TABLE table_name  | Used to drop the existing table   |
+| DROP DATABASE  | CREATE DATABASE database-name  | Used to drop the existing database   |
 |TRUNCATE TABLE|TRUNCATE TABLE table_name|used to delete the data inside a table, but not the table itself.|
 
+**[🔼Back to Top](#table-of-contents)**
 
-# 3 Alter Table
+## Alter Table
 
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
@@ -141,30 +136,39 @@ The datatypes available in SQL to handle Date/Time operations effectively are ca
 | ALTER TABLE DROP  | ALTER TABLE table_name DROP COLUMN column_name  | Used to drop column in existing table   |
 | ALTER TABLE MODIFY|ALTER TABLE table_name MODIFY COLUMN column_name datatype |Used to modify column in existing table |
 
-# 4 Insert Data into Table
+**[🔼Back to Top](#table-of-contents)**
+
+## Insert Table
 
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
 | INSERT INTO| INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...); | Used to insert data for particular columnn to add new records into  existing table        |
 | INSERT INTO  |INSERT INTO table_name VALUES (value1, value2, value3, ...);  | used to insert new record in existing table with all column  |
 
-# 5 Update Table
+**[🔼Back to Top](#table-of-contents)**
+
+
+## Update Table
 
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
 | UPDATE| UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;  | Used to update data for particular row for existing records in existing table        |
 | UPDATE| UPDATE table_name SET column1 = value1, column2 = value2, ... ;| Used to update data for all row exist in existing table        |
 
+**[🔼Back to Top](#table-of-contents)**
 
 
-# 6 Delete Table 
+## Delete Table 
+
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
 | DELETE|DELETE FROM table_name WHERE condition;  | Used to delete data for particular row for existing records in existing table        |
 | DELETE| DELETE FROM table_name;| Used to delete data for all row exist in existing table        |
 
+**[🔼Back to Top](#table-of-contents)**
 
-# important-sql-keywords
+
+# Important-Sql-Keywords
 
 |Keyword |	Description |	Example|
 |----------|---------|------------|
@@ -202,6 +206,8 @@ The datatypes available in SQL to handle Date/Time operations effectively are ca
 |GROUP BY|	Groups rows that have the same values into summary rows.|	SELECT COUNT(StudentID), State FROM Students GROUP BY State|
 |HAVING	|Enables the user to specify conditions that filter which group results appear in the results.|	HAVING COUNT(CustomerID) > 5|
 
+**[🔼Back to Top](#table-of-contents)**
+
 
 
 # clauses-in-SQL
@@ -218,14 +224,14 @@ The datatypes available in SQL to handle Date/Time operations effectively are ca
 |GROUP BY|	Groups rows that have the same values into summary rows.|	SELECT COUNT(StudentID), State FROM Students GROUP BY State;|
 |HAVING	|It performs the same as the WHERE clause but can also be used with aggregate functions.|	SELECT COUNT(ID), AGE FROM Students GROUP BY AGE HAVING COUNT(ID) > 5;|
 
+**[🔼Back to Top](#table-of-contents)**
 
  # SQL-Operators
+ 
  There are 3 main types of operators: Arithmetic, Comparision and Logical operators, each of which will be described below.
  
- 
- 
- 
-**1 Arithmetic Operators:**
+## Arithmetic Operators
+
 Arithmetic Operators allows the user to perform arithmetic operations in SQL. The table below shows the list of arithmetic operators available in SQL:
 
 |Operator|	Description|
@@ -236,12 +242,10 @@ Arithmetic Operators allows the user to perform arithmetic operations in SQL. Th
 | / |	Division|
 | % |	Modulo|
 
+**[🔼Back to Top](#table-of-contents)**
 
+## Bitwise Operators
 
-
-
-
-**2 Bitwise Operators:**
 Bitwise operators are used to performing Bit manipulation operations in SQL. The table below shows the list of bitwise operators available in SQL:
 
 |Operator|	Description|
@@ -250,12 +254,9 @@ Bitwise operators are used to performing Bit manipulation operations in SQL. The
 | ![image](https://user-images.githubusercontent.com/47249568/197326193-77622f96-20cd-4f8f-b4b6-997fb54b2d69.png)|	Bitwise OR|
 |^|	Bitwise XOR|
 
+**[🔼Back to Top](#table-of-contents)**
 
-
-
-
-
-**3 Relational Operators:**
+## Relational Operators
 
 Relational operators are used to performing relational expressions in SQL, i.e those expressions whose value either result in true or false. The table below shows the list of relational operators available in SQL:
 
@@ -268,8 +269,10 @@ Relational operators are used to performing relational expressions in SQL, i.e t
 |<=|	Less than or equal to|
 |<>|	Not equal to|
 
+**[🔼Back to Top](#table-of-contents)**
 
-**4 Compound Operators:**
+## Compound Operators
+
 Compound operators are basically a combination of 2 or more arithmetic or relational operator, which can be used as a shorthand while writing code. The table below shows the list of compound operators available in SQL:
 
 |Operator|	Description|
@@ -283,9 +286,10 @@ Compound operators are basically a combination of 2 or more arithmetic or relati
 | ![image](https://user-images.githubusercontent.com/47249568/197326390-7087561c-34d3-450e-aacb-0282cfd17922.png)= |	OR equals|
 |^=|	XOR equals|
 
+**[🔼Back to Top](#table-of-contents)**
 
+## Logical Operators
 
-**5 Logical Operators:**
 Logical operators are used to combining 2 or more relational statements into 1 compound statement whose truth value is evaluated as a whole. The table below shows the SQL logical operators with their description:
 
 |Operator|	Description|
@@ -301,11 +305,12 @@ Logical operators are used to combining 2 or more relational statements into 1 c
 |OR|	Returns True if any of the conditions turn out to be True|
 |SOME|	Returns True if any of the Subqueries meet the given condition.|
 
+**[🔼Back to Top](#table-of-contents)**
 
+# Function in sql
 
-# Function-in-sql
+## SQL Server Numeric Functions
 
-**1 SQL Server Numeric Functions:**
 The table below lists some of the Numeric functions in SQL with their description:
 
 |Name|	Description|
@@ -321,7 +326,10 @@ The table below lists some of the Numeric functions in SQL with their descriptio
 |SQRT|	Returns the square root of a number.|
 |SUM|	Returns the sum of a set of values.|
 
-**2 SQL Server Date Functions:**
+**[🔼Back to Top](#table-of-contents)**
+
+## SQL Server Date Functions
+
 The table below lists some of the Date functions in SQL with their description:
 
 |Name|	Description|
@@ -333,7 +341,10 @@ The table below lists some of the Date functions in SQL with their description:
 |DAY|	Returns the day of the month for a specified date.|
 |GETDATE|	Returns the current date and time from the database.|
 
-**3 SQL Server Advanced Functions:**
+**[🔼Back to Top](#table-of-contents)**
+
+## SQL Server Advanced Functions
+
 The table below lists some of the Advanced functions in SQL with their description:
 
 |Name|	Description|
@@ -347,8 +358,9 @@ The table below lists some of the Advanced functions in SQL with their descripti
 |USER_NAME|	Returns the database user name based on the specified id.|
 
 
+**[🔼Back to Top](#table-of-contents)**
 
-# joins-in-sql
+# Joins in SQL
 
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
@@ -359,3 +371,4 @@ The table below lists some of the Advanced functions in SQL with their descripti
 |SELF JOIN |SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;|A self join is a regular join, but the table is joined with itself.|
 
 
+**[🔼Back to Top](#table-of-contents)**
