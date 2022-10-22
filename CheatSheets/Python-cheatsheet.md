@@ -2183,5 +2183,424 @@ from queue import Queue
 <el> = <Queue>.get()                           # Blocks until queue stops being empty.
 <el> = <Queue>.get_nowait()                    # Raises queue.Empty exception if empty.
 ```
+Operator
+--------
+**Module of functions that provide the functionality of operators.**
+```python
+import operator as op
+<el>      = op.add/sub/mul/truediv/floordiv/mod(<el>, <el>)  # +, -, *, /, //, %
+<int/set> = op.and_/or_/xor(<int/set>, <int/set>)            # &, |, ^
+<bool>    = op.eq/ne/lt/le/gt/ge(<sortable>, <sortable>)     # ==, !=, <, <=, >, >=
+<func>    = op.itemgetter/attrgetter/methodcaller(<obj>)     # [index/key], .name, .name()
+```
+
+```python
+elementwise_sum  = map(op.add, list_a, list_b)
+sorted_by_second = sorted(<collection>, key=op.itemgetter(1))
+sorted_by_both   = sorted(<collection>, key=op.itemgetter(1, 0))
+product_of_elems = functools.reduce(op.mul, <collection>)
+union_of_sets    = functools.reduce(op.or_, <coll_of_sets>)
+first_element    = op.methodcaller('pop', 0)(<list>)
+```
+* **Binary operators require objects to have and(), or(), xor() and invert() special methods, unlike logical operators that work on all types of objects.**
+* **Also: `'<bool> = <bool> &|^ <bool>'` and `'<int> = <bool> &|^ <int>'`.**
+
+
+Introspection
+-------------
+**Inspecting code at runtime.**
+
+### Variables
+```python
+<list> = dir()                             # Names of local variables (incl. functions).
+<dict> = vars()                            # Dict of local variables. Also locals().
+<dict> = globals()                         # Dict of global variables.
+```
+
+### Attributes
+```python
+<list> = dir(<object>)                     # Names of object's attributes (incl. methods).
+<dict> = vars(<object>)                    # Dict of writable attributes. Also <obj>.__dict__.
+<bool> = hasattr(<object>, '<attr_name>')  # Checks if getattr() raises an AttributeError.
+value  = getattr(<object>, '<attr_name>')  # Raises AttributeError if attribute is missing.
+setattr(<object>, '<attr_name>', value)    # Only works on objects with '__dict__' attribute.
+delattr(<object>, '<attr_name>')           # Same. Also `del <object>.<attr_name>`.
+```
+
+### Parameters
+```python
+<Sig>  = inspect.signature(<function>)     # Function's Signature object.
+<dict> = <Sig>.parameters                  # Dict of Parameter objects.
+<memb> = <Param>.kind                      # Member of ParameterKind enum.
+<obj>  = <Param>.default                   # Default value or <Param>.empty.
+<type> = <Param>.annotation                # Type or <Param>.empty.
+```
+
+
+Metaprogramming
+---------------
+**Code that generates code.**
+
+### Type
+**Type is the root class. If only passed an object it returns its type (class). Otherwise it creates a new class.**
+
+```python
+<class> = type('<class_name>', <tuple_of_parents>, <dict_of_class_attributes>)
+```
+
+```python
+>>> Z = type('Z', (), {'a': 'abcde', 'b': 12345})
+>>> z = Z()
+```
+
+### Meta Class
+**A class that creates classes.**
+
+```python
+def my_meta_class(name, parents, attrs):
+    attrs['a'] = 'abcde'
+    return type(name, parents, attrs)
+```
+
+#### Or:
+```python
+class MyMetaClass(type):
+    def __new__(cls, name, parents, attrs):
+        attrs['a'] = 'abcde'
+        return type.__new__(cls, name, parents, attrs)
+```
+* **New() is a class method that gets called before init(). If it returns an instance of its class, then that instance gets passed to init() as a 'self' argument.**
+* **It receives the same arguments as init(), except for the first one that specifies the desired type of the returned instance (MyMetaClass in our case).**
+* **Like in our case, new() can also be called directly, usually from a new() method of a child class (**`def __new__(cls): return super().__new__(cls)`**).**
+* **The only difference between the examples above is that my\_meta\_class() returns a class of type type, while MyMetaClass() returns a class of type MyMetaClass.**
+
+### Metaclass Attribute
+**Right before a class is created it checks if it has the 'metaclass' attribute defined. If not, it recursively checks if any of his parents has it defined and eventually comes to type().**
+
+```python
+class MyClass(metaclass=MyMetaClass):
+    b = 12345
+```
+
+```python
+>>> MyClass.a, MyClass.b
+('abcde', 12345)
+```
+
+### Type Diagram
+```python
+type(MyClass) == MyMetaClass         # MyClass is an instance of MyMetaClass.
+type(MyMetaClass) == type            # MyMetaClass is an instance of type.
+```
+
+```text
++-------------+-------------+
+|   Classes   | Metaclasses |
++-------------+-------------|
+|   MyClass --> MyMetaClass |
+|             |     v       |
+|    object -----> type <+  |
+|             |     ^ +--+  |
+|     str ----------+       |
++-------------+-------------+
+```
+
+### Inheritance Diagram
+```python
+MyClass.__base__ == object           # MyClass is a subclass of object.
+MyMetaClass.__base__ == type         # MyMetaClass is a subclass of type.
+```
+
+```text
++-------------+-------------+
+|   Classes   | Metaclasses |
++-------------+-------------|
+|   MyClass   | MyMetaClass |
+|      v      |     v       |
+|    object <----- type     |
+|      ^      |             |
+|     str     |             |
++-------------+-------------+
+```
+
+
+Eval
+----
+```python
+>>> from ast import literal_eval
+>>> literal_eval('[1, 2, 3]')
+[1, 2, 3]
+>>> literal_eval('1 + 2')
+ValueError: malformed node or string
+```
+
+
+Coroutines
+----------
+* **Coroutines have a lot in common with threads, but unlike threads, they only give up control when they call another coroutine and they don’t use as much memory.**
+* **Coroutine definition starts with `'async'` and its call with `'await'`.**
+* **`'asyncio.run(<coroutine>)'` is the main entry point for asynchronous programs.**
+* **Functions wait(), gather() and as_completed() start multiple coroutines at the same time.**
+* **Asyncio module also provides its own [Queue](#queue), [Event](#semaphore-event-barrier), [Lock](#lock) and [Semaphore](#semaphore-event-barrier) classes.**
+
+#### Runs a terminal game where you control an asterisk that must avoid numbers:
+
+```python
+import asyncio, collections, curses, curses.textpad, enum, random
+
+P = collections.namedtuple('P', 'x y')         # Position
+D = enum.Enum('D', 'n e s w')                  # Direction
+W, H = 15, 7                                   # Width, Height
+
+def main(screen):
+    curses.curs_set(0)                         # Makes cursor invisible.
+    screen.nodelay(True)                       # Makes getch() non-blocking.
+    asyncio.run(main_coroutine(screen))        # Starts running asyncio code.
+
+async def main_coroutine(screen):
+    moves = asyncio.Queue()
+    state = {'*': P(0, 0), **{id_: P(W//2, H//2) for id_ in range(10)}}
+    ai    = [random_controller(id_, moves) for id_ in range(10)]
+    mvc   = [human_controller(screen, moves), model(moves, state), view(state, screen)]
+    tasks = [asyncio.create_task(cor) for cor in ai + mvc]
+    await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+
+async def random_controller(id_, moves):
+    while True:
+        d = random.choice(list(D))
+        moves.put_nowait((id_, d))
+        await asyncio.sleep(random.triangular(0.01, 0.65))
+
+async def human_controller(screen, moves):
+    while True:
+        ch = screen.getch()
+        key_mappings = {258: D.s, 259: D.n, 260: D.w, 261: D.e}
+        if ch in key_mappings:
+            moves.put_nowait(('*', key_mappings[ch]))
+        await asyncio.sleep(0.005)
+
+async def model(moves, state):
+    while state['*'] not in (state[id_] for id_ in range(10)):
+        id_, d = await moves.get()
+        x, y   = state[id_]
+        deltas = {D.n: P(0, -1), D.e: P(1, 0), D.s: P(0, 1), D.w: P(-1, 0)}
+        state[id_] = P((x + deltas[d].x) % W, (y + deltas[d].y) % H)
+
+async def view(state, screen):
+    offset = P(curses.COLS//2 - W//2, curses.LINES//2 - H//2)
+    while True:
+        screen.erase()
+        curses.textpad.rectangle(screen, offset.y-1, offset.x-1, offset.y+H, offset.x+W)
+        for id_, p in state.items():
+            screen.addstr(offset.y + (p.y - state['*'].y + H//2) % H,
+                          offset.x + (p.x - state['*'].x + W//2) % W, str(id_))
+        await asyncio.sleep(0.005)
+
+if __name__ == '__main__':
+    curses.wrapper(main)
+```
+<br>
+
+
+Libraries
+=========
+
+Progress Bar
+------------
+```python
+# $ pip3 install tqdm
+>>> from tqdm import tqdm
+>>> from time import sleep
+>>> for el in tqdm([1, 2, 3], desc='Processing'):
+...     sleep(1)
+Processing: 100%|████████████████████| 3/3 [00:03<00:00,  1.00s/it]
+```
+
+
+Plot
+----
+```python
+# $ pip3 install matplotlib
+import matplotlib.pyplot as plt
+plt.plot(<x_data>, <y_data> [, label=<str>])   # Or: plt.plot(<y_data>)
+plt.legend()                                   # Adds a legend.
+plt.savefig(<path>)                            # Saves the figure.
+plt.show()                                     # Displays the figure.
+plt.clf()                                      # Clears the figure.
+```
+
+
+Table
+-----
+#### Prints a CSV file as an ASCII table:
+```python
+# $ pip3 install tabulate
+import csv, tabulate
+with open('test.csv', encoding='utf-8', newline='') as file:
+    rows   = csv.reader(file)
+    header = next(rows)
+    table  = tabulate.tabulate(rows, header)
+print(table)
+```
+
+
+Curses
+------
+#### Runs a basic file explorer in the terminal:
+```python
+import curses, curses.ascii, os
+from curses import A_REVERSE, KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ENTER
+
+def main(screen):
+    ch, first, selected, paths = 0, 0, 0, os.listdir()
+    while ch != curses.ascii.ESC:
+        height, _ = screen.getmaxyx()
+        screen.erase()
+        for y, filename in enumerate(paths[first : first+height]):
+            screen.addstr(y, 0, filename, A_REVERSE * (selected == first + y))
+        ch = screen.getch()
+        selected += (ch == KEY_DOWN) - (ch == KEY_UP)
+        selected = max(0, min(len(paths)-1, selected))
+        first += (first <= selected - height) - (first > selected)
+        if ch in [KEY_LEFT, KEY_RIGHT, KEY_ENTER, 10, 13]:
+            new_dir = '..' if ch == KEY_LEFT else paths[selected]
+            if os.path.isdir(new_dir):
+                os.chdir(new_dir)
+                first, selected, paths = 0, 0, os.listdir()
+
+if __name__ == '__main__':
+    curses.wrapper(main)
+```
+
+
+Logging
+-------
+```python
+# $ pip3 install loguru
+from loguru import logger
+```
+
+```python
+logger.add('debug_{time}.log', colorize=True)  # Connects a log file.
+logger.add('error_{time}.log', level='ERROR')  # Another file for errors or higher.
+logger.<level>('A logging message.')           # Logs to file/s and prints to stderr.
+```
+* **Levels: `'debug'`, `'info'`, `'success'`, `'warning'`, `'error'`, `'critical'`.**
+
+### Exceptions
+**Exception description, stack trace and values of variables are appended automatically.**
+
+```python
+try:
+    ...
+except <exception>:
+    logger.exception('An error happened.')
+```
+
+### Rotation
+**Argument that sets a condition when a new log file is created.**
+```python
+rotation=<int>|<datetime.timedelta>|<datetime.time>|<str>
+```
+* **`'<int>'` - Max file size in bytes.**
+* **`'<timedelta>'` - Max age of a file.**
+* **`'<time>'` - Time of day.**
+* **`'<str>'` - Any of above as a string: `'100 MB'`, `'1 month'`, `'monday at 12:00'`, ...**
+
+### Retention
+**Sets a condition which old log files get deleted.**
+```python
+retention=<int>|<datetime.timedelta>|<str>
+```
+* **`'<int>'` - Max number of files.**
+* **`'<timedelta>'` - Max age of a file.**
+* **`'<str>'` - Max age as a string: `'1 week, 3 days'`, `'2 months'`, ...**
+
+
+Scraping
+--------
+#### Scrapes Python's URL, version number and logo from its Wikipedia page:
+```python
+# $ pip3 install requests beautifulsoup4
+import requests, bs4, os, sys
+
+WIKI_URL = 'https://en.wikipedia.org/wiki/Python_(programming_language)'
+try:
+    html       = requests.get(WIKI_URL).text
+    document   = bs4.BeautifulSoup(html, 'html.parser')
+    table      = document.find('table', class_='infobox vevent')
+    python_url = table.find('th', text='Website').next_sibling.a['href']
+    version    = table.find('th', text='Stable release').next_sibling.strings.__next__()
+    logo_url   = table.find('img')['src']
+    logo       = requests.get(f'https:{logo_url}').content
+    filename   = os.path.basename(logo_url)
+    with open(filename, 'wb') as file:
+        file.write(logo)
+    print(f'{python_url}, {version}, file://{os.path.abspath(filename)}')
+except requests.exceptions.ConnectionError:
+    print("You've got problems with connection.", file=sys.stderr)
+```
+
+
+Web
+---
+```python
+# $ pip3 install bottle
+from bottle import run, route, static_file, template, post, request, response
+import json
+```
+
+### Run
+```python
+run(host='localhost', port=8080)        # Runs locally.
+run(host='0.0.0.0', port=80)            # Runs globally.
+```
+
+### Static Request
+```python
+@route('/img/<filename>')
+def send_file(filename):
+    return static_file(filename, root='img_dir/')
+```
+
+### Dynamic Request
+```python
+@route('/<sport>')
+def send_html(sport):
+    return template('<h1>{{title}}</h1>', title=sport)
+```
+
+### REST Request
+```python
+@post('/<sport>/odds')
+def send_json(sport):
+    team = request.forms.get('team')
+    response.headers['Content-Type'] = 'application/json'
+    response.headers['Cache-Control'] = 'no-cache'
+    return json.dumps({'team': team, 'odds': [2.09, 3.74, 3.68]})
+```
+
+#### Test:
+```python
+# $ pip3 install requests
+>>> import threading, requests
+>>> threading.Thread(target=run, daemon=True).start()
+>>> url = 'http://localhost:8080/football/odds'
+>>> request_data = {'team': 'arsenal f.c.'}
+>>> response = requests.post(url, data=request_data)
+>>> response.json()
+{'team': 'arsenal f.c.', 'odds': [2.09, 3.74, 3.68]}
+```
+
+
+Profiling
+---------
+### Stopwatch
+```python
+from time import perf_counter
+start_time = perf_counter()
+...
+duration_in_seconds = perf_counter() - start_time
+```
 
 
