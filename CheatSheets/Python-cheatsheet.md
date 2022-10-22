@@ -2668,6 +2668,7 @@ with cg.PyCallGraph(drawer):
     <code_to_be_profiled>
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 NumPy
 -----
@@ -2776,6 +2777,7 @@ right = [[0.1,  0.6,  0.8],                             # Shape: (3, 3) <- !
 [1, 2, 1]
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Image
 -----
@@ -2873,6 +2875,7 @@ frames += reversed(frames[1:-1])
 imageio.mimsave('test.gif', frames, duration=0.03)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Audio
 -----
