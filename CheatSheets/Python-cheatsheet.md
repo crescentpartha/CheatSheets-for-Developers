@@ -1733,3 +1733,889 @@ shutil.copy(from, to)               # Copies the file. 'to' can exist or be a di
 shutil.copytree(from, to)           # Copies the directory. 'to' must not exist.
 ```
 
+
+```python
+os.rename(from, to)                 # Renames/moves the file or directory.
+os.replace(from, to)                # Same, but overwrites 'to' if it exists.
+```
+
+```python
+os.remove(<path>)                   # Deletes the file.
+os.rmdir(<path>)                    # Deletes the empty directory.
+shutil.rmtree(<path>)               # Deletes the directory.
+```
+* **Paths can be either strings, Paths or DirEntry objects.**
+* **Functions report OS related errors by raising either OSError or one of its [subclasses](#exceptions-1).**
+
+### Shell Commands
+```python
+<pipe> = os.popen('<command>')      # Executes command in sh/cmd. Returns its stdout pipe.
+<str>  = <pipe>.read(size=-1)       # Reads 'size' chars or until EOF. Also readline/s().
+<int>  = <pipe>.close()             # Closes the pipe. Returns None on success.
+```
+
+#### Sends '1 + 1' to the basic calculator and captures its output:
+```python
+>>> subprocess.run('bc', input='1 + 1\n', capture_output=True, text=True)
+CompletedProcess(args='bc', returncode=0, stdout='2\n', stderr='')
+```
+
+#### Sends test.in to the basic calculator running in standard mode and saves its output to test.out:
+```python
+>>> from shlex import split
+>>> os.popen('echo 1 + 1 > test.in')
+>>> subprocess.run(split('bc -s'), stdin=open('test.in'), stdout=open('test.out', 'w'))
+CompletedProcess(args=['bc', '-s'], returncode=0)
+>>> open('test.out').read()
+'2\n'
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+JSON
+----
+**Text file format for storing collections of strings and numbers.**
+
+```python
+import json
+<str>    = json.dumps(<object>)     # Converts object to JSON string.
+<object> = json.loads(<str>)        # Converts JSON string to object.
+```
+
+### Read Object from JSON File
+```python
+def read_json_file(filename):
+    with open(filename, encoding='utf-8') as file:
+        return json.load(file)
+```
+
+### Write Object to JSON File
+```python
+def write_to_json_file(filename, an_object):
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(an_object, file, ensure_ascii=False, indent=2)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Pickle
+------
+**Binary file format for storing Python objects.**
+
+```python
+import pickle
+<bytes>  = pickle.dumps(<object>)   # Converts object to bytes object.
+<object> = pickle.loads(<bytes>)    # Converts bytes object to object.
+```
+
+### Read Object from File
+```python
+def read_pickle_file(filename):
+    with open(filename, 'rb') as file:
+        return pickle.load(file)
+```
+
+### Write Object to File
+```python
+def write_to_pickle_file(filename, an_object):
+    with open(filename, 'wb') as file:
+        pickle.dump(an_object, file)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+CSV
+---
+**Text file format for storing spreadsheets.**
+
+```python
+import csv
+```
+
+### Read
+```python
+<reader> = csv.reader(<file>)       # Also: `dialect='excel', delimiter=','`.
+<list>   = next(<reader>)           # Returns next row as a list of strings.
+<list>   = list(<reader>)           # Returns a list of remaining rows.
+```
+* **File must be opened with a `'newline=""'` argument, or newlines embedded inside quoted fields will not be interpreted correctly!**
+* **To print the spreadsheet to the console use [Tabulate](#table) library.**
+* **For XML and binary Excel files (xlsx, xlsm and xlsb) use [Pandas](#dataframe-plot-encode-decode) library.**
+
+### Write
+```python
+<writer> = csv.writer(<file>)       # Also: `dialect='excel', delimiter=','`.
+<writer>.writerow(<collection>)     # Encodes objects using `str(<el>)`.
+<writer>.writerows(<coll_of_coll>)  # Appends multiple rows.
+```
+* **File must be opened with a `'newline=""'` argument, or '\r' will be added in front of every '\n' on platforms that use '\r\n' line endings!**
+
+### Parameters
+* **`'dialect'` - Master parameter that sets the default values. String or a Dialect object.**
+* **`'delimiter'` - A one-character string used to separate fields.**
+* **`'quotechar'` - Character for quoting fields that contain special characters.**
+* **`'doublequote'` - Whether quotechars inside fields are/get doubled or escaped.**
+* **`'skipinitialspace'` - Is space character at the start of the field stripped by the reader.**
+* **`'lineterminator'` - How writer terminates rows. Reader is hardcoded to '\n', '\r', '\r\n'.**
+* **`'quoting'` - 0: As necessary, 1: All, 2: All but numbers which are read as floats, 3: None.**
+* **`'escapechar'` - Character for escaping quotechars if doublequote is False.**
+
+### Dialects
+```text
++------------------+--------------+--------------+--------------+
+|                  |     excel    |   excel-tab  |     unix     |
++------------------+--------------+--------------+--------------+
+| delimiter        |       ','    |      '\t'    |       ','    |
+| quotechar        |       '"'    |       '"'    |       '"'    |
+| doublequote      |      True    |      True    |      True    |
+| skipinitialspace |     False    |     False    |     False    |
+| lineterminator   |    '\r\n'    |    '\r\n'    |      '\n'    |
+| quoting          |         0    |         0    |         1    |
+| escapechar       |      None    |      None    |      None    |
++------------------+--------------+--------------+--------------+
+```
+
+### Read Rows from CSV File
+```python
+def read_csv_file(filename, dialect='excel'):
+    with open(filename, encoding='utf-8', newline='') as file:
+        return list(csv.reader(file, dialect))
+```
+
+### Write Rows to CSV File
+```python
+def write_to_csv_file(filename, rows, dialect='excel'):
+    with open(filename, 'w', encoding='utf-8', newline='') as file:
+        writer = csv.writer(file, dialect)
+        writer.writerows(rows)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+SQLite
+------
+**A server-less database engine that stores each database into a separate file.**
+
+```python
+import sqlite3
+<conn> = sqlite3.connect(<path>)                # Opens existing or new file. Also ':memory:'.
+<conn>.close()                                  # Closes the connection.
+```
+
+### Read
+```python
+<cursor> = <conn>.execute('<query>')            # Can raise a subclass of sqlite3.Error.
+<tuple>  = <cursor>.fetchone()                  # Returns next row. Also next(<cursor>).
+<list>   = <cursor>.fetchall()                  # Returns remaining rows. Also list(<cursor>).
+```
+
+### Write
+```python
+<conn>.execute('<query>')                       # Can raise a subclass of sqlite3.Error.
+<conn>.commit()                                 # Saves all changes since the last commit.
+<conn>.rollback()                               # Discards all changes since the last commit.
+```
+
+#### Or:
+```python
+with <conn>:                                    # Exits the block with commit() or rollback(),
+    <conn>.execute('<query>')                   # depending on whether any exception occurred.
+```
+
+### Placeholders
+```python
+<conn>.execute('<query>', <list/tuple>)         # Replaces '?'s in query with values.
+<conn>.execute('<query>', <dict/namedtuple>)    # Replaces ':<key>'s with values.
+<conn>.executemany('<query>', <coll_of_above>)  # Runs execute() multiple times.
+```
+* **Passed values can be of type str, int, float, bytes, None, bool, datetime.date or datetime.datetime.**
+* **Bools will be stored and returned as ints and dates as [ISO formatted strings](#encode).**
+
+### Example
+**Values are not actually saved in this example because `'conn.commit()'` is omitted!**
+```python
+>>> conn = sqlite3.connect('test.db')
+>>> conn.execute('CREATE TABLE person (person_id INTEGER PRIMARY KEY, name, height)')
+>>> conn.execute('INSERT INTO person VALUES (NULL, ?, ?)', ('Jean-Luc', 187)).lastrowid
+1
+>>> conn.execute('SELECT * FROM person').fetchall()
+[(1, 'Jean-Luc', 187)]
+```
+
+### SqlAlchemy
+```python
+# $ pip3 install sqlalchemy
+from sqlalchemy import create_engine, text
+<engine> = create_engine('<url>').connect()     # Url: 'dialect://user:password@host/dbname'.
+<conn>   = <engine>.connect()                   # Creates a connection. Also <conn>.close().
+<cursor> = <conn>.execute(text('<query>'), …)   # Replaces ':<key>'s with keyword arguments.
+with <conn>.begin(): ...                        # Exits the block with commit or rollback.
+```
+
+```text
++------------+--------------+-----------+-----------------------------------+
+| Dialects   | pip3 install | import    | Dependencies                      |
++------------+--------------+-----------+-----------------------------------+
+| mysql      | mysqlclient  | MySQLdb   | www.pypi.org/project/mysqlclient  |
+| postgresql | psycopg2     | psycopg2  | www.psycopg.org/docs/install.html |
+| mssql      | pyodbc       | pyodbc    | apt install g++ unixodbc-dev      |
+| oracle     | cx_oracle    | cx_Oracle | Oracle Instant Client             |
++------------+--------------+-----------+-----------------------------------+
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Bytes
+-----
+**Bytes object is an immutable sequence of single bytes. Mutable version is called bytearray.**
+
+```python
+<bytes> = b'<str>'                          # Only accepts ASCII characters and \x00-\xff.
+<int>   = <bytes>[<index>]                  # Returns an int in range from 0 to 255.
+<bytes> = <bytes>[<slice>]                  # Returns bytes even if it has only one element.
+<bytes> = <bytes>.join(<coll_of_bytes>)     # Joins elements using bytes as a separator.
+```
+
+### Encode
+```python
+<bytes> = bytes(<coll_of_ints>)             # Ints must be in range from 0 to 255.
+<bytes> = bytes(<str>, 'utf-8')             # Or: <str>.encode('utf-8')
+<bytes> = <int>.to_bytes(n_bytes, …)        # `byteorder='little/big', signed=False`.
+<bytes> = bytes.fromhex('<hex>')            # Hex pairs can be separated by whitespaces.
+```
+
+### Decode
+```python
+<list>  = list(<bytes>)                     # Returns ints in range from 0 to 255.
+<str>   = str(<bytes>, 'utf-8')             # Or: <bytes>.decode('utf-8')
+<int>   = int.from_bytes(<bytes>, …)        # `byteorder='little/big', signed=False`.
+'<hex>' = <bytes>.hex()                     # Returns hex pairs. Accepts `sep=<str>`.
+```
+
+### Read Bytes from File
+```python
+def read_bytes(filename):
+    with open(filename, 'rb') as file:
+        return file.read()
+```
+
+### Write Bytes to File
+```python
+def write_bytes(filename, bytes_obj):
+    with open(filename, 'wb') as file:
+        file.write(bytes_obj)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Struct
+------
+* **Module that performs conversions between a sequence of numbers and a bytes object.**
+* **System’s type sizes, byte order, and alignment rules are used by default.**
+
+```python
+from struct import pack, unpack
+<bytes> = pack('<format>', <el_1> [, ...])  # Packages arguments into bytes object.
+<tuple> = unpack('<format>', <bytes>)       # Use iter_unpack() for iterator of tuples.
+```
+
+```python
+>>> pack('>hhl', 1, 2, 3)
+b'\x00\x01\x00\x02\x00\x00\x00\x03'
+>>> unpack('>hhl', b'\x00\x01\x00\x02\x00\x00\x00\x03')
+(1, 2, 3)
+```
+
+### Format
+#### For standard type sizes and manual alignment (padding) start format string with:
+* **`'='` - System's byte order (usually little-endian).**
+* **`'<'` - Little-endian.**
+* **`'>'` - Big-endian (also `'!'`).**
+
+#### Besides numbers, pack() and unpack() also support bytes objects as part of the sequence:
+* **`'c'` - A bytes object with a single element. For pad byte use `'x'`.**
+* **`'<n>s'` - A bytes object with n elements.**
+
+#### Integer types. Use a capital letter for unsigned type. Minimum and standard sizes are in brackets:
+* **`'b'` - char (1/1)**
+* **`'h'` - short (2/2)**
+* **`'i'` - int (2/4)**
+* **`'l'` - long (4/4)**
+* **`'q'` - long long (8/8)**
+
+#### Floating point types:
+* **`'f'` - float (4/4)**
+* **`'d'` - double (8/8)**
+
+**[🔼Back to Top](#content-outlines)**
+
+Array
+-----
+**List that can only hold numbers of a predefined type. Available types and their minimum sizes in bytes are listed above. Sizes and byte order are always determined by the system.**
+
+```python
+from array import array
+<array> = array('<typecode>', <collection>)    # Array from collection of numbers.
+<array> = array('<typecode>', <bytes>)         # Array from bytes object.
+<array> = array('<typecode>', <array>)         # Treats array as a sequence of numbers.
+<bytes> = bytes(<array>)                       # Or: <array>.tobytes()
+<file>.write(<array>)                          # Writes array to the binary file.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Memory View
+-----------
+* **A sequence object that points to the memory of another object.**
+* **Each element can reference a single or multiple consecutive bytes, depending on format.**
+* **Order and number of elements can be changed with slicing.**
+* **Casting only works between char and other types and uses system's sizes.**
+* **Byte order is always determined by the system.**
+
+```python
+<mview> = memoryview(<bytes/bytearray/array>)  # Immutable if bytes, else mutable.
+<real>  = <mview>[<index>]                     # Returns an int or a float.
+<mview> = <mview>[<slice>]                     # Mview with rearranged elements.
+<mview> = <mview>.cast('<typecode>')           # Casts memoryview to the new format.
+<mview>.release()                              # Releases the object's memory buffer.
+```
+
+### Decode
+```python
+<bytes> = bytes(<mview>)                       # Returns a new bytes object.
+<bytes> = <bytes>.join(<coll_of_mviews>)       # Joins mviews using bytes object as sep.
+<array> = array('<typecode>', <mview>)         # Treats mview as a sequence of numbers.
+<file>.write(<mview>)                          # Writes mview to the binary file.
+```
+
+```python
+<list>  = list(<mview>)                        # Returns a list of ints or floats.
+<str>   = str(<mview>, 'utf-8')                # Treats mview as a bytes object.
+<int>   = int.from_bytes(<mview>, …)           # `byteorder='little/big', signed=False`.
+'<hex>' = <mview>.hex()                        # Treats mview as a bytes object.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Deque
+-----
+**A thread-safe list with efficient appends and pops from either side. Pronounced "deck".**
+
+```python
+from collections import deque
+<deque> = deque(<collection>, maxlen=None)
+```
+
+```python
+<deque>.appendleft(<el>)                       # Opposite element is dropped if full.
+<deque>.extendleft(<collection>)               # Collection gets reversed.
+<el> = <deque>.popleft()                       # Raises IndexError if empty.
+<deque>.rotate(n=1)                            # Rotates elements to the right.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Threading
+---------
+* **CPython interpreter can only run a single thread at a time.**
+* **That is why using multiple threads won't result in a faster execution, unless at least one of the threads contains an I/O operation.**
+```python
+from threading import Thread, RLock, Semaphore, Event, Barrier
+from concurrent.futures import ThreadPoolExecutor
+```
+
+### Thread
+```python
+<Thread> = Thread(target=<function>)           # Use `args=<collection>` to set the arguments.
+<Thread>.start()                               # Starts the thread.
+<bool> = <Thread>.is_alive()                   # Checks if the thread has finished executing.
+<Thread>.join()                                # Waits for the thread to finish.
+```
+* **Use `'kwargs=<dict>'` to pass keyword arguments to the function.**
+* **Use `'daemon=True'`, or the program will not be able to exit while the thread is alive.**
+
+### Lock
+```python
+<lock> = RLock()                               # Lock that can only be released by acquirer.
+<lock>.acquire()                               # Waits for the lock to be available.
+<lock>.release()                               # Makes the lock available again.
+```
+
+#### Or:
+```python
+with <lock>:                                   # Enters the block by calling acquire(),
+    ...                                        # and exits it with release().
+```
+
+### Semaphore, Event, Barrier
+```python
+<Semaphore> = Semaphore(value=1)               # Lock that can be acquired by 'value' threads.
+<Event>     = Event()                          # Method wait() blocks until set() is called.
+<Barrier>   = Barrier(n_times)                 # Wait() blocks until it's called n_times.
+```
+
+### Thread Pool Executor
+* **Object that manages thread execution.**
+* **An object with the same interface called ProcessPoolExecutor provides true parallelism by running a separate interpreter in each process. All arguments must be [pickable](#pickle).**
+
+```python
+<Exec> = ThreadPoolExecutor(max_workers=None)  # Or: `with ThreadPoolExecutor() as <name>: …`
+<Exec>.shutdown(wait=True)                     # Blocks until all threads finish executing.
+```
+
+```python
+<iter> = <Exec>.map(<func>, <args_1>, ...)     # A multithreaded and non-lazy map().
+<Futr> = <Exec>.submit(<func>, <arg_1>, ...)   # Starts a thread and returns its Future object.
+<bool> = <Futr>.done()                         # Checks if the thread has finished executing.
+<obj>  = <Futr>.result()                       # Waits for thread to finish and returns result.
+```
+
+### Queue
+**A thread-safe FIFO queue. For LIFO queue use LifoQueue.**
+```python
+from queue import Queue
+<Queue> = Queue(maxsize=0)
+```
+
+```python
+<Queue>.put(<el>)                              # Blocks until queue stops being full.
+<Queue>.put_nowait(<el>)                       # Raises queue.Full exception if full.
+<el> = <Queue>.get()                           # Blocks until queue stops being empty.
+<el> = <Queue>.get_nowait()                    # Raises queue.Empty exception if empty.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Operator
+--------
+**Module of functions that provide the functionality of operators.**
+```python
+import operator as op
+<el>      = op.add/sub/mul/truediv/floordiv/mod(<el>, <el>)  # +, -, *, /, //, %
+<int/set> = op.and_/or_/xor(<int/set>, <int/set>)            # &, |, ^
+<bool>    = op.eq/ne/lt/le/gt/ge(<sortable>, <sortable>)     # ==, !=, <, <=, >, >=
+<func>    = op.itemgetter/attrgetter/methodcaller(<obj>)     # [index/key], .name, .name()
+```
+
+```python
+elementwise_sum  = map(op.add, list_a, list_b)
+sorted_by_second = sorted(<collection>, key=op.itemgetter(1))
+sorted_by_both   = sorted(<collection>, key=op.itemgetter(1, 0))
+product_of_elems = functools.reduce(op.mul, <collection>)
+union_of_sets    = functools.reduce(op.or_, <coll_of_sets>)
+first_element    = op.methodcaller('pop', 0)(<list>)
+```
+* **Binary operators require objects to have and(), or(), xor() and invert() special methods, unlike logical operators that work on all types of objects.**
+* **Also: `'<bool> = <bool> &|^ <bool>'` and `'<int> = <bool> &|^ <int>'`.**
+
+**[🔼Back to Top](#content-outlines)**
+
+Introspection
+-------------
+**Inspecting code at runtime.**
+
+### Variables
+```python
+<list> = dir()                             # Names of local variables (incl. functions).
+<dict> = vars()                            # Dict of local variables. Also locals().
+<dict> = globals()                         # Dict of global variables.
+```
+
+### Attributes
+```python
+<list> = dir(<object>)                     # Names of object's attributes (incl. methods).
+<dict> = vars(<object>)                    # Dict of writable attributes. Also <obj>.__dict__.
+<bool> = hasattr(<object>, '<attr_name>')  # Checks if getattr() raises an AttributeError.
+value  = getattr(<object>, '<attr_name>')  # Raises AttributeError if attribute is missing.
+setattr(<object>, '<attr_name>', value)    # Only works on objects with '__dict__' attribute.
+delattr(<object>, '<attr_name>')           # Same. Also `del <object>.<attr_name>`.
+```
+
+### Parameters
+```python
+<Sig>  = inspect.signature(<function>)     # Function's Signature object.
+<dict> = <Sig>.parameters                  # Dict of Parameter objects.
+<memb> = <Param>.kind                      # Member of ParameterKind enum.
+<obj>  = <Param>.default                   # Default value or <Param>.empty.
+<type> = <Param>.annotation                # Type or <Param>.empty.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Metaprogramming
+---------------
+**Code that generates code.**
+
+### Type
+**Type is the root class. If only passed an object it returns its type (class). Otherwise it creates a new class.**
+
+```python
+<class> = type('<class_name>', <tuple_of_parents>, <dict_of_class_attributes>)
+```
+
+```python
+>>> Z = type('Z', (), {'a': 'abcde', 'b': 12345})
+>>> z = Z()
+```
+
+### Meta Class
+**A class that creates classes.**
+
+```python
+def my_meta_class(name, parents, attrs):
+    attrs['a'] = 'abcde'
+    return type(name, parents, attrs)
+```
+
+#### Or:
+```python
+class MyMetaClass(type):
+    def __new__(cls, name, parents, attrs):
+        attrs['a'] = 'abcde'
+        return type.__new__(cls, name, parents, attrs)
+```
+* **New() is a class method that gets called before init(). If it returns an instance of its class, then that instance gets passed to init() as a 'self' argument.**
+* **It receives the same arguments as init(), except for the first one that specifies the desired type of the returned instance (MyMetaClass in our case).**
+* **Like in our case, new() can also be called directly, usually from a new() method of a child class (**`def __new__(cls): return super().__new__(cls)`**).**
+* **The only difference between the examples above is that my\_meta\_class() returns a class of type type, while MyMetaClass() returns a class of type MyMetaClass.**
+
+### Metaclass Attribute
+**Right before a class is created it checks if it has the 'metaclass' attribute defined. If not, it recursively checks if any of his parents has it defined and eventually comes to type().**
+
+```python
+class MyClass(metaclass=MyMetaClass):
+    b = 12345
+```
+
+```python
+>>> MyClass.a, MyClass.b
+('abcde', 12345)
+```
+
+### Type Diagram
+```python
+type(MyClass) == MyMetaClass         # MyClass is an instance of MyMetaClass.
+type(MyMetaClass) == type            # MyMetaClass is an instance of type.
+```
+
+```text
++-------------+-------------+
+|   Classes   | Metaclasses |
++-------------+-------------|
+|   MyClass --> MyMetaClass |
+|             |     v       |
+|    object -----> type <+  |
+|             |     ^ +--+  |
+|     str ----------+       |
++-------------+-------------+
+```
+
+### Inheritance Diagram
+```python
+MyClass.__base__ == object           # MyClass is a subclass of object.
+MyMetaClass.__base__ == type         # MyMetaClass is a subclass of type.
+```
+
+```text
++-------------+-------------+
+|   Classes   | Metaclasses |
++-------------+-------------|
+|   MyClass   | MyMetaClass |
+|      v      |     v       |
+|    object <----- type     |
+|      ^      |             |
+|     str     |             |
++-------------+-------------+
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Eval
+----
+```python
+>>> from ast import literal_eval
+>>> literal_eval('[1, 2, 3]')
+[1, 2, 3]
+>>> literal_eval('1 + 2')
+ValueError: malformed node or string
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Coroutines
+----------
+* **Coroutines have a lot in common with threads, but unlike threads, they only give up control when they call another coroutine and they don’t use as much memory.**
+* **Coroutine definition starts with `'async'` and its call with `'await'`.**
+* **`'asyncio.run(<coroutine>)'` is the main entry point for asynchronous programs.**
+* **Functions wait(), gather() and as_completed() start multiple coroutines at the same time.**
+* **Asyncio module also provides its own [Queue](#queue), [Event](#semaphore-event-barrier), [Lock](#lock) and [Semaphore](#semaphore-event-barrier) classes.**
+
+#### Runs a terminal game where you control an asterisk that must avoid numbers:
+
+```python
+import asyncio, collections, curses, curses.textpad, enum, random
+
+P = collections.namedtuple('P', 'x y')         # Position
+D = enum.Enum('D', 'n e s w')                  # Direction
+W, H = 15, 7                                   # Width, Height
+
+def main(screen):
+    curses.curs_set(0)                         # Makes cursor invisible.
+    screen.nodelay(True)                       # Makes getch() non-blocking.
+    asyncio.run(main_coroutine(screen))        # Starts running asyncio code.
+
+async def main_coroutine(screen):
+    moves = asyncio.Queue()
+    state = {'*': P(0, 0), **{id_: P(W//2, H//2) for id_ in range(10)}}
+    ai    = [random_controller(id_, moves) for id_ in range(10)]
+    mvc   = [human_controller(screen, moves), model(moves, state), view(state, screen)]
+    tasks = [asyncio.create_task(cor) for cor in ai + mvc]
+    await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+
+async def random_controller(id_, moves):
+    while True:
+        d = random.choice(list(D))
+        moves.put_nowait((id_, d))
+        await asyncio.sleep(random.triangular(0.01, 0.65))
+
+async def human_controller(screen, moves):
+    while True:
+        ch = screen.getch()
+        key_mappings = {258: D.s, 259: D.n, 260: D.w, 261: D.e}
+        if ch in key_mappings:
+            moves.put_nowait(('*', key_mappings[ch]))
+        await asyncio.sleep(0.005)
+
+async def model(moves, state):
+    while state['*'] not in (state[id_] for id_ in range(10)):
+        id_, d = await moves.get()
+        x, y   = state[id_]
+        deltas = {D.n: P(0, -1), D.e: P(1, 0), D.s: P(0, 1), D.w: P(-1, 0)}
+        state[id_] = P((x + deltas[d].x) % W, (y + deltas[d].y) % H)
+
+async def view(state, screen):
+    offset = P(curses.COLS//2 - W//2, curses.LINES//2 - H//2)
+    while True:
+        screen.erase()
+        curses.textpad.rectangle(screen, offset.y-1, offset.x-1, offset.y+H, offset.x+W)
+        for id_, p in state.items():
+            screen.addstr(offset.y + (p.y - state['*'].y + H//2) % H,
+                          offset.x + (p.x - state['*'].x + W//2) % W, str(id_))
+        await asyncio.sleep(0.005)
+
+if __name__ == '__main__':
+    curses.wrapper(main)
+```
+<br>
+
+**[🔼Back to Top](#content-outlines)**
+
+Libraries
+=========
+
+Progress Bar
+------------
+```python
+# $ pip3 install tqdm
+>>> from tqdm import tqdm
+>>> from time import sleep
+>>> for el in tqdm([1, 2, 3], desc='Processing'):
+...     sleep(1)
+Processing: 100%|████████████████████| 3/3 [00:03<00:00,  1.00s/it]
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Plot
+----
+```python
+# $ pip3 install matplotlib
+import matplotlib.pyplot as plt
+plt.plot(<x_data>, <y_data> [, label=<str>])   # Or: plt.plot(<y_data>)
+plt.legend()                                   # Adds a legend.
+plt.savefig(<path>)                            # Saves the figure.
+plt.show()                                     # Displays the figure.
+plt.clf()                                      # Clears the figure.
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Table
+-----
+#### Prints a CSV file as an ASCII table:
+```python
+# $ pip3 install tabulate
+import csv, tabulate
+with open('test.csv', encoding='utf-8', newline='') as file:
+    rows   = csv.reader(file)
+    header = next(rows)
+    table  = tabulate.tabulate(rows, header)
+print(table)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Curses
+------
+#### Runs a basic file explorer in the terminal:
+```python
+import curses, curses.ascii, os
+from curses import A_REVERSE, KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ENTER
+
+def main(screen):
+    ch, first, selected, paths = 0, 0, 0, os.listdir()
+    while ch != curses.ascii.ESC:
+        height, _ = screen.getmaxyx()
+        screen.erase()
+        for y, filename in enumerate(paths[first : first+height]):
+            screen.addstr(y, 0, filename, A_REVERSE * (selected == first + y))
+        ch = screen.getch()
+        selected += (ch == KEY_DOWN) - (ch == KEY_UP)
+        selected = max(0, min(len(paths)-1, selected))
+        first += (first <= selected - height) - (first > selected)
+        if ch in [KEY_LEFT, KEY_RIGHT, KEY_ENTER, 10, 13]:
+            new_dir = '..' if ch == KEY_LEFT else paths[selected]
+            if os.path.isdir(new_dir):
+                os.chdir(new_dir)
+                first, selected, paths = 0, 0, os.listdir()
+
+if __name__ == '__main__':
+    curses.wrapper(main)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Logging
+-------
+```python
+# $ pip3 install loguru
+from loguru import logger
+```
+
+```python
+logger.add('debug_{time}.log', colorize=True)  # Connects a log file.
+logger.add('error_{time}.log', level='ERROR')  # Another file for errors or higher.
+logger.<level>('A logging message.')           # Logs to file/s and prints to stderr.
+```
+* **Levels: `'debug'`, `'info'`, `'success'`, `'warning'`, `'error'`, `'critical'`.**
+
+### Exceptions
+**Exception description, stack trace and values of variables are appended automatically.**
+
+```python
+try:
+    ...
+except <exception>:
+    logger.exception('An error happened.')
+```
+
+### Rotation
+**Argument that sets a condition when a new log file is created.**
+```python
+rotation=<int>|<datetime.timedelta>|<datetime.time>|<str>
+```
+* **`'<int>'` - Max file size in bytes.**
+* **`'<timedelta>'` - Max age of a file.**
+* **`'<time>'` - Time of day.**
+* **`'<str>'` - Any of above as a string: `'100 MB'`, `'1 month'`, `'monday at 12:00'`, ...**
+
+### Retention
+**Sets a condition which old log files get deleted.**
+```python
+retention=<int>|<datetime.timedelta>|<str>
+```
+* **`'<int>'` - Max number of files.**
+* **`'<timedelta>'` - Max age of a file.**
+* **`'<str>'` - Max age as a string: `'1 week, 3 days'`, `'2 months'`, ...**
+
+**[🔼Back to Top](#content-outlines)**
+
+Scraping
+--------
+#### Scrapes Python's URL, version number and logo from its Wikipedia page:
+```python
+# $ pip3 install requests beautifulsoup4
+import requests, bs4, os, sys
+
+WIKI_URL = 'https://en.wikipedia.org/wiki/Python_(programming_language)'
+try:
+    html       = requests.get(WIKI_URL).text
+    document   = bs4.BeautifulSoup(html, 'html.parser')
+    table      = document.find('table', class_='infobox vevent')
+    python_url = table.find('th', text='Website').next_sibling.a['href']
+    version    = table.find('th', text='Stable release').next_sibling.strings.__next__()
+    logo_url   = table.find('img')['src']
+    logo       = requests.get(f'https:{logo_url}').content
+    filename   = os.path.basename(logo_url)
+    with open(filename, 'wb') as file:
+        file.write(logo)
+    print(f'{python_url}, {version}, file://{os.path.abspath(filename)}')
+except requests.exceptions.ConnectionError:
+    print("You've got problems with connection.", file=sys.stderr)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Web
+---
+```python
+# $ pip3 install bottle
+from bottle import run, route, static_file, template, post, request, response
+import json
+```
+
+### Run
+```python
+run(host='localhost', port=8080)        # Runs locally.
+run(host='0.0.0.0', port=80)            # Runs globally.
+```
+
+### Static Request
+```python
+@route('/img/<filename>')
+def send_file(filename):
+    return static_file(filename, root='img_dir/')
+```
+
+### Dynamic Request
+```python
+@route('/<sport>')
+def send_html(sport):
+    return template('<h1>{{title}}</h1>', title=sport)
+```
+
+### REST Request
+```python
+@post('/<sport>/odds')
+def send_json(sport):
+    team = request.forms.get('team')
+    response.headers['Content-Type'] = 'application/json'
+    response.headers['Cache-Control'] = 'no-cache'
+    return json.dumps({'team': team, 'odds': [2.09, 3.74, 3.68]})
+```
+
+#### Test:
+```python
+# $ pip3 install requests
+>>> import threading, requests
+>>> threading.Thread(target=run, daemon=True).start()
+>>> url = 'http://localhost:8080/football/odds'
+>>> request_data = {'team': 'arsenal f.c.'}
+>>> response = requests.post(url, data=request_data)
+>>> response.json()
+{'team': 'arsenal f.c.', 'odds': [2.09, 3.74, 3.68]}
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Profiling
+---------
+### Stopwatch
+```python
+from time import perf_counter
+start_time = perf_counter()
+...
+duration_in_seconds = perf_counter() - start_time
+```
+
+

@@ -10,11 +10,14 @@
   - [Lists](#lists)
   - [Forms](#forms)
   - [Tables](#tables)
+  - [Graphics](#graphics)
+  - [Media](#media)
 
 # HTML CheatSheet for Developers
 
 ## Basic Tags of HTML
->tags are like keywords which defines that how web browser will format and display the content.
+
+> Tags are like keywords which defines that how web browser will format and display the content.
 
 | Command                | Description                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -47,12 +50,13 @@
 | `<address> … </address>`       | Tag for specifying author’s contact details.                                                                                   |
 | `<dfn> … </dfn>`               | Tag dedicated for definitions.                                                                                                 |
 | `<code> … </code>`             | This is used to display code snippets within a paragraph.                                                                      |
-| `<aside> … </aside>`           | Its a Block level element that defines content aside from the content in which it is Placed.                                   |
+| `<bdo dir="rtl/ltr"> … </bdo>` | Overrides the current directionality of text, so that the text within is rendered in a different direction.                    |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Semantic Elements
->semantic element clearly describes its meaning to both the browser and the developer.
+
+> Semantic element clearly describes its meaning to both the browser and the developer.
 
 | Command                          | Description                                                                                 |
 | -------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -68,11 +72,13 @@
 | `<section> ... </section>`       | Defines a section in a document                                                             |
 | `<summary> ... </summary>`       | Defines a visible heading for a `<details>` element                                         |
 | `<time> ... </time>`             | Defines a date/time                                                                         |
+| `<pre> ... </pre>`               | Preserve both spaces and linebreaks                                                         |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Formatting
->Formatting elements were designed to display special types of text:
+
+> Formatting elements were designed to display special types of text:
 
 | Command                  | Description                                          |
 | ------------------------ | ---------------------------------------------------- |
@@ -90,7 +96,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Links
->links allow users to click their way from page to page.
+
+> Links allow users to click their way from page to page.
 
 
 | Command                         | Description                                                                                                                    |
@@ -104,7 +111,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Images
->images can improve the design and the appearance of a web page.
+
+> Images can improve the design and the appearance of a web page.
 
 | Command                  | Description                                                                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -124,7 +132,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Lists
->lists allow web developers to group a set of related items in lists.
+
+> Lists allow web developers to group a set of related items in lists.
 
 | Command        | Description                                                 |
 | -------------- | ----------------------------------------------------------- |
@@ -138,7 +147,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Forms
->form is used to collect user input. The user input is most often sent to a server for processing.
+
+> Form is used to collect user input. The user input is most often sent to a server for processing.
 
 | Command            | Description                                                                      |
 | ------------------ | -------------------------------------------------------------------------------- |
@@ -149,7 +159,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Tables
->tables allow web developers to arrange data into rows and columns.
+
+> Tables allow web developers to arrange data into rows and columns.
 
 | Command                    | Description                                                        |
 | -------------------------- | ------------------------------------------------------------------ |
@@ -165,3 +176,22 @@
 | `<col>`                    | Denotes a column inside a table.                                   |
 
 **[🔼Back to Top](#table-of-contents)**
+
+## Graphics
+
+| Command                    | Description                                           |
+| -------------------------- | ----------------------------------------------------- |
+| `<canvas> … </canvas>`     | Used to draw graphics on a web page using javascript. |
+| `<svg> … </svg>`           | Used to defines vector-based graphics in XML format.  |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Media
+
+| Command                    | Description                                      |
+| -------------------------- | ------------------------------------------------ |
+| `<video> … </video>`       | Used to show a video on a web page.              |
+| `<audio> … </audio>`       | Used to play an audio file on a web page.        |
+
+**[🔼Back to Top](#table-of-contents)**
+
