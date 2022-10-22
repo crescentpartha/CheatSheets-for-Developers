@@ -9,6 +9,7 @@
   - [Lists](#lists)
   - [Forms](#forms)
   - [Tables](#tables)
+  - [Media](#media)
 
 # HTML CheatSheet for Developers
 
