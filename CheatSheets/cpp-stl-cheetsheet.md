@@ -27,7 +27,7 @@
 	- [Deque](#deque)
 		- [DeQue insertion](#deque)
 		- [DeQue Display](#deque)
-    - [vector pair](#vector-pair)
+    - [Vector pair](#vector-pair)
 		- [Vector pair insertion](#vector-pair)
 		- [Vector pair Display](#vector-pair)
 
