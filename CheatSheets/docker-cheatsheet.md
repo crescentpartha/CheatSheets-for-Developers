@@ -1,6 +1,6 @@
 ## Table of Contents
 
-- [Conda CheatSheet for Developers](#conda-cheatsheet-for-developers)
+- [Docker CheatSheet for Developers](#docker-cheatsheet-for-developers)
   - [Manage Containers](#manage-containers)
   - [Manage Images](#manage-images)
   - [Info and Stats](#info-and-stats)
