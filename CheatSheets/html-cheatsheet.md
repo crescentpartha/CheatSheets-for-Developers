@@ -160,3 +160,14 @@
 | `<col>`                    | Denotes a column inside a table.                                   |
 
 **[🔼Back to Top](#table-of-contents)**
+  
+  ## Media
+
+| Command                    | Description                                                        |
+| -------------------------- | ------------------------------------------------------------------ |
+| `<video>`       | It is used to add a video,its attributes can define its properties.                                        |
+| `<audio>`   | It is used to play an audio file in HTML               |
+| `<object>`       | It defines an embedded object within an HTML document. |
+| `<iframe>`       | It helps to play video directly from youtube.                       |
+
+**[🔼Back to Top](#table-of-contents)**
