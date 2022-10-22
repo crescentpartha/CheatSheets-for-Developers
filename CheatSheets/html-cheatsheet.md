@@ -135,8 +135,8 @@
   
 | Form Elements           | Description                                                                      |
 | ------------------ | -------------------------------------------------------------------------------- |
-| `<input>' | Used to take input from user, can be shown in different ways depending upon 'type' attribute.       |
-| `<label>'     | It defines a label for several form elements. |
+| `<input>` | Used to take input from user, can be shown in different ways depending upon 'type' attribute.       |
+| `<label>`     | It defines a label for several form elements. |
 | `<select>`        | It element defines a drop-down list  |
 | `<textarea>`   | It element defines a multi-line input field (a text area)                   |
 | `<button>`        | It element defines a clickable button   |
