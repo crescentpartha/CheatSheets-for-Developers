@@ -14,6 +14,7 @@
 # HTML CheatSheet for Developers
 
 ## Basic Tags of HTML
+>tags are like keywords which defines that how web browser will format and display the content.
 
 | Command                | Description                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,6 +52,7 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Semantic Elements
+>semantic element clearly describes its meaning to both the browser and the developer.
 
 | Command                          | Description                                                                                 |
 | -------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -70,6 +72,7 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Formatting
+>Formatting elements were designed to display special types of text:
 
 | Command                  | Description                                          |
 | ------------------------ | ---------------------------------------------------- |
@@ -87,6 +90,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Links
+>links allow users to click their way from page to page.
+
 
 | Command                         | Description                                                                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -99,6 +104,7 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Images
+>images can improve the design and the appearance of a web page.
 
 | Command                  | Description                                                                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -118,6 +124,7 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Lists
+>lists allow web developers to group a set of related items in lists.
 
 | Command        | Description                                                 |
 | -------------- | ----------------------------------------------------------- |
@@ -131,6 +138,7 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Forms
+>form is used to collect user input. The user input is most often sent to a server for processing.
 
 | Command            | Description                                                                      |
 | ------------------ | -------------------------------------------------------------------------------- |
@@ -141,6 +149,7 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Tables
+>tables allow web developers to arrange data into rows and columns.
 
 | Command                    | Description                                                        |
 | -------------------------- | ------------------------------------------------------------------ |
