@@ -17,6 +17,7 @@
 		- [Exception Handling](#exception-handling)
 	- [String Methods](#string-methods)
 	- [Math Library Methods](#math-library-methods)
+	- [Types of Variables](#Types-of-Variables)
 
 # Java CheatSheet for Developers
 
@@ -195,5 +196,15 @@ try {
 |sin(theta)| sine of theta|
 |cos(theta|cosine of theta|
 |tan(theta)|tangent of theta|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Types of Variables
+
+|Variable Type|Scope|Lifetime|
+|--|--|--|
+|Instance variable|Throughout the class except in<br /> static methods|Until the object is available in the<br />memory|
+|Class variable|Throughout the class|Until the end of the program|
+|Local variable|Within the block in which it is<br />declared|Until the control leaves the block<br />in which it is declared|
 
 **[🔼Back to Top](#table-of-contents)**

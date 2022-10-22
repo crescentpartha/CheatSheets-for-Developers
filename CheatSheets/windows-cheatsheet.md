@@ -15,6 +15,8 @@
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
   - [Touchpad Shortcuts](#touchpad-shortcuts)
+  - [Take Screenshot Shortcut](#take-screenshot-shortcut)
+  - [Command Prompt Shortcuts](#command-prompt-shortcuts)
 
 # Windows Keyboard Shortcuts for Developers
 
@@ -59,6 +61,7 @@
 |` Win + X`| Open the Quick Link menu|
 |` Win + Tab`| Open task view|
 |` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
+|` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
 | `Win + number key` | to open application from taskbar with numbered key position
 
@@ -177,5 +180,27 @@
 | `Drag Three/Four fingers down` | Show Desktop |
 | `Drag Three fingers left/right` | Switch apps |
 | `Drag Three fingers left/right` | Switch Desktops |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Take Screenshot Shortcut
+
+| Command | Description |
+| ------- | ----------- |
+| `Win + Shift + S` | Open Windows Snipping Tool |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Command Prompt Shortcuts
+
+| Gesture | Description |
+| ------- | ----------- |
+| `Ctrl + Up arrow` | Move up one line in the output history. |
+| `Ctrl + Down arrow` | Move down one line in the output history. |
+| `Ctrl + M` | Enter Mark mode. |
+| `Ctrl + Home (Mark mode)` | Move the cursor to the beginning of the buffer |
+| `Ctrl + End (Mark mode)` | Move the cursor to the end of the buffer. |
+| `Ctrl + Home (History navigation)` | If the command line is empty, move the viewport to the top of the buffer. Otherwise, delete all the characters to the left of the cursor in the command line. |
+| `Ctrl + End (History navigation)` | If the command line is empty, move the viewport to the command line. Otherwise, delete all the characters to the right of the cursor in the command line. |
 
 **[🔼Back to Top](#table-of-contents)**

@@ -9,6 +9,8 @@
   - [Lists](#lists)
   - [Forms](#forms)
   - [Tables](#tables)
+  - [Graphics](#graphics)
+  - [Media](#media)
 
 # HTML CheatSheet for Developers
 
@@ -51,7 +53,10 @@
 | `<sup> … </sup>`               | Similar to the above tag, but for superscripting.                                                                              |
 | `<small> … </small>`           | Reduces text size. In HTML5, it often refers to redundant or invalid information.                                              | 
 | `<strong> … </strong>`         | This element indicates that its contents have strong importance or urgency. Browsers usualy render the contents in bold type.  |
-| `<em> … </em>`                 | This tag is used to define emphasized text. The content inside is typically displayed in italic.  |
+| `<i> … </i>`                   | Defines a part of text in an alternate voice or mood. The content inside is typically displayed in italic.                     |
+| `<bdo dir="rtl/ltr"> … </bdo>` | Overrides the current directionality of text, so that the text within is rendered in a different direction.                    |
+| `<em> … </em>`                 | This tag is used to define emphasized text. The content inside is typically displayed in italic.                               |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -72,6 +77,8 @@
 | `<section> ... </section>`       | Defines a section in a document                                                             |
 | `<summary> ... </summary>`       | Defines a visible heading for a `<details>` element                                         |
 | `<time> ... </time>`             | Defines a date/time                                                                         |
+| `<pre> ... </pre>`               | Preserve both spaces and linebreaks                                                         |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -145,3 +152,22 @@
 | `<col>`                    | Denotes a column inside a table.                                   |
 
 **[🔼Back to Top](#table-of-contents)**
+
+## Graphics
+
+| Command                    | Description                                           |
+| -------------------------- | ----------------------------------------------------- |
+| `<canvas> … </canvas>`     | Used to draw graphics on a web page using javascript. |
+| `<svg> … </svg>`           | Used to defines vector-based graphics in XML format.  |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Media
+
+| Command                    | Description                                      |
+| -------------------------- | ------------------------------------------------ |
+| `<video> … </video>`       | Used to show a video on a web page.              |
+| `<audio> … </audio>`       | Used to play an audio file on a web page.        |
+
+**[🔼Back to Top](#table-of-contents)**
+

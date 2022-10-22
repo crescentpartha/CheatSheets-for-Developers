@@ -26,8 +26,6 @@
   - [SQL Server Date Functions](#SQL-Server-Date-Functions)
   - [SQL Server Advanced Functions](#SQL-Server-Advanced-Functions)
 - [Joins in SQL](#Joins-in-SQL)
-  
-  
 
 # SQL CheatSheet for Developers
 
@@ -357,7 +355,6 @@ The table below lists some of the Advanced functions in SQL with their descripti
 |SYSTEM_USER|	Returns the login name for the current user|
 |USER_NAME|	Returns the database user name based on the specified id.|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
 # Joins in SQL
@@ -370,5 +367,5 @@ The table below lists some of the Advanced functions in SQL with their descripti
 |FULL JOIN|SELECT column_name(s) FROM table1 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name WHERE condition;|returns all records when there is a match in left (table1) or right (table2) table records.|
 |SELF JOIN |SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;|A self join is a regular join, but the table is joined with itself.|
 
-
 **[🔼Back to Top](#table-of-contents)**
+
