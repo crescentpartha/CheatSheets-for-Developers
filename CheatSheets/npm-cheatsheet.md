@@ -10,9 +10,14 @@
 | Command                         | Description                         |
 | ------------------------------- | ----------------------------------- |
 | `npm init`                      | Initialize a node.js project        |
-| `npm install`                   | Install package.json dependencies   |
+| `npm install`  <br />  `npm i`  | Install package.json dependencies   |
+| `npm install --global [package]` <br /> `npm i -g [package]` | install package globally           |
+| `npm install-latest-npm`        | Update npm                          |
+| `npm run`                       | List available scripts to run       |
 | `npm run bar`                   | Runs the script named bar           |
 | `npm test`                      | Runs the projects tests             |
+| `npm list`                      | For Local packages                  |
+| `npm un <package_name> `  <br /> `npm uninstall <package_name>`       | Uninstall package from project |
 | `npm -g uninstall <name> `      | Uninstall global package            |
 | `npm update -g <package_name> ` | Update individual global package(s) |
 | `npm up <package_name>`         | Update npm package                  |
@@ -20,6 +25,11 @@
 | `npm-windows-upgrades`          | Upgrade npm on Windows              |
 | `npm outdated -g --depth-0`     | Updated global packages             |
 | `npm alias default 16`          | Make a node version default         |
-| `npm install-latest-npm`        | Update npm                          |
-| `npm run`                       | List available scripts to run       |
-| `npm list`                      | For Local packages                  |
+| `npm i <package>`               | Install a package                   |
+| `npm u <package>`               | Update the package                  |
+| `npm rm <package>`              | Remove a package                    |
+| `npm audit`                     | Scan and list all the vulnerabilities in the package |
+| `npm audit fix`                 | Fix found vulnerabilities        |
+
+
+
