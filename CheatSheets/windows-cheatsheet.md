@@ -15,6 +15,7 @@
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
   - [Touchpad Shortcuts](#touchpad-shortcuts)
+  - [Take Screenshot Shortcut](#take-screenshot-shortcut)
 
 # Windows Keyboard Shortcuts for Developers
 
@@ -177,5 +178,13 @@
 | `Drag Three/Four fingers down` | Show Desktop |
 | `Drag Three fingers left/right` | Switch apps |
 | `Drag Three fingers left/right` | Switch Desktops |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Take Screenshot Shortcut
+
+| Command | Description |
+| ------- | ----------- |
+| `Win + Shift + S` | Open Windows Snipping Tool |
 
 **[🔼Back to Top](#table-of-contents)**
