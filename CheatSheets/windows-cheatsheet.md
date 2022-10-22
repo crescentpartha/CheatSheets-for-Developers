@@ -16,7 +16,7 @@
   - [Settings Shortcuts](#settings-shortcuts)
   - [Touchpad Shortcuts](#touchpad-shortcuts)
   - [Take Screenshot Shortcut](#take-screenshot-shortcut)
-  - [Command Prompt Shortcuts](command-prompt-shortcuts)
+  - [Command Prompt Shortcuts](#command-prompt-shortcuts)
 
 # Windows Keyboard Shortcuts for Developers
 
