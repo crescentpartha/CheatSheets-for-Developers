@@ -203,7 +203,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-### For Loop
+### deque
 
 ```Deque
 	deque<int> d;
@@ -246,6 +246,9 @@
     }
     cout << endl;
 ```
+**[🔼Back to Top](#table-of-contents)**
+
+### Contributed By : Khushpreet Singh
 
 **[🔼Back to Top](#table-of-contents)**
 
