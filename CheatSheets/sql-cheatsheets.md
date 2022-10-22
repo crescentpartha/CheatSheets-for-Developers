@@ -9,23 +9,23 @@
   - [Numeric Datatype:](#numeric-datatype)
   - [Date/Time Datatype:](#datetime-datatype)
 - [Tables](#tables)
-  - [Alter Table](#Alter-Table)
-  - [Insert Table](#Insert-Table)
-  - [Update Table](#Update-Table)
-  - [Delete Table](#Delete-Table)
-- [Important-Sql-Keywords](#Important-Sql-Keywords)
-- [clauses in SQL](#clauses-in-SQL)
-- [SQL-Operators](#SQL-Operators)
-  - [Arithmetic Operators](#Arithmetic-Operators)
-  - [Bitwise Operators](#Bitwise-Operators)
-  - [Relational Operators](#Relational-Operators)
-  - [Compound Operators](#Compound-Operators)
-  - [Logical Operators](#Logical-Operators)
-- [Function in sql](#Function-in-sql)
-  - [SQL Server Numeric Functions](#SQL-Server-Numeric-Functions)
-  - [SQL Server Date Functions](#SQL-Server-Date-Functions)
-  - [SQL Server Advanced Functions](#SQL-Server-Advanced-Functions)
-- [Joins in SQL](#Joins-in-SQL)
+  - [Alter Table](#alter-table)
+  - [Insert Table](#insert-table)
+  - [Update Table](#update-table)
+  - [Delete Table](#delete-table)
+- [Important-Sql-Keywords](#important-sql-keywords)
+- [clauses-in-SQL](#clauses-in-sql)
+- [SQL-Operators](#sql-operators)
+  - [Arithmetic Operators](#arithmetic-operators)
+  - [Bitwise Operators](#bitwise-operators)
+  - [Relational Operators](#relational-operators)
+  - [Compound Operators](#compound-operators)
+  - [Logical Operators](#logical-operators)
+- [Function in sql](#function-in-sql)
+  - [SQL Server Numeric Functions](#sql-server-numeric-functions)
+  - [SQL Server Date Functions](#sql-server-date-functions)
+  - [SQL Server Advanced Functions](#sql-server-advanced-functions)
+- [Joins in SQL](#joins-in-sql)
 
 # SQL CheatSheet for Developers
 
@@ -49,6 +49,8 @@
 6. `DELETE data from tables`
 7. `Create Views in the database`
 8. `Execute various aggregate functions`
+
+**[🔼Back to Top](#table-of-contents)**
 
 # Basic SQL
 
