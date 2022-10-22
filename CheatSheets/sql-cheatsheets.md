@@ -7,8 +7,13 @@
 
 **4** [**important SQL keywords**](#important-sql-keywords)
 
-
 **5** [**clauses in SQL**](#clauses-in-SQL)
+
+**6** [**SQL Operators**](# SQL-Operators)
+
+**7**[**Functions in sql**](#Function-in-sql)
+
+**8**[**Joins In sql**](#joins-in-sql)
 
 
 # Introduction-What-is-SQL?
@@ -200,3 +205,158 @@ The datatypes available in SQL to handle Date/Time operations effectively are ca
 
 
 # clauses-in-SQL
+
+
+|Name|	Description|	Example|
+|-------|-------|-------|
+|WHERE|	Used to select data from the database based on some conditions.|	SELECT * from Employee WHERE age >= 18;|
+|AND |	Used to combine 2 or more conditions and returns true if all the conditions are True.|	SELECT * from Employee WHERE age >= 18 AND salary >= 45000 ;|
+|OR |	Similar to AND but returns true if any of the conditions are True.|	Select * from Employee where salary >= 45000 OR age >= 18|
+|LIKE |	Used to search for a specified pattern in a column.|	SELECT * FROM Students WHERE Name LIKE ‘a%’;|
+|LIMIT|	Puts a restriction on how many rows are returned from a query.|	SELECT * FROM table1 LIMIT 3;|
+|ORDER BY|	Used to sort given data in Ascending or Descending order.|	SELECT * FROM student ORDER BY age ASC|
+|GROUP BY|	Groups rows that have the same values into summary rows.|	SELECT COUNT(StudentID), State FROM Students GROUP BY State;|
+|HAVING	|It performs the same as the WHERE clause but can also be used with aggregate functions.|	SELECT COUNT(ID), AGE FROM Students GROUP BY AGE HAVING COUNT(ID) > 5;|
+
+
+ # SQL-Operators
+ There are 3 main types of operators: Arithmetic, Comparision and Logical operators, each of which will be described below.
+ 
+ 
+ 
+ 
+**1 Arithmetic Operators:**
+Arithmetic Operators allows the user to perform arithmetic operations in SQL. The table below shows the list of arithmetic operators available in SQL:
+
+|Operator|	Description|
+|-----|-------|
+|+|	Addition|
+|-|	Subtraction| 
+|* |	Multiplication|
+| / |	Division|
+| % |	Modulo|
+
+
+
+
+
+
+**2 Bitwise Operators:**
+Bitwise operators are used to performing Bit manipulation operations in SQL. The table below shows the list of bitwise operators available in SQL:
+
+|Operator|	Description|
+|---------|----------|
+|&|	Bitwise AND |
+| ![image](https://user-images.githubusercontent.com/47249568/197326193-77622f96-20cd-4f8f-b4b6-997fb54b2d69.png)|	Bitwise OR|
+|^|	Bitwise XOR|
+
+
+
+
+
+
+**3 Relational Operators:**
+
+Relational operators are used to performing relational expressions in SQL, i.e those expressions whose value either result in true or false. The table below shows the list of relational operators available in SQL:
+
+|Operator|	Description|
+|---------|---------|
+|=|	Equal to|
+|>|	Greater than|
+|<|	Less than|
+|>=|	Greater than or equal to|
+|<=|	Less than or equal to|
+|<>|	Not equal to|
+
+
+**4 Compound Operators:**
+Compound operators are basically a combination of 2 or more arithmetic or relational operator, which can be used as a shorthand while writing code. The table below shows the list of compound operators available in SQL:
+
+|Operator|	Description|
+|------|---------|
+|+=|	Add equals|
+|-=|	Subtract equals|
+|*=|	Multiply equals|
+|/=|	Divide equals|
+|%=|	Modulo equals|
+|&=|	AND equals|
+| ![image](https://user-images.githubusercontent.com/47249568/197326390-7087561c-34d3-450e-aacb-0282cfd17922.png)= |	OR equals|
+|^=|	XOR equals|
+
+
+
+**5 Logical Operators:**
+Logical operators are used to combining 2 or more relational statements into 1 compound statement whose truth value is evaluated as a whole. The table below shows the SQL logical operators with their description:
+
+|Operator|	Description|
+|---------|-----------|
+|ALL|	Returns True if all subqueries meet the given condition.|
+|AND|	Returns True if all the conditions turn out to be true|
+|ANY|	True if any of the subqueries meet the given condition|
+|BETWEEN|	True if the operand lies within the range of the conditions|
+|EXISTS	|True if the subquery returns one or more records|
+|IN|	Returns True if the operands to at least one of the operands in a given list of expressions|
+|LIKE|	Return True if the operand and some given pattern match.|
+|NOT|	Displays some record if the set of given conditions is False|
+|OR|	Returns True if any of the conditions turn out to be True|
+|SOME|	Returns True if any of the Subqueries meet the given condition.|
+
+
+
+# Function-in-sql
+
+**1 SQL Server Numeric Functions:**
+The table below lists some of the Numeric functions in SQL with their description:
+
+|Name|	Description|
+|------|-------|
+|ABS|	Returns the absolute value of a number.|
+|ASIN|	Returns arc sine value of a number.|
+|AVG|	Returns average value of an expression.|
+|COUNT|	Counts the number of records returned by a SELECT query.|
+|EXP|	Returns e raised to the power of a number.|
+|FLOOR|	Returns the greatest integer <= the number.|
+|RAND|	Returns a random number.|
+|SIGN|	Returns the sign of a number.|
+|SQRT|	Returns the square root of a number.|
+|SUM|	Returns the sum of a set of values.|
+
+**2 SQL Server Date Functions:**
+The table below lists some of the Date functions in SQL with their description:
+
+|Name|	Description|
+|----|------|
+|CURRENT_TIMESTAMP|	Returns current date and time.|
+|DATEADD|	Adds a date/time interval to date and returns the new date.|
+|DATENAME|	Returns a specified part of a date(as a string).|
+|DATEPART|	Returns a specified part of a date(as an integer).|
+|DAY|	Returns the day of the month for a specified date.|
+|GETDATE|	Returns the current date and time from the database.|
+
+**3 SQL Server Advanced Functions:**
+The table below lists some of the Advanced functions in SQL with their description:
+
+|Name|	Description|
+|------|---------|
+|CAST|	Typecasts a value into specified datatype.|
+|CONVERT|	Converts a value into a specified datatype.|
+|IIF|	Return a value if a condition evaluates to True, else some other value.|
+|ISNULL|	Return a specified value if the expression is NULL, else returns the expression.|
+|ISNUMERIC|	Checks if an expression is numeric or not.|
+|SYSTEM_USER|	Returns the login name for the current user|
+|USER_NAME|	Returns the database user name based on the specified id.|
+
+
+
+# joins-in-sql
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| INNER JOIN| SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;| selects records that have matching values in both tables.       |
+| LEFT JOIN| SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;| returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match.|
+|RIGHT JOIN|SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;|returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.|
+|FULL JOIN|SELECT column_name(s) FROM table1 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name WHERE condition;|returns all records when there is a match in left (table1) or right (table2) table records.|
+
+|SELF JOIN |SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;|A self join is a regular join, but the table is joined with itself.|
+
+
