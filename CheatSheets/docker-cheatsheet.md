@@ -16,14 +16,16 @@
 | `docker rm CONTAINER`                  | Delete a container                       |
 | `docker rm -f CONTAINER`               | Delete a running container               |
 | `docker CONTAINER prune`               | Delete stopped containers                |
-| `docker stop CONTAINER`                | Stop a running cointainer                |
-| `docker start CONTAINER`               | Start a stopped cointainer               |
+| `docker stop CONTAINER`                | Stop a running container                 |
+| `docker start CONTAINER`               | Start a stopped container                |
 | `docker cp CONTAINER:SOURCE TARGET`    | Copy a file from a container to the host |
 | `docker cp CONTAINER:SOURCE TARGET`    | Copy a file from a container to the host |
 | `docker cp TARGET CONTAINER:SOURCE`    | Copy a file from the host to a container |
 | `docker exec -it CONTAINER EXECUTABLE` | Start a shell inside a running container |
-| `docker remame OLD_NAME NEW_NAME`      | Rename a container                       |
-| `docker commit CONTAINER`              | Create an image out of a continer        |
+| `docker rename OLD_NAME NEW_NAME`      | Rename a container                       |
+| `docker commit CONTAINER`              | Create an image out of a container       |
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Manage Images
 
@@ -41,6 +43,8 @@
 | `docker save IMAGE > FILE`        | Save an image to a .tar file             |
 | `docker load -i TARFILE`          | Load an image from a .tar file           |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Info and Stats
 
 | Command                 | Description                            |
@@ -52,3 +56,6 @@
 | `docker inspect NAME`   | Get detailed info about an object      |
 | `docker diff CONTAINER` | Show all modified files in a container |
 | `docker port CONTAINER` | Show mapped ports of a container       |
+
+**[🔼Back to Top](#table-of-contents)**
+
