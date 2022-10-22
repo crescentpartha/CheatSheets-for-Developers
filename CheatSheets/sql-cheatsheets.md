@@ -9,6 +9,23 @@
   - [Numeric Datatype:](#numeric-datatype)
   - [Date/Time Datatype:](#datetime-datatype)
 - [Tables](#tables)
+  - [Alter Table](#Alter-Table)
+  - [Insert Table](#Insert-Table)
+  - [Update Table](#Update-Table)
+  - [Delete Table](#Delete-Table)
+- [Important-Sql-Keywords](#Important-Sql-Keywords)
+- [clauses in SQL](#clauses-in-SQL)
+- [SQL-Operators](#SQL-Operators)
+  - [Arithmetic Operators](#Arithmetic-Operators)
+  - [Bitwise Operators](#Bitwise-Operators)
+  - [Relational Operators](#Relational-Operators)
+  - [Compound Operators](#Compound-Operators)
+  - [Logical Operators](#Logical-Operators)
+- [Function in sql](#Function-in-sql)
+  - [SQL Server Numeric Functions](#SQL-Server-Numeric-Functions)
+  - [SQL Server Date Functions](#SQL-Server-Date-Functions)
+  - [SQL Server Advanced Functions](#SQL-Server-Advanced-Functions)
+- [Joins in SQL](#Joins-in-SQL)
 
 # SQL CheatSheet for Developers
 
@@ -105,7 +122,250 @@
 | ------------- | ------------- |--------|
 | CREATE TABLE| CREATE TABLE table_name (column1 datatype,column2 datatype,column3 datatype)  | Used to create new table        |
 | DROP DATABASE  | CREATE DATABASE database-name  | Used to drop the existing database   |
+|TRUNCATE TABLE|TRUNCATE TABLE table_name|used to delete the data inside a table, but not the table itself.|
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Alter Table
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| ALTER TABLE ADD| ALTER TABLE table_name ADD column_name datatype  | Used to add column in existing table        |
+| ALTER TABLE DROP  | ALTER TABLE table_name DROP COLUMN column_name  | Used to drop column in existing table   |
+| ALTER TABLE MODIFY|ALTER TABLE table_name MODIFY COLUMN column_name datatype |Used to modify column in existing table |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Insert Table
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| INSERT INTO| INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...); | Used to insert data for particular columnn to add new records into  existing table        |
+| INSERT INTO  |INSERT INTO table_name VALUES (value1, value2, value3, ...);  | used to insert new record in existing table with all column  |
+
+**[🔼Back to Top](#table-of-contents)**
+
+
+## Update Table
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| UPDATE| UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;  | Used to update data for particular row for existing records in existing table        |
+| UPDATE| UPDATE table_name SET column1 = value1, column2 = value2, ... ;| Used to update data for all row exist in existing table        |
+
+**[🔼Back to Top](#table-of-contents)**
+
+
+## Delete Table 
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| DELETE|DELETE FROM table_name WHERE condition;  | Used to delete data for particular row for existing records in existing table        |
+| DELETE| DELETE FROM table_name;| Used to delete data for all row exist in existing table        |
+
+**[🔼Back to Top](#table-of-contents)**
+
+
+# Important-Sql-Keywords
+
+|Keyword |	Description |	Example|
+|----------|---------|------------|
+|ADD |	Will add a new column to an existing table.|	ALTER TABLE student ADD email_address VARCHAR(255)|
+|ALTER TABLE |	Adds edits or deletes columns in a table|	ALTER TABLE student DROP COLUMN email_address|
+|ALTER COLUMN|	Can change the datatype of a table’s column|	ALTER TABLE student ALTER COLUMN phone VARCHAR(15)|
+|AS	|Renames a table/column with an alias existing only for the query duration.|	SELECT name AS student_name, phone FROM student|
+|ASC |Used in conjunction with ORDER BY to sort data in ascending order.|	SELECT column1, column2, … FROM table_name ORDER BY column1, column2, … ASC|
+|DESC |	Used in conjunction with ORDER BY to sort data in descending order.|	SELECT column1, column2, … FROM table_name ORDER BY column1, column2, … DESC|
+|CHECK	|Constrains the value which can be added to a column.|	CREATE TABLE student(fullName varchar(255), age INT, CHECK(age >= 18))|
+|CREATE DATABASE|	Creates a new database.	|CREATE DATABASE student;|
+|DEFAULT|	Sets the default value for a given column.|	CREATE TABLE products(ID int, name varchar(255) DEFAULT ‘Username’, from date DEFAULT GETDATE())|
+|DELETE	|Delete values from a table.	|DELETE FROM users WHERE user_id= 674|
+|DROP COLUMN|	Deletes/Drops a column from a table.|	ALTER TABLE student DROP COLUMN name|
+|DROP DATABASE|	Completely deletes a database with all its content within.|	DROP DATABASE student|
+|DROP DEFAULT|	Removes a default value for a column.	|ALTER TABLE student ALTER COLUMN age DROP DEFAULT|
+|DROP TABLE|	Deletes a table from a database.|	DROP TABLE students|
+|FROM|	Determines which table to read or delete data from.|	SELECT * FROM students|
+|IN	|Used with WHERE clause for multiple OR conditionals.|	SELECT * FROM students WHERE name IN(‘Scaler’, ‘Interviewbit’,‘Academy’)|
+|ORDER BY|	Used to sort given data in Ascending or Descending order.|	SELECT * FROM student ORDER BY age ASC|
+|SELECT DISTINCT|	Works in the same war as SELECT, except that only unique values are included in the results.|	SELECT DISTINCT age from student|
+|TOP|	Used in conjunction with SELECT to select a fixed number of records from a table.|SELECT TOP 5 * FROM students|
+|VALUES|	Used along with the INSERT INTO keyword to add new values to a table.|INSERT INTO Customers (CustomerName, City, Country) VALUES (‘Cardinal’, ‘Stavanger’, ‘Norway’)|
+|WHERE|	Filters given data based on some given condition.|	SELECT * FROM students WHERE age >= 18|
+|UNIQUE|	Ensures that all values in a column are different.|	UNIQUE (ID)|
+|UNION|	Used to combine the result-set of two or more SELECT statements.|	SELECT column_name(s) FROM Table1 UNION SELECT column_name(s) FROM Table2|
+|UNION ALL|	Combines the result set of two or more SELECT statements(it allows duplicate values)|	SELECT City FROM table1 UNION ALL SELECT City FROM table2 ORDER BY City;|
+|SELECT TOP|	Used to specify the number of records to return.|	SELECT TOP 3 * FROM Students|
+|LIMIT|	Puts a restriction on how many rows are returned from a query.|	SELECT * FROM table1 LIMIT 3|
+|UPDATE|	Modifies the existing records in a table.|	UPDATE Customers SET ContactName = ‘Scaler’, City = ‘India’ WHERE CustomerID = 1;|
+|SET|	Used with UPDATE to specify which columns and values should be updated in a table.|	UPDATE Customers SET ContactName = ‘Scaler’, City= ‘India’ WHERE |CustomerID = 1|
+|IS NULL|	Column values are tested for NULL values using this operator.|	SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL|
+|LIKE	|Used to search for a specified pattern in a column.|	SELECT * FROM Students WHERE Name LIKE ‘a%’|
+|ROWNUM|	Returns a number indicating the order in which Oracle selects the row from a table or set of joined rows.|	SELECT * FROM Employees WHERE ROWNUM < 10;|
+|GROUP BY|	Groups rows that have the same values into summary rows.|	SELECT COUNT(StudentID), State FROM Students GROUP BY State|
+|HAVING	|Enables the user to specify conditions that filter which group results appear in the results.|	HAVING COUNT(CustomerID) > 5|
+
+**[🔼Back to Top](#table-of-contents)**
+
+
+
+# clauses-in-SQL
+
+
+|Name|	Description|	Example|
+|-------|-------|-------|
+|WHERE|	Used to select data from the database based on some conditions.|	SELECT * from Employee WHERE age >= 18;|
+|AND |	Used to combine 2 or more conditions and returns true if all the conditions are True.|	SELECT * from Employee WHERE age >= 18 AND salary >= 45000 ;|
+|OR |	Similar to AND but returns true if any of the conditions are True.|	Select * from Employee where salary >= 45000 OR age >= 18|
+|LIKE |	Used to search for a specified pattern in a column.|	SELECT * FROM Students WHERE Name LIKE ‘a%’;|
+|LIMIT|	Puts a restriction on how many rows are returned from a query.|	SELECT * FROM table1 LIMIT 3;|
+|ORDER BY|	Used to sort given data in Ascending or Descending order.|	SELECT * FROM student ORDER BY age ASC|
+|GROUP BY|	Groups rows that have the same values into summary rows.|	SELECT COUNT(StudentID), State FROM Students GROUP BY State;|
+|HAVING	|It performs the same as the WHERE clause but can also be used with aggregate functions.|	SELECT COUNT(ID), AGE FROM Students GROUP BY AGE HAVING COUNT(ID) > 5;|
+
+**[🔼Back to Top](#table-of-contents)**
+
+ # SQL-Operators
+ 
+ There are 3 main types of operators: Arithmetic, Comparision and Logical operators, each of which will be described below.
+ 
+## Arithmetic Operators
+
+Arithmetic Operators allows the user to perform arithmetic operations in SQL. The table below shows the list of arithmetic operators available in SQL:
+
+|Operator|	Description|
+|-----|-------|
+|+|	Addition|
+|-|	Subtraction| 
+|* |	Multiplication|
+| / |	Division|
+| % |	Modulo|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Bitwise Operators
+
+Bitwise operators are used to performing Bit manipulation operations in SQL. The table below shows the list of bitwise operators available in SQL:
+
+|Operator|	Description|
+|---------|----------|
+|&|	Bitwise AND |
+| ![image](https://user-images.githubusercontent.com/47249568/197326193-77622f96-20cd-4f8f-b4b6-997fb54b2d69.png)|	Bitwise OR|
+|^|	Bitwise XOR|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Relational Operators
+
+Relational operators are used to performing relational expressions in SQL, i.e those expressions whose value either result in true or false. The table below shows the list of relational operators available in SQL:
+
+|Operator|	Description|
+|---------|---------|
+|=|	Equal to|
+|>|	Greater than|
+|<|	Less than|
+|>=|	Greater than or equal to|
+|<=|	Less than or equal to|
+|<>|	Not equal to|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Compound Operators
+
+Compound operators are basically a combination of 2 or more arithmetic or relational operator, which can be used as a shorthand while writing code. The table below shows the list of compound operators available in SQL:
+
+|Operator|	Description|
+|------|---------|
+|+=|	Add equals|
+|-=|	Subtract equals|
+|*=|	Multiply equals|
+|/=|	Divide equals|
+|%=|	Modulo equals|
+|&=|	AND equals|
+| ![image](https://user-images.githubusercontent.com/47249568/197326390-7087561c-34d3-450e-aacb-0282cfd17922.png)= |	OR equals|
+|^=|	XOR equals|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Logical Operators
+
+Logical operators are used to combining 2 or more relational statements into 1 compound statement whose truth value is evaluated as a whole. The table below shows the SQL logical operators with their description:
+
+|Operator|	Description|
+|---------|-----------|
+|ALL|	Returns True if all subqueries meet the given condition.|
+|AND|	Returns True if all the conditions turn out to be true|
+|ANY|	True if any of the subqueries meet the given condition|
+|BETWEEN|	True if the operand lies within the range of the conditions|
+|EXISTS	|True if the subquery returns one or more records|
+|IN|	Returns True if the operands to at least one of the operands in a given list of expressions|
+|LIKE|	Return True if the operand and some given pattern match.|
+|NOT|	Displays some record if the set of given conditions is False|
+|OR|	Returns True if any of the conditions turn out to be True|
+|SOME|	Returns True if any of the Subqueries meet the given condition.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+# Function in sql
+
+## SQL Server Numeric Functions
+
+The table below lists some of the Numeric functions in SQL with their description:
+
+|Name|	Description|
+|------|-------|
+|ABS|	Returns the absolute value of a number.|
+|ASIN|	Returns arc sine value of a number.|
+|AVG|	Returns average value of an expression.|
+|COUNT|	Counts the number of records returned by a SELECT query.|
+|EXP|	Returns e raised to the power of a number.|
+|FLOOR|	Returns the greatest integer <= the number.|
+|RAND|	Returns a random number.|
+|SIGN|	Returns the sign of a number.|
+|SQRT|	Returns the square root of a number.|
+|SUM|	Returns the sum of a set of values.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## SQL Server Date Functions
+
+The table below lists some of the Date functions in SQL with their description:
+
+|Name|	Description|
+|----|------|
+|CURRENT_TIMESTAMP|	Returns current date and time.|
+|DATEADD|	Adds a date/time interval to date and returns the new date.|
+|DATENAME|	Returns a specified part of a date(as a string).|
+|DATEPART|	Returns a specified part of a date(as an integer).|
+|DAY|	Returns the day of the month for a specified date.|
+|GETDATE|	Returns the current date and time from the database.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## SQL Server Advanced Functions
+
+The table below lists some of the Advanced functions in SQL with their description:
+
+|Name|	Description|
+|------|---------|
+|CAST|	Typecasts a value into specified datatype.|
+|CONVERT|	Converts a value into a specified datatype.|
+|IIF|	Return a value if a condition evaluates to True, else some other value.|
+|ISNULL|	Return a specified value if the expression is NULL, else returns the expression.|
+|ISNUMERIC|	Checks if an expression is numeric or not.|
+|SYSTEM_USER|	Returns the login name for the current user|
+|USER_NAME|	Returns the database user name based on the specified id.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+# Joins in SQL
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| INNER JOIN| SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;| selects records that have matching values in both tables.       |
+| LEFT JOIN| SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;| returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match.|
+|RIGHT JOIN|SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;|returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.|
+|FULL JOIN|SELECT column_name(s) FROM table1 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name WHERE condition;|returns all records when there is a match in left (table1) or right (table2) table records.|
+|SELF JOIN |SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;|A self join is a regular join, but the table is joined with itself.|
+
+**[🔼Back to Top](#table-of-contents)**
 
