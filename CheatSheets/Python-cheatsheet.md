@@ -2618,4 +2618,301 @@ start_time = perf_counter()
 duration_in_seconds = perf_counter() - start_time
 ```
 
+### Timing a Snippet
+```python
+>>> from timeit import timeit
+>>> timeit("''.join(str(i) for i in range(100))",
+...        number=10000, globals=globals(), setup='pass')
+0.34986
+```
+
+### Profiling by Line
+```python
+# $ pip3 install line_profiler memory_profiler
+@profile
+def main():
+    a = [*range(10000)]
+    b = {*range(10000)}
+main()
+```
+
+```text
+$ kernprof -lv test.py
+Line #   Hits     Time  Per Hit   % Time  Line Contents
+=======================================================
+     1                                    @profile
+     2                                    def main():
+     3      1    955.0    955.0     43.7      a = [*range(10000)]
+     4      1   1231.0   1231.0     56.3      b = {*range(10000)}
+```
+
+```text
+$ python3 -m memory_profiler test.py
+Line #         Mem usage      Increment   Line Contents
+=======================================================
+     1        37.668 MiB     37.668 MiB   @profile
+     2                                    def main():
+     3        38.012 MiB      0.344 MiB       a = [*range(10000)]
+     4        38.477 MiB      0.465 MiB       b = {*range(10000)}
+```
+
+### Call Graph
+#### Generates a PNG image of the call graph with highlighted bottlenecks:
+```python
+# $ pip3 install pycallgraph2; apt/brew install graphviz
+import pycallgraph2 as cg, datetime
+
+filename = f'profile-{datetime.datetime.now():%Y%m%d_%H%M%S}.png'
+drawer = cg.output.GraphvizOutput(output_file=filename)
+with cg.PyCallGraph(drawer):
+    <code_to_be_profiled>
+```
+
+
+NumPy
+-----
+**Array manipulation mini-language. It can run up to one hundred times faster than the equivalent Python code. An even faster alternative that runs on a GPU is called CuPy.**
+
+```python
+# $ pip3 install numpy
+import numpy as np
+```
+
+```python
+<array> = np.array(<list/list_of_lists>)                # Returns 1d/2d NumPy array.
+<array> = np.zeros/ones(<shape>)                        # Also np.full(<shape>, <el>).
+<array> = np.arange(from_inc, to_exc, ±step)            # Also np.linspace(start, stop, num).
+<array> = np.random.randint(from_inc, to_exc, <shape>)  # Also np.random.random(<shape>).
+```
+
+```python
+<view>  = <array>.reshape(<shape>)                      # Also `<array>.shape = <shape>`.
+<array> = <array>.flatten()                             # Collapses array into one dimension.
+<view>  = <array>.squeeze()                             # Removes dimensions of length one.
+```
+
+```python
+<array> = <array>.sum/min/mean/var/std(axis)            # Passed dimension gets aggregated.
+<array> = <array>.argmin(axis)                          # Returns indexes of smallest elements.
+<array> = np.apply_along_axis(<func>, axis, <array>)    # Func can return a scalar or array.
+```
+
+* **Shape is a tuple of dimension sizes. A 100x50 RGB image has shape (50, 100, 3).**
+* **Axis is an index of the dimension that gets aggregated. Leftmost dimension has index 0. Summing the RGB image along axis 2 will return a greyscale image with shape (50, 100).**
+* **Passing a tuple of axes will chain the operations like this: `'<array>.<method>(axis_1, keepdims=True).<method>(axis_2).squeeze()'`.**
+
+### Indexing
+```bash
+<el>       = <2d_array>[row_index, column_index]        # <3d_a>[table_i, row_i, column_i]
+<1d_view>  = <2d_array>[row_index]                      # <3d_a>[table_i, row_i]
+<1d_view>  = <2d_array>[:, column_index]                # <3d_a>[table_i, :, column_i]
+```
+
+```bash
+<1d_array> = <2d_array>[row_indexes, column_indexes]    # <3d_a>[table_is, row_is, column_is]
+<2d_array> = <2d_array>[row_indexes]                    # <3d_a>[table_is, row_is]
+<2d_array> = <2d_array>[:, column_indexes]              # <3d_a>[table_is, :, column_is]
+```
+
+```bash
+<2d_bools> = <2d_array> ><== <el>                       # <3d_array> ><== <1d_array>
+<1d_array> = <2d_array>[<2d_bools>]                     # <3d_array>[<2d_bools>]
+```
+* **All examples also allow assignments.**
+
+### Broadcasting
+**Broadcasting is a set of rules by which NumPy functions operate on arrays of different sizes and/or dimensions.**
+
+```python
+left  = [[0.1], [0.6], [0.8]]                           # Shape: (3, 1)
+right = [ 0.1 ,  0.6 ,  0.8 ]                           # Shape: (3,)
+```
+
+#### 1. If array shapes differ in length, left-pad the shorter shape with ones:
+```python
+left  = [[0.1], [0.6], [0.8]]                           # Shape: (3, 1)
+right = [[0.1 ,  0.6 ,  0.8]]                           # Shape: (1, 3) <- !
+```
+
+#### 2. If any dimensions differ in size, expand the ones that have size 1 by duplicating their elements:
+```python
+left  = [[0.1,  0.1,  0.1],                             # Shape: (3, 3) <- !
+         [0.6,  0.6,  0.6],
+         [0.8,  0.8,  0.8]]
+
+right = [[0.1,  0.6,  0.8],                             # Shape: (3, 3) <- !
+         [0.1,  0.6,  0.8],
+         [0.1,  0.6,  0.8]]
+```
+
+#### 3. If neither non-matching dimension has size 1, raise an error.
+
+
+### Example
+#### For each point returns index of its nearest point (`[0.1, 0.6, 0.8] => [1, 2, 1]`):
+
+```python
+>>> points = np.array([0.1, 0.6, 0.8])
+ [ 0.1,  0.6,  0.8]
+>>> wrapped_points = points.reshape(3, 1)
+[[ 0.1],
+ [ 0.6],
+ [ 0.8]]
+>>> distances = wrapped_points - points
+[[ 0. , -0.5, -0.7],
+ [ 0.5,  0. , -0.2],
+ [ 0.7,  0.2,  0. ]]
+>>> distances = np.abs(distances)
+[[ 0. ,  0.5,  0.7],
+ [ 0.5,  0. ,  0.2],
+ [ 0.7,  0.2,  0. ]]
+>>> i = np.arange(3)
+[0, 1, 2]
+>>> distances[i, i] = np.inf
+[[ inf,  0.5,  0.7],
+ [ 0.5,  inf,  0.2],
+ [ 0.7,  0.2,  inf]]
+>>> distances.argmin(1)
+[1, 2, 1]
+```
+
+
+Image
+-----
+```python
+# $ pip3 install pillow
+from PIL import Image
+```
+
+```python
+<Image> = Image.new('<mode>', (width, height))   # Also: `color=<int/tuple/str>`.
+<Image> = Image.open(<path>)                     # Identifies format based on file contents.
+<Image> = <Image>.convert('<mode>')              # Converts image to the new mode.
+<Image>.save(<path>)                             # Selects format based on the path extension.
+<Image>.show()                                   # Opens image in default preview app.
+```
+
+```python
+<int/tuple> = <Image>.getpixel((x, y))           # Returns a pixel.
+<Image>.putpixel((x, y), <int/tuple>)            # Writes a pixel to the image.
+<ImagingCore> = <Image>.getdata()                # Returns a flattened sequence of pixels.
+<Image>.putdata(<list/ImagingCore>)              # Writes a flattened sequence of pixels.
+<Image>.paste(<Image>, (x, y))                   # Writes passed image to the image.
+```
+
+```bash
+<2d_array> = np.array(<Image_L>)                 # Creates NumPy array from greyscale image.
+<3d_array> = np.array(<Image_RGB/A>)             # Creates NumPy array from color image.
+<Image>    = Image.fromarray(np.uint8(<array>))  # Use <array>.clip(0, 255) to clip the values.
+```
+
+### Modes
+* **`'1'` - 1-bit pixels, black and white, stored with one pixel per byte.**
+* **`'L'` - 8-bit pixels, greyscale.**
+* **`'RGB'` - 3x8-bit pixels, true color.**
+* **`'RGBA'` - 4x8-bit pixels, true color with transparency mask.**
+* **`'HSV'` - 3x8-bit pixels, Hue, Saturation, Value color space.**
+
+### Examples
+#### Creates a PNG image of a rainbow gradient:
+```python
+WIDTH, HEIGHT = 100, 100
+n_pixels = WIDTH * HEIGHT
+hues = (255 * i/n_pixels for i in range(n_pixels))
+img = Image.new('HSV', (WIDTH, HEIGHT))
+img.putdata([(int(h), 255, 255) for h in hues])
+img.convert('RGB').save('test.png')
+```
+
+#### Adds noise to a PNG image:
+```python
+from random import randint
+add_noise = lambda value: max(0, min(255, value + randint(-20, 20)))
+img = Image.open('test.png').convert('HSV')
+img.putdata([(add_noise(h), s, v) for h, s, v in img.getdata()])
+img.convert('RGB').save('test.png')
+```
+
+### Image Draw
+```python
+from PIL import ImageDraw
+<ImageDraw> = ImageDraw.Draw(<Image>)
+```
+
+```python
+<ImageDraw>.point((x, y))                        # Truncates floats into ints.
+<ImageDraw>.line((x1, y1, x2, y2 [, ...]))       # To get anti-aliasing use Image's resize().
+<ImageDraw>.arc((x1, y1, x2, y2), deg1, deg2)    # Always draws in clockwise direction.
+<ImageDraw>.rectangle((x1, y1, x2, y2))          # To rotate use Image's rotate() and paste().
+<ImageDraw>.polygon((x1, y1, x2, y2, ...))       # Last point gets connected to the first.
+<ImageDraw>.ellipse((x1, y1, x2, y2))            # To rotate use Image's rotate() and paste().
+```
+* **Use `'fill=<color>'` to set the primary color.**
+* **Use `'width=<int>'` to set the width of lines or contours.**
+* **Use `'outline=<color>'` to set the color of the contours.**
+* **Color can be an int, tuple, `'#rrggbb[aa]'` string or a color name.**
+
+
+Animation
+---------
+#### Creates a GIF of a bouncing ball:
+```python
+# $ pip3 install imageio
+from PIL import Image, ImageDraw
+import imageio
+
+WIDTH, HEIGHT, R = 126, 126, 10
+frames = []
+for velocity in range(1, 16):
+    y = sum(range(velocity))
+    frame = Image.new('L', (WIDTH, HEIGHT))
+    draw  = ImageDraw.Draw(frame)
+    draw.ellipse((WIDTH/2-R, y, WIDTH/2+R, y+R*2), fill='white')
+    frames.append(frame)
+frames += reversed(frames[1:-1])
+imageio.mimsave('test.gif', frames, duration=0.03)
+```
+
+
+Audio
+-----
+```python
+import wave
+```
+
+```python
+<Wave_read>  = wave.open('<path>', 'rb')        # Opens the WAV file.
+framerate    = <Wave_read>.getframerate()       # Number of frames per second.
+nchannels    = <Wave_read>.getnchannels()       # Number of samples per frame.
+sampwidth    = <Wave_read>.getsampwidth()       # Sample size in bytes.
+nframes      = <Wave_read>.getnframes()         # Number of frames.
+<params>     = <Wave_read>.getparams()          # Immutable collection of above.
+<bytes>      = <Wave_read>.readframes(nframes)  # Returns next 'nframes' frames.
+```
+
+```python
+<Wave_write> = wave.open('<path>', 'wb')        # Truncates existing file.
+<Wave_write>.setframerate(<int>)                # 44100 for CD, 48000 for video.
+<Wave_write>.setnchannels(<int>)                # 1 for mono, 2 for stereo.
+<Wave_write>.setsampwidth(<int>)                # 2 for CD quality sound.
+<Wave_write>.setparams(<params>)                # Sets all parameters.
+<Wave_write>.writeframes(<bytes>)               # Appends frames to the file.
+```
+* **Bytes object contains a sequence of frames, each consisting of one or more samples.**
+* **In a stereo signal, the first sample of a frame belongs to the left channel.**
+* **Each sample consists of one or more bytes that, when converted to an integer, indicate the displacement of a speaker membrane at a given moment.**
+* **If sample width is one byte, then the integer should be encoded unsigned.**
+* **For all other sizes, the integer should be encoded signed with little-endian byte order.**
+
+### Sample Values
+```text
++-----------+-----------+------+-----------+
+| sampwidth |    min    | zero |    max    |
++-----------+-----------+------+-----------+
+|     1     |         0 |  128 |       255 |
+|     2     |    -32768 |    0 |     32767 |
+|     3     |  -8388608 |    0 |   8388607 |
++-----------+-----------+------+-----------+
+```
+
 
