@@ -155,16 +155,19 @@
 
 ## Graphics
 
-| Command                    | Description                                                        |
-| `<canvas> … </canvas>`     | Used to draw graphics on a web page using javascript.              |
-| `<svg> … </svg>`           | Used to defines vector-based graphics in XML format.               |
+| Command                    | Description                                           |
+| -------------------------- | ----------------------------------------------------- |
+| `<canvas> … </canvas>`     | Used to draw graphics on a web page using javascript. |
+| `<svg> … </svg>`           | Used to defines vector-based graphics in XML format.  |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Media
 
 | Command                    | Description                                      |
+| -------------------------- | ------------------------------------------------ |
 | `<video> … </video>`       | Used to show a video on a web page.              |
 | `<audio> … </audio>`       | Used to play an audio file on a web page.        |
 
 **[🔼Back to Top](#table-of-contents)**
+
