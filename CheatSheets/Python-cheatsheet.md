@@ -2183,6 +2183,9 @@ from queue import Queue
 <el> = <Queue>.get()                           # Blocks until queue stops being empty.
 <el> = <Queue>.get_nowait()                    # Raises queue.Empty exception if empty.
 ```
+
+**[🔼Back to Top](#content-outlines)**
+
 Operator
 --------
 **Module of functions that provide the functionality of operators.**
@@ -2205,6 +2208,7 @@ first_element    = op.methodcaller('pop', 0)(<list>)
 * **Binary operators require objects to have and(), or(), xor() and invert() special methods, unlike logical operators that work on all types of objects.**
 * **Also: `'<bool> = <bool> &|^ <bool>'` and `'<int> = <bool> &|^ <int>'`.**
 
+**[🔼Back to Top](#content-outlines)**
 
 Introspection
 -------------
@@ -2236,6 +2240,7 @@ delattr(<object>, '<attr_name>')           # Same. Also `del <object>.<attr_name
 <type> = <Param>.annotation                # Type or <Param>.empty.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Metaprogramming
 ---------------
@@ -2323,6 +2328,7 @@ MyMetaClass.__base__ == type         # MyMetaClass is a subclass of type.
 +-------------+-------------+
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Eval
 ----
@@ -2334,6 +2340,7 @@ Eval
 ValueError: malformed node or string
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Coroutines
 ----------
@@ -2401,6 +2408,7 @@ if __name__ == '__main__':
 ```
 <br>
 
+**[🔼Back to Top](#content-outlines)**
 
 Libraries
 =========
@@ -2416,6 +2424,7 @@ Progress Bar
 Processing: 100%|████████████████████| 3/3 [00:03<00:00,  1.00s/it]
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Plot
 ----
@@ -2429,6 +2438,7 @@ plt.show()                                     # Displays the figure.
 plt.clf()                                      # Clears the figure.
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Table
 -----
@@ -2443,6 +2453,7 @@ with open('test.csv', encoding='utf-8', newline='') as file:
 print(table)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Curses
 ------
@@ -2472,6 +2483,7 @@ if __name__ == '__main__':
     curses.wrapper(main)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Logging
 -------
@@ -2516,6 +2528,7 @@ retention=<int>|<datetime.timedelta>|<str>
 * **`'<timedelta>'` - Max age of a file.**
 * **`'<str>'` - Max age as a string: `'1 week, 3 days'`, `'2 months'`, ...**
 
+**[🔼Back to Top](#content-outlines)**
 
 Scraping
 --------
@@ -2541,6 +2554,7 @@ except requests.exceptions.ConnectionError:
     print("You've got problems with connection.", file=sys.stderr)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Web
 ---
@@ -2592,6 +2606,7 @@ def send_json(sport):
 {'team': 'arsenal f.c.', 'odds': [2.09, 3.74, 3.68]}
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Profiling
 ---------
