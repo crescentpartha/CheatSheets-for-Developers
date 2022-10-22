@@ -1,4 +1,5 @@
 # CheatSheets-for-Developers
+
 A Collection of programming [CheatSheets](./CheatSheets/) for developers to quick review while working.
 
 <div align="center">
@@ -26,7 +27,6 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)&#160;
 [![Hacktoberfest 2022 stats](https://img.shields.io/github/hacktoberfest/2022/crescentpartha/CheatSheets-for-Developers?label=Hacktoberfest+2022)](https://github.com/crescentpartha/CheatSheets-for-Developers/pulls?q=is%3Apr+is%3Amerged+created%3A2022-10-01..2022-10-31)
 
-
 </div>
 
 ## ___CheatSheets List___
@@ -42,20 +42,21 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 9. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
 10. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
 11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
-12. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
-13. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+12. [javascript-cheatsheet.md](./CheatSheets/javascript-cheatsheet.md)
+13. [python-cheatsheet.md](./CheatSheets/python-cheatsheet.md)
 14. [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
-15. [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheetsheet.md)
+15. [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)
 16. [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
 17. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
 18. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
+
 ## ___Instructions___
 
 - Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md).
 - If you are new to open source contributions, check out [How-To at a glance](docs/HOW-TO.md).
 - Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md).
 
-## Contribution
+## ___Contribution___
 
 > Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets.
 
@@ -64,7 +65,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 - Suggest changes to existing CheatSheets
 - Discuss ideas in issues
 
-## Thanks to all the contributors ❤
+## ___Thanks to all the contributors ❤___
 
 ___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on GitHub, made ___suggestions___, given a ___star___, and generally helped make this a better repository for developers.
 
