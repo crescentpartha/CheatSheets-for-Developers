@@ -15,7 +15,7 @@
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
   - [Touchpad Shortcuts](#touchpad-shortcuts)
-  - [Take Screenshot Shortcut](#Take-Screenshot-Shortcut)
+  - [Take Screenshot Shortcut](#take-screenshot-shortcut)
 
 # Windows Keyboard Shortcuts for Developers
 
@@ -181,7 +181,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Take Screenshot Shortcut (using Windows snipping tool)
+## Take Screenshot Shortcut
 
 | Command | Description |
 | ------- | ----------- |
