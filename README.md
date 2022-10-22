@@ -44,7 +44,9 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 12. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
 13. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
 14. [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
-15. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
+15. [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheetsheet.md)
+16. [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
+17. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
 
 ## ___Instructions___
 
