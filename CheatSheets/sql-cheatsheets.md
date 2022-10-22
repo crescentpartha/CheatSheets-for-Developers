@@ -5,6 +5,12 @@
 
 **3** [**Basic SQL**](#Basic-SQL?)
 
+**4** [**important SQL keywords**](#important-sql-keywords)
+
+
+**5** [**clauses in SQL**](#clauses-in-SQL)
+
+
 # Introduction-What-is-SQL?
 
 To get introduced to **SQL**, we first need to know about Databases and **Database Management Systems(DBMS)**.
@@ -60,7 +66,7 @@ The following functionalities can be performed on a database using SQL:
 | **1** CREATE DATABASE| CREATE DATABASE databasename  | Used to create new SQL database in the server        |
 | **2** DROP DATABASE  | CREATE DATABASE databasename  | Used to drop the existing database   |
 
-# 2 String Datatype
+# 2 String-Datatype
 
 
 The table below lists all the String type datatypes available in SQL, along with their descriptions:
@@ -118,7 +124,79 @@ The datatypes available in SQL to handle Date/Time operations effectively are ca
 | COMMAND  | SYNTAX | DESCRIPTION |
 | ------------- | ------------- |--------|
 | CREATE TABLE| CREATE TABLE table_name (column1 datatype,column2 datatype,column3 datatype)  | Used to create new table        |
-| DROP DATABASE  | CREATE DATABASE databasename  | Used to drop the existing database   |
+| DROP TABLE  | DROP TABLE table_name  | Used to drop the existing table   |
+|TRUNCATE TABLE|TRUNCATE TABLE table_name|used to delete the data inside a table, but not the table itself.|
+
+
+# 3 Alter Table
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| ALTER TABLE ADD| ALTER TABLE table_name ADD column_name datatype  | Used to add column in existing table        |
+| ALTER TABLE DROP  | ALTER TABLE table_name DROP COLUMN column_name  | Used to drop column in existing table   |
+| ALTER TABLE MODIFY|ALTER TABLE table_name MODIFY COLUMN column_name datatype |Used to modify column in existing table |
+
+# 4 Insert Data into Table
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| INSERT INTO| INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...); | Used to insert data for particular columnn to add new records into  existing table        |
+| INSERT INTO  |INSERT INTO table_name VALUES (value1, value2, value3, ...);  | used to insert new record in existing table with all column  |
+
+# 5 Update Table
+
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| UPDATE| UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;  | Used to update data for particular row for existing records in existing table        |
+| UPDATE| UPDATE table_name SET column1 = value1, column2 = value2, ... ;| Used to update data for all row exist in existing table        |
 
 
 
+# 6 Delete Table 
+| COMMAND  | SYNTAX | DESCRIPTION |
+| ------------- | ------------- |--------|
+| DELETE|DELETE FROM table_name WHERE condition;  | Used to delete data for particular row for existing records in existing table        |
+| DELETE| DELETE FROM table_name;| Used to delete data for all row exist in existing table        |
+
+
+# important-sql-keywords
+
+|Keyword |	Description |	Example|
+|----------|---------|------------|
+|ADD |	Will add a new column to an existing table.|	ALTER TABLE student ADD email_address VARCHAR(255)|
+|ALTER TABLE |	Adds edits or deletes columns in a table|	ALTER TABLE student DROP COLUMN email_address|
+|ALTER COLUMN|	Can change the datatype of a table’s column|	ALTER TABLE student ALTER COLUMN phone VARCHAR(15)|
+|AS	|Renames a table/column with an alias existing only for the query duration.|	SELECT name AS student_name, phone FROM student|
+|ASC |Used in conjunction with ORDER BY to sort data in ascending order.|	SELECT column1, column2, … FROM table_name ORDER BY column1, column2, … ASC|
+|DESC |	Used in conjunction with ORDER BY to sort data in descending order.|	SELECT column1, column2, … FROM table_name ORDER BY column1, column2, … DESC|
+|CHECK	|Constrains the value which can be added to a column.|	CREATE TABLE student(fullName varchar(255), age INT, CHECK(age >= 18))|
+|CREATE DATABASE|	Creates a new database.	|CREATE DATABASE student;|
+|DEFAULT|	Sets the default value for a given column.|	CREATE TABLE products(ID int, name varchar(255) DEFAULT ‘Username’, from date DEFAULT GETDATE())|
+|DELETE	|Delete values from a table.	|DELETE FROM users WHERE user_id= 674|
+|DROP COLUMN|	Deletes/Drops a column from a table.|	ALTER TABLE student DROP COLUMN name|
+|DROP DATABASE|	Completely deletes a database with all its content within.|	DROP DATABASE student|
+|DROP DEFAULT|	Removes a default value for a column.	|ALTER TABLE student ALTER COLUMN age DROP DEFAULT|
+|DROP TABLE|	Deletes a table from a database.|	DROP TABLE students|
+|FROM|	Determines which table to read or delete data from.|	SELECT * FROM students|
+|IN	|Used with WHERE clause for multiple OR conditionals.|	SELECT * FROM students WHERE name IN(‘Scaler’, ‘Interviewbit’,‘Academy’)|
+|ORDER BY|	Used to sort given data in Ascending or Descending order.|	SELECT * FROM student ORDER BY age ASC|
+|SELECT DISTINCT|	Works in the same war as SELECT, except that only unique values are included in the results.|	SELECT DISTINCT age from student|
+|TOP|	Used in conjunction with SELECT to select a fixed number of records from a table.|SELECT TOP 5 * FROM students|
+|VALUES|	Used along with the INSERT INTO keyword to add new values to a table.|INSERT INTO Customers (CustomerName, City, Country) VALUES (‘Cardinal’, ‘Stavanger’, ‘Norway’)|
+|WHERE|	Filters given data based on some given condition.|	SELECT * FROM students WHERE age >= 18|
+|UNIQUE|	Ensures that all values in a column are different.|	UNIQUE (ID)|
+|UNION|	Used to combine the result-set of two or more SELECT statements.|	SELECT column_name(s) FROM Table1 UNION SELECT column_name(s) FROM Table2|
+|UNION ALL|	Combines the result set of two or more SELECT statements(it allows duplicate values)|	SELECT City FROM table1 UNION ALL SELECT City FROM table2 ORDER BY City;|
+|SELECT TOP|	Used to specify the number of records to return.|	SELECT TOP 3 * FROM Students|
+|LIMIT|	Puts a restriction on how many rows are returned from a query.|	SELECT * FROM table1 LIMIT 3|
+|UPDATE|	Modifies the existing records in a table.|	UPDATE Customers SET ContactName = ‘Scaler’, City = ‘India’ WHERE CustomerID = 1;|
+|SET|	Used with UPDATE to specify which columns and values should be updated in a table.|	UPDATE Customers SET ContactName = ‘Scaler’, City= ‘India’ WHERE |CustomerID = 1|
+|IS NULL|	Column values are tested for NULL values using this operator.|	SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL|
+|LIKE	|Used to search for a specified pattern in a column.|	SELECT * FROM Students WHERE Name LIKE ‘a%’|
+|ROWNUM|	Returns a number indicating the order in which Oracle selects the row from a table or set of joined rows.|	SELECT * FROM Employees WHERE ROWNUM < 10;|
+|GROUP BY|	Groups rows that have the same values into summary rows.|	SELECT COUNT(StudentID), State FROM Students GROUP BY State|
+|HAVING	|Enables the user to specify conditions that filter which group results appear in the results.|	HAVING COUNT(CustomerID) > 5|
+
+
+
+# clauses-in-SQL
