@@ -1,5 +1,4 @@
 ﻿## Table of Contents
----
 
 - [Linux CheatSheet for Developers](#linux-cheatsheet-for-developers)
   - [File Commands](#file-commands)
@@ -31,7 +30,6 @@
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
 | `touch file` | Create *file*| 
 
-
 **[🔼Back to Top](#table-of-contents)**
 
 ## File Permissions
@@ -59,7 +57,6 @@
 | ------- | ----------- |
 | `ssh user@host` | Connect to host as user |
 | `ssh -p port user@host` | Connect to host on port *port* as user|
-
 
 **[🔼Back to Top](#table-of-contents)**
 
