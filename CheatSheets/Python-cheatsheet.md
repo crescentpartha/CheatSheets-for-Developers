@@ -3003,6 +3003,7 @@ samples_b   = b''.join(struct.pack('<h', int(f * 30000)) for f in samples_f)
 simpleaudio.play_buffer(samples_b, 1, 2, F)
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Pygame
 ------
@@ -3157,6 +3158,7 @@ if __name__ == '__main__':
     main()
 ```
 
+**[🔼Back to Top](#content-outlines)**
 
 Pandas
 ------
@@ -3244,3 +3246,4 @@ y    2
 ```
 * **Last result has a hierarchical index. Use `'<Sr>[key_1, key_2]'` to get its values.**
 
+**[🔼Back to Top](#content-outlines)**
