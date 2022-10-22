@@ -49,6 +49,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 16. [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
 17. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
 18. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
+19. [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
 
 ## ___Instructions___
 
