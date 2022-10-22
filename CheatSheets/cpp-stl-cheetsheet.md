@@ -2,43 +2,43 @@
 
 - [CPP STL CheatSheet for Developers](#cpp-stl-cheatsheet-for-developers)
 	- [Vector](#vector)
-		- [Vector insertion](#insertion-in-vector)
-		- [Vector Display](#display-vector)
-		- [Vector Maximum element](#vector-max)
-		- [Vector Minimum element](#vector-min)
-		- [Vector sort](#vector-sort)
-		- [Vector reverse](#vector-reverse)
-		- [Vector deletion](#vector-delete)
+		- [Vector insertion](#vector)
+		- [Vector Display](#vector)
+		- [Vector Maximum element](#vector)
+		- [Vector Minimum element](#vector)
+		- [Vector sort](#vector)
+		- [Vector reverse](#vector)
+		- [Vector deletion](#vector)
 	- [Set](#set)
-		- [Set insertion](#insertion-in-set)
-		- [Set Display](#display-set)
+		- [Set insertion](#set)
+		- [Set Display](#set)
 	- [Unordered Set](#unordered-set)
-		- [Unordered insertion](#insertion-in-unorderedset)
-		- [Unordered Display](#display-unordered-set)
+		- [Unordered insertion](#unordered-set)
+		- [Unordered Display](#unordered-set)
 	- [Map](#map)
-		- [Map insertion](#insertion-in-map)
-		- [Map Display](#display-map)
-	- [Stack](#set)
-		- [Stack insertion](#insertion-in-stack)
-		- [Stack Display](#display-stack)
+		- [Map insertion](#map)
+		- [Map Display](#map)
+	- [Stack](#stack)
+		- [Stack insertion](#stack)
+		- [Stack Display](#stack)
 	- [Queue](#queue)
-		- [Queue insertion](#insertion-in-queue)
-		- [Queue Display](#display-queue)
+		- [Queue insertion](#queue)
+		- [Queue Display](#queue)
 	- [Deque](#deque)
-		- [DeQue insertion](#insertion-in-deque)
-		- [DeQue Display](#display-deque)
+		- [DeQue insertion](#deque)
+		- [DeQue Display](#deque)
     - [vector pair](#vector-pair)
-		- [Vector pair insertion](#insertion-in-vector-pair)
-		- [Vector pair Display](#display-vector-pair)
+		- [Vector pair insertion](#vector-pair)
+		- [Vector pair Display](#vector-pair)
 
 
 # C++ STL CheatSheet for Developers
 
 
-### Vector
+### vector
 
 ```cpp
-     vector<int> v;
+    vector<int> v;
     cout << "Insertion of element in vector: " << endl;
     cout << endl;
 
@@ -86,10 +86,10 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-### Set
+### set
 
 ```cpp
-	 set<int> s;
+	set<int> s;
     cout << endl;
 
     cout << "Insertion in set " << endl;
@@ -111,10 +111,10 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-### unordered Set
+### unordered-set
 
-```java
-	unordered_set<int> s1;
+```cpp
+unordered_set<int> s1;
     cout << endl;
 
     cout << "Insertion in unordered set " << endl;
@@ -139,7 +139,7 @@
 ### map
 
 ```cpp
-	map<int, int> m;
+map<int, int> m;
     cout << endl;
 
     cout << "Insertion in map " << endl;
@@ -205,8 +205,8 @@
 
 ### deque
 
-```Deque
-	deque<int> d;
+```deque
+   deque<int> d;
     cout << "Insertion in deqeue " << endl;
 
     for (int i = 0; i < n; i++)
@@ -227,7 +227,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-### vector pair
+### vector-pair
 
 ```cpp
     vector<pair<int, int>> p;
