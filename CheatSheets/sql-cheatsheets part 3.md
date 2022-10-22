@@ -24,7 +24,7 @@
 - [Function in sql](#Function-in-sql)
   - [SQL Server Numeric Functions](#SQL-Server-Numeric-Functions)
   - [SQL Server Date Functions](#SQL-Server-Date-Functions)
-  - [SQL Server Advanced Functions](#SQL Server Advanced Functions)
+  - [SQL Server Advanced Functions](#SQL-Server-Advanced-Functions)
 - [Joins in SQL](#Joins-in-SQL)
   
   
