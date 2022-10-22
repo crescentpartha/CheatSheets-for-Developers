@@ -1,12 +1,3 @@
----
-name: Create a pull request
-about: Create a report about your pull request
-title: ''
-labels: 📝review-pull-request, hacktoberfest, hacktoberfest-2022
-assignees: ''
-
----
-
 ### What does this PR do?
 > Add content(s) | Remove content(s) | Add new CheatSheet | Add new feature | Bug fix
 
