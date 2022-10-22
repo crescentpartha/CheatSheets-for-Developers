@@ -59,6 +59,7 @@
 |` Win + X`| Open the Quick Link menu|
 |` Win + Tab`| Open task view|
 |` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
+|` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
 | `Win + number key` | to open application from taskbar with numbered key position
 
