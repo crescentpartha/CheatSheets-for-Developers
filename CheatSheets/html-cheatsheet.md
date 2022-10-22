@@ -9,8 +9,8 @@
   - [Lists](#lists)
   - [Forms](#forms)
   - [Tables](#tables)
-  = [Graphics](#graphics)
-  = [Media](#media)
+  - [Graphics](#graphics)
+  - [Media](#media)
 
 # HTML CheatSheet for Developers
 
