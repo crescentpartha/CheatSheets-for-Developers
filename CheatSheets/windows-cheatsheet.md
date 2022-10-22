@@ -178,4 +178,10 @@
 | `Drag Three fingers left/right` | Switch apps |
 | `Drag Three fingers left/right` | Switch Desktops |
 
+## Take Screenshot Shortcut (using Windows snipping tool)
+
+| Command | Description |
+| ------- | ----------- |
+| `Win + Shift + S` | Open Windows Snipping Tool |
+
 **[🔼Back to Top](#table-of-contents)**
