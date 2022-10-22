@@ -51,6 +51,7 @@ Table of Contents
 | `git clean -f` | To delete or remove unstaged files forcefully |
 | `git commit -m "message about updates"` | Commit changes to current branch |
 | `git commit -amend` | Amend with last commit but use the previous commit log message |
+| `git rm --cached [file]` | Removes the file from the staging area (Unstage) |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
@@ -58,6 +59,7 @@ Table of Contents
 | `git show` | Shows information about any git object |
 | `gitk` | Shows graphical interface for a local repository |
 | `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
+| `git checkout [file]` | Matches the file with last commit |
 
 
 **[🔼Back to Top](#table-of-contents)**
@@ -128,8 +130,12 @@ Table of Contents
 ## Rewrite History
 | Command | Description |
 | ------- | ----------- |
-|` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
+| ` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
 | `git reset --hard [commit]`  | Clear staging area, rewrite working tree from specified commit |
+| `git reset HEAD "file-name"` | Go back to the pointer I'm already at, remove from staged |
+| `git reset --soft "commit-hash"` | Take my changes and go back/kill the commit I made but the file will be staged with the change ready to be committed again |
+| `git reset --mixed "commit-hash"` | Return/Kill the commit too but it returns the files to before staged i.e. modified but it will still return |
+| `git reset --hard "commit-hash"` | It will simply ignore the existence of this commit and undo everything that was done in this commit. <br /> It is a very rough reset and is normally used before pushing your commit to the remote repository. |
 
 **[🔼Back to Top](#table-of-contents)**
 

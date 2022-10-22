@@ -9,6 +9,8 @@
   - [Lists](#lists)
   - [Forms](#forms)
   - [Tables](#tables)
+  = [Graphics](#graphics)
+  = [Media](#media)
 
 # HTML CheatSheet for Developers
 
@@ -53,7 +55,8 @@
 | `<strong> … </strong>`         | This element indicates that its contents have strong importance or urgency. Browsers usualy render the contents in bold type.  |
 | `<i> … </i>`                   | Defines a part of text in an alternate voice or mood. The content inside is typically displayed in italic.                     |
 | `<bdo dir="rtl/ltr"> … </bdo>` | Overrides the current directionality of text, so that the text within is rendered in a different direction.                    |
-| `<canvas> … </canvas>`         | Used to draw graphics on a web page using javascript                                                                           |
+| `<em> … </em>`                 | This tag is used to define emphasized text. The content inside is typically displayed in italic.                               |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -75,8 +78,6 @@
 | `<summary> ... </summary>`       | Defines a visible heading for a `<details>` element                                         |
 | `<time> ... </time>`             | Defines a date/time                                                                         |
 | `<pre> ... </pre>`               | Preserve both spaces and linebreaks                                                         |
-| `<code> ... </code>`             | Defines sample output from a computer program                                               |
-
 
 
 **[🔼Back to Top](#table-of-contents)**
@@ -160,7 +161,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Graphics
+## Media
 
 | Command                    | Description                                      |
 | `<video> … </video>`       | Used to show a video on a web page.              |
