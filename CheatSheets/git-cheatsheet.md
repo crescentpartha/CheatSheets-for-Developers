@@ -126,6 +126,8 @@ Table of Contents
 | `git rm [file]` | Delete the file from project and stage the removal for commit |
 | `git mv [existing-path] [new-path]`  | Change an existing file path and stage the move |
 | `git log --stat -M`  | Show all commit logs with indication of any paths that moved |
+| `git rm --cached <file>` | Remove from staging area only |
+
 
 **[🔼Back to Top](#table-of-contents)**
 ## Setting up Alias
