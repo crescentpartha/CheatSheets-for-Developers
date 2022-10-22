@@ -11,7 +11,7 @@
 - [Tables](#tables)
   - [Alter Table](#Alter-Table)
   - [Insert Table](#Insert-Table)
-  - Update Table](#Update-Table)
+  - [Update Table](#Update-Table)
   - [Delete Table](#Delete-Table)
 - [Important-Sql-Keywords](#Important-Sql-Keywords)
 
