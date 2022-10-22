@@ -17,6 +17,7 @@
 		- [Exception Handling](#exception-handling)
 	- [String Methods](#string-methods)
 	- [Math Library Methods](#math-library-methods)
+	- [Types of Variables](#Types-of-Variables)
 
 # Java CheatSheet for Developers
 
