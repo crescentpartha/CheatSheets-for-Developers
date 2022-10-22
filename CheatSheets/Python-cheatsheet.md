@@ -1733,3 +1733,445 @@ shutil.copy(from, to)               # Copies the file. 'to' can exist or be a di
 shutil.copytree(from, to)           # Copies the directory. 'to' must not exist.
 ```
 
+
+```python
+os.rename(from, to)                 # Renames/moves the file or directory.
+os.replace(from, to)                # Same, but overwrites 'to' if it exists.
+```
+
+```python
+os.remove(<path>)                   # Deletes the file.
+os.rmdir(<path>)                    # Deletes the empty directory.
+shutil.rmtree(<path>)               # Deletes the directory.
+```
+* **Paths can be either strings, Paths or DirEntry objects.**
+* **Functions report OS related errors by raising either OSError or one of its [subclasses](#exceptions-1).**
+
+### Shell Commands
+```python
+<pipe> = os.popen('<command>')      # Executes command in sh/cmd. Returns its stdout pipe.
+<str>  = <pipe>.read(size=-1)       # Reads 'size' chars or until EOF. Also readline/s().
+<int>  = <pipe>.close()             # Closes the pipe. Returns None on success.
+```
+
+#### Sends '1 + 1' to the basic calculator and captures its output:
+```python
+>>> subprocess.run('bc', input='1 + 1\n', capture_output=True, text=True)
+CompletedProcess(args='bc', returncode=0, stdout='2\n', stderr='')
+```
+
+#### Sends test.in to the basic calculator running in standard mode and saves its output to test.out:
+```python
+>>> from shlex import split
+>>> os.popen('echo 1 + 1 > test.in')
+>>> subprocess.run(split('bc -s'), stdin=open('test.in'), stdout=open('test.out', 'w'))
+CompletedProcess(args=['bc', '-s'], returncode=0)
+>>> open('test.out').read()
+'2\n'
+```
+
+
+JSON
+----
+**Text file format for storing collections of strings and numbers.**
+
+```python
+import json
+<str>    = json.dumps(<object>)     # Converts object to JSON string.
+<object> = json.loads(<str>)        # Converts JSON string to object.
+```
+
+### Read Object from JSON File
+```python
+def read_json_file(filename):
+    with open(filename, encoding='utf-8') as file:
+        return json.load(file)
+```
+
+### Write Object to JSON File
+```python
+def write_to_json_file(filename, an_object):
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(an_object, file, ensure_ascii=False, indent=2)
+```
+
+
+Pickle
+------
+**Binary file format for storing Python objects.**
+
+```python
+import pickle
+<bytes>  = pickle.dumps(<object>)   # Converts object to bytes object.
+<object> = pickle.loads(<bytes>)    # Converts bytes object to object.
+```
+
+### Read Object from File
+```python
+def read_pickle_file(filename):
+    with open(filename, 'rb') as file:
+        return pickle.load(file)
+```
+
+### Write Object to File
+```python
+def write_to_pickle_file(filename, an_object):
+    with open(filename, 'wb') as file:
+        pickle.dump(an_object, file)
+```
+
+
+CSV
+---
+**Text file format for storing spreadsheets.**
+
+```python
+import csv
+```
+
+### Read
+```python
+<reader> = csv.reader(<file>)       # Also: `dialect='excel', delimiter=','`.
+<list>   = next(<reader>)           # Returns next row as a list of strings.
+<list>   = list(<reader>)           # Returns a list of remaining rows.
+```
+* **File must be opened with a `'newline=""'` argument, or newlines embedded inside quoted fields will not be interpreted correctly!**
+* **To print the spreadsheet to the console use [Tabulate](#table) library.**
+* **For XML and binary Excel files (xlsx, xlsm and xlsb) use [Pandas](#dataframe-plot-encode-decode) library.**
+
+### Write
+```python
+<writer> = csv.writer(<file>)       # Also: `dialect='excel', delimiter=','`.
+<writer>.writerow(<collection>)     # Encodes objects using `str(<el>)`.
+<writer>.writerows(<coll_of_coll>)  # Appends multiple rows.
+```
+* **File must be opened with a `'newline=""'` argument, or '\r' will be added in front of every '\n' on platforms that use '\r\n' line endings!**
+
+### Parameters
+* **`'dialect'` - Master parameter that sets the default values. String or a Dialect object.**
+* **`'delimiter'` - A one-character string used to separate fields.**
+* **`'quotechar'` - Character for quoting fields that contain special characters.**
+* **`'doublequote'` - Whether quotechars inside fields are/get doubled or escaped.**
+* **`'skipinitialspace'` - Is space character at the start of the field stripped by the reader.**
+* **`'lineterminator'` - How writer terminates rows. Reader is hardcoded to '\n', '\r', '\r\n'.**
+* **`'quoting'` - 0: As necessary, 1: All, 2: All but numbers which are read as floats, 3: None.**
+* **`'escapechar'` - Character for escaping quotechars if doublequote is False.**
+
+### Dialects
+```text
++------------------+--------------+--------------+--------------+
+|                  |     excel    |   excel-tab  |     unix     |
++------------------+--------------+--------------+--------------+
+| delimiter        |       ','    |      '\t'    |       ','    |
+| quotechar        |       '"'    |       '"'    |       '"'    |
+| doublequote      |      True    |      True    |      True    |
+| skipinitialspace |     False    |     False    |     False    |
+| lineterminator   |    '\r\n'    |    '\r\n'    |      '\n'    |
+| quoting          |         0    |         0    |         1    |
+| escapechar       |      None    |      None    |      None    |
++------------------+--------------+--------------+--------------+
+```
+
+### Read Rows from CSV File
+```python
+def read_csv_file(filename, dialect='excel'):
+    with open(filename, encoding='utf-8', newline='') as file:
+        return list(csv.reader(file, dialect))
+```
+
+### Write Rows to CSV File
+```python
+def write_to_csv_file(filename, rows, dialect='excel'):
+    with open(filename, 'w', encoding='utf-8', newline='') as file:
+        writer = csv.writer(file, dialect)
+        writer.writerows(rows)
+```
+
+
+SQLite
+------
+**A server-less database engine that stores each database into a separate file.**
+
+```python
+import sqlite3
+<conn> = sqlite3.connect(<path>)                # Opens existing or new file. Also ':memory:'.
+<conn>.close()                                  # Closes the connection.
+```
+
+### Read
+```python
+<cursor> = <conn>.execute('<query>')            # Can raise a subclass of sqlite3.Error.
+<tuple>  = <cursor>.fetchone()                  # Returns next row. Also next(<cursor>).
+<list>   = <cursor>.fetchall()                  # Returns remaining rows. Also list(<cursor>).
+```
+
+### Write
+```python
+<conn>.execute('<query>')                       # Can raise a subclass of sqlite3.Error.
+<conn>.commit()                                 # Saves all changes since the last commit.
+<conn>.rollback()                               # Discards all changes since the last commit.
+```
+
+#### Or:
+```python
+with <conn>:                                    # Exits the block with commit() or rollback(),
+    <conn>.execute('<query>')                   # depending on whether any exception occurred.
+```
+
+### Placeholders
+```python
+<conn>.execute('<query>', <list/tuple>)         # Replaces '?'s in query with values.
+<conn>.execute('<query>', <dict/namedtuple>)    # Replaces ':<key>'s with values.
+<conn>.executemany('<query>', <coll_of_above>)  # Runs execute() multiple times.
+```
+* **Passed values can be of type str, int, float, bytes, None, bool, datetime.date or datetime.datetime.**
+* **Bools will be stored and returned as ints and dates as [ISO formatted strings](#encode).**
+
+### Example
+**Values are not actually saved in this example because `'conn.commit()'` is omitted!**
+```python
+>>> conn = sqlite3.connect('test.db')
+>>> conn.execute('CREATE TABLE person (person_id INTEGER PRIMARY KEY, name, height)')
+>>> conn.execute('INSERT INTO person VALUES (NULL, ?, ?)', ('Jean-Luc', 187)).lastrowid
+1
+>>> conn.execute('SELECT * FROM person').fetchall()
+[(1, 'Jean-Luc', 187)]
+```
+
+### SqlAlchemy
+```python
+# $ pip3 install sqlalchemy
+from sqlalchemy import create_engine, text
+<engine> = create_engine('<url>').connect()     # Url: 'dialect://user:password@host/dbname'.
+<conn>   = <engine>.connect()                   # Creates a connection. Also <conn>.close().
+<cursor> = <conn>.execute(text('<query>'), …)   # Replaces ':<key>'s with keyword arguments.
+with <conn>.begin(): ...                        # Exits the block with commit or rollback.
+```
+
+```text
++------------+--------------+-----------+-----------------------------------+
+| Dialects   | pip3 install | import    | Dependencies                      |
++------------+--------------+-----------+-----------------------------------+
+| mysql      | mysqlclient  | MySQLdb   | www.pypi.org/project/mysqlclient  |
+| postgresql | psycopg2     | psycopg2  | www.psycopg.org/docs/install.html |
+| mssql      | pyodbc       | pyodbc    | apt install g++ unixodbc-dev      |
+| oracle     | cx_oracle    | cx_Oracle | Oracle Instant Client             |
++------------+--------------+-----------+-----------------------------------+
+```
+
+
+Bytes
+-----
+**Bytes object is an immutable sequence of single bytes. Mutable version is called bytearray.**
+
+```python
+<bytes> = b'<str>'                          # Only accepts ASCII characters and \x00-\xff.
+<int>   = <bytes>[<index>]                  # Returns an int in range from 0 to 255.
+<bytes> = <bytes>[<slice>]                  # Returns bytes even if it has only one element.
+<bytes> = <bytes>.join(<coll_of_bytes>)     # Joins elements using bytes as a separator.
+```
+
+### Encode
+```python
+<bytes> = bytes(<coll_of_ints>)             # Ints must be in range from 0 to 255.
+<bytes> = bytes(<str>, 'utf-8')             # Or: <str>.encode('utf-8')
+<bytes> = <int>.to_bytes(n_bytes, …)        # `byteorder='little/big', signed=False`.
+<bytes> = bytes.fromhex('<hex>')            # Hex pairs can be separated by whitespaces.
+```
+
+### Decode
+```python
+<list>  = list(<bytes>)                     # Returns ints in range from 0 to 255.
+<str>   = str(<bytes>, 'utf-8')             # Or: <bytes>.decode('utf-8')
+<int>   = int.from_bytes(<bytes>, …)        # `byteorder='little/big', signed=False`.
+'<hex>' = <bytes>.hex()                     # Returns hex pairs. Accepts `sep=<str>`.
+```
+
+### Read Bytes from File
+```python
+def read_bytes(filename):
+    with open(filename, 'rb') as file:
+        return file.read()
+```
+
+### Write Bytes to File
+```python
+def write_bytes(filename, bytes_obj):
+    with open(filename, 'wb') as file:
+        file.write(bytes_obj)
+```
+
+
+Struct
+------
+* **Module that performs conversions between a sequence of numbers and a bytes object.**
+* **System’s type sizes, byte order, and alignment rules are used by default.**
+
+```python
+from struct import pack, unpack
+<bytes> = pack('<format>', <el_1> [, ...])  # Packages arguments into bytes object.
+<tuple> = unpack('<format>', <bytes>)       # Use iter_unpack() for iterator of tuples.
+```
+
+```python
+>>> pack('>hhl', 1, 2, 3)
+b'\x00\x01\x00\x02\x00\x00\x00\x03'
+>>> unpack('>hhl', b'\x00\x01\x00\x02\x00\x00\x00\x03')
+(1, 2, 3)
+```
+
+### Format
+#### For standard type sizes and manual alignment (padding) start format string with:
+* **`'='` - System's byte order (usually little-endian).**
+* **`'<'` - Little-endian.**
+* **`'>'` - Big-endian (also `'!'`).**
+
+#### Besides numbers, pack() and unpack() also support bytes objects as part of the sequence:
+* **`'c'` - A bytes object with a single element. For pad byte use `'x'`.**
+* **`'<n>s'` - A bytes object with n elements.**
+
+#### Integer types. Use a capital letter for unsigned type. Minimum and standard sizes are in brackets:
+* **`'b'` - char (1/1)**
+* **`'h'` - short (2/2)**
+* **`'i'` - int (2/4)**
+* **`'l'` - long (4/4)**
+* **`'q'` - long long (8/8)**
+
+#### Floating point types:
+* **`'f'` - float (4/4)**
+* **`'d'` - double (8/8)**
+
+
+Array
+-----
+**List that can only hold numbers of a predefined type. Available types and their minimum sizes in bytes are listed above. Sizes and byte order are always determined by the system.**
+
+```python
+from array import array
+<array> = array('<typecode>', <collection>)    # Array from collection of numbers.
+<array> = array('<typecode>', <bytes>)         # Array from bytes object.
+<array> = array('<typecode>', <array>)         # Treats array as a sequence of numbers.
+<bytes> = bytes(<array>)                       # Or: <array>.tobytes()
+<file>.write(<array>)                          # Writes array to the binary file.
+```
+
+
+Memory View
+-----------
+* **A sequence object that points to the memory of another object.**
+* **Each element can reference a single or multiple consecutive bytes, depending on format.**
+* **Order and number of elements can be changed with slicing.**
+* **Casting only works between char and other types and uses system's sizes.**
+* **Byte order is always determined by the system.**
+
+```python
+<mview> = memoryview(<bytes/bytearray/array>)  # Immutable if bytes, else mutable.
+<real>  = <mview>[<index>]                     # Returns an int or a float.
+<mview> = <mview>[<slice>]                     # Mview with rearranged elements.
+<mview> = <mview>.cast('<typecode>')           # Casts memoryview to the new format.
+<mview>.release()                              # Releases the object's memory buffer.
+```
+
+### Decode
+```python
+<bytes> = bytes(<mview>)                       # Returns a new bytes object.
+<bytes> = <bytes>.join(<coll_of_mviews>)       # Joins mviews using bytes object as sep.
+<array> = array('<typecode>', <mview>)         # Treats mview as a sequence of numbers.
+<file>.write(<mview>)                          # Writes mview to the binary file.
+```
+
+```python
+<list>  = list(<mview>)                        # Returns a list of ints or floats.
+<str>   = str(<mview>, 'utf-8')                # Treats mview as a bytes object.
+<int>   = int.from_bytes(<mview>, …)           # `byteorder='little/big', signed=False`.
+'<hex>' = <mview>.hex()                        # Treats mview as a bytes object.
+```
+
+
+Deque
+-----
+**A thread-safe list with efficient appends and pops from either side. Pronounced "deck".**
+
+```python
+from collections import deque
+<deque> = deque(<collection>, maxlen=None)
+```
+
+```python
+<deque>.appendleft(<el>)                       # Opposite element is dropped if full.
+<deque>.extendleft(<collection>)               # Collection gets reversed.
+<el> = <deque>.popleft()                       # Raises IndexError if empty.
+<deque>.rotate(n=1)                            # Rotates elements to the right.
+```
+
+
+Threading
+---------
+* **CPython interpreter can only run a single thread at a time.**
+* **That is why using multiple threads won't result in a faster execution, unless at least one of the threads contains an I/O operation.**
+```python
+from threading import Thread, RLock, Semaphore, Event, Barrier
+from concurrent.futures import ThreadPoolExecutor
+```
+
+### Thread
+```python
+<Thread> = Thread(target=<function>)           # Use `args=<collection>` to set the arguments.
+<Thread>.start()                               # Starts the thread.
+<bool> = <Thread>.is_alive()                   # Checks if the thread has finished executing.
+<Thread>.join()                                # Waits for the thread to finish.
+```
+* **Use `'kwargs=<dict>'` to pass keyword arguments to the function.**
+* **Use `'daemon=True'`, or the program will not be able to exit while the thread is alive.**
+
+### Lock
+```python
+<lock> = RLock()                               # Lock that can only be released by acquirer.
+<lock>.acquire()                               # Waits for the lock to be available.
+<lock>.release()                               # Makes the lock available again.
+```
+
+#### Or:
+```python
+with <lock>:                                   # Enters the block by calling acquire(),
+    ...                                        # and exits it with release().
+```
+
+### Semaphore, Event, Barrier
+```python
+<Semaphore> = Semaphore(value=1)               # Lock that can be acquired by 'value' threads.
+<Event>     = Event()                          # Method wait() blocks until set() is called.
+<Barrier>   = Barrier(n_times)                 # Wait() blocks until it's called n_times.
+```
+
+### Thread Pool Executor
+* **Object that manages thread execution.**
+* **An object with the same interface called ProcessPoolExecutor provides true parallelism by running a separate interpreter in each process. All arguments must be [pickable](#pickle).**
+
+```python
+<Exec> = ThreadPoolExecutor(max_workers=None)  # Or: `with ThreadPoolExecutor() as <name>: …`
+<Exec>.shutdown(wait=True)                     # Blocks until all threads finish executing.
+```
+
+```python
+<iter> = <Exec>.map(<func>, <args_1>, ...)     # A multithreaded and non-lazy map().
+<Futr> = <Exec>.submit(<func>, <arg_1>, ...)   # Starts a thread and returns its Future object.
+<bool> = <Futr>.done()                         # Checks if the thread has finished executing.
+<obj>  = <Futr>.result()                       # Waits for thread to finish and returns result.
+```
+
+### Queue
+**A thread-safe FIFO queue. For LIFO queue use LifoQueue.**
+```python
+from queue import Queue
+<Queue> = Queue(maxsize=0)
+```
+
+```python
+<Queue>.put(<el>)                              # Blocks until queue stops being full.
+<Queue>.put_nowait(<el>)                       # Raises queue.Full exception if full.
+<el> = <Queue>.get()                           # Blocks until queue stops being empty.
+<el> = <Queue>.get_nowait()                    # Raises queue.Empty exception if empty.
+```
+
+
