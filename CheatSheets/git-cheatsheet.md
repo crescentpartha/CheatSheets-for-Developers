@@ -70,12 +70,18 @@ Table of Contents
 | ------- | ----------- |
 | `git branch` | List branches |
 | `git branch [branch-name]` | Create a local branch |
+| `git branch -m [old branch name] [new branch name]` | Rename a local branch |
 | `git branch -d [branch-name]` | Delete a branch |
+| `git branch -D [branch name]` | Delete a branch forcefully |
 | `git branch -a` | See all branches (local and remote) |
 | `git checkout [branch-name]` | Switch to another branch |
+| `git checkout -b "branch name"` | Create a new branch and switch to that branch |
+| `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
+| `git checkout -` | Switch to the branch last checked out |
+| `git checkout -- [file-name.txt]` | Discard changes to a file |
 | `git switch [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
-| `git checkout -b "branch name"` | Create a new branch and switch to that branch |
+| `git merge [source branch] [target branch]` | Merge a branch into a target branch |
 
 **[🔼Back to Top](#table-of-contents)**
 
