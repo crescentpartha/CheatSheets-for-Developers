@@ -11,7 +11,6 @@
   - [Forms](#forms)
   - [Important Attributes](#important-attributes)
   - [INPUT Types](#input-Types)
-  - [The `<label>` Element (Tag)](#The-label-Element)
   - [Tables](#tables)
   - [Graphics](#graphics)
   - [Media](#media)
@@ -170,31 +169,6 @@
 **[🔼Back to Top](#table-of-contents)**
 
 
-### The `<label>` Element (Tag)
-
-> The `<label>` element is the formal way to define a label for an HTML form widget. 
-> This is the most important element if you want to build accessible forms." *— MDN*
-
-There are two ways to use labels correctly:
-
-```html
-<!-- Simple (nested) label example -->
-<label>Click me 
-  <input type="text" id="user" name="name" />
-</label>
-
-<!-- Using the "for" attribute with the input's id -->
-<label for="user">Click me</label>
-<input id="user" type="text" name="name" />
-```
-
-#### `<label>`'s Attributes
-
-**Very important!** `for=` in a label references an `<input>`s `id=` attribute, not it's `name=` attribute!
-Sometimes these values will be the same, but `for=` goes with `id=`. `name=` is the key of the `<input>`'s 
-value when it arrives at the server.
-
-**[🔼Back to Top](#table-of-contents)**
 
 
 ## INPUT Types
@@ -215,24 +189,23 @@ value when it arrives at the server.
 
 ### Important Attributes
 
-All input types (including `<textarea>`s):
+**Input tag**
+|keyword|description|
+|--------|---------|
+|**type**| the type of data that is being input (affects the "widget" that is used to display this element by the browser).|
+|**name** | the key used to describe this data in the HTTP request.|
+|**id** | the unique identifier that other HTML elements, JavaScript and CSS use to access this element in the browser.|
+|**value** | the default data that is assigned to the element.|
+|**placeholder** | not a default value, but a useful HTML5 addition of a data "prompt" for an input.|
+|**disabled** | a Boolean attribute indicating that the "widget" is not available for interaction.|
 
-- **`type`**: the type of data that is being input (affects the "widget" that is used to display this
-  element by the browser).
-- **`name`**: the key used to describe this data in the HTTP request.
-- **`id`**: the unique identifier that other HTML elements, JavaScript and CSS use to access this 
-  element in the browser.
-- **`value`**: the default data that is assigned to the element.
-- **`placeholder`**: not a default value, but a useful HTML5 addition of a data "prompt" for an input.
-- **`disabled`**: a Boolean attribute indicating that the "widget" is not available for interaction.
+**Radio buttons or checkboxes:**
 
-Radio buttons or checkboxes:
-
-- **`checked`**: a Boolean that indicates whether the control is selected by default (is false unless).
-- **`name`**: the group to which this element is connected. For radio buttons, only one element per 
-  group (or name) can be checked.
-- **`value`**: the data or value that is returned for a specific group (a multi-element control), if 
-  this element is checked.
+|keyword|description|
+|--------|---------|
+|**checked** | a Boolean that indicates whether the control is selected by default (is false unless).|
+|**name** | the group to which this element is connected. For radio buttons, only one element per group (or name) can be checked.|
+|**value** | the data or value that is returned for a specific group (a multi-element control), if this element is checked.|
 
 
 
