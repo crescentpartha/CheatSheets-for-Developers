@@ -17,8 +17,15 @@
 		- [Exception Handling](#exception-handling)
 	- [String Methods](#string-methods)
 	- [Math Library Methods](#math-library-methods)
-	- [Types of Variables](#types-of-variables)  
-	- [Inheritance in java](#inheriance-in-java) 
+	- [Types of Variables](#types-of-variables)
+	- [Java Regex](#java-regex)
+		- [Matcher Class](#matcher-class)
+	- [Inheritance in Java](#inheritance-in-java)
+		- [Single Inheritance:](#single-inheritance)
+		- [Multi-Level Inheritance:](#multi-level-inheritance)
+		- [Hierarchical Inheritance](#hierarchical-inheritance)
+		- [Hybrid Inheritance:](#hybrid-inheritance)
+	- [NOTE](#note)
 
 # Java CheatSheet for Developers
 
@@ -298,6 +305,7 @@ Class C extends A {
     //your child class code 
 }
 ```
+
 **[🔼Back to Top](#table-of-contents)**
 
 ### Hybrid Inheritance:
