@@ -26,6 +26,7 @@
 		- [Hierarchical Inheritance](#hierarchical-inheritance)
 		- [Hybrid Inheritance:](#hybrid-inheritance)
 	- [NOTE](#note)
+  - [Collections](#collections)
 
 # Java CheatSheet for Developers
 
@@ -320,3 +321,15 @@ Class C extends A {
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Collections
+
+|Collection|Description|
+|-----|-----|
+|Set| Set is a collection of elements which can not contain duplicate values. Set is implemented in HashSets, LinkedHashSets, TreeSet etc|
+|List| List is a ordered collection of elements which can have duplicates. Lists are classified into ArrayList, LinkedList, Vectors|
+|Queue| FIFO approach, while instantiating Queue interface you can either choose LinkedList or PriorityQueue.|
+|Stack| LIFO approach, stack is a sub ordinate of vector which helps in performing different functions.|
+|Deque| Deque(Double Ended Queue) is used to add or remove elements from both the ends of the Queue(both head and tail)|
+|Map| Map contains key-values pairs which don't have any duplicates. Map is implemented in HashMap, TreeMap etc.|
+
+**[🔼Back to Top](#table-of-contents)**
