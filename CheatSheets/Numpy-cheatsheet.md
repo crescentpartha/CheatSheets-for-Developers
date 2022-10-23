@@ -86,91 +86,44 @@ Below is a list of all data types in NumPy and the characters used to represent 
 
 # Operations
 
-- Copying
 
-|keywords | description|
-|-------------|----------|
-|`np.copy(array)` | Copies array to new memory array.|
-|`view(dtype)` | Creates view of array elements with type dtype|
-
-- Sorting
-
-|keywords | description|
-|-------------|----------|
-|`array.sort()` | Sorts array|
-| `array.sort(axis=0)` | Sorts specific axis of array|
-| `array.reshape(2,3)` | Reshapes array to 2 rows, 3 columns without changing data.|
-
-- Adding
-
-|keywords | description|
-|-------------|----------|
-|`np.append(array,values)`| Appends values to end of array|
-|`np.insert(array,4,values)` | Inserts values into array before index 4|
-
-- Removing
-
-|keywords | description|
-|-------------|----------|
-|`np.delete(array,2,axis=0)` | Deletes row on index 2 of array|
-|`np.delete(array,3,axis=1)` | Deletes column on index 3 of array|
-
-- Combining
-
-|keywords | description|
-|-------------|----------|
-|`np.concatenate((array1,array2),axis=0)` | Adds array2 as rows to the end of array1|
-| `np.concatenate((array1,array2),axis=1)` | Adds array2 as columns to end of array1|
-
-- Splitting
-
-|keywords | description|
-|-------------|----------|
-|`np.split(array,3)` | Splits array into 3 sub|arrays|
-
-- Indexing
-
-|keywords | description|
-|-------------|----------|
-|`a[0]=5` | Assigns array element on index 0 the value 5|
-| `a[2,3]=1` | Assigns array element on index [2][3] the value 1|
-
-- Subseting
-
-|keywords | description|
-|-------------|----------|
-| `a[2]`| Returns the element of index 2 in array a.|
-|`a[3,5]` | Returns the 2D array element on index [3][5]|
-
-- Slicing
-
-|keywords | description|
-|-------------|----------|
-|`a[0:4]` | Returns the elements at indices 0,1,2,3|
-|`a[0:4,3]`| Returns the elements on rows 0,1,2,3 at column 3|
-|`a[:2]`| Returns the elements at indices 0,1|
-|`a[:,1]` | Returns the elements at index 1 on all rows|
+|keywords | description|action|
+|-------------|----------|-------|
+|`np.copy(array)` | Copies array to new memory array.|copying|
+|`view(dtype)` | Creates view of array elements with type dtype|copying|
+|`array.sort()` | Sorts array|Sorting|
+| `array.sort(axis=0)` | Sorts specific axis of array|Sorting|
+| `array.reshape(2,3)` | Reshapes array to 2 rows, 3 columns without changing data.|Sorting|
+|`np.append(array,values)`| Appends values to end of array|Adding|
+|`np.insert(array,4,values)` | Inserts values into array before index 4|Adding|
+|`np.delete(array,2,axis=0)` | Deletes row on index 2 of array|Removing|
+|`np.delete(array,3,axis=1)` | Deletes column on index 3 of array|Removing|
+|`np.concatenate((array1,array2),axis=0)` | Adds array2 as rows to the end of array1|Combining|
+| `np.concatenate((array1,array2),axis=1)` | Adds array2 as columns to end of array1|Combining|
+|`np.split(array,3)` | Splits array into 3 sub|arrays|Splitting|
+|`a[0]=5` | Assigns array element on index 0 the value 5|Indexing|
+| `a[2,3]=1` | Assigns array element on index [2][3] the value 1|Indexing|
+| `a[2]`| Returns the element of index 2 in array a.|Subseting|
+|`a[3,5]` | Returns the 2D array element on index [3][5]|Subseting|
+|`a[0:4]` | Returns the elements at indices 0,1,2,3|Slicing|
+|`a[0:4,3]`| Returns the elements on rows 0,1,2,3 at column 3|Slicing|
+|`a[:2]`| Returns the elements at indices 0,1|Slicing|
+|`a[:,1]` | Returns the elements at index 1 on all rows|Slicing|
 
 **[🔼Back to Top](#table-of-contents)**
 
 # Array Mathematics
 
-- Arithmetic Operations
-|Operation type | Syntax|
-|-------------|----------|
-| Addition| np.add(a,b)|
-| Subtraction| np.subtract(a,b)|
-| Multiplication| np.multiply(a,b)|
-| Division| np.divide(a,b)|
-| Exponentiation| np.exp(a)|
-| Square Root| np.sqrt(b)|
-
-- Comparison
-
-|Operations type| Syntax|
-|-------------|----------|
-| Element-wise| a==b|
-| Array-wise| np.array_equal(a,b)|
+|Operation type | Syntax|Action|
+|-------------|----------|------|
+| Addition| np.add(a,b)|Arithmetic Operations|
+| Subtraction| np.subtract(a,b)|Arithmetic Operations|
+| Multiplication| np.multiply(a,b)|Arithmetic Operations|
+| Division| np.divide(a,b)|Arithmetic Operations|
+| Exponentiation| np.exp(a)|Arithmetic Operations|
+| Square Root| np.sqrt(b)|Arithmetic Operations|
+| Element-wise| a==b|Comparison|
+| Array-wise| np.array_equal(a,b)|Comparison|
 
 **[🔼Back to Top](#table-of-contents)**
 
