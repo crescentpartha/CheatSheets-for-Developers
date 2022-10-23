@@ -51,6 +51,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 18. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
 19. [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
 20. [pandas-cheetsheet.md]((./CheatSheets/pandas-cheetsheet.md))
+21. [numpy-cheatsheet.md]((./CheatSheets/numpy-cheetsheet.md))
 
 ## ___Instructions___
 
