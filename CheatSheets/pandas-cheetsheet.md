@@ -31,7 +31,7 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 # Key and Imports
 
 We use following shorthand in the cheat sheet:
-|keywords | description|
+|Command | description|
 |----------|-------------|
 |**pd**|import pandas library| 
 |**df** | Refers to any Pandas Dataframe object.|
@@ -43,7 +43,7 @@ You can use the following imports to get started:
 
 # Importing Data
 
-|keywords | description|
+|Command | description|
 |---------|-------------|
 |**pd.read_csv(filename)** | It read the data from CSV file.|
 |**pd.read_table(filename)** | It is used to read the data from delimited text file.|
@@ -57,7 +57,8 @@ You can use the following imports to get started:
 **[🔼Back to Top](#table-of-contents)**
 
 **Exporting data**
-|keywords | description|
+
+|Command | description|
 |-------------|----------|
 |**df.to_csv(filename)**| It writes to a CSV file.|
 |**df.to_excel(filename)**| It writes to an Excel file.|
@@ -69,7 +70,8 @@ You can use the following imports to get started:
 # Create Test objects
 
 It is useful for testing the code segments.
-|keywords | description|
+
+|Command | description|
 |-------------|----------|
 |**pd.DataFrame(np.random.rand(7,18))**| Refers to 18 columns and 7 rows of random floats.|
 |**pd.Series(my_list)**| It creates a Series from an iterable my_list.|
@@ -79,7 +81,7 @@ It is useful for testing the code segments.
 
 # Viewing/Inspecting Data
 
-|keywords | description|
+|Command | description|
 |-------------|----------|
 |**df.head(n)**| It returns first n rows of the DataFrame.By default it will return first 5 rows|
 |**df.tail(n)** | It returns last n rows of the DataFrame.By default it will return last 5 rows|
@@ -91,7 +93,8 @@ It is useful for testing the code segments.
 **[🔼Back to Top](#table-of-contents)**
 
 # Selection
-|keywords | description|
+
+|Command | description|
 |-------------|----------|
 |**df[col1]** | It returns column with the label col as Series.|
 |**df[[col1, col2]]**| It returns columns as a new DataFrame.|
@@ -105,7 +108,7 @@ It is useful for testing the code segments.
 
 # Data cleaning
 
-|keywords | description|
+|Command | description|
 |-------------|----------|
 |**df.columns** = ['a','b','c'] | It rename the columns.|
 |**pd.isnull()** | It checks for the null values and returns the Boolean array.|
@@ -128,7 +131,7 @@ It is useful for testing the code segments.
 
 # Filter, Sort, and Groupby
 
-|keywords | description|
+|Command | description|
 |-------------|----------|
 |**df[df[col] > 0.5]** | Returns the rows where column col is greater than 0.5|
 |**df[(df[col] > 0.5) & (df[col] < 0.7)]**| Returns the rows where 0.7 > col > 0.5|
@@ -147,7 +150,7 @@ It is useful for testing the code segments.
 
 # Join/Combine
 
-|keywords | description|
+|Command | description|
 |-------------|----------|
 |**df1.append(df2)**| Its task is to add the rows in df1 to the end of df2(columns should be identical).|
 |**pd.concat([df1, df2], axis=1)**| Its task is to add the columns in df1 to the end of df2(rows should be identical).|
@@ -161,15 +164,15 @@ It is useful for testing the code segments.
 The statistics functions can be applied to a Series, which are as follows:
 
 
-|keywords | description|
+|Command | description|
 |-------------|----------|
-|df.describe() | It returns the summary statistics for the numerical columns.|
-|df.mean() | It returns the mean of all the columns.|
-|df.corr() | It returns the correlation between the columns in the dataframe.|
-|df.count()| It returns the count of all the non-null values in each dataframe column.|
-|df.max()| It returns the highest value from each of the columns.|
-|df.min()| It returns the lowest value from each of the columns.|
-|df.median()| It returns the median from each of the columns.|
-|df.std(): It returns the standard deviation from each of the columns.|
+|**df.describe()**| It returns the summary statistics for the numerical columns.|
+|**df.mean()** | It returns the mean of all the columns.|
+|**df.corr()** | It returns the correlation between the columns in the dataframe.|
+|**df.count()**| It returns the count of all the non-null values in each dataframe column.|
+|**df.max()**| It returns the highest value from each of the columns.|
+|**df.min()**| It returns the lowest value from each of the columns.|
+|**df.median()**| It returns the median from each of the columns.|
+|**df.std()**| It returns the standard deviation from each of the columns.|
 
 **[🔼Back to Top](#table-of-contents)**
