@@ -1,41 +1,53 @@
-# BASH
+## Table of Contents
 
-Bash Cheatsheet Index:
+- [BASH CheatSheet for Developers](#bash-cheatsheet-for-developers)
+  - [Commands](#commands)
+    - [`tr command`](#tr-command)
+  - [One Liners](#one-liners)
+    - [`Block Bad IPs`](#block-bad-ips)
+  - [If Statements](#if-statements)
+    - [`Check if args are passed`](#check-if-args-are-passed)
+    - [`Check if required variables exist`](#check-if-required-variables-exist)
+    - [`Check if environment variables exists`](#check-if-environment-variables-exists)
+  - [While Loops](#while-loops)
+    - [`Run process for 5 Seconds`](#run-process-for-5-seconds)
+    - [`Run until state changes within ttl`](#run-until-state-changes-within-ttl)
+  - [for Loops](#for-loops)
+    - [`Upload all docker image`](#upload-all-docker-image)
+  - [Functions](#functions)
+  - [Redirecting Outputs](#redirecting-outputs)
+    - [`Stdout, Stderr`](#stdout-stderr)
+  - [Manipulating Text](#manipulating-text)
+    - [`Remove first 3 characters`](#remove-first-3-characters)
+    - [`Only show last 3 characters`](#only-show-last-3-characters)
 
-* [One Liners](#one-liners)
-  * [Block Bad IPs](#block-bad-ips)
-* [If Statements](#if-statements)
-  * [Check if args are passed](#check-if-args-are-passed)
-  * [Check if required variables exist](#check-if-required-variables-exist)
-  * [Check if environment variables exists](#check-if-environment-variables-exists)
-* [While Loops](#while-loops)
-  * [Run for 5 Seconds](#run-process-for-5-seconds)
-* [Redirecting Outputs](#redirecting-outputs)
-  * [Stdout, Stderr](#stdout-stderr)
+# BASH CheatSheet for Developers
 
 ## Commands
 
-### tr command
+### `tr command`
 
-Remove whitespace:
+> ___Remove whitespace:___
 
 ```
 $ echo 'foo - bar' | tr -d '[:space:]'
 foo-bar
 ```
 
-Convert to uppercase:
+> ___Convert to uppercase:___
 
 ```
 $ echo 'HeLLo' | tr '[:lower:]' '[:upper:]'
 HELLO
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## One Liners
 
-### Block Bad IPs
+### `Block Bad IPs`
 
-Use iptables to block all bad ip addresses:
+> Use iptables to block all bad ip addresses:
 
 ```
 $ cat /var/log/maillog | grep 'lost connection after AUTH from unknown' | tail -n 5
@@ -46,7 +58,7 @@ May 10 11:23:51 srv4 postfix/smtpd[1838]: lost connection after AUTH from unknow
 May 10 11:24:02 srv4 postfix/smtpd[1838]: lost connection after AUTH from unknown[185.211.245.170]
 ```
 
-Get the data to show only IPs:
+> Get the data to show only IPs:
 
 ```
 cat /var/log/maillog | grep 'lost connection after AUTH from unknown' | cut -d'[' -f3 | cut -d ']' -f1 | tail -n5
@@ -57,7 +69,7 @@ cat /var/log/maillog | grep 'lost connection after AUTH from unknown' | cut -d'[
 185.36.81.173
 ```
 
-Get the uniqe IP addresses:
+> Get the uniqe IP addresses:
 
 ```
 $ cat /var/log/maillog | grep 'lost connection after AUTH from unknown' | cut -d'[' -f3 | cut -d ']' -f1 | sort | uniq
@@ -68,15 +80,17 @@ $ cat /var/log/maillog | grep 'lost connection after AUTH from unknown' | cut -d
 139.59.224.234
 ```
 
-Redirect the output to iptables:
+> Redirect the output to iptables:
 
 ```
 $ for ip in $(cat /var/log/maillog | grep 'lost connection after AUTH from unknown' | cut -d'[' -f3 | cut -d ']' -f1 | sort | uniq); do iptables -I INPUT -s ${ip} -p tcp --dport 25 -j DROP; done
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## If Statements
 
-### Check if args are passed
+### `Check if args are passed`
 
 ```
 if [[ $# -eq 0 ]] ; then
@@ -85,7 +99,9 @@ if [[ $# -eq 0 ]] ; then
 fi
 ```
 
-## Check if required variables exist
+**[🔼Back to Top](#table-of-contents)**
+
+### `Check if required variables exist`
 
 ```
 if [ $1 == "one" ] || [ $1 == "two" ]
@@ -98,7 +114,7 @@ else
 fi
 ```
 
-or:
+`OR`
 
 ```
 NAME=${1}
@@ -111,7 +127,9 @@ if [ -z ${NAME} ]
 fi
 ```
 
-## Check if environment variables exists
+**[🔼Back to Top](#table-of-contents)**
+
+### `Check if environment variables exists`
 
 ```
 if [ -z ${OWNER} ] || [ -z ${NAME} ]
@@ -123,9 +141,11 @@ else
 fi
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## While Loops
 
-### Run process for 5 Seconds
+### `Run process for 5 Seconds`
 
 ```
 set -ex
@@ -144,7 +164,9 @@ kill $!
 sleep 2
 ```
 
-### Run until state changes within ttl
+**[🔼Back to Top](#table-of-contents)**
+
+### `Run until state changes within ttl`
 
 ```
 UPDATE_COMPLETE=false
@@ -177,8 +199,11 @@ while [ ${UPDATE_COMPLETE} == false ]
 echo "complete"
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## for Loops
-### Upload all docker image
+
+### `Upload all docker image`
 
 ```bash
 for i in $(ls | grep .tar): do
@@ -186,7 +211,7 @@ for i in $(ls | grep .tar): do
 done
 ```
 
-
+**[🔼Back to Top](#table-of-contents)**
 
 ## Functions
 
@@ -197,7 +222,7 @@ message(){
 }
 ```
 
-or pass all args:
+`OR` ___pass all args:___
 
 ```
 message(){
@@ -205,37 +230,41 @@ message(){
 }
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Redirecting Outputs
 
-### Stdout, Stderr 
+### `Stdout, Stderr`
 
-Redirect stderr to /dev/null:
+> Redirect stderr to /dev/null:
 
 ```
 grep -irl faker . 2>/dev/null
 ```
 
-Redirect stdout to one file and stderr to another file:
+> Redirect stdout to one file and stderr to another file:
 
 ```
 grep -irl faker . > out 2>error
 ```
 
-Redirect stderr to stdout (&1), and then redirect stdout to a file:
+> Redirect stderr to stdout (&1), and then redirect stdout to a file:
 
 ```
 grep -irl faker . >out 2>&1
 ```
 
-Redirect both to a file:
+> Redirect both to a file:
 
 ```
 grep -irl faker . &> file.log
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Manipulating Text
 
-### Remove first 3 characters
+### `Remove first 3 characters`
 
 ```
 $ STRING="abcdefghij"
@@ -243,12 +272,16 @@ $ echo ${STRING:3}
 defghij
 ```
 
-### Only show last 3 characters
+**[🔼Back to Top](#table-of-contents)**
 
-With tail to only show the last 3 characters:
+### `Only show last 3 characters`
+
+> With tail to only show the last 3 characters:
 
 ```
 $ STRING="abcdefghij"
 $ echo ${STRING} | tail -c 4
 hij
 ```
+
+**[🔼Back to Top](#table-of-contents)**
