@@ -18,6 +18,7 @@
 	- [String Methods](#string-methods)
 	- [Math Library Methods](#math-library-methods)
 	- [Types of Variables](#Types-of-Variables)
+	- [Collections](#Collections)
 
 # Java CheatSheet for Developers
 
@@ -206,5 +207,18 @@ try {
 |Instance variable|Throughout the class except in<br /> static methods|Until the object is available in the<br />memory|
 |Class variable|Throughout the class|Until the end of the program|
 |Local variable|Within the block in which it is<br />declared|Until the control leaves the block<br />in which it is declared|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Collections
+
+|Collection|Description|
+|-----|-----|
+|Set| Set is a collection of elements which can not contain duplicate values. Set is implemented in HashSets, LinkedHashSets, TreeSet etc|
+|List| List is a ordered collection of elements which can have duplicates. Lists are classified into ArrayList, LinkedList, Vectors|
+|Queue| FIFO approach, while instantiating Queue interface you can either choose LinkedList or PriorityQueue.|
+|Stack| LIFO approach, stack is a sub ordinate of vector which helps in performing different functions.|
+|Deque| Deque(Double Ended Queue) is used to add or remove elements from both the ends of the Queue(both head and tail)|
+|Map| Map contains key-values pairs which don't have any duplicates. Map is implemented in HashMap, TreeMap etc.|
 
 **[🔼Back to Top](#table-of-contents)**
