@@ -160,17 +160,6 @@
 </form>
 ```
 
-#### `<form>`'s Attributes
-
-- **method**: the HTTP verb (method) that the browser uses to submit the form. We use "POST" to stand in for `POST`, `PUT` and `DELETE`.
-- **action**: the path of the HTTP request page that processes the information submitted via the form.
-- **the _route_**: is the combination of the verb (method) and path, and must be defined on our app for this form to submit data correctly.
-
-**[🔼Back to Top](#table-of-contents)**
-
-
-
-
 ## INPUT Types
 
 | Field Type | HTML Code  Notes |
