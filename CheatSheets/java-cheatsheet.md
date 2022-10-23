@@ -17,8 +17,8 @@
 		- [Exception Handling](#exception-handling)
 	- [String Methods](#string-methods)
 	- [Math Library Methods](#math-library-methods)
-	- [Types of Variables](#Types-of-Variables)  
-	- [Inheritance in java](#Inheriance-in-Java) 
+	- [Types of Variables](#types-of-variables)  
+	- [Inheritance in java](#inheriance-in-java) 
 
 # Java CheatSheet for Developers
 
@@ -182,7 +182,12 @@ try {
 |split(_regex_) |splits string into tokens  |
 |trim()  |trims surrounding whitespace  |
 |equals(_s2_)  |true if s equals s2  |
+|equalsIgnoreCase(_s2_) | true if s equals s2 ignoring the upper/lowercase |
 |compareTo(_s2_)  | 0 if equal/+ if s > s2/- if s < s2 |
+|concat(_s2_) | appends s2 to the end of s |
+|contains(_s2_) | Checks whether a s contains a sequence of characters (s2) |
+|replace(_s2_) | Searches the specified string s2 , and returns a new string where the specified values are replaced |
+|toCharArray() | Converts the string to a new character array |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -197,6 +202,7 @@ try {
 |sin(theta)| sine of theta|
 |cos(theta|cosine of theta|
 |tan(theta)|tangent of theta|
+|round(_x_)| Returns the value of x rounded to its nearest integer|
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -207,19 +213,43 @@ try {
 |Instance variable|Throughout the class except in<br /> static methods|Until the object is available in the<br />memory|
 |Class variable|Throughout the class|Until the end of the program|
 |Local variable|Within the block in which it is<br />declared|Until the control leaves the block<br />in which it is declared| 
- 
- ## Inheritance in Java-
 
-Inheritance - It is the property of a child/derived/subclass, allowing it to inherit the properties() and functionalities or data members methods from its parent/base/superclass.  
-Java supports 4 types of inheritance: 
+**[🔼Back to Top](#table-of-contents)**
+
+## Java Regex 
+
+### Matcher Class
+
+|Method|Description|
+|--|--|
+|matches()|tests whether the regex matches the pattern|
+|find()|finds the next expression that matches the pattern|
+|find(int a)| finds the next expression that matches from the start number _a_|
+|group()|returns the matched subsequence |
+|start()|returns the starting index of the matched subsequence|
+|end()|returns the ending index of the matched subsequence|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Inheritance in Java
+
+> Inheritance - It is the property of a child/derived/subclass, allowing it to inherit the properties() and functionalities or data members methods from its parent/base/superclass.  
+
+___Java supports 4 types of inheritance:___
+
 1.	Single Inheritance
 2.	Multi-level Inheritance
 3.	Hierarchical Inheritance
 4.	Hybrid Inheritance 
-## Single Inheritance : 
-As the title indicates, just one class is subject to this kind of inheritance. The parent class gives rise to just one child class. 
 
-Syntax: 
+**[🔼Back to Top](#table-of-contents)**
+
+### Single Inheritance: 
+
+> As the title indicates, just one class is subject to this kind of inheritance. The parent class gives rise to just one child class. 
+
+___Syntax:___
+
 ```java
 Class A{
   //your parent class code
@@ -229,10 +259,14 @@ Class B extends A {
 } 
 ```
 
-## Multi-Level Inheritance:  
-In multi-level inheritance, one class has more than one parent class but at different levels of inheritance.  
+**[🔼Back to Top](#table-of-contents)**
 
-Syntax:  
+### Multi-Level Inheritance:
+
+> In multi-level inheritance, one class has more than one parent class but at different levels of inheritance.  
+
+___Syntax:___
+
 ```java
 Class A{
   //your parent class code
@@ -245,10 +279,14 @@ Class C extends B {
 } 
 ```
 
-## Hierarchical Inheritance
- In hierarchical inheritance, one parent can have one or more child/sub/derived classes.
+**[🔼Back to Top](#table-of-contents)**
 
-Syntax: 
+### Hierarchical Inheritance
+
+> In hierarchical inheritance, one parent can have one or more child/sub/derived classes.
+
+___Syntax:___
+
 ```java
 Class A{
   //your parent class code
@@ -260,13 +298,17 @@ Class C extends A {
     //your child class code 
 }
 ```
-## Hybrid Inheritance: 
-Hybrid Inheritance is the combination of more than one type of inheritance in a single program. 
+**[🔼Back to Top](#table-of-contents)**
 
+### Hybrid Inheritance:
 
-## NOTE- 
-Multiple inheritance is not supported in Java as it leads to the diamond problem. 
-We can achieve Multiple inheritance in Java by using the concept of Abstraction.
-
+> Hybrid Inheritance is the combination of more than one type of inheritance in a single program. 
 
 **[🔼Back to Top](#table-of-contents)**
+
+## NOTE
+
+> Multiple inheritance is not supported in Java as it leads to the diamond problem. <br /> We can achieve Multiple inheritance in Java by using the concept of Abstraction.
+
+**[🔼Back to Top](#table-of-contents)**
+
