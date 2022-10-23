@@ -4,70 +4,94 @@ description: You can have the most important elements of Kotlin right under your
 created: 2022-10-18
 ---
 
-# Table of Contents
+## Table of Contents
 
-- [Table of Contents](#table-of-contents)
+- [Git CheatSheet for Developers](#git-cheatsheet-for-developers)
   - [About Kotlin](#about-kotlin)
   - [Basics](#basics)
-    - [Print Syntax](#print-syntax)
-    - [Declaring function](#declaring-function)
-    - [Single-expression function](#single-expression-function)
-    - [Declaring variables](#declaring-variables)
-    - [Variables with nullable types](#variables-with-nullable-types)
+    - [`Print Syntax`](#print-syntax)
+    - [`Declaring function`](#declaring-function)
+    - [`Single-expression function`](#single-expression-function)
+    - [`Declaring variables`](#declaring-variables)
+    - [`Variables with nullable types`](#variables-with-nullable-types)
   - [Control Structures](#control-structures)
   - [Classes](#classes)
-    - [Primary constructor](#primary-constructor)
-    - [Inheritance](#inheritance)
-    - [Properties with assessors](#properties-with-assessors)
-    - [Data classes](#data-classes)
+    - [`Primary constructor`](#primary-constructor)
+    - [`Inheritance`](#inheritance)
+    - [`Properties with assessors`](#properties-with-assessors)
+    - [`Data classes`](#data-classes)
   - [Collection Literals](#collection-literals)
   - [Collection Processing](#collection-processing)
-      - [students](#students)
-    - [Most important functions for collection processing](#most-important-functions-for-collection-processing)
-    - [Mutable vs immutable collection processing functions](#mutable-vs-immutable-collection-processing-functions)
+    - [`students`](#students)
+    - [`Most important functions for collection processing`](#most-important-functions-for-collection-processing)
+    - [`Mutable vs immutable collection processing functions`](#mutable-vs-immutable-collection-processing-functions)
   - [Extension Functions -> Object](#extension-functions---object)
-  - [Fuctions](#fuctions)
-    - [Function types](#function-types)
-    - [Function literals](#function-literals)
-    - [Extension functions](#extension-functions)
+  - [Functions](#functions)
+    - [`Function types`](#function-types)
+    - [`Function literals`](#function-literals)
+    - [`Extension functions`](#extension-functions)
   - [Delegates](#delegates)
   - [Visibility Modifiers](#visibility-modifiers)
   - [Variance Modifiers](#variance-modifiers)
 
+# Git CheatSheet for Developers
+
 ## About Kotlin
 
-Initially created for the JVM (Java Virtual Machine) and Android, Kotlin is a general-purpose, free, open-source, statically typed "pragmatic" programming language that blends object-oriented and functional programming capabilities. Interoperability, safety, clarity, and tool support are its main concerns.
+> Initially created for the JVM (Java Virtual Machine) and Android, Kotlin is a general-purpose, free, open-source, statically typed "pragmatic" programming language that blends object-oriented and functional programming capabilities. Interoperability, safety, clarity, and tool support are its main concerns.
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Basics
+
 1. [Print Syntax](#print-syntax)
 2. [Declaring Function](#declaring-function)
 3. [Single-expression function](#single-expression-function)
 4. [Declaring variables](#declaring-variables)
 5. [Variables with nullable types](#variables-with-nullable-types)
 
-### Print Syntax
+**[🔼Back to Top](#table-of-contents)**
+
+### `Print Syntax`
+
 ```bash
 fun main(args: Array<String>) {
  println("Hello, World")
 }
 ```
-### Declaring function
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Declaring function`
+
 ```bash
 fun sum(a: Int, b: Int): Int {
  return a + b
 }
 ```
-### Single-expression function
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Single-expression function`
+
 ```bash
 fun sum(a: Int, b: Int) = a + b
 ```
-### Declaring variables
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Declaring variables`
+
 ```bash
 val name = ”Marcin” ## Can't be changed
 var age = 5 ## Can be changed
 age++
 ```
-### Variables with nullable types
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Variables with nullable types`
+
 ```bash
 var name: String? = null
 val length: Int
@@ -78,19 +102,28 @@ length = name?.length ?: return
 length = name?.length ?: throw Error()
 ## length, or throw error when name is null
 ```
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## Control Structures
+
 - **If as an expression**
+
 ```bash
 fun bigger(a: Int, b: Int) = if (a > b) a else b
 ```
+
 - **For loop**
+
 ```bash
 val list = listOf("A", "B", "C")
 for (element in list) {
  println(element)
 }
 ```
+
 - **When expression**
+
 ```bash
 fun numberTypeName(x: Number) = when(x) {
  0 -> "Zero" ## Equality check
@@ -99,7 +132,9 @@ fun numberTypeName(x: Number) = when(x) {
  is Byte -> "Byte" ## Type check
  else -> "Some number"
 ```
+
 - **When expression with predicates**
+
 ```bash
 fun signAsString(x: Int)= when {
  x < 0 -> "Negative"
@@ -108,26 +143,40 @@ fun signAsString(x: Int)= when {
 }
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Classes
+
 1. [Primary constructor](#primary-constructor)
 2. [Inheritance](#inheritance)
 3. [Properties with assessors](#properties-with-assessors)
 4. [Data classes](#data-classes)
 
-### Primary constructor
+**[🔼Back to Top](#table-of-contents)**
+
+### `Primary constructor`
+
 ```bash
 val declares a read-only property, var a mutable one
 class Person(val name: String, var age: Int)
 ## name is read-only, age is mutable
 ```
-### Inheritance
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Inheritance`
+
 ```bash
 open class Person(val name: String) {
  open fun hello() = "Hello, I am $name"
  ## Final by default so we need open
 }
 ```
-### Properties with assessors
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Properties with assessors`
+
 ```bash
 class Person(var name: String, var surname: String) {
  var fullName: String
@@ -139,7 +188,11 @@ class Person(var name: String, var surname: String) {
  }
 }
 ```
-### Data classes
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Data classes`
+
 ```bash
 data class Person(val name: String, var age: Int)
 val mike = Person("Mike", 23)
@@ -169,7 +222,11 @@ print("$name $age") ## Mike 23
 properties changed
 val jake = mike.copy(name = "Jake")
 ```
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## Collection Literals
+
 ```bash
 listOf(1,2,3,4) ## List<Int>
 
@@ -193,8 +250,13 @@ List(4) { it * 2 } ## List<Int>
 
 generateSequence(4) { it + 2 } ## Sequence<Int>
 ```
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## Collection Processing
-#### students
+
+### `students`
+
 - **.filter { it.passing && it.averageGrade > 4.0 }** <br>
   *// Only passing students*
 
@@ -205,6 +267,7 @@ generateSequence(4) { it + 2 } ## Sequence<Int>
   
 - **.sortedWith(compareBy({ it.surname }, { it.name }))** <br>
  *// Sort by surname and then name*
+
 - **.generateSequence(0) { it + 1 }**<br>
 // Infinitive sequence of next numbers starting on 0
 
@@ -215,8 +278,11 @@ generateSequence(4) { it + 2 } ## Sequence<Int>
 - **.take(100)**<br> *// Take first 100*
 
 - **.average()** <br>*// Count average*
-  
-### Most important functions for collection processing
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Most important functions for collection processing`
+
 **val l = listOf(1,2,3,4)**
 
 - **filter - returns only elements matched by predicate**<br>
@@ -240,11 +306,13 @@ generateSequence(4) { it + 2 } ## Sequence<Int>
 ``val (even, odd) = l.partition { it % 2 == 0 }``<br>
 print(even) // [2, 4]<br>
 print(odd) // [1, 3]<br>
+
 - **min/max/minBy/maxBy**<br>
 ``l.min()`` // 1, possible because we can compare Int<br>
 ``l.minBy { -it }`` // 4<br>
 ``l.max()`` // 4, possible because we can compare Int<br>
 ``l.maxBy { -it }`` // 1
+
 - **first/firstBy**<br>
 ``l.first()`` // 1<br>
 ``l.first { it % 2 == 0 }`` // 2 (first even number)
@@ -262,7 +330,9 @@ print(odd) // [1, 3]<br>
 - **distinct/distinctBy - returns only unique elements**<br>
 ``listOf(1,1,2,2).distinct()``  // [1, 2]
 
-### Mutable vs immutable collection processing functions
+**[🔼Back to Top](#table-of-contents)**
+
+### `Mutable vs immutable collection processing functions`
 
 ```bash
 val list = mutableListOf(3,4,2,1)
@@ -273,10 +343,12 @@ val sortResult = list.sort() ## Sorts mutable collection
 println(sortResult) ## kotlin.Unit
 println(list) ## [1, 2, 3, 4]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## Extension Functions -> Object
 
-
-| Refference to receiver | Reciever | Results of lambda |
+| Reference to receiver | Receiver | Results of lambda |
 | ----------- | ----------- | ----------- |
 | it | also | let |
 | has | apply | run/with |
@@ -287,12 +359,19 @@ val dialog = Dialog().apply {
  onClick { print("Clicked") }
 }
 ```
-## Fuctions
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Functions
+
 1. [Function types](#function-types)
 2. [Function literals](#function-literals)
 3. [Extension functions](#extension-functions)
 
-### Function types
+**[🔼Back to Top](#table-of-contents)**
+
+### `Function types`
+
 ```bash
 ()->Unit - takes no arguments and returns nothing (Unit).
 (Int, Int)->Int - takes two arguments of type Int
@@ -302,7 +381,11 @@ and returns Int.
 (Int)->()->Unit - takes argument of type Int
 and returns function.
 ```
-### Function literals
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Function literals`
+
 ```bash
 val add: (Int, Int) -> Int = { i, j -> i + j }
 ## Simple lambda expression
@@ -319,13 +402,19 @@ val printAndDoubleFun: (Int) -> Int = fun(i: Int): Int {
 val i = printAndDouble(10) ## 10
 print(i) ## 20
 ```
-### Extension functions
+
+**[🔼Back to Top](#table-of-contents)**
+
+### `Extension functions`
+
 ```bash
 fun Int.isEven() = this % 2 == 0
 print(2.isEven()) ## true
 fun List<Int>.average() = 1.0 * sum() / size
 print(listOf(1, 2, 3, 4).average()) ## 2
 ```
+
+**[🔼Back to Top](#table-of-contents)**
    
 ## Delegates
 
@@ -358,6 +447,9 @@ val map = mapOf("a" to 10)
 val a by map
 print(a) ## Prints: 10
 ```
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## Visibility Modifiers
 
 |Modifier   | Class members| Top-level   |
@@ -366,6 +458,8 @@ print(a) ## Prints: 10
 |Private  | Visible only in the same class| Visible in the same file |
 | Protected |Visible only in the same class and subclasses  | Not allowed |
 | Internal |  Visible in the same module if class is accessible  | Visible in the same module |
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Variance Modifiers
 
@@ -378,3 +472,5 @@ print(a) ## Prints: 10
    |              X                    ↓                      ↓
  [Int]        [Box<Int>]          [Box<Int>]            [Box<Int>]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
