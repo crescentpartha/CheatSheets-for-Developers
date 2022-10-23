@@ -17,7 +17,8 @@
 		- [Exception Handling](#exception-handling)
 	- [String Methods](#string-methods)
 	- [Math Library Methods](#math-library-methods)
-	- [Types of Variables](#Types-of-Variables)
+	- [Types of Variables](#types-of-variables)  
+	- [Inheritance in java](#inheriance-in-java) 
 
 # Java CheatSheet for Developers
 
@@ -211,13 +212,14 @@ try {
 |--|--|--|
 |Instance variable|Throughout the class except in<br /> static methods|Until the object is available in the<br />memory|
 |Class variable|Throughout the class|Until the end of the program|
-|Local variable|Within the block in which it is<br />declared|Until the control leaves the block<br />in which it is declared|
+|Local variable|Within the block in which it is<br />declared|Until the control leaves the block<br />in which it is declared| 
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Java Regex 
 
-## Matcher Class
+### Matcher Class
+
 |Method|Description|
 |--|--|
 |matches()|tests whether the regex matches the pattern|
@@ -226,3 +228,87 @@ try {
 |group()|returns the matched subsequence |
 |start()|returns the starting index of the matched subsequence|
 |end()|returns the ending index of the matched subsequence|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Inheritance in Java
+
+> Inheritance - It is the property of a child/derived/subclass, allowing it to inherit the properties() and functionalities or data members methods from its parent/base/superclass.  
+
+___Java supports 4 types of inheritance:___
+
+1.	Single Inheritance
+2.	Multi-level Inheritance
+3.	Hierarchical Inheritance
+4.	Hybrid Inheritance 
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Single Inheritance: 
+
+> As the title indicates, just one class is subject to this kind of inheritance. The parent class gives rise to just one child class. 
+
+___Syntax:___
+
+```java
+Class A{
+  //your parent class code
+}
+Class B extends A {
+   //your child class code
+} 
+```
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Multi-Level Inheritance:
+
+> In multi-level inheritance, one class has more than one parent class but at different levels of inheritance.  
+
+___Syntax:___
+
+```java
+Class A{
+  //your parent class code
+}
+Class B extends A {
+   //your code
+}
+Class C extends B {
+    //your code 
+} 
+```
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Hierarchical Inheritance
+
+> In hierarchical inheritance, one parent can have one or more child/sub/derived classes.
+
+___Syntax:___
+
+```java
+Class A{
+  //your parent class code
+}
+Class B extends A {
+   //your child class code
+}
+Class C extends A {
+    //your child class code 
+}
+```
+**[🔼Back to Top](#table-of-contents)**
+
+### Hybrid Inheritance:
+
+> Hybrid Inheritance is the combination of more than one type of inheritance in a single program. 
+
+**[🔼Back to Top](#table-of-contents)**
+
+## NOTE
+
+> Multiple inheritance is not supported in Java as it leads to the diamond problem. <br /> We can achieve Multiple inheritance in Java by using the concept of Abstraction.
+
+**[🔼Back to Top](#table-of-contents)**
+
