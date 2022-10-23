@@ -200,7 +200,7 @@ value when it arrives at the server.
 ## INPUT Types
 
 | Field Type | HTML Code  Notes |
-|:-- |:-- |:--  |
+|--- |----- |
 | plain text | `<input type="text">` | the type attribute can be omitted |
 | password field | `<input type="password">`  | echoes dots instead of characters |
 | text area | `<textarea></textarea>` |  a more customizable plain text area |
