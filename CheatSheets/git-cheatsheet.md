@@ -161,7 +161,7 @@ Table of Contents
 |`git stash pop`| write working from top of stash stack|
 |`git stash drop` | discard the changes from top of stash stack|
 
-## Merge Unralated histories
+## Merge Unrelated histories
 | command | Description |
 | ------- | ----------- |
 | `git merge --allow-unrelated-histories`| Merge unrelated histories|
