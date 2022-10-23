@@ -1,29 +1,29 @@
 ## Table of Contents
 
-- [Numpy CheatSheet for Developers](#Numpy-cheatsheet-for-developers)
-- [Introduction-What-is-Numpy?](#introduction-what-is-Numpy)
-- [Key and Imports?](#Key-and-Imports)
-- [Data Type In Numpy](#Data-types-in-numpy)
-- [Save And Load Data](#Save-And-Load-Data)
-- [Operations](#Operations)
-- [Array Mathematics](#Array-Mathematics)
-- [Functions](#Functions)
+- [NumPy CheatSheet for Developers](#numpy-cheatsheet-for-developers)
+  - [Introduction-What-is-NumPy?](#introduction-what-is-numpy)
+  - [Key and Imports](#key-and-imports)
+  - [Data Types In Numpy](#data-types-in-numpy)
+  - [Save And Load Data](#save-and-load-data)
+    - [Text/CSV files:](#textcsv-files)
+    - [Properties:](#properties)
+  - [Operations](#operations)
+  - [Array Mathematics](#array-mathematics)
+  - [Functions](#functions)
 
+# NumPy CheatSheet for Developers
 
-
-# Numpy CheatSheet for Developers
-
-## Introduction-What-is-Numpy?
+## Introduction-What-is-NumPy?
 
 > A library consisting of **multidimensional array objects** and a collection of routines for processing those arrays. 
  
 **[🔼Back to Top](#table-of-contents)**
 
+## Key and Imports
 
-# Key and Imports
+> We use following shorthand in the cheat sheet:
 
-We use following shorthand in the cheat sheet:
-|Command | description|
+|Command | Description|
 |----------|-------------|
 |`np`|import numpy library| 
 |`np.array` |  The array object in NumPy|
@@ -39,13 +39,13 @@ We use following shorthand in the cheat sheet:
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Data Types In Numpy
+## Data Types In Numpy
 
-NumPy has some extra data types, and refer to data types with one character, like i for integers, u for unsigned integers etc.
+> NumPy has some extra data types, and refer to data types with one character, like i for integers, u for unsigned integers etc.
 
-Below is a list of all data types in NumPy and the characters used to represent them.
+> Below is a list of all data types in NumPy and the characters used to represent them.
 
-|Command | description|
+|Command | Description|
 |-------------|----------|
 |`i`|  integer|
 |`b `| boolean|
@@ -59,38 +59,37 @@ Below is a list of all data types in NumPy and the characters used to represent 
 |`U `| unicode string|
 |`V`|  fixed chunk of memory for other type ( void )|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-# Save And Load Data
+## Save And Load Data
 
-- Text/CSV files:
+### Text/CSV files:
 
-|Command | description|
+|Command | Description|
 |-------------|----------|
 |`np.loadtxt('New_file.txt')` | From a text file|
 |`np.genfromtxt('New_file.csv',delimiter=',') `| From a CSV file|
 |`np.savetxt('New_file.txt',arr,delimiter=' ') `| Writes to a text file|
 |`np.savetxt('New_file.csv',arr,delimiter=',') `| Writes to a CSV file|
 
-- Properties:
+**[🔼Back to Top](#table-of-contents)**
 
-|Command | description|
+### Properties:
+
+|Command | Description|
 |-------------|----------|
 |`array.size` | Returns number of elements in array|
 |`array.shape` | Returns dimensions of array(rows,columns)|
 |`array.dtype` | Returns type of elements in array|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-# Operations
+## Operations
 
-
-|keywords | description|action|
-|-------------|----------|-------|
-|`np.copy(array)` | Copies array to new memory array.|copying|
-|`view(dtype)` | Creates view of array elements with type dtype|copying|
+|Keywords | Description|Action|
+|-------------|----------|:-------:|
+|`np.copy(array)` | Copies array to new memory array.|Copying|
+|`view(dtype)` | Creates view of array elements with type dtype|Copying|
 |`array.sort()` | Sorts array|Sorting|
 | `array.sort(axis=0)` | Sorts specific axis of array|Sorting|
 | `array.reshape(2,3)` | Reshapes array to 2 rows, 3 columns without changing data.|Sorting|
@@ -112,10 +111,10 @@ Below is a list of all data types in NumPy and the characters used to represent 
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Array Mathematics
+## Array Mathematics
 
 |Operation type | Syntax|Action|
-|-------------|----------|------|
+|-------------|----------|:------:|
 | Addition| np.add(a,b)|Arithmetic Operations|
 | Subtraction| np.subtract(a,b)|Arithmetic Operations|
 | Multiplication| np.multiply(a,b)|Arithmetic Operations|
@@ -127,8 +126,7 @@ Below is a list of all data types in NumPy and the characters used to represent 
 
 **[🔼Back to Top](#table-of-contents)**
 
-
-# Functions
+## Functions
 
 |Operation Type | Syntax|
 |-------------|----------|
@@ -138,7 +136,4 @@ Below is a list of all data types in NumPy and the characters used to represent 
 | Mean| a.mean()|
 | Median| a.median()|
 
-
 **[🔼Back to Top](#table-of-contents)**
-
-
