@@ -10,20 +10,24 @@
 | Command                         | Description                         |
 | ------------------------------- | ----------------------------------- |
 | `yarn`                          | Install dependencies                |
-| `yarn init`                     | Create a new package                |
-| `yarn add [packeage]`           | Install package                     |
-| `yarn add --dev [packeage]`     | Install dev package                 |
-| `yarn remove [package]`         | Uninstall package                   |
-| `yarn remove [package]`         | Uninstall dev package               |
-| `yarn upgrade`                  | Updated                             |
-| `yarn upgrade [package]`        | Update package                      |
+| `yarn add [package]`            | Install package                     |
+| `yarn add --dev [package]`      | Install dev package                 |
+| `yarn autoclean`                | Frees up unnecessary files and folders from dependencies|
+| `yarn cache clean`              | Remove the shared cache files       |
 | `yarn global add [package]`     | Global install package              |
 | `yarn global remove [package]`  | Global uninstall package            |
-| `yarn run <scriptName>`         | Run a script defined in the package.json |
+| `yarn help`                     | Accessing the list of commands      |
+| `yarn info`                     | See information related to packages |
+| `yarn init`                     | Create a new package                |
 | `yarn link <destination>`       | Connect the local project to anotherone  |
 | `yarn npm login`                | Store new login info to access the npm registry |
 | `yarn npm logout`               | Logout of the npm registry          |
 | `yarn npm publish`              | Publish the active workspace to the npm registry |
-| `yarn cache clean`              | Remove the shared cache files |
-| `yarn info`                     | See information related to packages |
 | `yarn pack`                     | Generate a tarball from the active workspace |
+| `yarn remove [package]`         | Uninstall package                   |
+| `yarn remove [package]`         | Uninstall dev package               |
+| `yarn run <scriptName>`         | Run a script defined in the package.json |
+| `yarn set version <version>`    | Lock the Yarn version used by the project |
+| `yarn up [package]`             | Upgrade dependencies across the project|
+| `yarn upgrade`                  | Updated                             |
+| `yarn upgrade [package]`        | Update package                      |
