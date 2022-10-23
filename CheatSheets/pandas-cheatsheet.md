@@ -1,18 +1,17 @@
 ## Table of Contents
 
-- [Pandas CheatSheet for Developers](#Pandas-cheatsheet-for-developers)
-- [Introduction-What-is-Pandas?](#introduction-what-is-Pandas)
-- [Key and Imports?](#Key-and-Imports)
-- [Importing Data](#Importing-Data)
-- [Exorting Data](#Exporting-Data)
-- [Create Test objects](#Create-Test-objects)
-- [Viewing/Inspecting Data](#Viewing/Inspecting-Data)
-- [Selection](#Selection)
-- [Data cleaning](#Data-cleaning)
-- [Filter, Sort, and Groupby](#Filter-Sort-and-Groupby)
-- [Join/Combine](#Join/Combine)
-- [Statistics](#Statistics)
-
+- [Pandas CheatSheet for Developers](#pandas-cheatsheet-for-developers)
+  - [Introduction-What-is-Pandas?](#introduction-what-is-pandas)
+  - [Key and Imports](#key-and-imports)
+  - [Importing Data](#importing-data)
+  - [Exporting data](#exporting-data)
+  - [Create Test objects](#create-test-objects)
+  - [Viewing/Inspecting Data](#viewinginspecting-data)
+  - [Selection](#selection)
+  - [Data cleaning](#data-cleaning)
+  - [Filter, Sort, and Groupby](#filter-sort-and-groupby)
+  - [Join/Combine](#joincombine)
+  - [Statistics](#statistics)
 
 # Pandas CheatSheet for Developers
 
@@ -25,23 +24,21 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 
 **[🔼Back to Top](#table-of-contents)**
 
+## Key and Imports
 
+> We use following shorthand in the cheat sheet:
 
-
-# Key and Imports
-
-We use following shorthand in the cheat sheet:
 |Command | description|
 |----------|-------------|
 |`pd`|import pandas library| 
 |`df` | Refers to any Pandas Dataframe object.|
 |`s` | Refers to any Pandas Series object.|
 
-You can use the following imports to get started:
+> You can use the following imports to get started:
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Importing Data
+## Importing Data
 
 |Command | description|
 |---------|-------------|
@@ -56,7 +53,7 @@ You can use the following imports to get started:
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Exporting data
+## Exporting data
 
 |Command | description|
 |-------------|----------|
@@ -67,9 +64,9 @@ You can use the following imports to get started:
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Create Test objects
+## Create Test objects
 
-It is useful for testing the code segments.
+> It is useful for testing the code segments.
 
 |Command | description|
 |-------------|----------|
@@ -79,7 +76,7 @@ It is useful for testing the code segments.
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Viewing/Inspecting Data
+## Viewing/Inspecting Data
 
 |Command | description|
 |-------------|----------|
@@ -92,7 +89,7 @@ It is useful for testing the code segments.
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Selection
+## Selection
 
 |Command | description|
 |-------------|----------|
@@ -105,8 +102,7 @@ It is useful for testing the code segments.
 
 **[🔼Back to Top](#table-of-contents)**
 
-
-# Data cleaning
+## Data cleaning
 
 |Command | description|
 |-------------|----------|
@@ -128,8 +124,7 @@ It is useful for testing the code segments.
 
 **[🔼Back to Top](#table-of-contents)**
 
-
-# Filter, Sort, and Groupby
+## Filter, Sort, and Groupby
 
 |Command | description|
 |-------------|----------|
@@ -148,7 +143,7 @@ It is useful for testing the code segments.
 
 **[🔼Back to Top](#table-of-contents)**
 
-# Join/Combine
+## Join/Combine
 
 |Command | description|
 |-------------|----------|
@@ -156,13 +151,11 @@ It is useful for testing the code segments.
 |`pd.concat([df1, df2], axis=1)`| Its task is to add the columns in df1 to the end of df2(rows should be identical).|
 |`df1.join(df2,on=col1,how='inner')`| SQL-style join the columns in df1 with the columns on df2 where the rows for col have identical values, 'how' can be of 'left', 'right', 'outer', 'inner'.|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-# Statistics
+## Statistics
 
-The statistics functions can be applied to a Series, which are as follows:
-
+> The statistics functions can be applied to a Series, which are as follows:
 
 |Command | description|
 |-------------|----------|
