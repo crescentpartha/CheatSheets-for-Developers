@@ -8,6 +8,7 @@
   - [Images](#images)
   - [Lists](#lists)
   - [Forms](#forms)
+  - [Inputs](#inputs)
   - [Tables](#tables)
 
 # HTML CheatSheet for Developers
@@ -132,13 +133,15 @@
 
 | Command                                       | Description                                                                      |
 | -------------------------------------------   | -------------------------------------------------------------------------------- |
-| `<input type="email" name=?>`                 | Sets a single-line textbox for email addresses.                                  |
-| `<input type="url" name=?>`                   | Sets a single-line textbox for URLs.                                             |
-| `<input type="number" name=?>`                | Sets a single-line textbox for a number.                                         |
-| `<input type="range" name=?>`                 | Sets a single-line text box for a range numbers.                                 |
-| `<input type="date/month/week/time" name=?>`  | Sets a single-line text box with a calendar showing the date/month/week/time .   |
-| `<input type="search" name=?>`                | Sets a single-line text box for searching .                                      |
-| `<input type="color" name=?>`                 | Sets a single-line text box for picking a color.                                 |
+| `<input type="email" name=" ">`               | Sets a single-line textbox for email addresses.                                  |
+| `<input type="url" name=" ">`                 | Sets a single-line textbox for URLs.                                             |
+| `<input type="number" name=" ">`              | Sets a single-line textbox for a number.                                         |
+| `<input type="range" name=" ">`               | Sets a single-line text box for a range numbers.                                 |
+| `<input type="date" name=" ">`                | Sets a single-line text box with a calendar showing the date .                   |
+| `<input type="month" name=" ">`               | Sets a single-line text box with a calendar showing the month .                  |
+| `<input type="time" name=" ">`                | Sets a single-line text box with a calendar showing the time .                   |
+| `<input type="search" name=" ">`              | Sets a single-line text box for searching .                                      |
+| `<input type="color" name=" ">`               | Sets a single-line text box for picking a color.                                 |
 
 **[🔼Back to Top](#table-of-contents)**
 
