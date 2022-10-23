@@ -2,6 +2,7 @@
 
 - [Conda CheatSheet for Developers](#conda-cheatsheet-for-developers)
   - [Basic Syntax of conda env](#basic-syntax-of-conda-env)
+  - [Using Environment](#using-environment)
 
 # Conda CheatSheet for Developers
 
@@ -17,8 +18,12 @@
 | `conda update conda`            | Update conda version                |
 | `conda update package_name`     | Update any install package          |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Using Environment
 
 | Command                                | Description                                             |
 | -------------------------------------- | ------------------------------------------------------- |
 | `conda create --name py35 python=3.5`  | Create a new environment named py35, Install python 3.5 |
+
+**[🔼Back to Top](#table-of-contents)**
