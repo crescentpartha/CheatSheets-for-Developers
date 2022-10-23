@@ -181,7 +181,12 @@ try {
 |split(_regex_) |splits string into tokens  |
 |trim()  |trims surrounding whitespace  |
 |equals(_s2_)  |true if s equals s2  |
+|equalsIgnoreCase(_s2_) | true if s equals s2 ignoring the upper/lowercase |
 |compareTo(_s2_)  | 0 if equal/+ if s > s2/- if s < s2 |
+|concat(_s2_) | appends s2 to the end of s |
+|contains(_s2_) | Checks whether a s contains a sequence of characters (s2) |
+|replace(_s2_) | Searches the specified string s2 , and returns a new string where the specified values are replaced |
+|toCharArray() | Converts the string to a new character array |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -196,6 +201,7 @@ try {
 |sin(theta)| sine of theta|
 |cos(theta|cosine of theta|
 |tan(theta)|tangent of theta|
+|round(_x_)| Returns the value of x rounded to its nearest integer|
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -208,3 +214,15 @@ try {
 |Local variable|Within the block in which it is<br />declared|Until the control leaves the block<br />in which it is declared|
 
 **[🔼Back to Top](#table-of-contents)**
+
+## Java Regex 
+
+## Matcher Class
+|Method|Description|
+|--|--|
+|matches()|tests whether the regex matches the pattern|
+|find()|finds the next expression that matches the pattern|
+|find(int a)| finds the next expression that matches from the start number _a_|
+|group()|returns the matched subsequence |
+|start()|returns the starting index of the matched subsequence|
+|end()|returns the ending index of the matched subsequence|
