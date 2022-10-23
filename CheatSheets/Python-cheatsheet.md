@@ -65,9 +65,9 @@ list_of_chars    = list(<str>)
 Dictionary
 ----------
 ```python
-<view> = <dict>.keys()                          # Coll. of keys that reflects changes.
-<view> = <dict>.values()                        # Coll. of values that reflects changes.
-<view> = <dict>.items()                         # Coll. of key-value tuples that reflects chgs.
+<view> = <dict>.keys()                          # Call. of keys that reflects changes.
+<view> = <dict>.values()                        # Call. of values that reflects changes.
+<view> = <dict>.items()                         # Call. of key-value tuples that reflects chgs.
 ```
 ```python
 value  = <dict>.get(key, default=None)          # Returns default if key is missing.
