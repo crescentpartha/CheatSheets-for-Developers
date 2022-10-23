@@ -92,7 +92,7 @@ Table of Contents
 | `git push origin [branch name]` | Push a branch to your remote repository |
 | `git pull origin [branch name]` | Pull a branch from your remote repository |
 | `git remote origin [branch name]` | Connect repository to local server |
-| `git push -f` | force a push request
+| `git push <remote> --force` | Forces the push even if it results in a non-fast-forward merge. Be sure that nobody has pulled the commits before using the `--force` option. |
 
 
 **[🔼Back to Top](#table-of-contents)**
