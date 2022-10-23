@@ -1,16 +1,40 @@
-# Introduction
+## Table of Contents
 
-Vim is a widely used, open-source Unix text editor. Learning to use Vim commands is a matter of practice and experience. That is why it is handy to have a helpful reference sheet while mastering them.
+- [VIM-Editor CheatSheet for Developers](#vim-editor-cheatsheet-for-developers)
+  - [Introduction](#introduction)
+  - [How to open a file in vim](#how-to-open-a-file-in-vim)
+  - [Moving by Characters, Words and Tokens](#moving-by-characters-words-and-tokens)
+  - [Moving by Lines](#moving-by-lines)
+  - [Moving by Screens](#moving-by-screens)
+  - [Inserting Text](#inserting-text)
+  - [Editing Text](#editing-text)
+  - [Cutting, Copying And Pasting](#cutting-copying-and-pasting)
+  - [Marking Text (Visual Mode)](#marking-text-visual-mode)
+  - [Visual Commands](#visual-commands)
+  - [Search in File](#search-in-file)
+  - [Saving and Exiting File](#saving-and-exiting-file)
+  - [Enabling Vim Color Schemes](#enabling-vim-color-schemes)
+
+# VIM-Editor CheatSheet for Developers
+
+## Introduction
+
+> Vim is a widely used, open-source Unix text editor. Learning to use Vim commands is a matter of practice and experience. That is why it is handy to have a helpful reference sheet while mastering them.
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## How to open a file in vim
-| Commands          | Descriptions             | Examples                                                    |
-|-------------------|--------------------------|-------------------------------------------------------------|
-` $ vim <file path>`| Open a file in Vim Editor|- `$ vim './myRepo/README.md' ` <br/> or <br/> - `vim README.md`
 
+| Commands           | Descriptions              | Examples                                                         |
+| -------------------| --------------------------| ---------------------------------------------------------------- |
+| `$ vim <file path>`| Open a file in Vim Editor | - `$ vim './myRepo/README.md'` <br/> or <br/> - `vim README.md` |
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Moving by Characters, Words and Tokens
 
-The basic keys for moving the cursor by one character are:
+> The basic keys for moving the cursor by one character are:
+
 |Commands         |Description                   |
 |-----------------|------------------------------|
 |`h`              |move the cursor left          |
@@ -18,10 +42,7 @@ The basic keys for moving the cursor by one character are:
 |`k`              |move the cursor up            |
 |`l`              |move the cursor right         |
 
-
-
-You can also use these keys with a number as a prefix to move in a specified direction multiple times. For example, if you run 5j the cursor moves down 5 lines.
-
+> You can also use these keys with a number as a prefix to move in a specified direction multiple times. For example, if you run 5j the cursor moves down 5 lines.
 
 |Commands         |Description                          |
 |-----------------|-------------------------------------|
@@ -32,6 +53,7 @@ You can also use these keys with a number as a prefix to move in a specified dir
 |`e`              | move to the end of a word           |
 |`E`              | move to the end of a token          |
 
+**[🔼Back to Top](#table-of-contents)**
 
 ## Moving by Lines
 
@@ -42,9 +64,9 @@ You can also use these keys with a number as a prefix to move in a specified dir
 |`^`                  | jump to the first (non-blank) character of the line             |
 |`#G` / `#gg` / `:#`  | move to a specified line number (replace # with the line number)|
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Moving by Screens
-
-
 
 |Commands         |Description                                             |
 |-----------------|--------------------------------------------------------|
@@ -65,6 +87,8 @@ You can also use these keys with a number as a prefix to move in a specified dir
 |`M`              | move to the middle of the screen (M=middle)            |
 |`L`              | move to the bottom of the screen (L=low)               |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Inserting Text
 
 |Commands         |Description                                             |
@@ -78,11 +102,14 @@ You can also use these keys with a number as a prefix to move in a specified dir
 |`ea`             |insert text at the end of the word                      |
 |`Esc`            |exit insert mode; switch to command mode                |
 
-Some of these commands switch between command and insert mode. By default, Vim launches in command mode, allowing you to move around and edit the file. To switch to command mode, use the Esc key.
+> Some of these commands switch between command and insert mode. By default, Vim launches in command mode, allowing you to move around and edit the file. To switch to command mode, use the Esc key. 
 
-On the other hand, the insert mode enables you to type and add text into the file. To move to insert mode, press i.
+> On the other hand, the insert mode enables you to type and add text into the file. To move to insert mode, press i.
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Editing Text
+
 |Commands         |Description                                                           |
 |-----------------|----------------------------------------------------------------------|
 |`r`              |replace a single character (and return to command mode)               |
@@ -96,8 +123,9 @@ On the other hand, the insert mode enables you to type and add text into the fil
 |`Ctrl + r`       |redo                                                                  |
 |`.`              |repeat last command                                                   |
 
-## Cutting, Copying And Pasting
+**[🔼Back to Top](#table-of-contents)**
 
+## Cutting, Copying And Pasting
 
 |Commands         |Description                                             |
 |-----------------|--------------------------------------------------------|
@@ -108,12 +136,15 @@ On the other hand, the insert mode enables you to type and add text into the fil
 |`p`              | paste after the cursor                                 |
 |`P`              | paste before the cursor                                |
   
-  Replace # by number
+> Replace # by number
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Marking Text (Visual Mode)
-Apart from command mode and insert mode, Vim also includes visual mode. This mode is mainly used for marking text.
 
-Based on the chunk of text you want to select, you can choose between three versions of visual mode: character mode, line mode, and block mode.
+> Apart from command mode and insert mode, Vim also includes visual mode. This mode is mainly used for marking text.
+
+> Based on the chunk of text you want to select, you can choose between three versions of visual mode: character mode, line mode, and block mode.
 
 |Commands         |Description                                             |
 |-----------------|--------------------------------------------------------|
@@ -121,7 +152,8 @@ Based on the chunk of text you want to select, you can choose between three vers
 |`V`              | select lines using line mode                           |            
 |`Ctrl+v`         | select text using block mode                           |            
 
-Once you have enabled one of the modes, use the navigation keys to select the desired text.
+> Once you have enabled one of the modes, use the navigation keys to select the desired text.
+
 |Commands         |Description                                             |
 |-----------------|--------------------------------------------------------|
 | `o`             |move from one end of the selected text to the other     |
@@ -133,8 +165,12 @@ Once you have enabled one of the modes, use the navigation keys to select the de
 | `iB`            | select inner block with {}                             |
 | `it`            | select inner block with <>                             |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Visual Commands
-Once you have selected the desired text in visual mode, you can use one of the visual commands to manipulate it. Some of them include:
+
+> Once you have selected the desired text in visual mode, you can use one of the visual commands to manipulate it. Some of them include:
+
 |Commands         |Description                                             |
 |-----------------|--------------------------------------------------------|
 |`y`              | yank (copy) the marked text                            |
@@ -143,7 +179,10 @@ Once you have selected the desired text in visual mode, you can use one of the v
 |`u`              | change the market text to lowercase                    |
 |`U`              | change the market text to uppercase                    |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Search in File
+
 |Commands         |Description                                             |
 |-----------------|--------------------------------------------------------|
 |`*`              | jump to the next instance of the current word          |
@@ -153,7 +192,10 @@ Once you have selected the desired text in visual mode, you can use one of the v
 |`n`              | repeat the search in the same direction                |
 |`N`              | repeat the search in the opposite direction            |
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Saving and Exiting File
+
 |Commands             |Description                                                        |
 |---------------------|-------------------------------------------------------------------|
 |`:w`                 | save the file                                                     |   
@@ -164,6 +206,14 @@ Once you have selected the desired text in visual mode, you can use one of the v
 |`:sav`               | save the file under a new name and continue editing the new copy  |   
 |`:w !sudo tee %`     | write out the file using sudo and tee command                     |   
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Enabling Vim Color Schemes
-- `:colorscheme [colorscheme_name]`  – change to specified scheme
-- `:colorscheme [space]+Ctrl+d` – list available Vim color scheme
+
+| Vim Color Schemes                 | Description                     |
+| --------------------------------- | ------------------------------- |
+| `:colorscheme [colorscheme_name]` | change to specified scheme      |
+| `:colorscheme [space]+Ctrl+d`     | list available Vim color scheme |
+
+**[🔼Back to Top](#table-of-contents)**
+
