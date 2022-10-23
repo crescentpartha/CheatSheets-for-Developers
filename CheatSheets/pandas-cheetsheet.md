@@ -16,7 +16,7 @@
 
 # Pandas CheatSheet for Developers
 
-# Introduction-What-is-Pandas?
+## Introduction-What-is-Pandas?
 
 > Pandas can be used as the **most important Python** package for **Data Science**. It helps to provide a lot of functions that deal with the data in easier way. It's **fast, flexible, and expressive data structures** are designed to make real-world data analysis.
 > Pandas Cheat Sheet is a quick guide through the basics of Pandas that you will need to get started on wrangling your data with Python. If you want to begin your data science journey with Pandas, you can use it as a handy reference to deal with the data easily.
