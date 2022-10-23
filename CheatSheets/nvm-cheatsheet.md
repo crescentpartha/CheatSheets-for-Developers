@@ -17,6 +17,7 @@
 | `nvm which <version>`           | Shows path to the given Node version|
 | `nvm current`                   | Shows what is the currently used Node version|
 | `nvm alias default <version>`   | Sets the default Node version to the given version|
+| `nvm unalias <alias_name>`      | Deletes the alias named <alias_name> |
 | `nvm --help`                    | Shows NVM help documents.           |
 | `nvm exec <version> node app.js`| Run Node app.js with the PATH pointing to given node version|
 | `nvm set-colors cgYmW`          | Set text colors to cyan, green, bold yellow, magenta, and white|
