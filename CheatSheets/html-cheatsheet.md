@@ -9,6 +9,7 @@
   - [Images](#images)
   - [Lists](#lists)
   - [Forms](#forms)
+  - [Inputs](#inputs)
   - [Tables](#tables)
   - [Graphics](#graphics)
   - [Media](#media)
@@ -155,6 +156,22 @@
 | `<form> … </form>` | The parent tag for an HTML form.                                                 |
 | `action=”url”`     | The URL listed here is where the form data will be submitted once user fills it. |
 | `method=””`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Inputs
+
+| Command                                       | Description                                                                      |
+| -------------------------------------------   | -------------------------------------------------------------------------------- |
+| `<input type="email" name=" ">`               | Sets a single-line textbox for email addresses.                                  |
+| `<input type="url" name=" ">`                 | Sets a single-line textbox for URLs.                                             |
+| `<input type="number" name=" ">`              | Sets a single-line textbox for a number.                                         |
+| `<input type="range" name=" ">`               | Sets a single-line text box for a range numbers.                                 |
+| `<input type="date" name=" ">`                | Sets a single-line text box with a calendar showing the date .                   |
+| `<input type="month" name=" ">`               | Sets a single-line text box with a calendar showing the month .                  |
+| `<input type="time" name=" ">`                | Sets a single-line text box with a calendar showing the time .                   |
+| `<input type="search" name=" ">`              | Sets a single-line text box for searching .                                      |
+| `<input type="color" name=" ">`               | Sets a single-line text box for picking a color.                                 |
 
 **[🔼Back to Top](#table-of-contents)**
 
