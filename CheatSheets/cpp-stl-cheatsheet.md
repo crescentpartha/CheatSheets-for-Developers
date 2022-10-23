@@ -276,7 +276,21 @@
         cout << p[i].first << " " << p[i].second << endl;
     }
     cout << endl;
-```
+    
+    // Vector pair sorting according to first element
+    cout << "Sorting according to first element\n";
+    sort (v.begin(), v.end());
+    cout << "\n";
+    
+    // Vector pair sorting according to second element
+    cout << "Sorting according to second element\n";
+    bool second_sorter (const pair <int,int> &a, const pair <int,int> &b) //comparator function, to be put outside main
+    {
+    	return (a.second < b.second);
+    }
+    sort (v.begin(), v.end(), second_sorter);
+    cout << "\n";
+;```
 **[🔼Back to Top](#table-of-contents)**
 
 
