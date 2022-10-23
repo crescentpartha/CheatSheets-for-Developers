@@ -50,6 +50,8 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 17. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
 18. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
 19. [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
+20. [bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)
+21. [kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)
 20. [vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)
 
 ## ___Instructions___
