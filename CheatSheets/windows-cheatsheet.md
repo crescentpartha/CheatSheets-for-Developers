@@ -60,6 +60,8 @@
 | `Win + V` | to see clipboard and emoji |
 |` Win + X`| Open the Quick Link menu|
 |` Win + Tab`| Open task view|
+|` Win + M`| Minimize all windows |
+|` Win + R`| Open the Run dialog box |
 |` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
 |` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
