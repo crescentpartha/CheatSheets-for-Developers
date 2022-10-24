@@ -22,62 +22,20 @@ created: 2022-10-24
 
 ## Angular Binding:
 
- - One Way Binding:
-	```
-	<p>title</p>
-	//No changes were reflected back to the variable.
-	```
-- Two Way Binding
-	```
-	<input [(ngMo­del­)]=­"­student.F­ir­stN­ame­">
-	//Changes were reflected back to the variable
-	```
-- Property Binding
-	```
-	<img [src]=­"­student.profilePicUrl">
-	```
-- Attribute Binding
-	```
-	<button [attr.a­ri­a-l­abe­l]=­"­ok">­Ok<­/bu­tto­n>
-	```
-- Class Binding
-	```
-	<div [class.Focused]="isFocused">S­ele­cte­d</­div>
-	```
-- ngClass
-	```
-	<div [ngClass]="assignClasses()">
-	  <h1>{{student.FirstName}}</h1>
-	</div>
-	```
-- Style Binding
-	```
-	<p [style.co­lor­]="i­sSe­lected ? 'green' : 'red'">Option {{i}}</p>
-	```
- - ngStyle
-	 ```
-	<div [ngStyle]="setStyles()">
-	  {{student.name}}
-	</div>
-	```
-
-- Component Binding
-	```
-	<student-details [student]="currStudent"></student-details>
-	```
-- Directive Binding
-	```
-	<div [ngClass] = "­{se­lected: isSele­cte­d}">­Student<­/di­v>
-	```
-- Event Binding
-	```
-	<button (click­)="test()">­Test</­but­ton>
-	```
-- $event
-	```
-	<input [value]="student.name"
-	 (input)="student.name=$event.target.value">
-	 ```
+| Command | Description |
+| ------- | ----------- |
+| `One Way Binding` | `<p>title</p>` <br /> - No changes were reflected back to the variable. |
+| `Two Way Binding` | `<input [(ngMo­del­)]=­"­student.F­ir­stN­ame­">` <br /> - Changes were reflected back to the variable |
+| `Property Binding` | `<img [src]=­"­student.profilePicUrl">` |
+| `Attribute Binding` | `<button [attr.a­ri­a-l­abe­l]=­"­ok">­Ok<­/bu­tto­n>` |
+| `Class Binding` | `<div [class.Focused]="isFocused">S­ele­cte­d</­div>` |
+| `ngClass` | `<div [ngClass]="assignClasses()"> <h1>{{student.FirstName}}</h1> </div>` |
+| `Style Binding` | `<p [style.co­lor­]="i­sSe­lected ? 'green' : 'red'">Option {{i}}</p>` |
+| `ngStyle` | `<div [ngStyle]="setStyles()"> {{student.name}} </div>` |
+| `Component Binding` | `<student-details [student]="currStudent"></student-details>` |
+| `Directive Binding` | `<div [ngClass] = "­{se­lected: isSele­cte­d}">­Student<­/di­v>` |
+| `Event Binding` | `<button (click­)="test()">­Test</­but­ton>` |
+| `$event` | `<input [value]="student.name" (input)="student.name=$event.target.value">` |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -111,7 +69,6 @@ created: 2022-10-24
 | `ng build [--e=<name>]` | Create a build and change environment |
 | `ng test` &#124; `e2e` | ***Testing*** your application |
 
----
 
 | Command | Description |
 | ------- | ----------- |
@@ -120,4 +77,3 @@ created: 2022-10-24
 | `--dryRun=true` &#124; `false:` | - ***AND [options]*** <br /> - When true, it runs through and reports activity without writing out results.|
 
 **[🔼Back to Top](#table-of-contents)**
-
