@@ -55,6 +55,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 22. [vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)
 23. [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
 24. [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
+25. [npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)
 
 ## ___Instructions___
 
