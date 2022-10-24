@@ -27,10 +27,13 @@
 	- [Deque](#deque)
 		- [DeQue insertion](#deque)
 		- [DeQue Display](#deque)
-    	- [Vector pair](#vector-pair)
+    - [Vector pair](#vector-pair)
 		- [Vector pair insertion](#vector-pair)
 		- [Vector pair Display](#vector-pair)
 	- [List](#list)
+		- [List insertion](#vector-pair)
+		- [List traversal](#vector-pair)
+		- [List deletion](#vector-pair)
 		
 
 # C++ STL CheatSheet for Developers
@@ -283,6 +286,38 @@
 ### List
 
 ```cpp
+    list <int> LI;
+    list <int>::iterator it;
+    //inserts elements at end of list
+    LI.push_back(4);
+
+    //inserts elements at beginning of list
+    LI.push_front(3);
+
+    //returns reference to first element of list
+    it = LI.begin();
+
+    //inserts 1 before first element of list
+    LI.insert(it,1);
+
+    //list traversal
+    for(it = LI.begin();it!=LI.end();it++)
+    {
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+
+    //reverse elements of list
+    LI.reverse();
+
+    //removes all occurences of 5 from list
+    LI.remove(5);
+
+    //removes last element from list
+    LI.pop_back();
+	
+    //removes first element from list
+    LI.pop_front();
 ```
 **[🔼Back to Top](#table-of-contents)**
 
