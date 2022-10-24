@@ -3246,4 +3246,77 @@ y    2
 ```
 * **Last result has a hierarchical index. Use `'<Sr>[key_1, key_2]'` to get its values.**
 
+OpenCV
+------
+```python
+# Importing an Image & Viewing it
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+cv2.imshow("Image", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+Croping an image
+```python 
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+crop_img = image[y:y+h, x:x+w]
+cv2.imshow("cropped", crop_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Resizing an image
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+resized_image = cv2.resize(image, (100, 100))
+cv2.imshow("Resized image", resized_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Saving an image
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+cv2.imwrite("./path/to/save/image.jpg", image)
+```
+Converting an image to grayscale
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imshow("Grayscale image", gray_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Converting an image to HSV
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+cv2.imshow("HSV image", hsv_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Converting an image to LAB
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+cv2.imshow("LAB image", lab_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Converting an image to RGB
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+cv2.imshow("RGB image", rgb_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+
 **[🔼Back to Top](#content-outlines)**
