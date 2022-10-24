@@ -1,18 +1,31 @@
+---
+title: HTML CheatSheet
+description: The most commonly used html tags nds are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [HTML CheatSheet for Developers](#html-cheatsheet-for-developers)
   - [Basic Tags of HTML](#basic-tags-of-html)
   - [Tags to Structure Document](#tags-to-structure-document)
   - [Semantic Elements](#semantic-elements)
+  - [Formatting](#formatting)
   - [Links](#links)
   - [Images](#images)
   - [Lists](#lists)
   - [Forms](#forms)
+  - [Important Attributes](#important-attributes)
+  - [Input Types](#input-Types)
   - [Tables](#tables)
+  - [Graphics](#graphics)
+  - [Media](#media)
 
 # HTML CheatSheet for Developers
 
 ## Basic Tags of HTML
+
+> Tags are like keywords which defines that how web browser will format and display the content.
 
 | Command                | Description                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,22 +52,19 @@
 | `<hr/>`                        | In addition to switching to the next line, this tag also drawsa horizontal bar to indicate the end of the section.             |
 | `<strike>...</strike>`         | Another old tag, this is used to draw a line atthe center of the text, so as to make it appearunimportant or no longer useful. |
 | `<cite>...</cite>`             | Tag for citing author of a quote.                                                                                              |
-| `<del>...</del>`               | Pre-formatted, ‘monospace’ text laid out with whitespace inside the element intact.                                            |
-| `<ins> … </ins>`               | Denotes text that has been inserted into the webpage.                                                                          |
-| `<blockquote> … </blockquote>` | Quotes often go into this tag. Is used in tandem with the <cite> tag.                                                          |
+| `<blockquote> … </blockquote>` | Quotes often go into this tag. Is used in tandem with the `<cite>`tag.                                                         |
 | `<q> … </q>`                   | Similar to the above tag, but for shorter quotes.                                                                              |
 | `<abbr> … </abbr>`             | Denotes abbreviations, along with the full forms.                                                                              |
 | `<address> … </address>`       | Tag for specifying author’s contact details.                                                                                   |
 | `<dfn> … </dfn>`               | Tag dedicated for definitions.                                                                                                 |
 | `<code> … </code>`             | This is used to display code snippets within a paragraph.                                                                      |
-| `<sub> … </sub>`               | Used for writing a subscript (smaller font just below the mid-point of normal font).                                           |
-| `<sup> … </sup>`               | Similar to the above tag, but for superscripting.                                                                              |
-| `<small> … </small>`           | Reduces text size. In HTML5, it often refers to redundant or invalid information.                                              | 
-| `<strong> … </strong>`         | This element indicates that its contents have strong importance or urgency. Browsers usualy render the contents in bold type.  |
+| `<bdo dir="rtl/ltr"> … </bdo>` | Overrides the current directionality of text, so that the text within is rendered in a different direction.                    |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Semantic Elements
+
+> Semantic element clearly describes its meaning to both the browser and the developer.
 
 | Command                          | Description                                                                                 |
 | -------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -66,15 +76,36 @@
 | `<footer> ... </footer>`         | Defines a footer for a document or section                                                  |
 | `<header> ... </header>`         | Specifies a header for a document or section                                                |
 | `<main> ... </main>`             | Specifies the main content of a document                                                    |
-| `<mark> ... </mark>`             | Defines marked/highlighted text                                                             |
 | `<nav> ... </nav>`               | Defines navigation links                                                                    |
 | `<section> ... </section>`       | Defines a section in a document                                                             |
 | `<summary> ... </summary>`       | Defines a visible heading for a `<details>` element                                         |
 | `<time> ... </time>`             | Defines a date/time                                                                         |
+| `<pre> ... </pre>`               | Preserve both spaces and linebreaks                                                         |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Formatting
+
+> Formatting elements were designed to display special types of text:
+
+| Command                  | Description                                          |
+| ------------------------ | ---------------------------------------------------- |
+| `<b> ... </b>`           | Defines bold text                                    |
+| `<em> ... </em>`         | Defines emphasized text                              |
+| `<i> ... </i>`           | Defines a part of text in an alternate voice or mood |
+| `<small> ... </small>`   | Defines smaller text                                 |
+| `<strong> ... </strong>` | Defines important text                               |
+| `<sub> ... </sub>`       | Defines subscripted text                             |
+| `<sup> ... </sup>`       | Defines superscripted text                           |
+| `<ins> ... </i>`         | Defines inserted text                                |
+| `<del> ... </del>`       | Defines deleted text                                 |
+| `<mark> ... </mark>`     | Defines marked/highlighted text                      |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Links
+
+> Links allow users to click their way from page to page.
 
 | Command                         | Description                                                                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -87,6 +118,8 @@
 **[🔼Back to Top](#table-of-contents)**
 
 ## Images
+
+> Images can improve the design and the appearance of a web page.
 
 | Command                  | Description                                                                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -107,6 +140,8 @@
 
 ## Lists
 
+> Lists allow web developers to group a set of related items in lists.
+
 | Command        | Description                                                 |
 | -------------- | ----------------------------------------------------------- |
 | `<ol> … </ol>` | Tag for ordered or numbered list of items.                  |
@@ -120,15 +155,84 @@
 
 ## Forms
 
+> Form is used to collect user input. The user input is most often sent to a server for processing.
+
 | Command            | Description                                                                      |
 | ------------------ | -------------------------------------------------------------------------------- |
 | `<form> … </form>` | The parent tag for an HTML form.                                                 |
 | `action=”url”`     | The URL listed here is where the form data will be submitted once user fills it. |
-| `method=””`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+| `method=”POST”`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+
+**Example:**
+
+```html
+<form method="POST" action="/page">
+  <label for="name">Page Name</label>
+  <input id="name" type="text" name="page_name" />
+  <input type="submit" value="Create" />
+</form>
+```
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Input Types
+
+| Field Type | HTML Code  Notes |
+| :---: |----- |
+| plain text | `<input type="text">` | the type attribute can be omitted |
+| password field | `<input type="password">`  | echoes dots instead of characters |
+| text area | `<textarea></textarea>` |  a more customizable plain text area |
+| checkbox | `<input type="checkbox">` | can be toggled on or off |
+| radio button | `<input type="radio">`  can be grouped with other inputs |
+| drop-down lists | `<select><option>` | [check here for more info](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) |
+| file picker | `<input type="file">`  | pops up an “open file” dialog |
+| hidden field | `<input type="hidden">`   | nothing there!
+| submit button | `<input type="submit">`  | activates the form's submission <br/>(a `POST` request or <br/>Javascript action) |
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Important Attributes
+
+**Input Tags Attributes:**
+
+|keyword|description|
+|--------|---------|
+| `type` | the type of data that is being input (affects the "widget" that is used to display this element by the browser).|
+| `name` | the key used to describe this data in the HTTP request.|
+| `id` | the unique identifier that other HTML elements, JavaScript and CSS use to access this element in the browser.|
+| `value` | the default data that is assigned to the element.|
+| `placeholder` | not a default value, but a useful HTML5 addition of a data "prompt" for an input.|
+| `disabled` | a Boolean attribute indicating that the "widget" is not available for interaction.|
+
+**Radio Buttons or Checkboxes Attributes:**
+
+|keyword|description|
+|--------|---------|
+| `checked` | a Boolean that indicates whether the control is selected by default (is false unless).|
+| `name` | the group to which this element is connected. For radio buttons, only one element per group (or name) can be checked.|
+| `value` | the data or value that is returned for a specific group (a multi-element control), if this element is checked.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Inputs
+
+| Command                                       | Description                                                                      |
+| -------------------------------------------   | -------------------------------------------------------------------------------- |
+| `<input type="email" name=" ">`               | Sets a single-line textbox for email addresses.                                  |
+| `<input type="url" name=" ">`                 | Sets a single-line textbox for URLs.                                             |
+| `<input type="number" name=" ">`              | Sets a single-line textbox for a number.                                         |
+| `<input type="range" name=" ">`               | Sets a single-line text box for a range numbers.                                 |
+| `<input type="date" name=" ">`                | Sets a single-line text box with a calendar showing the date .                   |
+| `<input type="month" name=" ">`               | Sets a single-line text box with a calendar showing the month .                  |
+| `<input type="time" name=" ">`                | Sets a single-line text box with a calendar showing the time .                   |
+| `<input type="search" name=" ">`              | Sets a single-line text box for searching .                                      |
+| `<input type="color" name=" ">`               | Sets a single-line text box for picking a color.                                 |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Tables
+
+> Tables allow web developers to arrange data into rows and columns.
 
 | Command                    | Description                                                        |
 | -------------------------- | ------------------------------------------------------------------ |
@@ -144,3 +248,22 @@
 | `<col>`                    | Denotes a column inside a table.                                   |
 
 **[🔼Back to Top](#table-of-contents)**
+
+## Graphics
+
+| Command                    | Description                                           |
+| -------------------------- | ----------------------------------------------------- |
+| `<canvas> … </canvas>`     | Used to draw graphics on a web page using javascript. |
+| `<svg> … </svg>`           | Used to defines vector-based graphics in XML format.  |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Media
+
+| Command                    | Description                                      |
+| -------------------------- | ------------------------------------------------ |
+| `<video> … </video>`       | Used to show a video on a web page.              |
+| `<audio> … </audio>`       | Used to play an audio file on a web page.        |
+
+**[🔼Back to Top](#table-of-contents)**
+

@@ -1,5 +1,10 @@
-Table of Contents
 ---
+title: Git CheatSheet
+description: The most commonly used git commands are given here.
+created: 2022-10-18
+---
+
+## Table of Contents
 
 - [Git CheatSheet for Developers](#git-cheatsheet-for-developers)
   - [Git Configuration](#git-configuration)
@@ -12,7 +17,7 @@ Table of Contents
   - [Setting up Alias](#setting-up-alias)
   - [Rewrite History](#rewrite-history)
   - [Deletion](#deletion)
-  - [Temporary Commits](#Temporary-commits)
+  - [Temporary Commits](#temporary-commits)
 
 # Git CheatSheet for Developers
 
@@ -51,14 +56,16 @@ Table of Contents
 | `git clean -f` | To delete or remove unstaged files forcefully |
 | `git commit -m "message about updates"` | Commit changes to current branch |
 | `git commit -amend` | Amend with last commit but use the previous commit log message |
+| `git rm --cached [file]` | Removes the file from the staging area (Unstage) |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
+| `git pull --allow-unrelated-histories`| Pull changes form remote branch with unrelated histories|
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
 | `git remote add origin [url]` | Adding a remote repository | 
 | `git show` | Shows information about any git object |
 | `gitk` | Shows graphical interface for a local repository |
 | `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
-
+| `git checkout [file]` | Matches the file with last commit |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -68,12 +75,19 @@ Table of Contents
 | ------- | ----------- |
 | `git branch` | List branches |
 | `git branch [branch-name]` | Create a local branch |
+| `git branch -m [old branch name] [new branch name]` | Rename a local branch |
 | `git branch -d [branch-name]` | Delete a branch |
+| `git branch -D [branch name]` | Delete a branch forcefully |
 | `git branch -a` | See all branches (local and remote) |
 | `git checkout [branch-name]` | Switch to another branch |
+| `git checkout -b "branch name"` | Create a new branch and switch to that branch |
+| `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
+| `git checkout -` | Switch to the branch last checked out |
+| `git checkout -- [file-name.txt]` | Discard changes to a file |
 | `git switch [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
-| `git checkout -b "branch name"` | Create a new branch and switch to that branch |
+| `git merge [source branch] [target branch]` | Merge a branch into a target branch |
+| `git merge --allow-unrelated-histories`| Merge unrelated histories |
 | `git cherry-pick [commit-ID]` | Bring in changes from one (or more) particular commit to the current branch. |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -106,9 +120,8 @@ Table of Contents
 | `git blame [file name]` | Display the modification on each line of a file |
 | `git diff --name-only` | Show only names of changed files |
 | `git bisect start` | Starts the bisection search process to find that bad commit which introduced the bug we're facing right now |
-| `git bisect good [Commit ID]` | Takes up the good commit, which is that one where the bug was not there |
+| `git bisect good` <br /> `git bisect good [Commit ID]` | Takes up the good commit, which is that one where the bug was not there |
 | `git bisect bad [Commit ID]` | Takes up the bad commit, which is that one where the bug was there. If commit ID is not provided, then it takes up the current commit as the bad commit |
-
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -117,10 +130,11 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git rm [file]` | Delete the file from project and stage the removal for commit |
-| `git mv [existing-path] [new-path]`  | Change an existing file path and stage the move |
-| `git log --stat -M`  | Show all commit logs with indication of any paths that moved |
+| `git mv [existing-path] [new-path]` | Change an existing file path and stage the move |
+| `git log --stat -M` | Show all commit logs with indication of any paths that moved |
 
 **[🔼Back to Top](#table-of-contents)**
+
 ## Setting up Alias
 
 | Command | Description |
@@ -130,14 +144,20 @@ Table of Contents
 **[🔼Back to Top](#table-of-contents)**
 
 ## Rewrite History
+
 | Command | Description |
 | ------- | ----------- |
-|` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
-| `git reset --hard [commit]`  | Clear staging area, rewrite working tree from specified commit |
+| `git rebase [branch]` | Apply any commits of current branch ahead of specified one |
+| `git reset --hard [commit]` | Clear staging area, rewrite working tree from specified commit |
+| `git reset HEAD "file-name"` | Go back to the pointer I'm already at, remove from staged |
+| `git reset --soft "commit-hash"` | Take my changes and go back/kill the commit I made but the file will be staged with the change ready to be committed again |
+| `git reset --mixed "commit-hash"` | Return/Kill the commit too but it returns the files to before staged i.e. modified but it will still return |
+| `git reset --hard "commit-hash"` | It will simply ignore the existence of this commit and undo everything that was done in this commit. <br /> It is a very rough reset and is normally used before pushing your commit to the remote repository. |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Deletion
+
 | Command | Description |
 | ------- | ----------- |
 | `git gc` | Cleans unnecessary files and optimizes the local repository |
@@ -146,12 +166,12 @@ Table of Contents
 **[🔼Back to Top](#table-of-contents)**
 
 ## Temporary Commits
+
 | command | Description |
 | ------- | ----------- |
-| `git stash`| Save modified and staged changes|
-|`git stash list`| list stack-order of stashed file changes|
-|`git stash pop`| write working from top of stash stack|
-|`git stash drop` | discard the changes from top of stash stack|
-
+| `git stash` | Save modified and staged changes|
+| `git stash list` | list stack-order of stashed file changes|
+| `git stash pop` | write working from top of stash stack|
+| `git stash drop` | discard the changes from top of stash stack|
 
 **[🔼Back to Top](#table-of-contents)**

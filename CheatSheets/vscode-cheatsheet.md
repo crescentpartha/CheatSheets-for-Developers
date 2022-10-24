@@ -1,3 +1,9 @@
+---
+title: VSCode CheatSheet
+description: The most commonly used vscode keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [VSCode Keyboard Shortcuts for Developers](#vscode-keyboard-shortcuts-for-developers)
@@ -93,6 +99,8 @@
 | `Ctrl + Shift + G` | Go to Source Control |
 | `Ctrl + Shift + H` | Go to Search |
 | `Ctrl + Shift + J` | Go to Problems |
+| `` Ctrl + ↑/↓ ``| Scroll up/down |
+| `` Ctrl+ Home/End ``| Scroll top/bottom |
 
 **[🔼Back to Top](#table-of-contents)**
 
