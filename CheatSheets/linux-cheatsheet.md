@@ -91,11 +91,11 @@ created: 2022-10-21
 
 | Command | Description |
 | ------- | ----------- |
-| `Ctrl + A` | Move to the start of command line |
-| `Ctrl + E` | Move to the end of command line |
+| `Ctrl + A` | Moves the cursor to the start of a line |
+| `Ctrl + E` | Moves the cursor to the end of the line |
 | `Ctrl + F` | Move one character forward |
 | `Ctrl + B` | Move one character backward |
-| `Ctrl + L` | Clears the terminal screen |
+| `Ctrl + L` | Clear the terminal screen |
 | `Ctrl + C` | Halts the current command |
 | `Ctrl + D` | Log out of current session |
 | `Ctrl + W` | Erases one word in current line |
