@@ -22,7 +22,7 @@ created: 2022-10-24
 
 ## Angular Binding:
 
-| Command | Description |
+| Description | Command |
 | ------- | ----------- |
 | `One Way Binding` | `<p>title</p>` <br /> - No changes were reflected back to the variable. |
 | `Two Way Binding` | `<input [(ngMo­del­)]=­"­student.F­ir­stN­ame­">` <br /> - Changes were reflected back to the variable |
