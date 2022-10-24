@@ -1,6 +1,6 @@
 ---
-title: Kotlin-Cheatsheet
-description: You can have the most important elements of Kotlin right under your grasp
+title: Kotlin CheatSheet
+description: You can have the most important elements of Kotlin right under your grasp.
 created: 2022-10-18
 ---
 

@@ -1,3 +1,9 @@
+---
+title: NPM CheatSheet
+description: The most commonly used npm commands are given here.
+created: 2022-10-18
+---
+
 ## Table of Contents
 
 - [NPM CheatSheet for Developers](#npm-cheatsheet-for-developers)
@@ -32,4 +38,6 @@
 | `npm audit fix`                                                | Fix found vulnerabilities                            |
 | `npm edit`                                                     | Edit an installed package                            |
 | `npm publish`                                                  | Publish a package                                    |
-| `npm rebuild`                                                  | Rebuild a package                                    |
+| `npm rebuild`                                                  | - Rebuild a package <br /> - This command runs the `npm build` command on the matched folders |
+
+**[🔼Back to Top](#table-of-contents)**

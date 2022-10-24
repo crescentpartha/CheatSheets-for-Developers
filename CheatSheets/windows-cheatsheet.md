@@ -1,3 +1,9 @@
+---
+title: Windows CheatSheet
+description: The most commonly used windows keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [Windows Keyboard Shortcuts for Developers](#windows-keyboard-shortcuts-for-developers)
@@ -14,7 +20,7 @@
   - [App Rearrangement Shortcuts (Metro)](#app-rearrangement-shortcuts-metro)
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
-  - [Touchpad Shortcuts](#touchpad-shortcuts)
+  - [TouchPad Shortcuts](#touchpad-shortcuts)
   - [Take Screenshot Shortcut](#take-screenshot-shortcut)
   - [Command Prompt Shortcuts](#command-prompt-shortcuts)
 
@@ -169,7 +175,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Touchpad Shortcuts
+## TouchPad Shortcuts
 
 | Gesture | Description |
 | ------- | ----------- |

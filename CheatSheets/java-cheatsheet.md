@@ -1,3 +1,9 @@
+---
+title: Java CheatSheet
+description: The most commonly used java concepts are given here.
+created: 2022-10-21
+---
+
 ## Table of Contents
 
 - [Java CheatSheet for Developers](#java-cheatsheet-for-developers)
@@ -26,7 +32,7 @@
 		- [Hierarchical Inheritance](#hierarchical-inheritance)
 		- [Hybrid Inheritance:](#hybrid-inheritance)
 	- [NOTE](#note)
-  - [Collections](#collections)
+	- [Collections](#collections)
 
 # Java CheatSheet for Developers
 

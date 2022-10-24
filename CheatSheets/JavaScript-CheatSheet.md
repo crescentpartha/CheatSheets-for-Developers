@@ -1,3 +1,9 @@
+---
+title: JavaScript CheatSheet
+description: The most commonly used JavaScript concepts are given here.
+created: 2022-10-21
+---
+
 ## Table of Contents
 
 - [JavaScript CheatSheet for Developers](#javascript-cheatsheet-for-developers)
