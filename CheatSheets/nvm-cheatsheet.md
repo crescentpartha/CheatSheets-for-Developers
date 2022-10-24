@@ -34,5 +34,6 @@ created: 2022-10-19
 | `nvm -v`                        | Check if nvm is installed                                                                                              |
 | `nvm uninstall <version>`       | Un-Install a specific version                                                                                          |
 | `nvm ls`                        | Show versions available locally                                                                                        |
+| `nvm uninstall --lts`           | Uninstall the latest long term support version |
 
 **[🔼Back to Top](#table-of-contents)**
