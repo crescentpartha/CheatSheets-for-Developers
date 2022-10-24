@@ -21,6 +21,7 @@
 | ------- | ----------- |
 | `pwd` | Show current directory | 
 | `mkdir dir` | Make directory called *dir* | 
+| `mkdir -p folder/folder2` | Make a directory *folder* and another directory *folder2* in it|
 | `cd dir` | Change directory to *dir* |
 | `cd ..` | Go up a directory | 
 | `cd` | Change to home directory |
@@ -71,6 +72,7 @@
 | `date` | Show the system date and time |
 | `cal` | Show this month's calendar |
 | `uptime` | Show system's uptime |
+| `free` | Display amount of free and used memory in the system |
 | `w` | See who is online |
 | `whoami` | See who you are logged in as|
 | `uname -a` | Show kernel information |
@@ -82,6 +84,11 @@
 
 | Command | Description |
 | ------- | ----------- |
+| `Ctrl + A` | Move to the start of command line |
+| `Ctrl + E` | Move to the end of command line |
+| `Ctrl + F` | Move one character forward |
+| `Ctrl + B` | Move one character backward |
+| `Ctrl + L` | Clears the terminal screen |
 | `Ctrl + C` | Halts the current command |
 | `Ctrl + D` | Log out of current session |
 | `Ctrl + W` | Erases one word in current line |
