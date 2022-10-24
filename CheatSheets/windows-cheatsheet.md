@@ -40,6 +40,7 @@ created: 2022-10-20
 | `Ctrl + F` | Find |
 | `Ctrl + P` | Print |
 | `Ctrl + S` | Save |
+| `Ctrl + T` | Open New Tab |
 | `Ctrl + O` | Open |
 | `Ctrl` + `+` | to increase the size |
 | `Ctrl` + `-` | to decrease the size |
@@ -68,6 +69,14 @@ created: 2022-10-20
 |` Win + Tab`| Open task view|
 |` Win + M`| Minimize all windows |
 |` Win + R`| Open the Run dialog box |
+|` Win + A`| Open the Action Center |
+|` Win + C`| Launch Cortona in listening mode (used for voice commands) |
+|` Win + S`| Search/Launch Cortona (listening mode) |
+|` Win + I`| Open the settings app |
+|` Win + Ctrl + D`| Create New Virtual Desktop |
+|` Win + Ctrl + F4`| Close the Current Desktop |
+|` Win + Ctrl + Left Arrow Key / Right Arrow Key`| Switch between Virtual Desktops |
+|` Win + Left Arrow Key / Right Arrow Key`| Snap Current Windows to left or right |
 |` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
 |` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
