@@ -40,7 +40,7 @@ created: 2022-10-21
 | `rm -rf dir` | Force delete directory *dir* | 
 | `cp file1 dir` | Copy *file1* to inside of *dir*| 
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
-| `touch file` | Create *file*| 
+| `touch file` | Create *file*|
 
 **[🔼Back to Top](#table-of-contents)**
 
