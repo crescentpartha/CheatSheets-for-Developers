@@ -32,13 +32,7 @@
 | `rm -rf dir` | Force delete directory *dir* | 
 | `cp file1 dir` | Copy *file1* to inside of *dir*| 
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
-| `touch file` | Create *file*| 
-| `cat file` | Show the Contents of file | 
-| `head file` | Display first 10 lines of files | 
-| `tail file` | Display last 10 lines of files | 
-| `gpg -c file` | Encrypt a file | 
-| `gpg file` | Decrypt a file | 
-| `wc` | Show the Number of words,lines,bytes in file | 
+| `touch file` | Create *file*|
 
 **[🔼Back to Top](#table-of-contents)**
 
