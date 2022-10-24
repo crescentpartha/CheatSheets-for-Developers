@@ -1,5 +1,4 @@
-Table of Contents
----
+## Table of Contents
 
 - [Git CheatSheet for Developers](#git-cheatsheet-for-developers)
   - [Git Configuration](#git-configuration)
@@ -12,7 +11,7 @@ Table of Contents
   - [Setting up Alias](#setting-up-alias)
   - [Rewrite History](#rewrite-history)
   - [Deletion](#deletion)
-  - [Temporary Commits](#Temporary-commits)
+  - [Temporary Commits](#temporary-commits)
 
 # Git CheatSheet for Developers
 
