@@ -99,6 +99,8 @@ created: 2022-10-20
 | `Ctrl + Shift + G` | Go to Source Control |
 | `Ctrl + Shift + H` | Go to Search |
 | `Ctrl + Shift + J` | Go to Problems |
+| `` Ctrl + ↑/↓ ``| Scroll up/down |
+| `` Ctrl+ Home/End ``| Scroll top/bottom |
 
 **[🔼Back to Top](#table-of-contents)**
 
