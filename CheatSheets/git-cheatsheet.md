@@ -67,7 +67,6 @@ created: 2022-10-18
 | `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
 | `git checkout [file]` | Matches the file with last commit |
 
-
 **[🔼Back to Top](#table-of-contents)**
 
 ## Branching & Merging
@@ -89,6 +88,7 @@ created: 2022-10-18
 | `git merge [branch-name]` | Merge branchs |
 | `git merge [source branch] [target branch]` | Merge a branch into a target branch |
 | `git merge --allow-unrelated-histories`| Merge unrelated histories |
+| `git cherry-pick [commit-ID]` | Bring in changes from one (or more) particular commit to the current branch. |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -119,7 +119,9 @@ created: 2022-10-18
 | `git diff branchB...branchA` | View the differences of what is in branchA that are not on branchB |
 | `git blame [file name]` | Display the modification on each line of a file |
 | `git diff --name-only` | Show only names of changed files |
-
+| `git bisect start` | Starts the bisection search process to find that bad commit which introduced the bug we're facing right now |
+| `git bisect good` <br /> `git bisect good [Commit ID]` | Takes up the good commit, which is that one where the bug was not there |
+| `git bisect bad [Commit ID]` | Takes up the bad commit, which is that one where the bug was there. If commit ID is not provided, then it takes up the current commit as the bad commit |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -128,10 +130,11 @@ created: 2022-10-18
 | Command | Description |
 | ------- | ----------- |
 | `git rm [file]` | Delete the file from project and stage the removal for commit |
-| `git mv [existing-path] [new-path]`  | Change an existing file path and stage the move |
-| `git log --stat -M`  | Show all commit logs with indication of any paths that moved |
+| `git mv [existing-path] [new-path]` | Change an existing file path and stage the move |
+| `git log --stat -M` | Show all commit logs with indication of any paths that moved |
 
 **[🔼Back to Top](#table-of-contents)**
+
 ## Setting up Alias
 
 | Command | Description |
@@ -141,10 +144,11 @@ created: 2022-10-18
 **[🔼Back to Top](#table-of-contents)**
 
 ## Rewrite History
+
 | Command | Description |
 | ------- | ----------- |
-| ` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
-| `git reset --hard [commit]`  | Clear staging area, rewrite working tree from specified commit |
+| `git rebase [branch]` | Apply any commits of current branch ahead of specified one |
+| `git reset --hard [commit]` | Clear staging area, rewrite working tree from specified commit |
 | `git reset HEAD "file-name"` | Go back to the pointer I'm already at, remove from staged |
 | `git reset --soft "commit-hash"` | Take my changes and go back/kill the commit I made but the file will be staged with the change ready to be committed again |
 | `git reset --mixed "commit-hash"` | Return/Kill the commit too but it returns the files to before staged i.e. modified but it will still return |
@@ -153,6 +157,7 @@ created: 2022-10-18
 **[🔼Back to Top](#table-of-contents)**
 
 ## Deletion
+
 | Command | Description |
 | ------- | ----------- |
 | `git gc` | Cleans unnecessary files and optimizes the local repository |
@@ -161,11 +166,12 @@ created: 2022-10-18
 **[🔼Back to Top](#table-of-contents)**
 
 ## Temporary Commits
+
 | command | Description |
 | ------- | ----------- |
-| `git stash`| Save modified and staged changes|
-|`git stash list`| list stack-order of stashed file changes|
-|`git stash pop`| write working from top of stash stack|
-|`git stash drop` | discard the changes from top of stash stack|
+| `git stash` | Save modified and staged changes|
+| `git stash list` | list stack-order of stashed file changes|
+| `git stash pop` | write working from top of stash stack|
+| `git stash drop` | discard the changes from top of stash stack|
 
 **[🔼Back to Top](#table-of-contents)**
