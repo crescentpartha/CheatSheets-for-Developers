@@ -11,6 +11,7 @@
   - [Archives(Tar Files)](#archives)
   - [Disk Usage](#disk-usage)
   - [Search](#search)
+  - [Networking](#networking)
 
 # Linux CheatSheet for Developers
 
@@ -128,5 +129,23 @@
 | `locate name` | Find files and directories by name|
 | `find /home/xyz -name 'prefix*'` | Find files in /home/xyz that start with "prefix" |
 | `find /home -size +100M` | Find files larger than 100MB in /home|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Networking
+| Command | Description |
+| ------- | ----------- |
+| `ip a` | Display all network interfaces and IP address |
+| `ip addr show dev eth0` | Display eth0 address and details |
+| `ethtool eth0` | Query or control network driver and hardware settings|
+| `ping host` | Send ICMP echo request to host |
+| `whois domain` | Display whois information for domain|
+| `dig domain` | Display DNS information for domain|
+| `dig -x IP_ADDRESS` | Reverse lookup of IP_ADDRESS|
+| `host domain` | Display DNS IP address for domain|
+| `hostname -i` | Display the network address of the host name|
+| `hostname -I` | Display all local IP addresses of the host|
+| `wget http://domain.com/file` |Download http[]()://domain.com/file |
+| `netstat -nutlp` |Display listening tcp and udp ports and corresponding programs|
 
 **[🔼Back to Top](#table-of-contents)**
