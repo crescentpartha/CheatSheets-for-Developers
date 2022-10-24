@@ -1,9 +1,16 @@
+---
+title: CSS CheatSheet
+description: The most commonly used css properties and attributes are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
-- [CSS Properties](#css-properties)
-- [CSS Selectors](#css-selectors)
-- [CSS Pseudo Classes](#css-pseudo-classes)
-- [CSS Attribute Selectors](#css-attribute-selectors)
+- [CSS CheatSheet for Developers](#css-cheatsheet-for-developers)
+  - [CSS Properties](#css-properties)
+  - [CSS Selectors](#css-selectors)
+  - [CSS Pseudo Classes](#css-pseudo-classes)
+  - [CSS Attribute Selectors](#css-attribute-selectors)
 
 # CSS CheatSheet for Developers
 

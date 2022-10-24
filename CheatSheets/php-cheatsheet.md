@@ -1,15 +1,21 @@
+---
+title: PHP CheatSheet
+description: The most commonly used php concepts are given here.
+created: 2022-10-23
+---
+
 ## Table of Contents
 
 - [PHP CheatSheet for Developers](#php-cheatsheet-for-developers)
-  - [Basic](#basic-php)
+  - [Escape Sequence](#escape-sequence)
 
-# HTML CheatSheet for Developers
+# PHP CheatSheet for Developers
 
-## Basic
+## Escape Sequence
 
 | Command                | Description                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `// Comment Message` | This is a singleline comment 
+| `// Comment Message` | This is a single-line comment 
 | `$Title = "Title"` | Defining Variables
 | `\n` | New Line
 | `\r` | It inserts a carriage return in the text at this point.
@@ -19,3 +25,5 @@
 | `\$` | Print the next character as a dollar, not as part of a variable
 | `\'` | Print the next character as a double quote, not a string closer
 | `\"` | Print the next character as a double quote, not a string closer
+
+**[🔼Back to Top](#table-of-contents)**

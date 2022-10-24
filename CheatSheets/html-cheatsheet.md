@@ -1,3 +1,9 @@
+---
+title: HTML CheatSheet
+description: The most commonly used html tags nds are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [HTML CheatSheet for Developers](#html-cheatsheet-for-developers)
@@ -10,7 +16,7 @@
   - [Lists](#lists)
   - [Forms](#forms)
   - [Important Attributes](#important-attributes)
-  - [INPUT Types](#input-Types)
+  - [Input Types](#input-Types)
   - [Tables](#tables)
   - [Graphics](#graphics)
   - [Media](#media)
@@ -101,7 +107,6 @@
 
 > Links allow users to click their way from page to page.
 
-
 | Command                         | Description                                                                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `<a href=””> … </a>`            | Anchor tag. Primarily used for including hyperlinks.                                                                           |
@@ -152,6 +157,14 @@
 
 > Form is used to collect user input. The user input is most often sent to a server for processing.
 
+| Command            | Description                                                                      |
+| ------------------ | -------------------------------------------------------------------------------- |
+| `<form> … </form>` | The parent tag for an HTML form.                                                 |
+| `action=”url”`     | The URL listed here is where the form data will be submitted once user fills it. |
+| `method=”POST”`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+
+**Example:**
+
 ```html
 <form method="POST" action="/page">
   <label for="name">Page Name</label>
@@ -160,10 +173,12 @@
 </form>
 ```
 
-## INPUT Types
+**[🔼Back to Top](#table-of-contents)**
+
+## Input Types
 
 | Field Type | HTML Code  Notes |
-|--- |----- |
+| :---: |----- |
 | plain text | `<input type="text">` | the type attribute can be omitted |
 | password field | `<input type="password">`  | echoes dots instead of characters |
 | text area | `<textarea></textarea>` |  a more customizable plain text area |
@@ -178,25 +193,40 @@
 
 ### Important Attributes
 
-**Input tag**
-|keyword|description|
-|--------|---------|
-|**type**| the type of data that is being input (affects the "widget" that is used to display this element by the browser).|
-|**name** | the key used to describe this data in the HTTP request.|
-|**id** | the unique identifier that other HTML elements, JavaScript and CSS use to access this element in the browser.|
-|**value** | the default data that is assigned to the element.|
-|**placeholder** | not a default value, but a useful HTML5 addition of a data "prompt" for an input.|
-|**disabled** | a Boolean attribute indicating that the "widget" is not available for interaction.|
-
-**Radio buttons or checkboxes:**
+**Input Tags Attributes:**
 
 |keyword|description|
 |--------|---------|
-|**checked** | a Boolean that indicates whether the control is selected by default (is false unless).|
-|**name** | the group to which this element is connected. For radio buttons, only one element per group (or name) can be checked.|
-|**value** | the data or value that is returned for a specific group (a multi-element control), if this element is checked.|
+| `type` | the type of data that is being input (affects the "widget" that is used to display this element by the browser).|
+| `name` | the key used to describe this data in the HTTP request.|
+| `id` | the unique identifier that other HTML elements, JavaScript and CSS use to access this element in the browser.|
+| `value` | the default data that is assigned to the element.|
+| `placeholder` | not a default value, but a useful HTML5 addition of a data "prompt" for an input.|
+| `disabled` | a Boolean attribute indicating that the "widget" is not available for interaction.|
 
+**Radio Buttons or Checkboxes Attributes:**
 
+|keyword|description|
+|--------|---------|
+| `checked` | a Boolean that indicates whether the control is selected by default (is false unless).|
+| `name` | the group to which this element is connected. For radio buttons, only one element per group (or name) can be checked.|
+| `value` | the data or value that is returned for a specific group (a multi-element control), if this element is checked.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Inputs
+
+| Command                                       | Description                                                                      |
+| -------------------------------------------   | -------------------------------------------------------------------------------- |
+| `<input type="email" name=" ">`               | Sets a single-line textbox for email addresses.                                  |
+| `<input type="url" name=" ">`                 | Sets a single-line textbox for URLs.                                             |
+| `<input type="number" name=" ">`              | Sets a single-line textbox for a number.                                         |
+| `<input type="range" name=" ">`               | Sets a single-line text box for a range numbers.                                 |
+| `<input type="date" name=" ">`                | Sets a single-line text box with a calendar showing the date .                   |
+| `<input type="month" name=" ">`               | Sets a single-line text box with a calendar showing the month .                  |
+| `<input type="time" name=" ">`                | Sets a single-line text box with a calendar showing the time .                   |
+| `<input type="search" name=" ">`              | Sets a single-line text box for searching .                                      |
+| `<input type="color" name=" ">`               | Sets a single-line text box for picking a color.                                 |
 
 **[🔼Back to Top](#table-of-contents)**
 

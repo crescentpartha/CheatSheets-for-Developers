@@ -1,3 +1,9 @@
+---
+title: JavaScript CheatSheet
+description: The most commonly used JavaScript concepts are given here.
+created: 2022-10-21
+---
+
 ## Table of Contents
 
 - [JavaScript CheatSheet for Developers](#javascript-cheatsheet-for-developers)
@@ -91,6 +97,9 @@ var names= ["Raj", "Ram", "Sham"];
 | toString()    | Converts elements to strings                                            |
 | unshift()     | Adds a new element to the beginning                                     |
 | valueOf()     | Returns the primitive value of the specified object                     |
+| map()         | Returns a new array from calling a function for every array element     |
+| forEach()     | calls a function for each element in an array                           |
+| at()          | method takes an integer value and returns the item at that index        |
 
 **[🔼Back to Top](#table-of-contents)**
 
