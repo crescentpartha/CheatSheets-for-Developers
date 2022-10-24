@@ -56,6 +56,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 23. [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
 24. [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
 25. [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
+26. [npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)
 
 ## ___Instructions___
 
