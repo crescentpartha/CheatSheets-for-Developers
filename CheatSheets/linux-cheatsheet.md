@@ -1,4 +1,10 @@
-﻿## Table of Contents
+﻿---
+title: Linux CheatSheet
+description: The most commonly used linux commands are given here.
+created: 2022-10-21
+---
+
+## Table of Contents
 
 - [Linux CheatSheet for Developers](#linux-cheatsheet-for-developers)
   - [File Commands](#file-commands)
@@ -8,7 +14,7 @@
   - [System Info](#system-info)
   - [Shortcuts](#shortcuts)
   - [Text Editors](#text-editors)
-  - [Archives(Tar Files)](#archives)
+  - [Archives](#archives)
   - [Disk Usage](#disk-usage)
   - [Search](#search)
   - [Networking](#networking)

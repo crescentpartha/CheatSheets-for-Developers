@@ -1,4 +1,10 @@
-# Python Cheatsheet for Developers
+---
+title: Python CheatSheet
+description: The most commonly used Python concepts are given here.
+created: 2022-10-20
+---
+
+# Python CheatSheet for Developers
 
 ## Content Outlines
 
@@ -3248,12 +3254,6 @@ y    2
 
 **[🔼Back to Top](#content-outlines)**
 
-
-
-
-
-
-
 ### DataFrame
 **Table with labeled rows and columns.**
 
@@ -3627,3 +3627,4 @@ Index
 * **Ctrl+F / ⌘F is usually sufficient.**
 * **Searching `'#<title>'` on the [webpage](https://gto76.github.io/python-cheatsheet/) will limit the search to the titles.**
 
+**[🔼Back to Top](#content-outlines)**

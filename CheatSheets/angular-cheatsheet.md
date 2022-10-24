@@ -1,6 +1,6 @@
 ---
 title: Angular CheatSheet
-description: Angular cheatsheet contains basics of angular binding & angular CLI.
+description: Angular CheatSheet contains basics of angular binding & angular CLI.
 created: 2022-10-24
 ---
 

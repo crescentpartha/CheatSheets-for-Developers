@@ -1,6 +1,6 @@
 ---
 title: NPX CheatSheet
-description: The most commonly used `npx commands` are given here.
+description: The most commonly used npx commands are given here.
 created: 2022-10-24
 ---
 
@@ -14,11 +14,11 @@ created: 2022-10-24
 ## Basic Commands
 
 | Command | Description |
-| ------- | ----------- |
+| :-------: | :-----------: |
 | `npx create-react-app [name]` | Create a react app |
 | `npx npm-check -u` | Update all project dependencies |
 | `npx browserslist` <br /> OR <br /> `npx browserslist "last 2 versions, not dead, not < 2%"` | Browsers list |
-| `npx create-react-app {name} --template {template}` | Templates can be added according to developer's need, like redux template, `npx create-react-app my-app --template redux` |
+| `npx create-react-app {name} --template {template}` | Templates can be added according to developer's need, like redux template, <br /> `npx create-react-app my-app --template redux` |
 
 **[🔼Back to Top](#table-of-contents)**
 
