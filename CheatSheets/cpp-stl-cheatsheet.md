@@ -1,3 +1,9 @@
+---
+title: CPP-STL CheatSheet
+description: Some STL library are implemented here.
+created: 2022-10-22
+---
+
 ## Table of Contents
 
 - [CPP STL CheatSheet for Developers](#cpp-stl-cheatsheet-for-developers)
@@ -30,7 +36,13 @@
     - [Vector pair](#vector-pair)
 		- [Vector pair insertion](#vector-pair)
 		- [Vector pair Display](#vector-pair)
-
+	- [List](#list)
+		- [List insertion](#list)
+		- [List Display](#list)
+		- [List deletion](#list)
+	- [Priority Queue](#priority-queue)
+		- [Priority Queue insertion](#priority-queue)
+		- [Priority Queue Display](#priority-queue)
 
 # C++ STL CheatSheet for Developers
 
@@ -279,4 +291,63 @@
 ```
 **[🔼Back to Top](#table-of-contents)**
 
+### List
 
+```cpp
+    list <int> LI;
+    list <int>::iterator it;
+    //inserts elements at end of list
+    LI.push_back(4);
+
+    //inserts elements at beginning of list
+    LI.push_front(3);
+
+    //returns reference to first element of list
+    it = LI.begin();
+
+    //inserts 1 before first element of list
+    LI.insert(it,1);
+
+    //list traversal
+    for(it = LI.begin();it!=LI.end();it++)
+    {
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+
+    //reverse elements of list
+    LI.reverse();
+
+    //removes all occurences of 5 from list
+    LI.remove(5);
+
+    //removes last element from list
+    LI.pop_back();
+	
+    //removes first element from list
+    LI.pop_front();
+```
+**[🔼Back to Top](#table-of-contents)**
+
+### Priority Queue
+
+```cpp
+	priority_queue<int> pq;
+	// priority queue insertion
+	pq.push(10);
+	pq.push(20);
+
+	// priority queue display
+	while (!pq.empty()) {
+		cout << '\t' << g.top();
+		g.pop();
+	}
+	cout << '\n';
+	
+	cout << "\n size if pq : " << pq.size();
+	cout << "\n top element of pq : " << pq.top();
+	
+	// priority queue deletion
+	pq.pop();
+```
+**[🔼Back to Top](#table-of-contents)**

@@ -1,3 +1,9 @@
+---
+title: NVM CheatSheet
+description: The most commonly used nvm commands are given here.
+created: 2022-10-19
+---
+
 ## Table of Contents
 
 - [NVM CheatSheet for Developers](#nvm-cheatsheet-for-developers)
@@ -17,6 +23,7 @@
 | `nvm which <version>`           | Shows path to the given Node version|
 | `nvm current`                   | Shows what is the currently used Node version|
 | `nvm alias default <version>`   | Sets the default Node version to the given version|
+| `nvm unalias <alias_name>`      | Deletes the alias named <alias_name> |
 | `nvm --help`                    | Shows NVM help documents.           |
 | `nvm exec <version> node app.js`| Run Node app.js with the PATH pointing to given node version|
 | `nvm set-colors cgYmW`          | Set text colors to cyan, green, bold yellow, magenta, and white|
@@ -29,3 +36,4 @@
 | `nvm ls`                        | Show versions available locally                                                                                        |
 | `nvm uninstall --lts`           | Uninstall the latest long term support version |
 
+**[🔼Back to Top](#table-of-contents)**

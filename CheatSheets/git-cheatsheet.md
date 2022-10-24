@@ -1,5 +1,10 @@
-Table of Contents
 ---
+title: Git CheatSheet
+description: The most commonly used git commands are given here.
+created: 2022-10-18
+---
+
+## Table of Contents
 
 - [Git CheatSheet for Developers](#git-cheatsheet-for-developers)
   - [Git Configuration](#git-configuration)
@@ -12,7 +17,7 @@ Table of Contents
   - [Setting up Alias](#setting-up-alias)
   - [Rewrite History](#rewrite-history)
   - [Deletion](#deletion)
-  - [Temporary Commits](#Temporary-commits)
+  - [Temporary Commits](#temporary-commits)
 
 # Git CheatSheet for Developers
 
@@ -54,6 +59,7 @@ Table of Contents
 | `git rm --cached [file]` | Removes the file from the staging area (Unstage) |
 | `git rm [file]` | Deletes the file from your working directory and stages the deletion |
 | `git pull` | Fetches and merges changes on the remote server to your working directory |
+| `git pull --allow-unrelated-histories`| Pull changes form remote branch with unrelated histories|
 | `git fetch` | Gathers remote commits but does not merge them unlike `pull` |
 | `git remote add origin [url]` | Adding a remote repository | 
 | `git show` | Shows information about any git object |
@@ -82,6 +88,7 @@ Table of Contents
 | `git switch [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
 | `git merge [source branch] [target branch]` | Merge a branch into a target branch |
+| `git merge --allow-unrelated-histories`| Merge unrelated histories |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -160,6 +167,5 @@ Table of Contents
 |`git stash list`| list stack-order of stashed file changes|
 |`git stash pop`| write working from top of stash stack|
 |`git stash drop` | discard the changes from top of stash stack|
-
 
 **[🔼Back to Top](#table-of-contents)**

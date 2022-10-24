@@ -1,3 +1,9 @@
+---
+title: VSCode CheatSheet
+description: The most commonly used vscode keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [VSCode Keyboard Shortcuts for Developers](#vscode-keyboard-shortcuts-for-developers)

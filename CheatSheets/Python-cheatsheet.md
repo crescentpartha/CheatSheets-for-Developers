@@ -1,4 +1,10 @@
-# Python Cheatsheet for Developers
+---
+title: Python CheatSheet
+description: The most commonly used Python concepts are given here.
+created: 2022-10-20
+---
+
+# Python CheatSheet for Developers
 
 ## Content Outlines
 
@@ -396,7 +402,7 @@ import re
 Format
 ------
 ```python
-<str> = f'{<el_1>}, {<el_2>}'            # Curly brackets can also contain expressions.
+<str> = f'{<el_1>}, {<el_2>}'            # Curly brackets can also contain expressions. This is named "Fstring"
 <str> = '{}, {}'.format(<el_1>, <el_2>)  # Or: '{0}, {a}'.format(<el_1>, a=<el_2>)
 <str> = '%s, %s' % (<el_1>, <el_2>)      # Redundant and inferior C style formatting.
 ```
@@ -2918,4 +2924,707 @@ nframes      = <Wave_read>.getnframes()         # Number of frames.
 +-----------+-----------+------+-----------+
 ```
 
+### Read Float Samples from WAV File
+```python
+def read_wav_file(filename):
+    def get_int(bytes_obj):
+        an_int = int.from_bytes(bytes_obj, 'little', signed=(sampwidth != 1))
+        return an_int - 128 * (sampwidth == 1)
+    with wave.open(filename, 'rb') as file:
+        sampwidth = file.getsampwidth()
+        frames = file.readframes(-1)
+    bytes_samples = (frames[i : i+sampwidth] for i in range(0, len(frames), sampwidth))
+    return [get_int(b) / pow(2, sampwidth * 8 - 1) for b in bytes_samples]
+```
 
+### Write Float Samples to WAV File
+```python
+def write_to_wav_file(filename, float_samples, nchannels=1, sampwidth=2, framerate=44100):
+    def get_bytes(a_float):
+        a_float = max(-1, min(1 - 2e-16, a_float))
+        a_float += sampwidth == 1
+        a_float *= pow(2, sampwidth * 8 - 1)
+        return int(a_float).to_bytes(sampwidth, 'little', signed=(sampwidth != 1))
+    with wave.open(filename, 'wb') as file:
+        file.setnchannels(nchannels)
+        file.setsampwidth(sampwidth)
+        file.setframerate(framerate)
+        file.writeframes(b''.join(get_bytes(f) for f in float_samples))
+```
+
+### Examples
+#### Saves a 440 Hz sine wave to a mono WAV file:
+```python
+from math import pi, sin
+samples_f = (sin(i * 2 * pi * 440 / 44100) for i in range(100000))
+write_to_wav_file('test.wav', samples_f)
+```
+
+#### Adds noise to a mono WAV file:
+```python
+from random import random
+add_noise = lambda value: value + (random() - 0.5) * 0.03
+samples_f = (add_noise(f) for f in read_wav_file('test.wav'))
+write_to_wav_file('test.wav', samples_f)
+```
+
+#### Plays a WAV file:
+```python
+# $ pip3 install simpleaudio
+from simpleaudio import play_buffer
+with wave.open('test.wav', 'rb') as file:
+    p = file.getparams()
+    frames = file.readframes(-1)
+    play_buffer(frames, p.nchannels, p.sampwidth, p.framerate)
+```
+
+### Text to Speech
+```python
+# $ pip3 install pyttsx3
+import pyttsx3
+engine = pyttsx3.init()
+engine.say('Sally sells seashells by the seashore.')
+engine.runAndWait()
+```
+
+
+Synthesizer
+-----------
+#### Plays Popcorn by Gershon Kingsley:
+```python
+# $ pip3 install simpleaudio
+import itertools as it, math, struct, simpleaudio
+
+F  = 44100
+P1 = '71♩,69♪,,71♩,66♪,,62♩,66♪,,59♩,,'
+P2 = '71♩,73♪,,74♩,73♪,,74♪,,71♪,,73♩,71♪,,73♪,,69♪,,71♩,69♪,,71♪,,67♪,,71♩,,'
+get_pause   = lambda seconds: it.repeat(0, int(seconds * F))
+sin_f       = lambda i, hz: math.sin(i * 2 * math.pi * hz / F)
+get_wave    = lambda hz, seconds: (sin_f(i, hz) for i in range(int(seconds * F)))
+get_hz      = lambda key: 8.176 * 2 ** (int(key) / 12)
+parse_note  = lambda note: (get_hz(note[:2]), 1/4 if '♩' in note else 1/8)
+get_samples = lambda note: get_wave(*parse_note(note)) if note else get_pause(1/8)
+samples_f   = it.chain.from_iterable(get_samples(n) for n in f'{P1},{P1},{P2}'.split(','))
+samples_b   = b''.join(struct.pack('<h', int(f * 30000)) for f in samples_f)
+simpleaudio.play_buffer(samples_b, 1, 2, F)
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Pygame
+------
+```python
+# $ pip3 install pygame
+import pygame as pg
+
+pg.init()
+screen = pg.display.set_mode((500, 500))
+rect = pg.Rect(240, 240, 20, 20)
+while all(event.type != pg.QUIT for event in pg.event.get()):
+    deltas = {pg.K_UP: (0, -1), pg.K_RIGHT: (1, 0), pg.K_DOWN: (0, 1), pg.K_LEFT: (-1, 0)}
+    for ch, is_pressed in enumerate(pg.key.get_pressed()):
+        rect = rect.move(deltas[ch]) if ch in deltas and is_pressed else rect
+    screen.fill((0, 0, 0))
+    pg.draw.rect(screen, (255, 255, 255), rect)
+    pg.display.flip()
+```
+
+### Rectangle
+**Object for storing rectangular coordinates.**
+```python
+<Rect> = pg.Rect(x, y, width, height)           # Floats get truncated into ints.
+<int>  = <Rect>.x/y/centerx/centery/…           # Top, right, bottom, left. Allows assignments.
+<tup.> = <Rect>.topleft/center/…                # Topright, bottomright, bottomleft. Same.
+<Rect> = <Rect>.move((x, y))                    # Use move_ip() to move in-place.
+```
+
+```python
+<bool> = <Rect>.collidepoint((x, y))            # Checks if rectangle contains a point.
+<bool> = <Rect>.colliderect(<Rect>)             # Checks if two rectangles overlap.
+<int>  = <Rect>.collidelist(<list_of_Rect>)     # Returns index of first colliding Rect or -1.
+<list> = <Rect>.collidelistall(<list_of_Rect>)  # Returns indexes of all colliding rectangles.
+```
+
+### Surface
+**Object for representing images.**
+```python
+<Surf> = pg.display.set_mode((width, height))   # Returns a display surface.
+<Surf> = pg.Surface((width, height))            # New RGB surface. RGBA if `flags=pg.SRCALPHA`.
+<Surf> = pg.image.load('<path>')                # Loads the image. Format depends on source.
+<Surf> = <Surf>.subsurface(<Rect>)              # Returns a subsurface.
+```
+
+```python
+<Surf>.fill(color)                              # Tuple, Color('#rrggbb[aa]') or Color(<name>).
+<Surf>.set_at((x, y), color)                    # Updates pixel.
+<Surf>.blit(<Surf>, (x, y))                     # Draws passed surface to the surface.
+```
+
+```python
+from pygame.transform import scale, ...
+<Surf> = scale(<Surf>, (width, height))         # Returns scaled surface.
+<Surf> = rotate(<Surf>, anticlock_degrees)      # Returns rotated and scaled surface.
+<Surf> = flip(<Surf>, x_bool, y_bool)           # Returns flipped surface.
+```
+
+```python
+from pygame.draw import line, ...
+line(<Surf>, color, (x1, y1), (x2, y2), width)  # Draws a line to the surface.
+arc(<Surf>, color, <Rect>, from_rad, to_rad)    # Also: ellipse(<Surf>, color, <Rect>, width=0)
+rect(<Surf>, color, <Rect>, width=0)            # Also: polygon(<Surf>, color, points, width=0)
+```
+
+### Font
+```python
+<Font> = pg.font.SysFont('<name>', size)        # Loads the system font or default if missing.
+<Font> = pg.font.Font('<path>', size)           # Loads the TTF file. Pass None for default.
+<Surf> = <Font>.render(text, antialias, color)  # Background color can be specified at the end.
+```
+
+### Sound
+```python
+<Sound> = pg.mixer.Sound('<path>')              # Loads the WAV file.
+<Sound>.play()                                  # Starts playing the sound.
+```
+
+### Basic Mario Brothers Example
+```python
+import collections, dataclasses, enum, io, itertools as it, pygame as pg, urllib.request
+from random import randint
+
+P = collections.namedtuple('P', 'x y')          # Position
+D = enum.Enum('D', 'n e s w')                   # Direction
+W, H, MAX_S = 50, 50, P(5, 10)                  # Width, Height, Max speed
+
+def main():
+    def get_screen():
+        pg.init()
+        return pg.display.set_mode((W*16, H*16))
+    def get_images():
+        url = 'https://gto76.github.io/python-cheatsheet/web/mario_bros.png'
+        img = pg.image.load(io.BytesIO(urllib.request.urlopen(url).read()))
+        return [img.subsurface(get_rect(x, 0)) for x in range(img.get_width() // 16)]
+    def get_mario():
+        Mario = dataclasses.make_dataclass('Mario', 'rect spd facing_left frame_cycle'.split())
+        return Mario(get_rect(1, 1), P(0, 0), False, it.cycle(range(3)))
+    def get_tiles():
+        border = [(x, y) for x in range(W) for y in range(H) if x in [0, W-1] or y in [0, H-1]]
+        platforms = [(randint(1, W-2), randint(2, H-2)) for _ in range(W*H // 10)]
+        return [get_rect(x, y) for x, y in border + platforms]
+    def get_rect(x, y):
+        return pg.Rect(x*16, y*16, 16, 16)
+    run(get_screen(), get_images(), get_mario(), get_tiles())
+
+def run(screen, images, mario, tiles):
+    clock = pg.time.Clock()
+    while all(event.type != pg.QUIT for event in pg.event.get()):
+        keys = {pg.K_UP: D.n, pg.K_RIGHT: D.e, pg.K_DOWN: D.s, pg.K_LEFT: D.w}
+        pressed = {keys.get(ch) for ch, is_prsd in enumerate(pg.key.get_pressed()) if is_prsd}
+        update_speed(mario, tiles, pressed)
+        update_position(mario, tiles)
+        draw(screen, images, mario, tiles, pressed)
+        clock.tick(28)
+
+def update_speed(mario, tiles, pressed):
+    x, y = mario.spd
+    x += 2 * ((D.e in pressed) - (D.w in pressed))
+    x -= (x > 0) - (x < 0)
+    y += 1 if D.s not in get_boundaries(mario.rect, tiles) else (D.n in pressed) * -10
+    mario.spd = P(x=max(-MAX_S.x, min(MAX_S.x, x)), y=max(-MAX_S.y, min(MAX_S.y, y)))
+
+def update_position(mario, tiles):
+    x, y = mario.rect.topleft
+    n_steps = max(abs(s) for s in mario.spd)
+    for _ in range(n_steps):
+        mario.spd = stop_on_collision(mario.spd, get_boundaries(mario.rect, tiles))
+        x, y = x + mario.spd.x / n_steps, y + mario.spd.y / n_steps
+        mario.rect.topleft = x, y
+
+def get_boundaries(rect, tiles):
+    deltas = {D.n: P(0, -1), D.e: P(1, 0), D.s: P(0, 1), D.w: P(-1, 0)}
+    return {d for d, delta in deltas.items() if rect.move(delta).collidelist(tiles) != -1}
+
+def stop_on_collision(spd, bounds):
+    return P(x=0 if (D.w in bounds and spd.x < 0) or (D.e in bounds and spd.x > 0) else spd.x,
+             y=0 if (D.n in bounds and spd.y < 0) or (D.s in bounds and spd.y > 0) else spd.y)
+
+def draw(screen, images, mario, tiles, pressed):
+    def get_marios_image_index():
+        if D.s not in get_boundaries(mario.rect, tiles):
+            return 4
+        return next(mario.frame_cycle) if {D.w, D.e} & pressed else 6
+    screen.fill((85, 168, 255))
+    mario.facing_left = (D.w in pressed) if {D.w, D.e} & pressed else mario.facing_left
+    screen.blit(images[get_marios_image_index() + mario.facing_left * 9], mario.rect)
+    for t in tiles:
+        screen.blit(images[18 if t.x in [0, (W-1)*16] or t.y in [0, (H-1)*16] else 19], t)
+    pg.display.flip()
+
+if __name__ == '__main__':
+    main()
+```
+
+**[🔼Back to Top](#content-outlines)**
+
+Pandas
+------
+```python
+# $ pip3 install pandas matplotlib
+import pandas as pd
+from pandas import Series, DataFrame
+import matplotlib.pyplot as plt
+```
+
+### Series
+**Ordered dictionary with a name.**
+
+```python
+>>> Series([1, 2], index=['x', 'y'], name='a')
+x    1
+y    2
+Name: a, dtype: int64
+```
+
+```python
+<Sr> = Series(<list>)                          # Assigns RangeIndex starting at 0.
+<Sr> = Series(<dict>)                          # Takes dictionary's keys for index.
+<Sr> = Series(<dict/Series>, index=<list>)     # Only keeps items with keys specified in index.
+```
+
+```python
+<el> = <Sr>.loc[key]                           # Or: <Sr>.iloc[index]
+<Sr> = <Sr>.loc[keys]                          # Or: <Sr>.iloc[indexes]
+<Sr> = <Sr>.loc[from_key : to_key_inclusive]   # Or: <Sr>.iloc[from_i : to_i_exclusive]
+```
+
+```python
+<el> = <Sr>[key/index]                         # Or: <Sr>.key
+<Sr> = <Sr>[keys/indexes]                      # Or: <Sr>[<key_range/range>]
+<Sr> = <Sr>[bools]                             # Or: <Sr>.i/loc[bools]
+```
+
+```python
+<Sr> = <Sr> ><== <el/Sr>                       # Returns a Series of bools.
+<Sr> = <Sr> +-*/ <el/Sr>                       # Items with non-matching keys get value NaN.
+```
+
+```python
+<Sr> = <Sr>.append(<Sr>)                       # Or: pd.concat(<coll_of_Sr>)
+<Sr> = <Sr>.combine_first(<Sr>)                # Adds items that are not yet present.
+<Sr>.update(<Sr>)                              # Updates items that are already present.
+```
+
+```python
+<Sr>.plot.line/area/bar/pie/hist()             # Generates a Matplotlib plot.
+plt.show()                                     # Displays the plot. Also plt.savefig(<path>).
+```
+
+#### Series — Aggregate, Transform, Map:
+```python
+<el> = <Sr>.sum/max/mean/idxmax/all()          # Or: <Sr>.agg(lambda <Sr>: <el>)
+<Sr> = <Sr>.rank/diff/cumsum/ffill/interpl()   # Or: <Sr>.agg/transform(lambda <Sr>: <Sr>)
+<Sr> = <Sr>.fillna(<el>)                       # Or: <Sr>.agg/transform/map(lambda <el>: <el>)
+```
+
+```python
+>>> sr = Series([1, 2], index=['x', 'y'])
+x    1
+y    2
+```
+
+```text
++-----------------+-------------+-------------+---------------+
+|                 |    'sum'    |   ['sum']   | {'s': 'sum'}  |
++-----------------+-------------+-------------+---------------+
+| sr.apply(…)     |      3      |    sum  3   |     s  3      |
+| sr.agg(…)       |             |             |               |
++-----------------+-------------+-------------+---------------+
+```
+
+```text
++-----------------+-------------+-------------+---------------+
+|                 |    'rank'   |   ['rank']  | {'r': 'rank'} |
++-----------------+-------------+-------------+---------------+
+| sr.apply(…)     |             |      rank   |               |
+| sr.agg(…)       |     x  1    |   x     1   |    r  x  1    |
+| sr.transform(…) |     y  2    |   y     2   |       y  2    |
++-----------------+-------------+-------------+---------------+
+```
+* **Last result has a hierarchical index. Use `'<Sr>[key_1, key_2]'` to get its values.**
+
+**[🔼Back to Top](#content-outlines)**
+
+### DataFrame
+**Table with labeled rows and columns.**
+
+```python
+>>> DataFrame([[1, 2], [3, 4]], index=['a', 'b'], columns=['x', 'y'])
+   x  y
+a  1  2
+b  3  4
+```
+
+```python
+<DF>    = DataFrame(<list_of_rows>)            # Rows can be either lists, dicts or series.
+<DF>    = DataFrame(<dict_of_columns>)         # Columns can be either lists, dicts or series.
+```
+
+```python
+<el>    = <DF>.loc[row_key, column_key]        # Or: <DF>.iloc[row_index, column_index]
+<Sr/DF> = <DF>.loc[row_key/s]                  # Or: <DF>.iloc[row_index/es]
+<Sr/DF> = <DF>.loc[:, column_key/s]            # Or: <DF>.iloc[:, column_index/es]
+<DF>    = <DF>.loc[row_bools, column_bools]    # Or: <DF>.iloc[row_bools, column_bools]
+```
+
+```python
+<Sr/DF> = <DF>[column_key/s]                   # Or: <DF>.column_key
+<DF>    = <DF>[row_bools]                      # Keeps rows as specified by bools.
+<DF>    = <DF>[<DF_of_bools>]                  # Assigns NaN to False values.
+```
+
+```python
+<DF>    = <DF> ><== <el/Sr/DF>                 # Returns DF of bools. Sr is treated as a row.
+<DF>    = <DF> +-*/ <el/Sr/DF>                 # Items with non-matching keys get value NaN.
+```
+
+```python
+<DF>    = <DF>.set_index(column_key)           # Replaces row keys with values from a column.
+<DF>    = <DF>.reset_index()                   # Moves row keys to a column named index.
+<DF>    = <DF>.sort_index(ascending=True)      # Sorts rows by row keys.
+<DF>    = <DF>.sort_values(column_key/s)       # Sorts rows by the passed column/s.
+```
+
+#### DataFrame — Merge, Join, Concat:
+```python
+>>> l = DataFrame([[1, 2], [3, 4]], index=['a', 'b'], columns=['x', 'y'])
+   x  y
+a  1  2
+b  3  4
+>>> r = DataFrame([[4, 5], [6, 7]], index=['b', 'c'], columns=['y', 'z'])
+   y  z
+b  4  5
+c  6  7
+```
+
+```text
++------------------------+---------------+------------+------------+--------------------------+
+|                        |    'outer'    |   'inner'  |   'left'   |       Description        |
++------------------------+---------------+------------+------------+--------------------------+
+| l.merge(r, on='y',     |    x   y   z  | x   y   z  | x   y   z  | Joins/merges on column.  |
+|            how=…)      | 0  1   2   .  | 3   4   5  | 1   2   .  | Also accepts left_on and |
+|                        | 1  3   4   5  |            | 3   4   5  | right_on parameters.     |
+|                        | 2  .   6   7  |            |            | Uses 'inner' by default. |
++------------------------+---------------+------------+------------+--------------------------+
+| l.join(r, lsuffix='l', |    x yl yr  z |            | x yl yr  z | Joins/merges on row keys.|
+|           rsuffix='r', | a  1  2  .  . | x yl yr  z | 1  2  .  . | Uses 'left' by default.  |
+|           how=…)       | b  3  4  4  5 | 3  4  4  5 | 3  4  4  5 | If r is a Series, it is  |
+|                        | c  .  .  6  7 |            |            | treated as a column.     |
++------------------------+---------------+------------+------------+--------------------------+
+| pd.concat([l, r],      |    x   y   z  |     y      |            | Adds rows at the bottom. |
+|           axis=0,      | a  1   2   .  |     2      |            | Uses 'outer' by default. |
+|           join=…)      | b  3   4   .  |     4      |            | A Series is treated as a |
+|                        | b  .   4   5  |     4      |            | column. Use l.append(sr) |
+|                        | c  .   6   7  |     6      |            | to add a row instead.    |
++------------------------+---------------+------------+------------+--------------------------+
+| pd.concat([l, r],      |    x  y  y  z |            |            | Adds columns at the      |
+|           axis=1,      | a  1  2  .  . | x  y  y  z |            | right end. Uses 'outer'  |
+|           join=…)      | b  3  4  4  5 | 3  4  4  5 |            | by default. A Series is  |
+|                        | c  .  .  6  7 |            |            | treated as a column.     |
++------------------------+---------------+------------+------------+--------------------------+
+| l.combine_first(r)     |    x   y   z  |            |            | Adds missing rows and    |
+|                        | a  1   2   .  |            |            | columns. Also updates    |
+|                        | b  3   4   5  |            |            | items that contain NaN.  |
+|                        | c  .   6   7  |            |            | R must be a DataFrame.   |
++------------------------+---------------+------------+------------+--------------------------+
+```
+
+#### DataFrame — Aggregate, Transform, Map:
+```python
+<Sr> = <DF>.sum/max/mean/idxmax/all()          # Or: <DF>.apply/agg(lambda <Sr>: <el>)
+<DF> = <DF>.rank/diff/cumsum/ffill/interpl()   # Or: <DF>.apply/agg/transfrm(lambda <Sr>: <Sr>)
+<DF> = <DF>.fillna(<el>)                       # Or: <DF>.applymap(lambda <el>: <el>)
+```
+* **All operations operate on columns by default. Pass `'axis=1'` to process the rows instead.**
+
+```python
+>>> df = DataFrame([[1, 2], [3, 4]], index=['a', 'b'], columns=['x', 'y'])
+   x  y
+a  1  2
+b  3  4
+```
+
+```text
++-----------------+-------------+-------------+---------------+
+|                 |    'sum'    |   ['sum']   | {'x': 'sum'}  |
++-----------------+-------------+-------------+---------------+
+| df.apply(…)     |             |       x  y  |               |
+| df.agg(…)       |     x  4    |  sum  4  6  |     x  4      |
+|                 |     y  6    |             |               |
++-----------------+-------------+-------------+---------------+
+```
+
+```text
++-----------------+-------------+-------------+---------------+
+|                 |    'rank'   |   ['rank']  | {'x': 'rank'} |
++-----------------+-------------+-------------+---------------+
+| df.apply(…)     |      x  y   |      x    y |        x      |
+| df.agg(…)       |   a  1  1   |   rank rank |     a  1      |
+| df.transform(…) |   b  2  2   | a    1    1 |     b  2      |
+|                 |             | b    2    2 |               |
++-----------------+-------------+-------------+---------------+
+```
+* **Use `'<DF>[col_key_1, col_key_2][row_key]'` to get the fifth result's values.**
+
+#### DataFrame — Plot, Encode, Decode:
+```python
+<DF>.plot.line/bar/hist/scatter/box()          # Also: `x=column_key, y=column_key/s`.
+plt.show()                                     # Displays the plot. Also plt.savefig(<path>).
+```
+
+```python
+<DF> = pd.read_json/html('<str/path/url>')     # Run `$ pip3 install beautifulsoup4 lxml`.
+<DF> = pd.read_csv/pickle/excel('<path/url>')  # Use `sheet_name=None` to get all Excel sheets.
+<DF> = pd.read_sql('<table/query>', <conn.>)   # Accepts SQLite3 or SQLAlchemy connection.
+<DF> = pd.read_clipboard()                     # Reads a copied table from the clipboard.
+```
+
+```python
+<dict> = <DF>.to_dict(['d/l/s/…'])             # Returns columns as dicts, lists or series.
+<str>  = <DF>.to_json/html/csv([<path>])       # Also to_markdown/latex([<path>]).
+<DF>.to_pickle/excel(<path>)                   # Run `$ pip3 install openpyxl` for xlsx files.
+<DF>.to_sql('<table_name>', <connection>)      # Accepts SQLite3 or SQLAlchemy connection.
+```
+
+### GroupBy
+**Object that groups together rows of a dataframe based on the value of the passed column.**
+
+```python
+>>> df = DataFrame([[1, 2, 3], [4, 5, 6], [7, 8, 6]], index=list('abc'), columns=list('xyz'))
+>>> df.groupby('z').get_group(6)
+   x  y
+b  4  5
+c  7  8
+```
+
+```python
+<GB> = <DF>.groupby(column_key/s)              # Splits DF into groups based on passed column.
+<DF> = <GB>.apply(<func>)                      # Maps each group. Func can return DF, Sr or el.
+<GB> = <GB>[column_key]                        # Single column GB. All operations return a Sr.
+```
+
+#### GroupBy — Aggregate, Transform, Map:
+```python
+<DF> = <GB>.sum/max/mean/idxmax/all()          # Or: <GB>.agg(lambda <Sr>: <el>)
+<DF> = <GB>.rank/diff/cumsum/ffill()           # Or: <GB>.transform(lambda <Sr>: <Sr>)
+<DF> = <GB>.fillna(<el>)                       # Or: <GB>.transform(lambda <Sr>: <Sr>)
+```
+
+```python
+>>> gb = df.groupby('z')
+      x  y  z
+3: a  1  2  3
+6: b  4  5  6
+   c  7  8  6
+```
+
+```text
++-----------------+-------------+-------------+-------------+---------------+
+|                 |    'sum'    |    'rank'   |   ['rank']  | {'x': 'rank'} |
++-----------------+-------------+-------------+-------------+---------------+
+| gb.agg(…)       |      x   y  |      x  y   |      x    y |        x      |
+|                 |  z          |   a  1  1   |   rank rank |     a  1      |
+|                 |  3   1   2  |   b  1  1   | a    1    1 |     b  1      |
+|                 |  6  11  13  |   c  2  2   | b    1    1 |     c  2      |
+|                 |             |             | c    2    2 |               |
++-----------------+-------------+-------------+-------------+---------------+
+| gb.transform(…) |      x   y  |      x  y   |             |               |
+|                 |  a   1   2  |   a  1  1   |             |               |
+|                 |  b  11  13  |   b  1  1   |             |               |
+|                 |  c  11  13  |   c  2  2   |             |               |
++-----------------+-------------+-------------+-------------+---------------+
+```
+
+### Rolling
+**Object for rolling window calculations.**
+
+```python
+<RSr/RDF/RGB> = <Sr/DF/GB>.rolling(win_size)   # Also: `min_periods=None, center=False`.
+<RSr/RDF/RGB> = <RDF/RGB>[column_key/s]        # Or: <RDF/RGB>.column_key
+<Sr/DF>       = <R>.mean/sum/max()             # Or: <R>.apply/agg(<agg_func/str>)
+```
+
+
+Plotly
+------
+```python
+# $ pip3 install plotly kaleido
+from plotly.express import line
+<Figure> = line(<DF>, x=<col_name>, y=<col_name>)        # Or: line(x=<list>, y=<list>)
+<Figure>.update_layout(margin=dict(t=0, r=0, b=0, l=0))  # Or: paper_bgcolor='rgba(0, 0, 0, 0)'
+<Figure>.write_html/json/image('<path>')                 # Also: <Figure>.show()
+```
+
+#### Covid deaths by continent:
+
+![Covid Deaths](web/covid_deaths.png)
+<div id="2a950764-39fc-416d-97fe-0a6226a3095f" class="plotly-graph-div" style="height:340px; width:100%;"></div>
+
+```python
+covid = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv',
+                    usecols=['iso_code', 'date', 'total_deaths', 'population'])
+continents = pd.read_csv('https://gist.githubusercontent.com/stevewithington/20a69c0b6d2ff'
+                         '846ea5d35e5fc47f26c/raw/country-and-continent-codes-list-csv.csv',
+                         usecols=['Three_Letter_Country_Code', 'Continent_Name'])
+df = pd.merge(covid, continents, left_on='iso_code', right_on='Three_Letter_Country_Code')
+df = df.groupby(['Continent_Name', 'date']).sum().reset_index()
+df['Total Deaths per Million'] = df.total_deaths * 1e6 / df.population
+df = df[df.date > '2020-03-14']
+df = df.rename({'date': 'Date', 'Continent_Name': 'Continent'}, axis='columns')
+line(df, x='Date', y='Total Deaths per Million', color='Continent').show()
+```
+
+#### Confirmed covid cases, Dow Jones, Gold, and Bitcoin price:
+
+![Covid Cases](web/covid_cases.png)
+<div id="e23ccacc-a456-478b-b467-7282a2165921" class="plotly-graph-div" style="height:315px; width:100%;"></div>
+
+```python
+import pandas as pd
+import plotly.graph_objects as go
+
+def main():
+    display_data(wrangle_data(*scrape_data()))
+
+def scrape_data():
+    def scrape_covid():
+        url = 'https://covid.ourworldindata.org/data/owid-covid-data.csv'
+        df = pd.read_csv(url, usecols=['location', 'date', 'total_cases'])
+        return df[df.location == 'World'].set_index('date').total_cases
+    def scrape_yahoo(slug):
+        url = f'https://query1.finance.yahoo.com/v7/finance/download/{slug}' + \
+              '?period1=1579651200&period2=9999999999&interval=1d&events=history'
+        df = pd.read_csv(url, usecols=['Date', 'Close'])
+        return df.set_index('Date').Close
+    out = scrape_covid(), scrape_yahoo('BTC-USD'), scrape_yahoo('GC=F'), scrape_yahoo('^DJI')
+    return map(pd.Series.rename, out, ['Total Cases', 'Bitcoin', 'Gold', 'Dow Jones'])
+
+def wrangle_data(covid, bitcoin, gold, dow):
+    df = pd.concat([bitcoin, gold, dow], axis=1)  # Joins columns on dates.
+    df = df.sort_index().interpolate()            # Sorts by date and interpolates NaN-s.
+    df = df.loc['2020-02-23':]                    # Discards rows before '2020-02-23'.
+    df = (df / df.iloc[0]) * 100                  # Calculates percentages relative to day 1.
+    df = df.join(covid)                           # Adds column with covid cases.
+    return df.sort_values(df.index[-1], axis=1)   # Sorts columns by last day's value.
+
+def display_data(df):
+    figure = go.Figure()
+    for col_name in reversed(df.columns):
+        yaxis = 'y1' if col_name == 'Total Cases' else 'y2'
+        trace = go.Scatter(x=df.index, y=df[col_name], name=col_name, yaxis=yaxis)
+        figure.add_trace(trace)
+    figure.update_layout(
+        yaxis1=dict(title='Total Cases', rangemode='tozero'),
+        yaxis2=dict(title='%', rangemode='tozero', overlaying='y', side='right'),
+        legend=dict(x=1.1),
+        height=450
+    ).show()
+
+if __name__ == '__main__':
+    main()
+```
+
+
+PySimpleGUI
+-----------
+```python
+# $ pip3 install PySimpleGUI
+import PySimpleGUI as sg
+layout = [[sg.Text("What's your name?")], [sg.Input()], [sg.Button('Ok')]]
+window = sg.Window('Window Title', layout)
+event, values = window.read()
+print(f'Hello {values[0]}!' if event == 'Ok' else '')
+```
+
+
+Appendix
+--------
+### Cython
+**Library that compiles Python code into C.**
+
+```python
+# $ pip3 install cython
+import pyximport; pyximport.install()
+import <cython_script>
+<cython_script>.main()
+```
+
+#### Definitions:
+* **All `'cdef'` definitions are optional, but they contribute to the speed-up.**
+* **Script needs to be saved with a `'pyx'` extension.**
+
+```python
+cdef <ctype> <var_name> = <el>
+cdef <ctype>[n_elements] <var_name> = [<el_1>, <el_2>, ...]
+cdef <ctype/void> <func_name>(<ctype> <arg_name>): ...
+```
+
+```python
+cdef class <class_name>:
+    cdef public <ctype> <attr_name>
+    def __init__(self, <ctype> <arg_name>):
+        self.<attr_name> = <arg_name>
+```
+
+```python
+cdef enum <enum_name>: <member_name_1>, <member_name_2>, ...
+```
+
+### PyInstaller
+```bash
+$ pip3 install pyinstaller
+$ pyinstaller script.py                        # Compiles into './dist/script' directory.
+$ pyinstaller script.py --onefile              # Compiles into './dist/script' console app.
+$ pyinstaller script.py --windowed             # Compiles into './dist/script' windowed app.
+$ pyinstaller script.py --add-data '<path>:.'  # Adds file to the root of the executable.
+```
+* **File paths need to be updated to `'os.path.join(sys._MEIPASS, <path>)'`.**
+
+### Basic Script Template
+```python
+#!/usr/bin/env python3
+#
+# Usage: .py
+#
+
+from sys import argv, exit
+from collections import defaultdict, namedtuple
+from dataclasses import make_dataclass
+from enum import Enum
+import functools as ft, itertools as it, operator as op, re
+
+
+def main():
+    pass
+
+
+###
+##  UTIL
+#
+
+def read_file(filename):
+    with open(filename, encoding='utf-8') as file:
+        return file.readlines()
+
+
+if __name__ == '__main__':
+    main()
+```
+
+
+Index
+-----
+* **Only available in the [PDF](https://transactions.sendowl.com/products/78175486/4422834F/view).**
+* **Ctrl+F / ⌘F is usually sufficient.**
+* **Searching `'#<title>'` on the [webpage](https://gto76.github.io/python-cheatsheet/) will limit the search to the titles.**
+
+**[🔼Back to Top](#content-outlines)**
