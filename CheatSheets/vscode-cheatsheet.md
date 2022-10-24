@@ -93,6 +93,8 @@
 | `Ctrl + Shift + G` | Go to Source Control |
 | `Ctrl + Shift + H` | Go to Search |
 | `Ctrl + Shift + J` | Go to Problems |
+| `` Ctrl + ↑/↓ ``| Scroll up/down |
+| `` Ctrl+ Home/End ``| Scroll top/bottom |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -130,9 +132,5 @@
 | ------- | ----------- |
 | `` Ctrl + ` `` | Show integrated terminal |
 | `` Ctrl + Shift + ` `` | Create new integrated terminal |
-| `` Ctrl + C ``| Copy selection |
-| `` Ctrl + V `` | Paste into active terminal |
-| `` Ctrl + ↑/↓ ``| Scroll up/down |
-| `` Ctrl+ Home/End ``| Scroll top/bottom |
 
 **[🔼Back to Top](#table-of-contents)**
