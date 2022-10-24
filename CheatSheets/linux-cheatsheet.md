@@ -1,9 +1,9 @@
-﻿---
+﻿<!-- Heading section doesn't work -->
+<!-- ---
 title: Linux CheatSheet
 description: The most commonly used linux commands are given here.
 created: 2022-10-21
-
----
+--- -->
 
 ## Table of Contents
 
