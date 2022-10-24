@@ -31,10 +31,12 @@
 		- [Vector pair insertion](#vector-pair)
 		- [Vector pair Display](#vector-pair)
 	- [List](#list)
-		- [List insertion](#vector-pair)
-		- [List traversal](#vector-pair)
-		- [List deletion](#vector-pair)
-		
+		- [List insertion](#list)
+		- [List Display](#list)
+		- [List deletion](#list)
+	- [Priority Queue](#priority-queue)
+		- [Priority Queue insertion](#priority-queue)
+		- [Priority Queue Display](#priority-queue)
 
 # C++ STL CheatSheet for Developers
 
@@ -321,4 +323,25 @@
 ```
 **[🔼Back to Top](#table-of-contents)**
 
+### Priority Queue
 
+```cpp
+	priority_queue<int> pq;
+	// priority queue insertion
+	pq.push(10);
+	pq.push(20);
+
+	// priority queue display
+	while (!pq.empty()) {
+		cout << '\t' << g.top();
+		g.pop();
+	}
+	cout << '\n';
+	
+	cout << "\n size if pq : " << pq.size();
+	cout << "\n top element of pq : " << pq.top();
+	
+	// priority queue deletion
+	pq.pop();
+```
+**[🔼Back to Top](#table-of-contents)**
