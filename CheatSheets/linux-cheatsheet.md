@@ -8,6 +8,9 @@
   - [System Info](#system-info)
   - [Shortcuts](#shortcuts)
   - [Text Editors](#text-editors)
+  - [Archives(Tar Files)](#archives)
+  - [Disk Usage](#disk-usage)
+  - [Search](#search)
 
 # Linux CheatSheet for Developers
 
@@ -91,5 +94,39 @@
 | `nano file` | nano  is  a  small and friendly editor |
 | `vi file` | vi is a powerful text editor where every action is done though the keyboard. [How to exit vim/vi](https://www.cyberciti.biz/faq/linux-unix-exit-vim-editor/) (Trust me you'll need to know it) |
 | `vim file` | vim - Vi IMproved is an improved version of the vi editor. Like vi, every action is done through the keyboard.|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Archives
+| Command | Description |
+| ------- | ----------- |
+| `tar cf archive.tar directory` | Create tar named archive.tar containing directory |
+| `tar xf archive.tar` | Extract the contents from archive.tar |
+| `tar czf archive.tar.gz directory` | Create a gzip compressed tar file name archive.tar.gz|
+| `tar xzf archive.tar.gz` | Extract a gzip compressed tar file|
+| `tar cjf archive.tar.bz2 directory` | Create a tar file with bzip2 compression|
+| `tar xjf archive.tar.bz2` | Extract a bzip2 compressed tar file|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Disk Usage
+| Command | Description |
+| ------- | ----------- |
+| `df -h` | Show free and used space on mounted filesystems |
+| `df -i` | Show free and used inodes on mounted filesystems |
+| `fdisk -l` | Display disks partitions sizes and types|
+| `du -ah` | Display disk usage for all files and directories in human readable format|
+| `du -sh` | Display total disk usage off the current directory|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Search
+| Command | Description |
+| ------- | ----------- |
+| `grep pattern file` | Search for pattern in file |
+| `grep -r pattern directory` | Search recursively for pattern in directory |
+| `locate name` | Find files and directories by name|
+| `find /home/xyz -name 'prefix*'` | Find files in /home/xyz that start with "prefix" |
+| `find /home -size +100M` | Find files larger than 100MB in /home|
 
 **[🔼Back to Top](#table-of-contents)**
