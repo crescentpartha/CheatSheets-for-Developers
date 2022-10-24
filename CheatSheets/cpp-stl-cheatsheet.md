@@ -290,7 +290,5 @@
     }
     sort (v.begin(), v.end(), second_sorter);
     cout << "\n";
-;```
-**[🔼Back to Top](#table-of-contents)**
 
 
