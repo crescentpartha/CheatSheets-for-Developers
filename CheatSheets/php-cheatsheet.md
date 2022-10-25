@@ -4,7 +4,7 @@
   - [PHP standard functions](#php-standard-functions)
   - [Escape Sequence](#escape-sequence)
   - [Operators](#operators)
-  -  - [Operators](#operators)
+  - [Operators](#operators)
   - [Super global variable](#super-global-variable)
   -  - [Important keywords $_SERVER](#Important-keywords)
   -  [Array function](#array-function)
