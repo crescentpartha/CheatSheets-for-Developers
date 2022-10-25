@@ -7,45 +7,57 @@ created: 2022-10-23
 ## Table of Contents
 
 - [PHP CheatSheet for Developers](#php-cheatsheet-for-developers)
-  - [PHP standard functions](#php-standard-functions)
   - [Escape Sequence](#escape-sequence)
   - [Operators](#operators)
-  - [Operators](#operators)
+    - [Arithmetic Operators](#arithmetic-operators)
+    - [Comparison Operators](#comparison-operators)
+    - [Logical	Operators](#logicaloperators)
+    - [String Operators](#string-operators)
+    - [Array Operators](#array-operators)
+    - [Conditional Assignment Operators](#conditional-assignment-operators)
+    - [Increment/Decrement Operators](#incrementdecrement-operators)
   - [Super global variable](#super-global-variable)
-  -  - [Important keywords $_SERVER](#Important-keywords)
-  -  [Array function](#array-function)
-  -  [String function](#string-function)
-  -  [File function](#File-function)
-  -  - [Read File](#File-Read)
-  -  [Cookies and Session](#Cookies-and-Session)
-  -  [Most Important Function ](#most-important-function)
+  - [Important keywords $_SERVER](#important-keywords-_server)
+  - [Functions](#functions)
+    - [Array Function](#array-function)
+    - [PHP standard functions](#php-standard-functions)
+    - [String function](#string-function)
+    - [File function](#file-function)
+  - [Read File](#read-file)
+  - [Cookies and Session](#cookies-and-session)
+  - [Most Important Function](#most-important-function)
+    - [calender function](#calender-function)
+    - [Date/time Function](#datetime-function)
+    - [Filter Function](#filter-function)
+    - [MySQLi  Function](#mysqli--function)
+    - [PHP Regular Expression Functions](#php-regular-expression-functions)
 
 
 # PHP CheatSheet for Developers
 
 ## Escape Sequence
 
-| Command                | Description                                                                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Command                | Description                                     |
+| :--------------------: | :----------------------------------------------- |
 | `// Comment Message` | This is a single-line comment |
-| `$Title = "Title"` | Defining Variables|
-| `\n` | New Line|
-| `\r` | It inserts a carriage return in the text at this point.|
-| `\t` | It gives a horizontal tab space|
-| `\v` | It gives a vertical tab space|
-| `\\` | It adds a backslash|
-| `\$` | Print the next character as a dollar, not as part of a variable|
-| `\'` | Print the next character as a double quote, not a string closer|
-| `\"` | Print the next character as a double quote, not a string closer|
+| `$Title = "Title"` | Defining Variables |
+| `\n` | New Line |
+| `\r` | It inserts a carriage return in the text at this point. |
+| `\t` | It gives a horizontal tab space |
+| `\v` | It gives a vertical tab space |
+| `\\` | It adds a backslash |
+| `\$` | Print the next character as a dollar, not as part of a variable |
+| `\'` | Print the next character as a double quote, not a string closer |
+| `\"` | Print the next character as a double quote, not a string closer |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Operators
 
-## Arithmetic Operators
+### Arithmetic Operators
 
 |operator|name |syntax|
-|---------|------|-----|
+|:--------:|:------:|:-----:|
 |`+`|	Addition|	$x + $y|
 |`-`|	Subtraction|	$x - $y|
 |`*` |	Multiplication|	$x * $y |
@@ -53,10 +65,12 @@ created: 2022-10-23
 |`%`|	Modulus|	$x % $y|	
 |` ** `|	Exponentiation |	$x ** $y	|	
 
-## Comparison Operators
+**[🔼Back to Top](#table-of-contents)**
+
+### Comparison Operators
 
 |operator|name |syntax|
-|---------|------|-----|
+|:--------:|:------:|:-----:|
 |`==`|	Equal|	$x == $y|	
 |`===`|	Identical|	$x === $y|
 | `!= `| 	Not equal|	$x != $y|	
@@ -68,26 +82,34 @@ created: 2022-10-23
 |`<=`|	Less than or equal to|	$x <= $y|	
 |`<=>`|	Spaceship|	$x <=> $y	|
 
-## Logical	Operators
+**[🔼Back to Top](#table-of-contents)**
+
+### Logical	Operators
 
 |operator|name |syntax|
-|---------|------|-----|
+|:--------:|:------:|:-----:|
 |`and`|	And|	$x and $y|
 |`or`	|Or|	$x or $y	|
 |`xor`|	Xor|	$x xor $y	|
 |`&&`|	And|	$x && $y|	
-|  `\|`	| Or | $x \| $y |
+| `\|` | Or | $x \| $y |
 |`!`	|Not	|!$x |	
 
-## String Operators
+**[🔼Back to Top](#table-of-contents)**
+
+### String Operators
 
 |operator|name |syntax|
-|---------|------|-----|
+|:--------:|:------:|:-----:|
 |`.`|	Concatenation|	$txt1 . $txt2	|
 |`.=`|	Concatenation assignment|	$txt1 .= $txt2|	
 
-## Array Operators
+**[🔼Back to Top](#table-of-contents)**
 
+### Array Operators
+
+|operator|name |syntax|
+|:--------:|:------:|:-----:|
 |`+`|	Union|	$x + $y|	
 |`==`|	Equality|	$x == $y	|
 |`===`|	Identity|	$x === $y |
@@ -95,29 +117,32 @@ created: 2022-10-23
 |`<>`|	Inequality|	$x <> $y	|
 |`!==`|	Non-identity|	$x !== $y	|	
 
-## Conditional Assignment Operators
+**[🔼Back to Top](#table-of-contents)**
+
+### Conditional Assignment Operators
 
 |operator|name |syntax|
-|---------|------|-----|
+|:--------:|:------:|:-----:|
 |`?:	`|Ternary|	$x = expr1 ? expr2 : expr3|
 |`??`|	Null coalescing|	$x = expr1 ?? expr2|
 
-## Increment/Decrement Operators
+**[🔼Back to Top](#table-of-contents)**
+
+### Increment/Decrement Operators
 
 |operator|name |description|
-|---------|------|-----|
+|:--------:|:------:|:-----:|
 |`++$x`|	Pre-increment|	Increments $x by one|
 |`$x++`|	Post-increment|	Returns $x, then increments $x by one	|
 |`--$x`|	Pre-decrement	|Decrements $x by one, then returns $x|
 |`$x--`	|Post-decrement	|Returns $x, then decrements $x by one	|	
-
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Super global variable
 
 |keyword|description|
-|---------|--------|
+|:--------:|:------|
 |`$GLOBALS`| used to access global variables from anywhere in the PHP script |
 |`$_SERVER`|holds information about headers, paths, and script locations|
 |` $_REQUEST`|used to collect data after submitting an HTML form|
@@ -133,7 +158,7 @@ created: 2022-10-23
 ## Important keywords $_SERVER
 
 |Element/Code|	Description|
-|----------|--------------|
+|:--------:|:------|
 |`$_SERVER['PHP_SELF']`|	Returns the filename of the currently executing script|
 |`$_SERVER['GATEWAY_INTERFACE']`	|Returns the version of the Common Gateway Interface (CGI) the server is using|
 |`$_SERVER['SERVER_ADDR']`	|Returns the IP address of the host server|
@@ -159,14 +184,14 @@ created: 2022-10-23
 |`$_SERVER['SCRIPT_NAME']`	|Returns the path of the current script|
 |`$_SERVER['SCRIPT_URI']`	|Returns the URI of the current page|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
+## Functions
 
-## Array Function 
+### Array Function 
 
 |Function |Description|
-|-------|------|
+|:--------:|:------|
 |`count(arr)`| Returns the length of an array arr|
 |`print_r(arr)`| Prints the arr’s contents|
 |`array_pop(arr)`| Pops (removes) an element off the end of the array arr|
@@ -180,15 +205,14 @@ created: 2022-10-23
 |`implode(glue, pieces)`| Joins array elements (pieces) with a string (glue)|
 |`array_rand(arr)`| Randomly selects a random entry from the array and returns the key(or keys) of the random entries|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-## PHP standard functions
+### PHP standard functions
 
 |Function| Description|
-|------|-------|
+|:--------:|:------|
 |`isset(el)` |Will return false if el has been assigned the constant NULL, el has not been set to any value yet (undefined) el has been deleted using the unset function|
-|`print str or echo str|` Prints str|
+|`print str` <br /> or <br /> `echo str` | Prints str |
 |`time()`| Returns the current time in seconds|
 |`date(format, time)`| Converts an optional time in seconds to a date based on format|
 |`mt_rand(min, max)`| Returns a random integer between min and max (inclusive)|
@@ -196,13 +220,12 @@ created: 2022-10-23
 |`die(message)`| Ends execution and sends back optional message|
 |`include "path"` |Includes and evaluates the specified file path such as "hidden/config.php"|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-## String function
+### String function
 
 |Function| Description|
-|-----------|----------|
+|:--------:|:------|
 |`strlen(s)`| Returns the length of a string s|
 |`strpos(str, substr)`| Returns the position of the first occurrence of substr in str, or FALSE if not found|
 |`substr(s, start,len)`| Returns a substring of s starting at start and up to len characters in length. If s is less than start characters long, FALSE will be returned|
@@ -211,13 +234,12 @@ created: 2022-10-23
 |`strtoupper(s)` |Returns an uppercase version of s|
 |`explode(delimiter,s)`| Returns an array of substrings of s split by delimiter|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-## File function
+### File function
 
 |Function| Description|
-|----------|-------|
+|:--------:|:------|
 |`file(path, [int flags = 0])`| Reads entire file path into an array. Optional flags parameter can be passed in such as FILE_IGNORE_NEW_LINES or FILE_SKIP_EMPTY_LINES|
 |`file_exists(path) `|Returns whether a file or directory path exists|
 |`file_get_contents(path) `|Reads entire file path into a string|
@@ -226,13 +248,12 @@ created: 2022-10-23
 |`glob(pattern) `|Returns an array of path names matching pattern|
 |`basename(path)`|Given a filename path, this function will strip any leading directory from a file path and return just the filename|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
 ## Read File
 
 |Modes	|Description|pointer|
-|--------|----------|-------|
+|:--------:|:------|:-------|
 |`r`|	Open a file for read only.| File pointer starts at the beginning of the file|
 |`w`|	Open a file for write only.| Erases the contents of the file or creates a new file if it doesn't exist. File pointer starts at the beginning of the file|
 |`a`|	Open a file for write only.| The existing data in file is preserved. File pointer starts at the end of the file. Creates a new file if the file doesn't exist|
@@ -247,22 +268,21 @@ created: 2022-10-23
 ## Cookies and Session
 
 |keyword	|Description
-|--------|----------|
+|:--------:|:------|
 |`setcookie(name, value)`|used to set cookie with HTTP response|
 |`$_COOKIE`|etrieve the value of the cookie|
 |`session_start()`|A session is started |
 |`$_SESSION`|Session variables are set with the PHP global variable|
 |`session_unset() and session_destroy()`|To remove all global session variables and destroy the session|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
 ## Most Important Function  
 
-## calender function
+### calender function
 
 |Function|	Description|
-|-------|-----------|
+|:--------:|:------|
 |`cal_days_in_month()`|	Returns the number of days in a month for a specified year and calendar|
 |`cal_from_jd()`|	Converts a Julian Day Count into a date of a specified calendar|
 |`cal_info()`|	Returns information about a specified calendar|
@@ -282,10 +302,12 @@ created: 2022-10-23
 |`juliantojd()`|	Converts a Julian date to a Julian Day Count|
 |`unixtojd()`|	Converts Unix timestamp to Julian Day Count|
 
-## Date/time Function
+**[🔼Back to Top](#table-of-contents)**
+
+### Date/time Function
 
 |Function|	Description|
-|-------|-----------|
+|:--------:|:------|
 |`checkdate()	`|Validates a Gregorian date|
 |`date_add()`|	Adds days, months, years, hours, minutes, and seconds to a date|
 |`date_create_from_format()	`|Returns a new DateTime object formatted according to a specified format|
@@ -336,10 +358,12 @@ created: 2022-10-23
 |`timezone_transitions_get()`|	Returns all transitions for the timezone|
 |`timezone_version_get()`|	Returns the version of the timezonedb|
 
-## Filter Function
+**[🔼Back to Top](#table-of-contents)**
+
+### Filter Function
 
 |Function|	Description|
-|-------|--------------|
+|:--------:|:------|
 |`filter_has_var()`|	Checks whether a variable of a specified input type exist|
 |`filter_id()`|	Returns the filter ID of a specified filter name|
 |`filter_input()`|	Gets an external variable (e.g. from form input) and optionally filters it|
@@ -348,11 +372,12 @@ created: 2022-10-23
 |`filter_var()`|	Filters a variable with a specified filter|
 |`filter_var_array()`|	Gets multiple variables and filter them|
 
+**[🔼Back to Top](#table-of-contents)**
 
-## MySQLi  Function
+### MySQLi  Function
 
 |Function|	Description|
-|-------|--------------| 
+|:--------:|:------|
 |`affected_rows()`|	Returns the number of affected rows in the previous MySQL operation|
 |`autocommit()`|	Turns on or off auto-committing database modifications|
 |`begin_transaction()`|	Starts a transaction|
@@ -412,10 +437,12 @@ created: 2022-10-23
 |`use_result()`|	Initiates the retrieval of a result-set from the last query executed|
 |`warning_count()`|	Returns the number of warnings from the last query in the connection |
 
-## PHP Regular Expression Functions
+**[🔼Back to Top](#table-of-contents)**
+
+### PHP Regular Expression Functions
 
 |Function|	Description|
-|-------|--------------|
+|:--------:|:------|
 |`preg_filter()`|	Returns a string or an array with pattern matches replaced, but only if matches were found|
 |`preg_grep()`|	Returns an array consisting only of elements from the input array which matched the pattern|
 |`preg_last_error()`|	Returns an error code indicating the reason that the most recent regular expression call failed|
