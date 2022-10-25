@@ -66,8 +66,8 @@ created: 2022-10-18
 | `gitk` | Shows graphical interface for a local repository |
 | `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
 | `git checkout [file]` | Matches the file with last commit |
-| `git help` | Shows list of the most commonly used Git commands |
-| `git restore` | Restore working tree files |
+| `git help -a` | Shows the list of all available Git commands |
+| `git restore .` | To restore all files in the current directory |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -126,8 +126,8 @@ created: 2022-10-18
 | `git bisect start` | Starts the bisection search process to find that bad commit which introduced the bug we're facing right now |
 | `git bisect good` <br /> `git bisect good [Commit ID]` | Takes up the good commit, which is that one where the bug was not there |
 | `git bisect bad [Commit ID]` | Takes up the bad commit, which is that one where the bug was there. If commit ID is not provided, then it takes up the current commit as the bad commit |
-| `git grep` | Print lines matching a specified pattern in the tracked files in the work tree, blobs registered in the index file, or blobs in given tree objects |
-| `git bugreport` | Collect information (e.g., user's machine, Git client, and repository state) for user to file a bug report |
+| `git grep "hello"` | A text search on all files in the directory |
+| `git bugreport` | Created new report at `git-bugreport-2022-10-25-1228.txt` |
 
 **[🔼Back to Top](#table-of-contents)**
 
