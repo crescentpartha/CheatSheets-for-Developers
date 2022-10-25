@@ -10,6 +10,7 @@ created: 2022-10-22
   - [Run a New Container](#run-a-new-container) 
   - [Manage Containers](#manage-containers)
   - [Manage Images](#manage-images)
+  - [Manage System](#manage-system)
   - [Info and Stats](#info-and-stats)
 
 # Docker CheatSheet for Developers
@@ -64,6 +65,14 @@ created: 2022-10-22
 | `docker build -t IMAGE DIRECTORY` | Build and tag an image from a Dockerfile |
 | `docker save IMAGE > FILE`        | Save an image to a .tar file             |
 | `docker load -i TARFILE`          | Load an image from a .tar file           |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Manage System
+
+| Command                           | Description                              |
+| --------------------------------- | ---------------------------------------- |
+| `docker system prune --all --force` | Removes everything that is not in use  |
 
 **[🔼Back to Top](#table-of-contents)**
 
