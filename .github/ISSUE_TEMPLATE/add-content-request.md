@@ -17,7 +17,7 @@ assignees: ''
 > If applicable, add **screenshots** or a modified **UI link** to help explain your contribution.
 
 **Additional Context**
-> Mention your pull request id here like `#150`
+> Please, directly ***create a pull request*** and ***@mention*** your ***pull request id*** here like `#150`
 
 ---
 
