@@ -1,3 +1,9 @@
+---
+title: PHP CheatSheet
+description: The most commonly used php concepts are given here.
+created: 2022-10-23
+---
+
 ## Table of Contents
 
 - [PHP CheatSheet for Developers](#php-cheatsheet-for-developers)
@@ -36,48 +42,74 @@
 
 ## Operators
 
-|operator|name |syntax|type|
-|---------|------|-----|----|
-|`+`|	Addition|	$x + $y|Arithmetic Operators|
-|`-`|	Subtraction|	$x - $y|Arithmetic Operators|
-|`*` |	Multiplication|	$x * $y |Arithmetic Operators|
-| `/` |	Division|	$x / $y|Arithmetic Operators|	
-|`%`|	Modulus|	$x % $y|	Arithmetic Operators|y	
-|` ** `|	Exponentiation |	$x ** $y	|Arithmetic Operators|	
-|`==`|	Equal|	$x == $y|Comparison Operators|	
-|`===`|	Identical|	$x === $y|Comparison Operators|
-| `!= `| 	Not equal|	$x != $y|Comparison Operators|	
-| `<>` |	Not equal |	$x <> $y	|Comparison Operators|	
-|`!==` |	Not identical|	$x !== $y |Comparison Operators|	
-|`>`|	Greater than|	$x > $y|Comparison Operators|	
-|`<`|	Less than|	$x < $y|Comparison Operators|	
-|`>=`|	Greater than or equal to|	$x >= $y|Comparison Operators|	
-|`<=`|	Less than or equal to|	$x <= $y|Comparison Operators|	
-|`<=>`|	Spaceship|	$x <=> $y	|Comparison Operators|
-|`and`|	And|	$x and $y|Logical	Operators|
-|`or`	|Or|	$x or $y	|Logical	Operators|
-|`xor`|	Xor|	$x xor $y	|Logical	Operators|
-|`&&`|	And|	$x && $y|	Logical	Operators|
-|  `\|`	| Or | $x \| $y | Logical Operators |	
-|`!`	|Not	|!$x |	Logical	Operators|
-|`.`|	Concatenation|	$txt1 . $txt2	|String Operators|
-|`.=`|	Concatenation assignment|	$txt1 .= $txt2|	String Operators|
-|`+`|	Union|	$x + $y|Array Operators|	
-|`==`|	Equality|	$x == $y	|Array Operators|
-|`===`|	Identity|	$x === $y |Array Operators|
-|`!=`|	Inequality|	$x != $y	|Array Operators|
-|`<>`|	Inequality|	$x <> $y	|Array Operators|
-|`!==`|	Non-identity|	$x !== $y	|Array Operators|	
-|`?:	`|Ternary|	$x = expr1 ? expr2 : expr3|	Conditional Assignment Operators|
-|`??`|	Null coalescing|	$x = expr1 ?? expr2|	Conditional Assignment Operators|
+## Arithmetic Operators
 
+|operator|name |syntax|
+|---------|------|-----|
+|`+`|	Addition|	$x + $y|
+|`-`|	Subtraction|	$x - $y|
+|`*` |	Multiplication|	$x * $y |
+| `/` |	Division|	$x / $y|	
+|`%`|	Modulus|	$x % $y|	
+|` ** `|	Exponentiation |	$x ** $y	|	
 
-|operator|name |description|type|
-|---------|------|-----|----|
-|`++$x`|	Pre-increment|	Increments $x by one |Increment|
-|`$x++`|	Post-increment|	Returns $x, then increments $x by one	|Increment|
-|`--$x`|	Pre-decrement	|Decrements $x by one, then returns $x|decrement|	
-|`$x--`	|Post-decrement	|Returns $x, then decrements $x by one	|decrement|	
+## Comparison Operators
+
+|operator|name |syntax|
+|---------|------|-----|
+|`==`|	Equal|	$x == $y|	
+|`===`|	Identical|	$x === $y|
+| `!= `| 	Not equal|	$x != $y|	
+| `<>` |	Not equal |	$x <> $y	|	
+|`!==` |	Not identical|	$x !== $y |	
+|`>`|	Greater than|	$x > $y|	
+|`<`|	Less than|	$x < $y|	
+|`>=`|	Greater than or equal to|	$x >= $y|	
+|`<=`|	Less than or equal to|	$x <= $y|	
+|`<=>`|	Spaceship|	$x <=> $y	|
+
+## Logical	Operators
+
+|operator|name |syntax|
+|---------|------|-----|
+|`and`|	And|	$x and $y|
+|`or`	|Or|	$x or $y	|
+|`xor`|	Xor|	$x xor $y	|
+|`&&`|	And|	$x && $y|	
+|  `\|`	| Or | $x \| $y |
+|`!`	|Not	|!$x |	
+
+## String Operators
+
+|operator|name |syntax|
+|---------|------|-----|
+|`.`|	Concatenation|	$txt1 . $txt2	|
+|`.=`|	Concatenation assignment|	$txt1 .= $txt2|	
+
+## Array Operators
+
+|`+`|	Union|	$x + $y|	
+|`==`|	Equality|	$x == $y	|
+|`===`|	Identity|	$x === $y |
+|`!=`|	Inequality|	$x != $y	|
+|`<>`|	Inequality|	$x <> $y	|
+|`!==`|	Non-identity|	$x !== $y	|	
+
+## Conditional Assignment Operators
+
+|operator|name |syntax|
+|---------|------|-----|
+|`?:	`|Ternary|	$x = expr1 ? expr2 : expr3|
+|`??`|	Null coalescing|	$x = expr1 ?? expr2|
+
+## Increment/Decrement Operators
+
+|operator|name |description|
+|---------|------|-----|
+|`++$x`|	Pre-increment|	Increments $x by one|
+|`$x++`|	Post-increment|	Returns $x, then increments $x by one	|
+|`--$x`|	Pre-decrement	|Decrements $x by one, then returns $x|
+|`$x--`	|Post-decrement	|Returns $x, then decrements $x by one	|	
 
 
 **[🔼Back to Top](#table-of-contents)**
