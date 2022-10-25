@@ -95,7 +95,7 @@ created: 2022-10-25
 
 | Command                  | Description                                                              |
 | :----------------------: | ------------------------------------------------------------------------ |
-| `ipconfing`              | Display IP network settings.                                             |
+| `ipconfig`               | Display IP network settings.                                             |
 | `ping`                   | - Test the ability of the source computer to reach a specified destination computer <br /> - Show the list of ___usage___ and ___options___ in cmd <br /> - Get a response from the website network <br /> - `ping [website name]` <br /> - `ping [ip address]` |
 | `nslookup`               | Finds IP address by resource name.                                       |
 | `route`                  | This command is used to check and make changes to the route table of the computer. |
