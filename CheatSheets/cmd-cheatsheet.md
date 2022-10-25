@@ -5,7 +5,7 @@
 ## Some common and useful CMD commands 
 # RAA(Run As Administrator)
 
-# File and Folder Management:
+### File and Folder Management:
 
 | Command                  | Description                                                              |
 | ------------------------ | -------------------------------------------------------------------------|
@@ -30,7 +30,7 @@
 | `xcopy`                  | The xcopy command can copy one or more files or directory trees from one location to another. |
 
 
-# Applications and Processes:
+### Applications and Processes:
 
 | Command                  | Description                                                              |
 | ------------------------ | -------------------------------------------------------------------------|
@@ -42,7 +42,7 @@
 | `runas`                  | Launches the task as another user.                                       |
 
 
-# Disk Management: 
+### Disk Management: 
 
 | Command                  | Description                                                              |
 | ------------------------ | -------------------------------------------------------------------------|
@@ -55,7 +55,7 @@
 | `vol`                    |  Displays volume label and serial number for the disk.                   |
 
 
-# System Informantion: 
+### System Informantion: 
 
 | Command                  | Description                                                              |
 | ------------------------ | -------------------------------------------------------------------------|
@@ -73,7 +73,7 @@
 | `print`                  | print a specified text file to a specified printing device.              |
 
 
-# Network: 
+### Network: 
 
 | `ipconfing`              | display IP network settings.                                             |
 | `ping`                   | get a response from the website network, ping<website name>              |
@@ -84,7 +84,7 @@
 | `netsh wlan`             | command extension to the netsh, try netsh wlan /?                        |
 
 
-# Command Line Setup: 
+### Command Line Setup: 
   
 | `cls`                    | clear screen.                                                            |
 | `color`                  | changes text and background color.                                       |
