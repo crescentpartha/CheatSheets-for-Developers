@@ -409,6 +409,8 @@ class Demo implements Printable{
 
 > Polymorphism is a concept by which we can perform single action in different ways. It is of two types: compile-time polymorphism (method overloading) and run-time polymorphism (method overriding).
 
+**[🔼Back to Top](#table-of-contents)**
+
 ### Method overloading
 
 > It is compile-time polymorphism. If a class has multiple methods having same name but different parameters, it is known as Method Overloading. Parameters can differ in number of arguments or data type of arguments.
@@ -419,6 +421,8 @@ class Demo{
 	double add(double a, double b, double c){return a+b+c;}
 }
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 ### Method overriding
 
@@ -432,6 +436,8 @@ class Car{
 	void run(){System.out.println("Car is running")};
 }
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 ## Collections
 
