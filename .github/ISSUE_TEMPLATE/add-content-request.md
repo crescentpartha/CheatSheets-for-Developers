@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Descriptions**
-> add more `contents` or `commands` / `keyboard shortcuts` / `tags and attributes` / `properties` in *-cheatsheet.md file
+> add more `contents` or `commands` / `keyboard shortcuts` / `tags and attributes` / `properties` in ***-cheatsheet.md*** file
 
 **Expected behavior**
 > Enrich the *-cheatsheet.md file by adding more frequently used commands / keyboard shortcuts / tags and attributes / properties.
@@ -17,7 +17,7 @@ assignees: ''
 > If applicable, add **screenshots** or a modified **UI link** to help explain your contribution.
 
 **Additional Context**
-> Mention your pull request id like `#150`
+> Mention your pull request id here like `#150`
 
 ---
 
