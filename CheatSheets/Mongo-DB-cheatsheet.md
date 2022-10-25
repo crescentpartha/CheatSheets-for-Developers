@@ -12,7 +12,7 @@ created: 2022-10-25
   - [Row Command](#Row-Command)
   - [MongoDB Query Operators](#MongoDB-Query-Operators)
     - [Comparison Operators](#Comparison-Operators)
-    - [Logical Operators](#Logical Operators)
+    - [Logical Operators](#Logical-Operators)
     - [Evaluation Operators](#Evaluation-Operators)
   - [MongoDB Update Operators](#MongoDB-Update-Operators)
       - [Fields](#Fields)
