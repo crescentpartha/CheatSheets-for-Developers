@@ -80,8 +80,8 @@ ___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ 
 
 <!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
 
-<a href = "https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers"/>
+<a href = "https://github.com/ritwikdalmia/CheatSheets-for-Developers/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=ritwikdalmia/CheatSheets-for-Developers"/>
 </a>
 
 ## License
