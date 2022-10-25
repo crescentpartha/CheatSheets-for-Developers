@@ -16,6 +16,9 @@ assignees: ''
 **Screenshots or Links**
 > If applicable, add **screenshots** or a modified **UI link** to help explain your contribution.
 
+**Additional Context**
+> Mention your pull request id like `#150`
+
 ---
 
 Please, fill free to contribute to this project. Anyone including `newcomers` can make a contribution to this repo by adding `basic Commands` or `Keyboard Shortcuts` or `tags, attributes, and properties` and take a part in an `open-source project`. 
