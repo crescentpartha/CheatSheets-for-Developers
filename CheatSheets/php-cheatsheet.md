@@ -58,7 +58,7 @@
 |`or`	|Or|	$x or $y	|Logical	Operators|
 |`xor`|	Xor|	$x xor $y	|Logical	Operators|
 |`&&`|	And|	$x && $y|	Logical	Operators|
-| ![image](https://user-images.githubusercontent.com/47249568/197706502-62d506bd-5596-4c5f-a1e3-7e58633c4139.png)	|Or|	$x ![image](https://user-images.githubusercontent.com/47249568/197706528-2bbe3369-5c51-4e1b-b295-c607f05bfa77.png) $y |Logical	Operators|	
+|  `\|`	| Or | $x \| $y | Logical Operators |	
 |`!`	|Not	|!$x |	Logical	Operators|
 |`.`|	Concatenation|	$txt1 . $txt2	|String Operators|
 |`.=`|	Concatenation assignment|	$txt1 .= $txt2|	String Operators|
