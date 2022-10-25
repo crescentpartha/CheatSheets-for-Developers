@@ -75,6 +75,8 @@
 
 ### Network: 
 
+| Command                  | Description                                                              |
+| ------------------------ | -------------------------------------------------------------------------|
 | `ipconfing`              | display IP network settings.                                             |
 | `ping`                   | get a response from the website network, ping<website name>              |
 | `nslookup`               | Finds IP address by resource name.                                       |
@@ -85,7 +87,9 @@
 
 
 ### Command Line Setup: 
-  
+ 
+| Command                  | Description                                                              |
+| ------------------------ | -------------------------------------------------------------------------|
 | `cls`                    | clear screen.                                                            |
 | `color`                  | changes text and background color.                                       |
 | `echo`                   | print the after echo text once.                                          |
