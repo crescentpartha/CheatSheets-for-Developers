@@ -7,6 +7,35 @@
     - [Variables](#variables)
     - [Arrays](#arrays)
     - [Array Methods](#array-methods)
+      - [Array.prototype.push()](#array-prototype-push)
+      - [Array.prototype.pop()](#array-prototype-pop)
+      - [Array.prototype.shift()](#array-prototype-shift)
+      - [Array.prototype.unshift()](#array-prototype-unshift)
+      - [Array.prototype.slice()](#array-prototype-slice)
+      - [Array.prototype.splice()](#array-prototype-splice)
+      - [Array.prototype.concat()](#array-prototype-concat)
+      - [Array.prototype.indexOf()](#array-prototype-indexof)
+      - [Array.prototype.lastIndexOf()](#array-prototype-lastindexof)
+      - [Array.prototype.join()](#array-prototype-join)
+      - [Array.prototype.reverse()](#array-prototype-reverse)
+      - [Array.prototype.sort()](#array-prototype-sort)
+      - [Array.prototype.forEach()](#array-prototype-foreach)
+      - [Array.prototype.map()](#array-prototype-map)
+      - [Array.prototype.filter()](#array-prototype-filter)
+      - [Array.prototype.reduce()](#array-prototype-reduce)
+      - [Array.prototype.reduceRight()](#array-prototype-reduceright)
+      - [Array.prototype.every()](#array-prototype-every)
+      - [Array.prototype.some()](#array-prototype-some)
+      - [Array.prototype.find()](#array-prototype-find)
+      - [Array.prototype.findIndex()](#array-prototype-findindex)
+      - [Array.prototype.fill()](#array-prototype-fill)
+      - [Array.prototype.copyWithin()](#array-prototype-copywithin)
+      - [Array.prototype.includes()](#array-prototype-includes)
+      - [Array.prototype.flat()](#array-prototype-flat)
+      - [Array.prototype.flatMap()](#array-prototype-flatmap)
+      - [Array.prototype.keys()](#array-prototype-keys)
+      - [Array.prototype.values()](#array-prototype-values)
+      - [Array.prototype.entries()](#array-prototype-entries)
     - [Functions](#functions)
     - [Loops](#loops)
       - [For](#for)
@@ -77,20 +106,448 @@ var names= ["Raj", "Ram", "Sham"];
 
 | Method        | Description                                                             |
 | ------------- | ----------------------------------------------------------------------- |
-| concat()      | Join several arrays into one                                            |
-| indexOf()     | Returns the first position at which a given element appears in an array |
-| join()        | Combine elements of an array into a single string and return the string |
-| lastIndexOf() | the last position at which a given element appears in an array          |
+| push()        | Adds an element to the end of an array                                  |
 | pop()         | Removes the last element of an array                                    |
-| push()        | Add a new element at the end                                            |
-| reverse()     | Reverse the order of the elements in an array                           |
-| shift()       | Remove the first element of an array                                    |
-| slice()       | Pulls a copy of a portion of an array into a new array                  |
-| sort()        | Sorts elements alphabetically                                           |
-| splice()      | Adds elements in a specified way and position                           |
-| toString()    | Converts elements to strings                                            |
-| unshift()     | Adds a new element to the beginning                                     |
-| valueOf()     | Returns the primitive value of the specified object                     |
+| shift()       | Removes the first element of an array                                   |
+| unshift()     | Adds an element to the beginning of an array                            |
+| slice()       | Selects a part of an array and returns the new array                    |
+| splice()      | Adds/Removes elements to/from an array                                  |
+| concat()      | Joins two or more arrays, and returns a copy of the joined arrays       |
+| indexOf()     | Search the array for an element and returns its position                |
+| lastIndexOf() | Search the array for an element, starting at the end, and returns its position |
+| join()        | Joins all elements of an array into a string                            |
+| reverse()     | Reverses the order of the elements in an array                          |
+| sort()        | Sorts the elements of an array                                          |
+| forEach()     | Calls a function for each array element                                 |
+| map()         | Creates a new array with the result of calling a function for each array element |
+| filter()      | Creates a new array with every element in an array that pass a test     |
+| reduce()      | Reduce the values of an array to a single value (going left-to-right)   |
+| reduceRight() | Reduce the values of an array to a single value (going right-to-left)   |
+| every()       | Check if all array values pass a test                                   |
+| some()        | Check if some array values pass a test                                  |
+| find()        | Returns the value of the first array element that pass a test           |
+| findIndex()   | Returns the index of the first array element that pass a test           |
+| fill()        | Fill the elements in an array with a static value                       |
+| copyWithin()  | Copy array elements within the array                                    |
+| includes()    | Check if an array contains the specified element                        |
+| flat()        | Creates a new array with sub-array elements concatenated into it        |
+| flatMap()     | First maps each element using a mapping function, then flattens the result into a new array |
+| keys()        | Returns a Array Iterator object with the keys of an array               |
+| values()      | Returns a Array Iterator object with the values of an array             |
+| entries()     | Returns a Array Iterator object with key/value pairs                    |
+
+#### Array Prototype Push
+
+``` JavaScript
+// Syntax
+array.push(element1, element2, ..., elementN);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.push("Ramesh");
+// Output
+["Raj", "Ram", "Sham", "Ramesh"]
+```
+
+#### Array Prototype Pop
+
+``` JavaScript
+// Syntax
+array.pop();
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.pop();
+// Output
+["Raj", "Ram"]
+```
+
+#### Array Prototype Shift
+
+``` JavaScript
+// Syntax
+array.shift();
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.shift();
+// Output
+["Ram", "Sham"]
+```
+
+#### Array Prototype Unshift
+
+``` JavaScript
+// Syntax
+array.unshift(element1, element2, ..., elementN);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.unshift("Ramesh");
+// Output
+["Ramesh", "Raj", "Ram", "Sham"]
+```
+
+#### Array Prototype Slice
+
+``` JavaScript
+// Syntax
+array.slice();
+array.slice(start);
+array.slice(start, end);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.slice(1, 2);
+// Output
+["Ram"]
+```
+
+#### Array Prototype Splice
+
+``` JavaScript
+// Syntax
+array.splice(start)
+array.splice(start, deleteCount)
+array.splice(start, deleteCount, item1)
+array.splice(start, deleteCount, item1, item2, itemN)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.splice(1, 2);
+// Output
+["Ram", "Sham"]
+```
+
+#### Array Prototype Concat
+
+``` JavaScript
+// Syntax
+array.concat(array1, array2, ..., arrayN);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+var names2= ["Ramesh", "Rajesh", "Rakesh"];
+names.concat(names2);
+// Output
+["Raj", "Ram", "Sham", "Ramesh", "Rajesh", "Rakesh"]
+```
+
+#### Array Prototype IndexOf
+
+``` JavaScript
+// Syntax
+array.indexOf(searchElement);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.indexOf("Ram");
+// Output
+1
+```
+
+#### Array Prototype LastIndexOf
+
+``` JavaScript
+// Syntax
+array.lastIndexOf(searchElement);
+// Example
+var names= ["Raj", "Ram", "Sham", "Ram"];
+names.lastIndexOf("Ram");
+// Output
+3
+```
+
+#### Array Prototype Join
+
+``` JavaScript
+// Syntax
+array.join(separator);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.join(" ");
+// Output
+Raj Ram Sham
+```
+
+#### Array Prototype Reverse
+
+``` JavaScript
+// Syntax
+array.reverse();
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.reverse();
+// Output
+["Sham", "Ram", "Raj"]
+```
+
+#### Array Prototype Sort
+
+``` JavaScript
+// Syntax
+array.sort();
+array.sort(compareFunction);
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.sort();
+// Output
+["Ram", "Raj", "Sham"]
+```
+
+#### Array Prototype ForEach
+
+``` JavaScript
+// Syntax
+array.forEach(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.forEach(function(name) {
+    console.log(name);
+});
+// Output
+Raj
+Ram
+Sham
+```
+
+#### Array Prototype Map
+
+``` JavaScript
+// Syntax
+array.map(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.map(function(name) {
+    return name + " Singh";
+});
+// Output
+["Raj Singh", "Ram Singh", "Sham Singh"]
+```
+
+#### Array Prototype Filter
+
+``` JavaScript
+// Syntax
+array.filter(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.filter(function(name) {
+    return name.length > 3;
+});
+// Output
+["Raj", "Sham"]
+```
+
+#### Array Prototype Reduce
+
+``` JavaScript
+// Syntax
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.reduce(function(total, name) {
+    return total + name;
+}, "");
+// Output
+RajRamSham
+
+// Example
+var numbers= [1, 2, 3];
+numbers.reduce(function(total, number) {
+    return total * number;
+}, 1);
+// Output
+6
+```
+
+#### Array Prototype ReduceRight
+
+``` JavaScript
+// Syntax
+array.reduceRight(function(total, currentValue, currentIndex, arr), initialValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.reduceRight(function(total, name) {
+    return total + name;
+}, "");
+// Output
+ShamRamRaj
+```
+
+#### Array Prototype Every
+
+``` JavaScript
+// Syntax
+array.every(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.every(function(name) {
+    return name.length > 3;
+});
+// Output
+false
+```
+
+#### Array Prototype Some
+
+``` JavaScript
+// Syntax
+array.some(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.some(function(name) {
+    return name.length > 3;
+});
+// Output
+true
+```
+
+#### Array Prototype Find
+
+``` JavaScript
+// Syntax
+array.find(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.find(function(name) {
+    return name.length > 3;
+});
+// Output
+Raj
+```
+
+#### Array Prototype FindIndex
+
+``` JavaScript
+// Syntax
+array.findIndex(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.findIndex(function(name) {
+    return name.length > 3;
+});
+// Output
+0
+```
+
+#### Array Prototype Fill
+
+``` JavaScript
+// Syntax
+array.fill(value, start, end)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.fill("Ramesh");
+// Output
+["Ramesh", "Ramesh", "Ramesh"]
+
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.fill("Ramesh", 1, 2);
+// Output
+["Raj", "Ramesh", "Sham"]
+```
+
+#### Array Prototype CopyWithin
+
+``` JavaScript
+// Syntax
+array.copyWithin(target, start, end)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.copyWithin(1, 0);
+// Output
+["Raj", "Raj", "Ram"]
+
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.copyWithin(1, 0, 2);
+// Output
+["Raj", "Raj", "Sham"]
+```
+
+#### Array Prototype Includes
+
+``` JavaScript
+// Syntax
+array.includes(searchElement, fromIndex)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.includes("Ram");
+// Output
+true
+
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.includes("Ram", 1);
+// Output
+false
+```
+
+#### Array Prototype Flat
+
+``` JavaScript
+// Syntax
+array.flat(depth)
+// Example
+var names= ["Raj", ["Ram", "Sham"]];
+names.flat();
+// Output
+["Raj", "Ram", "Sham"]
+
+// Example
+var names= ["Raj", ["Ram", ["Sham"]]];
+names.flat(1);
+// Output
+["Raj", "Ram", ["Sham"]]
+```
+
+#### Array Prototype FlatMap
+
+``` JavaScript
+// Syntax
+array.flatMap(function(currentValue, index, arr), thisValue)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.flatMap(function(name) {
+    return name + " Singh";
+});
+// Output
+["Raj Singh", "Ram Singh", "Sham Singh"]
+```
+
+#### Array Prototype Keys
+
+``` JavaScript
+// Syntax
+array.keys()
+// Example
+var names= ["Raj", "Ram", "Sham"];
+var iterator = names.keys();
+iterator.next();
+// Output
+{value: 0, done: false}
+```
+
+#### Array Prototype Values
+
+``` JavaScript
+// Syntax
+array.values()
+// Example
+var names= ["Raj", "Ram", "Sham"];
+var iterator = names.values();
+iterator.next();
+// Output
+{value: "Raj", done: false}
+```
+
+#### Array Prototype Entries
+
+``` JavaScript
+// Syntax
+array.entries()
+// Example
+var names= ["Raj", "Ram", "Sham"];
+var iterator = names.entries();
+iterator.next();
+// Output
+{value: Array(2), done: false}
+```
+
 
 **[🔼Back to Top](#table-of-contents)**
 
