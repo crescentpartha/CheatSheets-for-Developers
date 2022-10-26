@@ -32,7 +32,7 @@ created: 2022-10-27
 | `https` | work with secure HTTP servers using SSL/TLS |
 | `events` | work with the EventEmitter |
 | `crypto` | cryptography tools like encryption and hashing |
-| `process` | information about the currently running process, e.g. process.argv for arguments passed in or process.env for environment variables | 
+| `process` | information about the currently running process, e.g. <br /> - `process.argv` for arguments passed in <br /> - `process.env` for environment variables | 
 
 **[🔼Back to Top](#table-of-contents)**
  
