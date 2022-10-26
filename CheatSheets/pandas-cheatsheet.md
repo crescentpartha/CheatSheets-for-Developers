@@ -19,6 +19,7 @@ created: 2022-10-24
   - [Join/Combine](#joincombine)
   - [Statistics](#statistics)
   - [Data Visualization with dataframe](#Data-Visualization-with-dataframe)
+    - [Terminology And Definitions](#Terminology-And-Definitions)
 
 # Pandas CheatSheet for Developers
 
@@ -179,6 +180,7 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 
 ## Data Visualization with dataframe
 
+## Terminology And Definitions
 
 |data| DataFrame|
 |--------|------|
@@ -216,7 +218,13 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 |`mark_right `| boolean, default True. When using a secondary_y axis, automatically mark the column labels with “(right)” in the legend|
 |`kwds`|  keywords .Options to pass to matplotlib plotting method|
 |`axes`|  matplotlib.axes.Axes or numpy.ndarray of them|
-|**king:str**|
+
+## Type of plots
+
+`Note it is a part of data Visualization`
+
+|king|type|
+|-----|-----|
 |`‘line’ `| line plot (default)|
 |`‘bar’ `| vertical bar plot|
 |`‘barh’ `| horizontal bar plot|
@@ -228,3 +236,5 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 |`‘pie’ `| pie plot|
 |`‘scatter’ `| scatter plot|
 |`‘hexbin’ `| hexbin plot|
+
+**[🔼Back to Top](#table-of-contents)**
