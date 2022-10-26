@@ -36,10 +36,15 @@ created: 2022-10-20
 | ------- | ----------- |
 | `Ctrl + A` | Select All |
 | `Ctrl + C` | Copy line |
+| `Ctrl + D` | Duplicate line |
+| `Ctrl + L` | Select current line |
 | `Ctrl + X` | Cut line |
+| `Ctrl + U` | Undo last cursor operation |
 | `Ctrl + V` | Paste |
-| `Ctrl + Z` | Undo Changes |
 | `Ctrl + Y` | Redo Changes |
+| `Ctrl + Z` | Undo Changes |
+| `Alt + Down` | Move Line Down |
+| `Alt + Up` | Move Line Up|
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -48,6 +53,10 @@ created: 2022-10-20
 | Command | Description |
 | ------- | ----------- |
 | `F2` | Rename Symbol |
+| `Shift + F12` | Go to References |
+| `F12` | Go to Definition |
+| `Ctrl + Space` | Trigger Suggest |
+| `Ctrl + .` | Quick Fix |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -121,6 +130,8 @@ created: 2022-10-20
 | `Ctrl + O` | Open |
 | `Ctrl + S` | Save |
 | `Ctrl + Shift + S` | Save As |
+| `Ctrl + W` | Close |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -129,6 +140,9 @@ created: 2022-10-20
 | Command | Description |
 | ------- | ----------- |
 | `F9` | Toggle Breakpoint |
+| `F5` | Start |
+| `Ctrl + F5` | Start (without debugging) |
+| `F11` | Step Into |
 
 **[🔼Back to Top](#table-of-contents)**
 
