@@ -20,6 +20,8 @@ created: 2022-10-24
   - [Statistics](#statistics)
   - [Data Visualization with dataframe](#Data-Visualization-with-dataframe)
     - [Terminology And Definitions](#Terminology-And-Definitions)
+    - [Types Of Plots](#Types-Of-Plots)
+
 
 # Pandas CheatSheet for Developers
 
@@ -219,9 +221,12 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 |`kwds`|  keywords .Options to pass to matplotlib plotting method|
 |`axes`|  matplotlib.axes.Axes or numpy.ndarray of them|
 
+**[🔼Back to Top](#table-of-contents)**
+
 ## Type of plots
 
 `Note it is a part of data Visualization`
+
 
 |king|type|
 |-----|-----|
