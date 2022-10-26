@@ -18,9 +18,9 @@ created: 2022-10-24
   - [Filter, Sort, and Groupby](#filter-sort-and-groupby)
   - [Join/Combine](#joincombine)
   - [Statistics](#statistics)
-  - [Data Visualization with dataframe](#Data-Visualization-with-dataframe)
-    - [Terminology And Definitions](#Terminology-And-Definitions)
-    - [Types Of Plots](#Types-Of-Plots)
+  - [Data Visualization with dataframe](#data-visualization-with-dataframe)
+    - [Terminology And Definitions](#terminology-and-definitions)
+    - [Type of plots](#type-of-plots)
 
 
 # Pandas CheatSheet for Developers
@@ -182,7 +182,7 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 
 ## Data Visualization with dataframe
 
-## Terminology And Definitions
+### Terminology And Definitions
 
 |data| DataFrame|
 |--------|------|
@@ -223,7 +223,7 @@ This cheat sheet will guide through the basics of the Pandas library from the da
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Type of plots
+### Type of plots
 
 `Note it is a part of data Visualization`
 
