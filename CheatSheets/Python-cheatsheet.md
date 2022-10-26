@@ -27,17 +27,17 @@ if __name__ == '__main__':     # Runs main() if file wasn't imported.
 
 **[🔼Back to Top](#content-outlines)**
 
-### Shortcut to comment the selected code 
+Shortcut to comment/uncomment the selected code
+----
 
-```python
+| Editor       | Shortcut Block Comment	  | Shortcut Block Uncomment |
+| :----------: | :----------------------: | :----------------------: | 
+| Eclipse      |  `CTRL + /`	          |     `CTRL + /`           | 
+| PyDev	       |  `CTRL + /`	          |     `CTRL + /`           | 
+| PyCharm	   |  `CTRL + /`	          |     `CTRL + /`           | 
+| Notepad++    |  `CTRL + K`	          |     `CTRL + SHIFT + K`   | 
+| IDLE	       |  `ALT + 3`	              |     `ALT + 4`            | 
 
-Editor       Shortcut Block Comment	    Shortcut Block Uncomment
-Eclipse      CTRL + /	                CTRL + /
-PyDev	     CTRL + /	                CTRL + /
-PyCharm	     CTRL + /	                CTRL + /
-Notepad++	 CTRL + K	                CTRL + SHIFT + K
-IDLE	     ALT + 3	                ALT + 4
-```
 **[🔼Back to Top](#content-outlines)**
 
 List
