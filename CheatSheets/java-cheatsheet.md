@@ -32,6 +32,14 @@ created: 2022-10-21
 		- [Hierarchical Inheritance](#hierarchical-inheritance)
 		- [Hybrid Inheritance:](#hybrid-inheritance)
 	- [NOTE](#note)
+	- [Encapsulation in Java](#encapsulation-in-java)
+		- [Java Packages](#java-packages)
+	- [Abstraction in Java](#abstraction-in-java)
+		- [Abstract Class](#abstract-class)
+		- [Interface](#interface)
+	- [Polymorphism in Java](#polymorphism-in-java)
+		- [Method Overloading](#method-overloading)
+		- [Method Overriding](#method-overriding)
 	- [Collections](#collections)
 
 # Java CheatSheet for Developers
@@ -324,6 +332,110 @@ Class C extends A {
 ## NOTE
 
 > Multiple inheritance is not supported in Java as it leads to the diamond problem. <br /> We can achieve Multiple inheritance in Java by using the concept of Abstraction.
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Encapsulation in Java
+
+> Encapsulation - It is wrapping of data members (variables) and functions (methods) together as a single unit. It is also known as **data hiding**, as variables of class is hidden from other classes and can be accessed only through methods of that class.
+
+Encapsulation in Java can be achieved through packages
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Java Packages
+
+> A java package is a group of similar types of classes, interfaces and sub-packages. It provides access protection and prevents naming collision. 
+
+```java
+package mypack;
+public class Demo{
+	public static void main(String args[]){
+		­ _statements_  
+	}
+}
+```
+**To Compile:** javac -d . Demo.java
+**To Run:** java mypack.Demo
+**Accessing package from another package:** import package.* or import package.className.*
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Abstraction in Java
+
+> Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+___Abstraction can be achieved in 2 ways in Java___
+
+1.	Abstract class
+2. Interface
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Abstract class
+
+> Class declared with abstract keyword, which cannot be instatiated and has to be extended by other classes for its methods to be implemented. It can have both abstract and non-abstract methods.
+
+```java
+    abstract class A{  
+      abstract void demo();  
+    }  
+	//Abstract class extended by other class to implement its methods
+	class B extends A{
+		void demo(){
+			_statements_  
+		}
+	}
+```
+**[🔼Back to Top](#table-of-contents)**
+
+### Interface 
+
+> Interface is blueprint of class having public abstract methods and public static final constants. It cannot be instatiated. Interface is extended by other interfaces and implemented by class.
+
+```java
+interface Printable{
+	void print(); //empty method body
+}
+class Demo implements Printable{
+	public void print(){
+		_statements_
+	}
+}
+```
+**[🔼Back to Top](#table-of-contents)**
+
+## Polymorphism in Java
+
+> Polymorphism is a concept by which we can perform single action in different ways. It is of two types: compile-time polymorphism (method overloading) and run-time polymorphism (method overriding).
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Method overloading
+
+> It is compile-time polymorphism. If a class has multiple methods having same name but different parameters, it is known as Method Overloading. Parameters can differ in number of arguments or data type of arguments.
+
+```java
+class Demo{
+	int add(int a, int b){return a+b;}
+	double add(double a, double b, double c){return a+b+c;}
+}
+```
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Method overriding
+
+> It is run-time polymorphism. If a child class provides specific implementation of method declared in parent class, it is known as method overriding.
+
+```java
+class Vehicle{
+	void run(){System.out.println("Vehicle is running")};
+}
+class Car{
+	void run(){System.out.println("Car is running")};
+}
+```
 
 **[🔼Back to Top](#table-of-contents)**
 
