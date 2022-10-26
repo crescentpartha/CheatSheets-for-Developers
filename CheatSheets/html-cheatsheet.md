@@ -97,7 +97,7 @@ created: 2022-10-20
 | `<strong> ... </strong>` | Defines important text                               |
 | `<sub> ... </sub>`       | Defines subscripted text                             |
 | `<sup> ... </sup>`       | Defines superscripted text                           |
-| `<ins> ... </i>`         | Defines inserted text                                |
+| `<ins> ... </ins>`       | Defines inserted text                                |
 | `<del> ... </del>`       | Defines deleted text                                 |
 | `<mark> ... </mark>`     | Defines marked/highlighted text                      |
 
