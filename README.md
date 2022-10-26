@@ -59,6 +59,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 26. [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
 27. [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
 28. [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
+29. [terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)
 
 ## ___Instructions___
 

@@ -1,38 +1,36 @@
 ---
 title: Terraform CheatSheet
 description: The most commonly used Terraform commands are given here.
-created: 2022-10-22
+created: 2022-10-27
 ---
 
 ## Table of Contents
 
 - [Terraform CheatSheet for Developers](#terraform-cheatsheet-for-developers)
-  - [Format and Validate Terraform code](#format-and-validate-terraform-code) 
+  - [Format and Validate Terraform code](#format-and-validate-terraform-code)
   - [Initialize your Terraform working directory](#initialize-your-terraform-working-directory)
   - [Plan, Deploy and Cleanup Infrastructure](#plan-deploy-and-cleanup-infrastructure)
   - [Terraform Workspace](#terraform-workspace)
   - [Terraform State Manipulation](#terraform-state-manipulation)
   - [Terraform Import And Outputs](#terraform-import-and-outputs)
-  - [Terraform Miscelleneous commands](#terraform-miscellation-commands)
-
+  - [Terraform Miscelleneous commands](#terraform-miscelleneous-commands)
 
 # Terraform CheatSheet for Developers
 
 ## Format and Validate Terraform code
 
 | Command                               | Description                              |
-| ------------------------------------- | ---------------------------------------- |
+| :-----------------------------------: | ---------------------------------------- |
 | `terraform fmt`                       | Format code per HCL canonical standard   |
 | `terraform validate`                  | Validate code for syntax                 |
 | `terraform validate -backend=false`   | Validate code skip backend               |
-
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Initialize your Terraform working directory
 
 | Command                                   | Description                                                           |
-| ----------------------------------------- | --------------------------------------------------------------------- |
+| :---------------------------------------: | --------------------------------------------------------------------- |
 | `terraform init`                          | Initialize directory, pull down providers                             |
 | `terraform init -get-plugins=false`       | Initialize directory, do not download plugins                         |
 | `terraform init -verify-plugins=false`    | Initialize directory, do not verify plugins for Hashicorp signature   |
@@ -41,8 +39,8 @@ created: 2022-10-22
 
 ## Plan, Deploy and Cleanup Infrastructure
 
-| Command                           | Description                              |
-| --------------------------------- | ---------------------------------------- |
+| Command                                              | Description                                                                                      |
+| :--------------------------------------------------: | ------------------------------------------------------------------------------------------------ |
 | `terraform apply --auto-approve`                     | Apply changes without being prompted to enter “yes”                                              |
 | `terraform destroy --auto-approve`                   | Destroy/cleanup deployment without being prompted for “yes”                                      |
 | `terraform plan -out plan.out`                       | Output the deployment plan to plan.out                                                           |
@@ -61,7 +59,7 @@ created: 2022-10-22
 ## Terraform Workspace
 
 | Command                                   | Description                           |
-| ----------------------------------------- | ------------------------------------- |
+| :---------------------------------------: | ------------------------------------- |
 | `terraform workspace new mynewworkspace`  | Create a new workspace                |
 | `terraform workspace select default`      | Change to the selected workspace      |
 | `terraform workspace list`                | List out all workspaces               |
@@ -71,7 +69,7 @@ created: 2022-10-22
 ## Terraform State Manipulation
 
 | Command                                                                   | Description                                                         |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| :-----------------------------------------------------------------------: | ------------------------------------------------------------------- |
 | `terraform state show aws_instance.my_ec2`                                | Show details stored in Terraform state for the resource             |
 | `terraform state pull > terraform.tfstate`                                | Download and output terraform state to a file                       |
 | `terraform state mv aws_iam_role.my_ssm_role module.custom_module`        | Move a resource tracked via state to different module               |
@@ -84,8 +82,8 @@ created: 2022-10-22
 ## Terraform Import And Outputs
 
 | Command                                                      | Description                               |
-| ------------------------------------------------------------ | ----------------------------------------- |
-| `terraform import aws_instance.new_ec2_instance i-abcd1234`  | Import EC2 instance with id i-abcd1234 into the Terraform resource named “new_ec2_instance” of type “aws_instance”                |
+| :----------------------------------------------------------: | ----------------------------------------- |
+| `terraform import aws_instance.new_ec2_instance i-abcd1234`  | Import EC2 instance with id i-abcd1234 into the Terraform resource named “new_ec2_instance” of type “aws_instance” |
 | `terraform output`                                           | List all outputs as stated in code         |
 | `terraform output instance_public_ip`                        | List out a specific declared               |
 | `terraform output -json`                                     | List all outputs in JSON format            |
@@ -95,7 +93,7 @@ created: 2022-10-22
 ## Terraform Miscelleneous commands
 
 | Command                                   | Description                                                              |
-| ----------------------------------------- | ------------------------------------------------------------------------ |
+| :---------------------------------------: | ------------------------------------------------------------------------ |
 | `terraform version`                       | display Terraform binary version, also warns if version is old           |
 | `terraform get -update=true`              | download and update modules in the “root” module.                        |
 
