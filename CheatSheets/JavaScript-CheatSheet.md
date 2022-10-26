@@ -1,3 +1,9 @@
+---
+title: JavaScript CheatSheet
+description: The most commonly used JavaScript concepts are given here.
+created: 2022-10-21
+---
+
 ## Table of Contents
 
 - [JavaScript CheatSheet for Developers](#javascript-cheatsheet-for-developers)
@@ -36,6 +42,7 @@
       - [Array.prototype.keys()](#array-prototype-keys)
       - [Array.prototype.values()](#array-prototype-values)
       - [Array.prototype.entries()](#array-prototype-entries)
+      - [Array.prototype.at()](#array-prototype-at)
     - [Functions](#functions)
     - [Loops](#loops)
       - [For](#for)
@@ -135,6 +142,7 @@ var names= ["Raj", "Ram", "Sham"];
 | keys()        | Returns a Array Iterator object with the keys of an array               |
 | values()      | Returns a Array Iterator object with the values of an array             |
 | entries()     | Returns a Array Iterator object with key/value pairs                    |
+| at()          | Returns the element at the specified index in an array                  |
 
 #### Array Prototype Push
 
@@ -546,6 +554,18 @@ var iterator = names.entries();
 iterator.next();
 // Output
 {value: Array(2), done: false}
+```
+
+#### Array Prototype at
+
+``` JavaScript
+// Syntax
+array.at(index)
+// Example
+var names= ["Raj", "Ram", "Sham"];
+names.at(1);
+// Output
+Ram
 ```
 
 
