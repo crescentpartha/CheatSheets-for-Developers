@@ -118,7 +118,9 @@ created: 2022-10-20
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + W` | Close Editor |
-| `Ctrl + Shift + T` | Open Recently Closed Editor |
+| `Ctrl + \` | Split Editor |
+| `Ctrl + Shift + PgUp` | Move Editor Left |
+| `Ctrl + Shift + PgDn` | Move Editor Right |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -131,6 +133,7 @@ created: 2022-10-20
 | `Ctrl + S` | Save |
 | `Ctrl + Shift + S` | Save As |
 | `Ctrl + W` | Close |
+| `Ctrl + Shift + T` | Open Recently Closed Editor |
 
 
 **[🔼Back to Top](#table-of-contents)**
