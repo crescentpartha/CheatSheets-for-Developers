@@ -13,36 +13,36 @@ created: 2022-10-21
     - [Variables](#variables)
     - [Arrays](#arrays)
     - [Array Methods](#array-methods)
-      - [Array.prototype.push()](#array-prototype-push)
-      - [Array.prototype.pop()](#array-prototype-pop)
-      - [Array.prototype.shift()](#array-prototype-shift)
-      - [Array.prototype.unshift()](#array-prototype-unshift)
-      - [Array.prototype.slice()](#array-prototype-slice)
-      - [Array.prototype.splice()](#array-prototype-splice)
-      - [Array.prototype.concat()](#array-prototype-concat)
-      - [Array.prototype.indexOf()](#array-prototype-indexof)
-      - [Array.prototype.lastIndexOf()](#array-prototype-lastindexof)
-      - [Array.prototype.join()](#array-prototype-join)
-      - [Array.prototype.reverse()](#array-prototype-reverse)
-      - [Array.prototype.sort()](#array-prototype-sort)
-      - [Array.prototype.forEach()](#array-prototype-foreach)
-      - [Array.prototype.map()](#array-prototype-map)
-      - [Array.prototype.filter()](#array-prototype-filter)
-      - [Array.prototype.reduce()](#array-prototype-reduce)
-      - [Array.prototype.reduceRight()](#array-prototype-reduceright)
-      - [Array.prototype.every()](#array-prototype-every)
-      - [Array.prototype.some()](#array-prototype-some)
-      - [Array.prototype.find()](#array-prototype-find)
-      - [Array.prototype.findIndex()](#array-prototype-findindex)
-      - [Array.prototype.fill()](#array-prototype-fill)
-      - [Array.prototype.copyWithin()](#array-prototype-copywithin)
-      - [Array.prototype.includes()](#array-prototype-includes)
-      - [Array.prototype.flat()](#array-prototype-flat)
-      - [Array.prototype.flatMap()](#array-prototype-flatmap)
-      - [Array.prototype.keys()](#array-prototype-keys)
-      - [Array.prototype.values()](#array-prototype-values)
-      - [Array.prototype.entries()](#array-prototype-entries)
-      - [Array.prototype.at()](#array-prototype-at)
+      - [Array Prototype Push](#array-prototype-push)
+      - [Array Prototype Pop](#array-prototype-pop)
+      - [Array Prototype Shift](#array-prototype-shift)
+      - [Array Prototype Unshift](#array-prototype-unshift)
+      - [Array Prototype Slice](#array-prototype-slice)
+      - [Array Prototype Splice](#array-prototype-splice)
+      - [Array Prototype Concat](#array-prototype-concat)
+      - [Array Prototype IndexOf](#array-prototype-indexof)
+      - [Array Prototype LastIndexOf](#array-prototype-lastindexof)
+      - [Array Prototype Join](#array-prototype-join)
+      - [Array Prototype Reverse](#array-prototype-reverse)
+      - [Array Prototype Sort](#array-prototype-sort)
+      - [Array Prototype ForEach](#array-prototype-foreach)
+      - [Array Prototype Map](#array-prototype-map)
+      - [Array Prototype Filter](#array-prototype-filter)
+      - [Array Prototype Reduce](#array-prototype-reduce)
+      - [Array Prototype ReduceRight](#array-prototype-reduceright)
+      - [Array Prototype Every](#array-prototype-every)
+      - [Array Prototype Some](#array-prototype-some)
+      - [Array Prototype Find](#array-prototype-find)
+      - [Array Prototype FindIndex](#array-prototype-findindex)
+      - [Array Prototype Fill](#array-prototype-fill)
+      - [Array Prototype CopyWithin](#array-prototype-copywithin)
+      - [Array Prototype Includes](#array-prototype-includes)
+      - [Array Prototype Flat](#array-prototype-flat)
+      - [Array Prototype FlatMap](#array-prototype-flatmap)
+      - [Array Prototype Keys](#array-prototype-keys)
+      - [Array Prototype Values](#array-prototype-values)
+      - [Array Prototype Entries](#array-prototype-entries)
+      - [Array Prototype at](#array-prototype-at)
     - [Functions](#functions)
     - [Loops](#loops)
       - [For](#for)
@@ -93,10 +93,10 @@ created: 2022-10-21
 ### Variables
 
 | Variables | Description |
-| ---- | --- |
-| var | The most common variable. Can be reassigned but only accessed within a function, Variables defined with var move to the top when code is executed. |
-| const | Cannot be reassigned and not accessible before they appear within the code. |
-| let | Similar to const, however, let variable can be reassigned but not re-declared. |
+| :----:    | :--- |
+| `var`     | The most common variable. Can be reassigned but only accessed within a function, Variables defined with var move to the top when code is executed. |
+| `const`   | Cannot be reassigned and not accessible before they appear within the code. |
+| `let`     | Similar to const, however, let variable can be reassigned but not re-declared. |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -111,38 +111,40 @@ var names= ["Raj", "Ram", "Sham"];
 
 ### Array Methods
 
-| Method        | Description                                                             |
-| ------------- | ----------------------------------------------------------------------- |
-| push()        | Adds an element to the end of an array                                  |
-| pop()         | Removes the last element of an array                                    |
-| shift()       | Removes the first element of an array                                   |
-| unshift()     | Adds an element to the beginning of an array                            |
-| slice()       | Selects a part of an array and returns the new array                    |
-| splice()      | Adds/Removes elements to/from an array                                  |
-| concat()      | Joins two or more arrays, and returns a copy of the joined arrays       |
-| indexOf()     | Search the array for an element and returns its position                |
-| lastIndexOf() | Search the array for an element, starting at the end, and returns its position |
-| join()        | Joins all elements of an array into a string                            |
-| reverse()     | Reverses the order of the elements in an array                          |
-| sort()        | Sorts the elements of an array                                          |
-| forEach()     | Calls a function for each array element                                 |
-| map()         | Creates a new array with the result of calling a function for each array element |
-| filter()      | Creates a new array with every element in an array that pass a test     |
-| reduce()      | Reduce the values of an array to a single value (going left-to-right)   |
-| reduceRight() | Reduce the values of an array to a single value (going right-to-left)   |
-| every()       | Check if all array values pass a test                                   |
-| some()        | Check if some array values pass a test                                  |
-| find()        | Returns the value of the first array element that pass a test           |
-| findIndex()   | Returns the index of the first array element that pass a test           |
-| fill()        | Fill the elements in an array with a static value                       |
-| copyWithin()  | Copy array elements within the array                                    |
-| includes()    | Check if an array contains the specified element                        |
-| flat()        | Creates a new array with sub-array elements concatenated into it        |
-| flatMap()     | First maps each element using a mapping function, then flattens the result into a new array |
-| keys()        | Returns a Array Iterator object with the keys of an array               |
-| values()      | Returns a Array Iterator object with the values of an array             |
-| entries()     | Returns a Array Iterator object with key/value pairs                    |
-| at()          | Returns the element at the specified index in an array                  |
+| Method          | Description                                                             |
+| :-------------: | :---------------------------------------------------------------------- |
+| `push()`        | Adds an element to the end of an array                                  |
+| `pop()`         | Removes the last element of an array                                    |
+| `shift()`       | Removes the first element of an array                                   |
+| `unshift()`     | Adds an element to the beginning of an array                            |
+| `slice()`       | Selects a part of an array and returns the new array                    |
+| `splice()`      | Adds/Removes elements to/from an array                                  |
+| `concat()`      | Joins two or more arrays, and returns a copy of the joined arrays       |
+| `indexOf()`     | Search the array for an element and returns its position                |
+| `lastIndexOf()` | Search the array for an element, starting at the end, and returns its position |
+| `join()`        | Joins all elements of an array into a string                            |
+| `reverse()`     | Reverses the order of the elements in an array                          |
+| `sort()`        | Sorts the elements of an array                                          |
+| `forEach()`     | Calls a function for each array element                                 |
+| `map()`         | Creates a new array with the result of calling a function for each array element |
+| `filter()`      | Creates a new array with every element in an array that pass a test     |
+| `reduce()`      | Reduce the values of an array to a single value (going left-to-right)   |
+| `reduceRight()` | Reduce the values of an array to a single value (going right-to-left)   |
+| `every()`       | Check if all array values pass a test                                   |
+| `some()`        | Check if some array values pass a test                                  |
+| `find()`        | Returns the value of the first array element that pass a test           |
+| `findIndex()`   | Returns the index of the first array element that pass a test           |
+| `fill()`        | Fill the elements in an array with a static value                       |
+| `copyWithin()`  | Copy array elements within the array                                    |
+| `includes()`    | Check if an array contains the specified element                        |
+| `flat()`        | Creates a new array with sub-array elements concatenated into it        |
+| `flatMap()`     | First maps each element using a mapping function, then flattens the result into a new array |
+| `keys()`        | Returns a Array Iterator object with the keys of an array               |
+| `values()`      | Returns a Array Iterator object with the values of an array             |
+| `entries()`     | Returns a Array Iterator object with key/value pairs                    |
+| `at()`          | Returns the element at the specified index in an array                  |
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Push
 
@@ -156,6 +158,8 @@ names.push("Ramesh");
 ["Raj", "Ram", "Sham", "Ramesh"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Pop
 
 ``` JavaScript
@@ -167,6 +171,8 @@ names.pop();
 // Output
 ["Raj", "Ram"]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Shift
 
@@ -180,6 +186,8 @@ names.shift();
 ["Ram", "Sham"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Unshift
 
 ``` JavaScript
@@ -191,6 +199,8 @@ names.unshift("Ramesh");
 // Output
 ["Ramesh", "Raj", "Ram", "Sham"]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Slice
 
@@ -205,6 +215,8 @@ names.slice(1, 2);
 // Output
 ["Ram"]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Splice
 
@@ -221,6 +233,8 @@ names.splice(1, 2);
 ["Ram", "Sham"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Concat
 
 ``` JavaScript
@@ -234,6 +248,8 @@ names.concat(names2);
 ["Raj", "Ram", "Sham", "Ramesh", "Rajesh", "Rakesh"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype IndexOf
 
 ``` JavaScript
@@ -245,6 +261,8 @@ names.indexOf("Ram");
 // Output
 1
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype LastIndexOf
 
@@ -258,6 +276,8 @@ names.lastIndexOf("Ram");
 3
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Join
 
 ``` JavaScript
@@ -269,6 +289,8 @@ names.join(" ");
 // Output
 Raj Ram Sham
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Reverse
 
@@ -282,6 +304,8 @@ names.reverse();
 ["Sham", "Ram", "Raj"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Sort
 
 ``` JavaScript
@@ -294,6 +318,8 @@ names.sort();
 // Output
 ["Ram", "Raj", "Sham"]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype ForEach
 
@@ -311,6 +337,8 @@ Ram
 Sham
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Map
 
 ``` JavaScript
@@ -325,6 +353,8 @@ names.map(function(name) {
 ["Raj Singh", "Ram Singh", "Sham Singh"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Filter
 
 ``` JavaScript
@@ -338,6 +368,8 @@ names.filter(function(name) {
 // Output
 ["Raj", "Sham"]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Reduce
 
@@ -361,6 +393,8 @@ numbers.reduce(function(total, number) {
 6
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype ReduceRight
 
 ``` JavaScript
@@ -374,6 +408,8 @@ names.reduceRight(function(total, name) {
 // Output
 ShamRamRaj
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Every
 
@@ -389,6 +425,8 @@ names.every(function(name) {
 false
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Some
 
 ``` JavaScript
@@ -402,6 +440,8 @@ names.some(function(name) {
 // Output
 true
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Find
 
@@ -417,6 +457,8 @@ names.find(function(name) {
 Raj
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype FindIndex
 
 ``` JavaScript
@@ -430,6 +472,8 @@ names.findIndex(function(name) {
 // Output
 0
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Fill
 
@@ -449,6 +493,8 @@ names.fill("Ramesh", 1, 2);
 ["Raj", "Ramesh", "Sham"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype CopyWithin
 
 ``` JavaScript
@@ -466,6 +512,8 @@ names.copyWithin(1, 0, 2);
 // Output
 ["Raj", "Raj", "Sham"]
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Includes
 
@@ -485,6 +533,8 @@ names.includes("Ram", 1);
 false
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Flat
 
 ``` JavaScript
@@ -503,6 +553,8 @@ names.flat(1);
 ["Raj", "Ram", ["Sham"]]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype FlatMap
 
 ``` JavaScript
@@ -517,6 +569,8 @@ names.flatMap(function(name) {
 ["Raj Singh", "Ram Singh", "Sham Singh"]
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Keys
 
 ``` JavaScript
@@ -529,6 +583,8 @@ iterator.next();
 // Output
 {value: 0, done: false}
 ```
+
+**[🔼Back to Top](#table-of-contents)**
 
 #### Array Prototype Values
 
@@ -543,6 +599,8 @@ iterator.next();
 {value: "Raj", done: false}
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype Entries
 
 ``` JavaScript
@@ -556,6 +614,8 @@ iterator.next();
 {value: Array(2), done: false}
 ```
 
+**[🔼Back to Top](#table-of-contents)**
+
 #### Array Prototype at
 
 ``` JavaScript
@@ -567,7 +627,6 @@ names.at(1);
 // Output
 Ram
 ```
-
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -625,24 +684,24 @@ var event = "Hacktoberfest 2022";
 
 ### String Methods
 
-| Method         | Description                                                                              |
-| -------------- | ---------------------------------------------------------------------------------------- |
-| charAt()       | Returns a character at a specified position inside a string                              |
-| charCodeAt()   | Gives you the unicode of character at that position                                      |
-| concat()       | Concatenates (joins) two or more strings into one                                        |
-| fromCharCode() | Returns a string created from the specified sequence of UTF-16 code units                |
-| indexOf()      | Provides the position of the first occurrence of a specified text within a string        |
-| lastIndexOf()  | Same as indexOf() but with the last occurrence, searching backwards                      |
-| match()        | Retrieves the matches of a string against a search pattern                               |
-| replace()      | Find and replace specific text in a string                                               |
-| search()       | Executes a search for a matching text and returns its position                           |
-| slice()        | Extracts a section of a string and returns it as a new string                            |
-| split()        | Splits a string object into an array of strings at a specified position                  |
-| substr()       | Similar to slice() but extracts a substring depended on a specified number of characters |
-| substring()    | Also similar to slice() but can’t accept negative indices                                |
-| toLowerCase()  | Convert strings to lowercase                                                             |
-| toUpperCase()  | Convert strings to uppercase                                                             |
-| valueOf()      | Returns the primitive value (that has no properties or methods) of a string object       |
+| Method           | Description                                                                              |
+| :--------------: | :--------------------------------------------------------------------------------------- |
+| `charAt()`       | Returns a character at a specified position inside a string                              |
+| `charCodeAt()`   | Gives you the unicode of character at that position                                      |
+| `concat()`       | Concatenates (joins) two or more strings into one                                        |
+| `fromCharCode()` | Returns a string created from the specified sequence of UTF-16 code units                |
+| `indexOf()`      | Provides the position of the first occurrence of a specified text within a string        |
+| `lastIndexOf()`  | Same as indexOf() but with the last occurrence, searching backwards                      |
+| `match()`        | Retrieves the matches of a string against a search pattern                               |
+| `replace()`      | Find and replace specific text in a string                                               |
+| `search()`       | Executes a search for a matching text and returns its position                           |
+| `slice()`        | Extracts a section of a string and returns it as a new string                            |
+| `split()`        | Splits a string object into an array of strings at a specified position                  |
+| `substr()`       | Similar to slice() but extracts a substring depended on a specified number of characters |
+| `substring()`    | Also similar to slice() but can’t accept negative indices                                |
+| `toLowerCase()`  | Convert strings to lowercase                                                             |
+| `toUpperCase()`  | Convert strings to uppercase                                                             |
+| `valueOf()`      | Returns the primitive value (that has no properties or methods) of a string object       |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -650,13 +709,13 @@ var event = "Hacktoberfest 2022";
 
 ### Number Properties
 
-| Method            | Description                                                 |
-| ----------------- | ----------------------------------------------------------- |
-| MAX_VALUE         | The maximum numeric value representable in JavaScript       |
-| MIN_VALUE         | Smallest positive numeric value representable in JavaScript |
-| NaN               | The “Not-a-Number” value                                    |
-| NEGATIVE_INFINITY | The negative Infinity value                                 |
-| POSITIVE_INFINITY | Positive Infinity value                                     |
+| Method              | Description                                                 |
+| :-----------------: | :---------------------------------------------------------- |
+| `MAX_VALUE`         | The maximum numeric value representable in JavaScript       |
+| `MIN_VALUE`         | Smallest positive numeric value representable in JavaScript |
+| `NaN`               | The “Not-a-Number” value                                    |
+| `NEGATIVE_INFINITY` | The negative Infinity value                                 |
+| `POSITIVE_INFINITY` | Positive Infinity value                                     |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -668,44 +727,44 @@ var event = "Hacktoberfest 2022";
 
 #### Setting Dates
 
-| Method                          | Description                                                                                                                                                          |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Date()                          | Creates a new date object with the current date and time                                                                                                             |
-| Date(2022, 5, 21, 3, 23, 10, 0) | Create a custom date object. The numbers represent year, month, day, hour, minutes, seconds, milliseconds. You can omit anything you want except for year and month. |
-| Date("2017-06-23")              | Date declaration as a string                                                                                                                                         |
+| Method                            | Description                                                                                                                                                          |
+| :-------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Date()`                          | Creates a new date object with the current date and time                                                                                                             |
+| `Date(2022, 5, 21, 3, 23, 10, 0)` | Create a custom date object. The numbers represent year, month, day, hour, minutes, seconds, milliseconds. You can omit anything you want except for year and month. |
+| `Date("2017-06-23")`              | Date declaration as a string                                                                                                                                         |
 
 **[🔼Back to Top](#table-of-contents)**
 
 #### Pulling Date and Time Values
 
-| Function          | Description                                                                                                                                  |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| getDate()         | Get the day of the month as a number (1-31)                                                                                                  |
-| getDay()          | The weekday as a number (0-6)                                                                                                                |
-| getFullYear()     | Year as a four digit number (yyyy)                                                                                                           |
-| getHours()        | Get the hour (0-23)                                                                                                                          |
-| getMilliseconds() | The millisecond (0-999)                                                                                                                      |
-| getMinutes()      | Get the minute (0-59)                                                                                                                        |
-| getMonth()        | Month as a number (0-11)                                                                                                                     |
-| getSeconds()      | Get the second (0-59)                                                                                                                        |
-| getTime()         | Get the milliseconds since January 1, 1970                                                                                                   |
-| getUTCDate()      | The day (date) of the month in the specified date according to universal time (also available for day, month, fullyear, hours, minutes etc.) |
+| Function            | Description                                                                                                                                  |
+| :-----------------: | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getDate()`         | Get the day of the month as a number (1-31)                                                                                                  |
+| `getDay()`          | The weekday as a number (0-6)                                                                                                                |
+| `getFullYear()`     | Year as a four digit number (yyyy)                                                                                                           |
+| `getHours()`        | Get the hour (0-23)                                                                                                                          |
+| `getMilliseconds()` | The millisecond (0-999)                                                                                                                      |
+| `getMinutes()`      | Get the minute (0-59)                                                                                                                        |
+| `getMonth()`        | Month as a number (0-11)                                                                                                                     |
+| `getSeconds()`      | Get the second (0-59)                                                                                                                        |
+| `getTime()`         | Get the milliseconds since January 1, 1970                                                                                                   |
+| `getUTCDate()`      | The day (date) of the month in the specified date according to universal time (also available for day, month, fullyear, hours, minutes etc.) |
 
 **[🔼Back to Top](#table-of-contents)**
 
 #### Setting Part of a Date
 
-| Method            | Description                                                                                                                               |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| setDate()         | Set the day as a number (1-31)                                                                                                            |
-| setFullYear()     | Sets the year (optionally month and day)                                                                                                  |
-| setHours()        | Set the hour (0-23)                                                                                                                       |
-| setMilliseconds() | Set milliseconds (0-999)                                                                                                                  |
-| setMinutes()      | Sets the minutes (0-59)                                                                                                                   |
-| setMonth()        | Set the month (0-11)                                                                                                                      |
-| setSeconds()      | Sets the seconds (0-59)                                                                                                                   |
-| setTime()         | Set the time (milliseconds since January 1, 1970)                                                                                         |
-| setUTCDate()      | Sets the day of the month for a specified date according to universal time (also available for day, month, fullyear, hours, minutes etc.) |
+| Method              | Description                                                                                                                               |
+| :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| `setDate()`         | Set the day as a number (1-31)                                                                                                            |
+| `setFullYear()`     | Sets the year (optionally month and day)                                                                                                  |
+| `setHours()`        | Set the hour (0-23)                                                                                                                       |
+| `setMilliseconds()` | Set milliseconds (0-999)                                                                                                                  |
+| `setMinutes()`      | Sets the minutes (0-59)                                                                                                                   |
+| `setMonth()`        | Set the month (0-11)                                                                                                                      |
+| `setSeconds()`      | Sets the seconds (0-59)                                                                                                                   |
+| `setTime()`         | Set the time (milliseconds since January 1, 1970)                                                                                         |
+| `setUTCDate()`      | Sets the day of the month for a specified date according to universal time (also available for day, month, fullyear, hours, minutes etc.) |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -713,23 +772,23 @@ var event = "Hacktoberfest 2022";
 
 ### Element Methods
   
-| Method                   | Description                                                                                                         |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| getAttribute()           | Returns the specified attribute value of an element node                                                            |
-| getAttributeNS()         | Returns string value of the attribute with the specified namespace and name                                         |
-| getAttributeNode()       | Gets the specified attribute node                                                                                   |
-| getAttributeNodeNS()     | Returns the attribute node for the attribute with the given namespace and name                                      |
-| getElementsByTagName()   | Provides a collection of all child elements with the specified tag name                                             |
-| getElementsByTagNameNS() | Returns a live HTMLCollection of elements with a certain tag name belonging to the given namespace                  |
-| hasAttribute()           | Returns true if an element has any attributes, otherwise false                                                      |
-| hasAttributeNS()         | Provides a true/false value indicating whether the current element in a given namespace has the specified attribute |
-| removeAttribute()        | Removes a specified attribute from an element                                                                       |
-| removeAttributeNS()      | Removes the specified attribute from an element within a certain namespace                                          |
-| removeAttributeNode()    | Takes away a specified attribute node and returns the removed node                                                  |
-| setAttribute()           | Sets or changes the specified attribute to a specified value                                                        |
-| setAttributeNS()         | Adds a new attribute or changes the value of an attribute with the given namespace and name                         |
-| setAttributeNode()       | Sets or changes the specified attribute node                                                                        |
-| setAttributeNodeNS()     | Adds a new name spaced attribute node to an element                                                                 |
+| Method                     | Description                                                                                                         |
+| :------------------------: | :------------------------------------------------------------------------------------------------------------------ |
+| `getAttribute()`           | Returns the specified attribute value of an element node                                                            |
+| `getAttributeNS()`         | Returns string value of the attribute with the specified namespace and name                                         |
+| `getAttributeNode()`       | Gets the specified attribute node                                                                                   |
+| `getAttributeNodeNS()`     | Returns the attribute node for the attribute with the given namespace and name                                      |
+| `getElementsByTagName()`   | Provides a collection of all child elements with the specified tag name                                             |
+| `getElementsByTagNameNS()` | Returns a live HTMLCollection of elements with a certain tag name belonging to the given namespace                  |
+| `hasAttribute()`           | Returns true if an element has any attributes, otherwise false                                                      |
+| `hasAttributeNS()`         | Provides a true/false value indicating whether the current element in a given namespace has the specified attribute |
+| `removeAttribute()`        | Removes a specified attribute from an element                                                                       |
+| `removeAttributeNS()`      | Removes the specified attribute from an element within a certain namespace                                          |
+| `removeAttributeNode()`    | Takes away a specified attribute node and returns the removed node                                                  |
+| `setAttribute()`           | Sets or changes the specified attribute to a specified value                                                        |
+| `setAttributeNS()`         | Adds a new attribute or changes the value of an attribute with the given namespace and name                         |
+| `setAttributeNode()`       | Sets or changes the specified attribute node                                                                        |
+| `setAttributeNodeNS()`     | Adds a new name spaced attribute node to an element                                                                 |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -737,70 +796,70 @@ var event = "Hacktoberfest 2022";
 
 ### Mouse
 
-| Method        | Description                                                           |
-| ------------- | --------------------------------------------------------------------- |
-| onclick       | The event occurs when the user clicks on an element                   |
-| oncontextmenu | User right-clicks on an element to open a context menu                |
-| ondblclick    | The user double-clicks on an element                                  |
-| onmousedown   | User presses a mouse button over an element                           |
-| onmouseenter  | The pointer moves onto an element                                     |
-| onmouseleave  | Pointer moves out of an element                                       |
-| onmousemove   | The pointer is moving while it is over an element                     |
-| onmouseover   | When the pointer is moved onto an element or one of its children      |
-| onmouseout    | User moves the mouse pointer out of an element or one of its children |
-| onmouseup     | The user releases a mouse button while over an element                |
+| Method          | Description                                                           |
+| :-------------: | :-------------------------------------------------------------------- |
+| `onclick`       | The event occurs when the user clicks on an element                   |
+| `oncontextmenu` | User right-clicks on an element to open a context menu                |
+| `ondblclick`    | The user double-clicks on an element                                  |
+| `onmousedown`   | User presses a mouse button over an element                           |
+| `onmouseenter`  | The pointer moves onto an element                                     |
+| `onmouseleave`  | Pointer moves out of an element                                       |
+| `onmousemove`   | The pointer is moving while it is over an element                     |
+| `onmouseover`   | When the pointer is moved onto an element or one of its children      |
+| `onmouseout`    | User moves the mouse pointer out of an element or one of its children |
+| `onmouseup`     | The user releases a mouse button while over an element                |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ### Keyboard
 
-| Method     | Description                               |
-| ---------- | ----------------------------------------- |
-| onkeydown  | When the user is pressing a key down      |
-| onkeypress | The moment the user starts pressing a key |
-| onkeyup    | The user releases a key                   |
+| Method       | Description                               |
+| :----------: | :---------------------------------------- |
+| `onkeydown`  | When the user is pressing a key down      |
+| `onkeypress` | The moment the user starts pressing a key |
+| `onkeyup`    | The user releases a key                   |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ### Frame
 
-| Method         | Description                                                                          |
-| -------------- | ------------------------------------------------------------------------------------ |
-| onabort        | The loading of a media is aborted                                                    |
-| onbeforeunload | Event occurs before the document is about to be unloaded                             |
-| onerror        | An error occurs while loading an external file                                       |
-| onhashchange   | There have been changes to the anchor part of a URL onload When an object has loaded |
-| onpagehide     | The user navigates away from a webpage                                               |
-| onpageshow     | When the user navigates to a webpage                                                 |
-| onresize       | The document view is resized                                                         |
-| onscroll       | An element’s scrollbar is being scrolled                                             |
-| onunload       | Event occurs when a page has unloaded                                                |
+| Method           | Description                                                                          |
+| :--------------: | :----------------------------------------------------------------------------------- |
+| `onabort`        | The loading of a media is aborted                                                    |
+| `onbeforeunload` | Event occurs before the document is about to be unloaded                             |
+| `onerror`        | An error occurs while loading an external file                                       |
+| `onhashchange`   | There have been changes to the anchor part of a URL onload When an object has loaded |
+| `onpagehide`     | The user navigates away from a webpage                                               |
+| `onpageshow`     | When the user navigates to a webpage                                                 |
+| `onresize`       | The document view is resized                                                         |
+| `onscroll`       | An element’s scrollbar is being scrolled                                             |
+| `onunload`       | Event occurs when a page has unloaded                                                |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ### Form
   
-| Method     | Description                                 |
-| ---------- | ------------------------------------------- |
-| onblur     | When an element loses focus                 |
-| onchange   | The content of a form element changes       |
-| onfocus    | An element gets focus                       |
-| onfocusin  | When an element is about to get focus       |
-| onfocusout | The element is about to lose focus          |
-| oninput    | User input on an element                    |
-| oninvalid  | An element is invalid                       |
-| onreset    | A form is reset                             |
-| onsearch   | The user writes something in a search field |
+| Method       | Description                                 |
+| :----------: | :------------------------------------------ |
+| `onblur`     | When an element loses focus                 |
+| `onchange`   | The content of a form element changes       |
+| `onfocus`    | An element gets focus                       |
+| `onfocusin`  | When an element is about to get focus       |
+| `onfocusout` | The element is about to lose focus          |
+| `oninput`    | User input on an element                    |
+| `oninvalid`  | An element is invalid                       |
+| `onreset`    | A form is reset                             |
+| `onsearch`   | The user writes something in a search field |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Errors
 
-| Error Handlers | Description                                                            |
-| -------------- | ---------------------------------------------------------------------- |
-| try            | Lets you define a block of code to test for errors                     |
-| catch          | Set up a block of code to execute in case of an error                  |
-| throw          | Create custom error messages instead of the standard JavaScript errors |
-| finally        | Lets you execute code, after try and catch, regardless of the result   |
+| Error Handlers   | Description                                                            |
+| :--------------: | :--------------------------------------------------------------------- |
+| `try`            | Lets you define a block of code to test for errors                     |
+| `catch`          | Set up a block of code to execute in case of an error                  |
+| `throw`          | Create custom error messages instead of the standard JavaScript errors |
+| `finally`        | Lets you execute code, after try and catch, regardless of the result   |
 
 **[🔼Back to Top](#table-of-contents)**
