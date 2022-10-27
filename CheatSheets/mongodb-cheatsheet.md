@@ -1,24 +1,23 @@
 ---
-title: Mongo DB CheatSheet
-description: The most commonly used Mongo DB concepts are given here.
-created: 2022-10-26
+title: MongoDB CheatSheet
+description: The most commonly used MongoDB commands are given here.
+created: 2022-10-27
 ---
 
 ## Table of Contents
 
-- [Mongo DB CheatSheet for Developers](#Mongo-DB-cheatsheet-for-developers)
-  - [Database Commands](#Database-Commands)
-  - [Collection Commands](#Collection-Commands)
-  - [Row Command](#Row-Command)
-  - [MongoDB Query Operators](#MongoDB-Query-Operators)
-    - [Comparison Operators](#Comparison-Operators)
-    - [Logical Operators](#Logical-Operators)
-    - [Evaluation Operators](#Evaluation-Operators)
-  - [MongoDB Update Operators](#MongoDB-Update-Operators)
-      - [Fields](#Fields)
-      - [Array](#Array)
-  - [MongoDB-Aggregation](#MongoDB-Aggregation)
-
+- [Mongo-DB CheatSheet for Developers](#mongo-db-cheatsheet-for-developers)
+  - [Database Commands](#database-commands)
+  - [Collection Commands](#collection-commands)
+  - [Row(Document) Commands](#rowdocument-commands)
+  - [MongoDB Query Operators](#mongodb-query-operators)
+    - [Comparison Operators](#comparison-operators)
+    - [Logical Operators](#logical-operators)
+    - [Evaluation Operators](#evaluation-operators)
+  - [MongoDB Update Operators](#mongodb-update-operators)
+    - [Fields](#fields)
+    - [Array](#array)
+  - [MongoDB - Aggregation](#mongodb---aggregation)
 
 # Mongo-DB CheatSheet for Developers
 
@@ -63,16 +62,15 @@ created: 2022-10-26
 |`db.collection_name.deleteOne({name: 'Harry'})`|Delete one Row|
 |`db.collection_name.deleteMany({lang: 'JavaScript'})`|Delete many Row|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
 ## MongoDB Query Operators
 
-There are many query operators that can be used to compare and reference document fields.
+> There are many query operators that can be used to compare and reference document fields.
 
-## Comparison Operators
+### Comparison Operators
 
-The following operators can be used in queries to compare values:
+> The following operators can be used in queries to compare values:
 
 | Command                | Description                                     |
 | :--------------------: | :----------------------------------------------- |
@@ -84,13 +82,11 @@ The following operators can be used in queries to compare values:
 |`$lte`| Value is less than or equal to another value|
 |`$in`| Value is matched within an array|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-## Logical Operators
+### Logical Operators
 
-The following operators can logically compare multiple queries.
-
+> The following operators can logically compare multiple queries.
 
 | Command                | Description                                     |
 | :--------------------: | :----------------------------------------------- |
@@ -99,12 +95,11 @@ The following operators can logically compare multiple queries.
 |`$nor`| Returns documents where both queries fail to match|
 |`$not`| Returns documents where the query does not match|
 
-
 **[🔼Back to Top](#table-of-contents)**
 
-## Evaluation Operators
+### Evaluation Operators
 
-The following operators assist in evaluating documents.
+> The following operators assist in evaluating documents.
 
 | Command                | Description                                     |
 | :--------------------: | :----------------------------------------------- |
@@ -112,18 +107,15 @@ The following operators assist in evaluating documents.
 |`$text`| Performs a text search|
 |`$where`| Uses a JavaScript expression to match documents|
 
-
 **[🔼Back to Top](#table-of-contents)**
-
 
 ## MongoDB Update Operators
 
-There are many update operators that can be used during document updates.
+> There are many update operators that can be used during document updates.
 
-## Fields
+### Fields
 
-The following operators can be used to update fields:
-
+> The following operators can be used to update fields:
 
 | Command                | Description                                     |
 | :--------------------: | :----------------------------------------------- |
@@ -135,9 +127,9 @@ The following operators can be used to update fields:
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Array
+### Array
 
-The following operators assist with updating arrays.
+> The following operators assist with updating arrays.
 
 | Command                | Description                                     |
 | :--------------------: | :----------------------------------------------- |
@@ -150,10 +142,8 @@ The following operators assist with updating arrays.
 
 ## MongoDB - Aggregation
 
-
-
 |Expression|	Description|
-|----------|--------------|
+|:--------:|--------------|
 |`$sum`|	Sums up the defined value from all documents in the collection.	|
 |`$avg`|	Calculates the average of all given values from all documents in the collection.|
 |`$min`|	Gets the minimum of the corresponding values from all documents in the collection.|
