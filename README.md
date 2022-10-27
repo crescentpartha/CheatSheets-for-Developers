@@ -61,6 +61,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 28. [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
 29. [terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)
 30. [nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)
+31. [mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)
 
 ## ___Instructions___
 
