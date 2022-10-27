@@ -33,6 +33,8 @@ created: 2022-10-21
 | `cd ..` | Go up a directory | 
 | `cd` | Change to home directory |
 | `ls` | List contents of directory|
+| `ls -r` | Reverse list contents of directory |
+| `ls -t` | List contents of directory based on time |
 | `ls -al` | Formatted list of contents for the directory including hidden files |
 | `rm file` | Delete file | 
 | `rm -r dir` | Delete directory *dir* | 
