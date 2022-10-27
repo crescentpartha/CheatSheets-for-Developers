@@ -13,36 +13,36 @@ created: 2022-10-21
     - [Variables](#variables)
     - [Arrays](#arrays)
     - [Array Methods](#array-methods)
-      - [Array Prototype Push](#array-prototype-push)
-      - [Array Prototype Pop](#array-prototype-pop)
-      - [Array Prototype Shift](#array-prototype-shift)
-      - [Array Prototype Unshift](#array-prototype-unshift)
-      - [Array Prototype Slice](#array-prototype-slice)
-      - [Array Prototype Splice](#array-prototype-splice)
-      - [Array Prototype Concat](#array-prototype-concat)
-      - [Array Prototype IndexOf](#array-prototype-indexof)
-      - [Array Prototype LastIndexOf](#array-prototype-lastindexof)
-      - [Array Prototype Join](#array-prototype-join)
-      - [Array Prototype Reverse](#array-prototype-reverse)
-      - [Array Prototype Sort](#array-prototype-sort)
-      - [Array Prototype ForEach](#array-prototype-foreach)
-      - [Array Prototype Map](#array-prototype-map)
-      - [Array Prototype Filter](#array-prototype-filter)
-      - [Array Prototype Reduce](#array-prototype-reduce)
-      - [Array Prototype ReduceRight](#array-prototype-reduceright)
-      - [Array Prototype Every](#array-prototype-every)
-      - [Array Prototype Some](#array-prototype-some)
-      - [Array Prototype Find](#array-prototype-find)
-      - [Array Prototype FindIndex](#array-prototype-findindex)
-      - [Array Prototype Fill](#array-prototype-fill)
-      - [Array Prototype CopyWithin](#array-prototype-copywithin)
-      - [Array Prototype Includes](#array-prototype-includes)
-      - [Array Prototype Flat](#array-prototype-flat)
-      - [Array Prototype FlatMap](#array-prototype-flatmap)
-      - [Array Prototype Keys](#array-prototype-keys)
-      - [Array Prototype Values](#array-prototype-values)
-      - [Array Prototype Entries](#array-prototype-entries)
-      - [Array Prototype at](#array-prototype-at)
+      - [Array.Prototype.Push()](#arrayprototypepush)
+      - [Array.Prototype.Pop()](#arrayprototypepop)
+      - [Array.Prototype.Shift()](#arrayprototypeshift)
+      - [Array.Prototype.Unshift()](#arrayprototypeunshift)
+      - [Array.Prototype.Slice()](#arrayprototypeslice)
+      - [Array.Prototype.Splice()](#arrayprototypesplice)
+      - [Array.Prototype.Concat()](#arrayprototypeconcat)
+      - [Array.Prototype.IndexOf()](#arrayprototypeindexof)
+      - [Array.Prototype.LastIndexOf()](#arrayprototypelastindexof)
+      - [Array.Prototype.Join()](#arrayprototypejoin)
+      - [Array.Prototype.Reverse()](#arrayprototypereverse)
+      - [Array.Prototype.Sort()](#arrayprototypesort)
+      - [Array.Prototype.ForEach()](#arrayprototypeforeach)
+      - [Array.Prototype.Map()](#arrayprototypemap)
+      - [Array.Prototype.Filter()](#arrayprototypefilter)
+      - [Array.Prototype.Reduce()](#arrayprototypereduce)
+      - [Array.Prototype.ReduceRight()](#arrayprototypereduceright)
+      - [Array.Prototype.Every()](#arrayprototypeevery)
+      - [Array.Prototype.Some()](#arrayprototypesome)
+      - [Array.Prototype.Find()](#arrayprototypefind)
+      - [Array.Prototype.FindIndex()](#arrayprototypefindindex)
+      - [Array.Prototype.Fill()](#arrayprototypefill)
+      - [Array.Prototype.CopyWithin()](#arrayprototypecopywithin)
+      - [Array.Prototype.Includes()](#arrayprototypeincludes)
+      - [Array.Prototype.Flat()](#arrayprototypeflat)
+      - [Array.Prototype.FlatMap()](#arrayprototypeflatmap)
+      - [Array.Prototype.Keys()](#arrayprototypekeys)
+      - [Array.Prototype.Values()](#arrayprototypevalues)
+      - [Array.Prototype.Entries()](#arrayprototypeentries)
+      - [Array.Prototype.at()](#arrayprototypeat)
     - [Functions](#functions)
     - [Loops](#loops)
       - [For](#for)
@@ -146,7 +146,7 @@ var names= ["Raj", "Ram", "Sham"];
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Push
+#### Array.Prototype.Push()
 
 ``` JavaScript
 // Syntax
@@ -160,7 +160,7 @@ names.push("Ramesh");
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Pop
+#### Array.Prototype.Pop()
 
 ``` JavaScript
 // Syntax
@@ -174,7 +174,7 @@ names.pop();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Shift
+#### Array.Prototype.Shift()
 
 ``` JavaScript
 // Syntax
@@ -188,7 +188,7 @@ names.shift();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Unshift
+#### Array.Prototype.Unshift()
 
 ``` JavaScript
 // Syntax
@@ -202,7 +202,7 @@ names.unshift("Ramesh");
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Slice
+#### Array.Prototype.Slice()
 
 ``` JavaScript
 // Syntax
@@ -218,7 +218,7 @@ names.slice(1, 2);
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Splice
+#### Array.Prototype.Splice()
 
 ``` JavaScript
 // Syntax
@@ -235,7 +235,7 @@ names.splice(1, 2);
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Concat
+#### Array.Prototype.Concat()
 
 ``` JavaScript
 // Syntax
@@ -250,7 +250,7 @@ names.concat(names2);
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype IndexOf
+#### Array.Prototype.IndexOf()
 
 ``` JavaScript
 // Syntax
@@ -264,7 +264,7 @@ names.indexOf("Ram");
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype LastIndexOf
+#### Array.Prototype.LastIndexOf()
 
 ``` JavaScript
 // Syntax
@@ -278,7 +278,7 @@ names.lastIndexOf("Ram");
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Join
+#### Array.Prototype.Join()
 
 ``` JavaScript
 // Syntax
@@ -292,7 +292,7 @@ Raj Ram Sham
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Reverse
+#### Array.Prototype.Reverse()
 
 ``` JavaScript
 // Syntax
@@ -306,7 +306,7 @@ names.reverse();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Sort
+#### Array.Prototype.Sort()
 
 ``` JavaScript
 // Syntax
@@ -321,7 +321,7 @@ names.sort();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype ForEach
+#### Array.Prototype.ForEach()
 
 ``` JavaScript
 // Syntax
@@ -339,7 +339,7 @@ Sham
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Map
+#### Array.Prototype.Map()
 
 ``` JavaScript
 // Syntax
@@ -355,7 +355,7 @@ names.map(function(name) {
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Filter
+#### Array.Prototype.Filter()
 
 ``` JavaScript
 // Syntax
@@ -371,7 +371,7 @@ names.filter(function(name) {
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Reduce
+#### Array.Prototype.Reduce()
 
 ``` JavaScript
 // Syntax
@@ -395,7 +395,7 @@ numbers.reduce(function(total, number) {
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype ReduceRight
+#### Array.Prototype.ReduceRight()
 
 ``` JavaScript
 // Syntax
@@ -411,7 +411,7 @@ ShamRamRaj
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Every
+#### Array.Prototype.Every()
 
 ``` JavaScript
 // Syntax
@@ -427,7 +427,7 @@ false
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Some
+#### Array.Prototype.Some()
 
 ``` JavaScript
 // Syntax
@@ -443,7 +443,7 @@ true
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Find
+#### Array.Prototype.Find()
 
 ``` JavaScript
 // Syntax
@@ -459,7 +459,7 @@ Raj
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype FindIndex
+#### Array.Prototype.FindIndex()
 
 ``` JavaScript
 // Syntax
@@ -475,7 +475,7 @@ names.findIndex(function(name) {
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Fill
+#### Array.Prototype.Fill()
 
 ``` JavaScript
 // Syntax
@@ -495,7 +495,7 @@ names.fill("Ramesh", 1, 2);
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype CopyWithin
+#### Array.Prototype.CopyWithin()
 
 ``` JavaScript
 // Syntax
@@ -515,7 +515,7 @@ names.copyWithin(1, 0, 2);
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Includes
+#### Array.Prototype.Includes()
 
 ``` JavaScript
 // Syntax
@@ -535,7 +535,7 @@ false
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Flat
+#### Array.Prototype.Flat()
 
 ``` JavaScript
 // Syntax
@@ -555,7 +555,7 @@ names.flat(1);
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype FlatMap
+#### Array.Prototype.FlatMap()
 
 ``` JavaScript
 // Syntax
@@ -571,7 +571,7 @@ names.flatMap(function(name) {
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Keys
+#### Array.Prototype.Keys()
 
 ``` JavaScript
 // Syntax
@@ -586,7 +586,7 @@ iterator.next();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Values
+#### Array.Prototype.Values()
 
 ``` JavaScript
 // Syntax
@@ -601,7 +601,7 @@ iterator.next();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype Entries
+#### Array.Prototype.Entries()
 
 ``` JavaScript
 // Syntax
@@ -616,7 +616,7 @@ iterator.next();
 
 **[🔼Back to Top](#table-of-contents)**
 
-#### Array Prototype at
+#### Array.Prototype.at()
 
 ``` JavaScript
 // Syntax
