@@ -1,3 +1,9 @@
+---
+title: Chrome DevTools CheatSheet
+description: The most commonly used keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [Chrome DevTools Keyboard Shortcuts for Developers](#chrome-devtools-keyboard-shortcuts-for-developers)

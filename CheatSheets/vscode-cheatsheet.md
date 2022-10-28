@@ -1,3 +1,9 @@
+---
+title: VSCode CheatSheet
+description: The most commonly used vscode keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [VSCode Keyboard Shortcuts for Developers](#vscode-keyboard-shortcuts-for-developers)
@@ -30,10 +36,15 @@
 | ------- | ----------- |
 | `Ctrl + A` | Select All |
 | `Ctrl + C` | Copy line |
+| `Ctrl + D` | Duplicate line |
+| `Ctrl + L` | Select current line |
 | `Ctrl + X` | Cut line |
+| `Ctrl + U` | Undo last cursor operation |
 | `Ctrl + V` | Paste |
-| `Ctrl + Z` | Undo Changes |
 | `Ctrl + Y` | Redo Changes |
+| `Ctrl + Z` | Undo Changes |
+| `Alt + Down` | Move Line Down |
+| `Alt + Up` | Move Line Up|
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -42,6 +53,10 @@
 | Command | Description |
 | ------- | ----------- |
 | `F2` | Rename Symbol |
+| `Shift + F12` | Go to References |
+| `F12` | Go to Definition |
+| `Ctrl + Space` | Trigger Suggest |
+| `Ctrl + .` | Quick Fix |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -55,6 +70,7 @@
 | `Shift + Alt + Click` | Select text in blocks |
 | `Ctrl + Alt + UpArrow` | Add cursor above |
 | `Ctrl + Alt + DownArrow` | Add cursor below |
+| `Ctrl + Shift + K` | Delete line |
 | `Ctrl + Shift + L` | Select all occurrences of current selection |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -92,6 +108,8 @@
 | `Ctrl + Shift + G` | Go to Source Control |
 | `Ctrl + Shift + H` | Go to Search |
 | `Ctrl + Shift + J` | Go to Problems |
+| `` Ctrl + ↑/↓ ``| Scroll up/down |
+| `` Ctrl+ Home/End ``| Scroll top/bottom |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -100,7 +118,9 @@
 | Command | Description |
 | ------- | ----------- |
 | `Ctrl + W` | Close Editor |
-| `Ctrl + Shift + T` | Open Recently Closed Editor |
+| `Ctrl + \` | Split Editor |
+| `Ctrl + Shift + PgUp` | Move Editor Left |
+| `Ctrl + Shift + PgDn` | Move Editor Right |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -112,6 +132,9 @@
 | `Ctrl + O` | Open |
 | `Ctrl + S` | Save |
 | `Ctrl + Shift + S` | Save As |
+| `Ctrl + W` | Close |
+| `Ctrl + Shift + T` | Open Recently Closed Editor |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -120,6 +143,9 @@
 | Command | Description |
 | ------- | ----------- |
 | `F9` | Toggle Breakpoint |
+| `F5` | Start |
+| `Ctrl + F5` | Start (without debugging) |
+| `F11` | Step Into |
 
 **[🔼Back to Top](#table-of-contents)**
 
