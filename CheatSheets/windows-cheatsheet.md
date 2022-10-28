@@ -80,6 +80,7 @@ created: 2022-10-20
 |` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
 | `Win + number key` | to open application from taskbar with numbered key position
+| `Win + Alt + R` | to start in-built screen recording |
 
 
 **[🔼Back to Top](#table-of-contents)**
