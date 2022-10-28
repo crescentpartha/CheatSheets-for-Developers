@@ -768,6 +768,14 @@ var event = "Hacktoberfest 2022";
 
 **[🔼Back to Top](#table-of-contents)**
 
+#### Format Date Object
+
+| Method                 | Description                                                                                                                      |
+| :--------------------: | :------------------------------------------------------------------------------------------------------------------------------- |
+| `toLocaleDateString()` | Returns a string with a language-sensitive representation of the date portion of the specified date in the user agent's timezone |
+
+**[🔼Back to Top](#table-of-contents)**
+
 ## DOM (Document Object Modulation)
 
 ### Element Methods
