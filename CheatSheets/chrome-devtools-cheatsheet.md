@@ -96,6 +96,8 @@ created: 2022-10-20
 | :-------------: | :-: | :---------: |
 | `Ctrl + Delete(del)` | `Option(⌥) + Delete(del)` | Delete all characters in the last word, up to the cursor | 
 | `Ctrl + M` | `Ctrl + M` | Go to matching bracket |
+| `Ctrl+B` | `Cmd + B` | Add or remove a line-of-code breakpoint |
+| `Ctrl+D / Ctrl+U` | `Cmd+D / Cmd+U` | Select / de-select the next occurrence of whatever word the cursor is on. Each occurrence is highlighted simultaneously |
 | `Ctrl + /` | `Cmd(⌘) + /` | Toggle single-line comment.<br />If multiple lines are selected, DevTools adds a comment to the start of each line |
 
 
