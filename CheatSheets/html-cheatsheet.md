@@ -162,6 +162,21 @@ created: 2022-10-20
 | `<form> … </form>` | The parent tag for an HTML form.                                                 |
 | `action=”url”`     | The URL listed here is where the form data will be submitted once user fills it. |
 | `method=”POST”`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+| `accept-charset`   | It specifies the character encodings used for form submission.                   |
+| `autocomplete`        | It specifies whether a form should have autocomplete on or off.   |
+| `enctype`        | It specifies how the form-data should be encoded when submitting it to the server (only for method="post")   |
+| `name`        | It specifies the name of the form.   |
+| `novalidate`        | It specifies that the form should not be validated when submitted   |
+| `target`        | It specifies where to display the response that is received after submitting the form  |
+
+
+| Form Elements           | Description                                                                      |
+| ------------------ | -------------------------------------------------------------------------------- |
+| `<input>` | Used to take input from user, can be shown in different ways depending upon 'type' attribute.       |
+| `<label>`     | It defines a label for several form elements. |
+| `<select>`        | It element defines a drop-down list  |
+| `<textarea>`   | It element defines a multi-line input field (a text area)                   |
+| `<button>`        | It element defines a clickable button   |
 
 **Example:**
 
@@ -264,6 +279,8 @@ created: 2022-10-20
 | -------------------------- | ------------------------------------------------ |
 | `<video> … </video>`       | Used to show a video on a web page.              |
 | `<audio> … </audio>`       | Used to play an audio file on a web page.        |
+| `<object>`       | It defines an embedded object within an HTML document. |
+| `<iframe>`       | It helps to play video directly from youtube.                       |
 
 **[🔼Back to Top](#table-of-contents)**
 
