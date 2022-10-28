@@ -68,6 +68,8 @@ created: 2022-10-18
 | `git checkout [file]` | Matches the file with last commit |
 | `git help -a` | Shows the list of all available Git commands |
 | `git restore .` | To restore all files in the current directory |
+| `git-submodule` | Initialize, update or inspect submodules |
+| `git-gui` | A portable graphical interface to Git |
 | `git config --global core.excludesfile [file]` | System wide ignore patern for all local repositories |
 
 
