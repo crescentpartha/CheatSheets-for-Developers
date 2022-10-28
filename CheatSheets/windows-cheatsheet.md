@@ -102,6 +102,9 @@ created: 2022-10-20
 | `Crtl + Shift + N`| Create a New Folder         |
 | `Alt + ←`| Navigate to previous folder |
 | `Ctrl + L` | Navigate to the address bar |
+| `⊞(Window key) + E ` | Opening File Explorer |
+| `Backspace` | Move to the previous folder |
+| `F2` |  Renaming Files and Folders |
 
 
 
