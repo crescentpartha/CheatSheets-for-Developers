@@ -63,6 +63,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 30. [nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)
 31. [mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)
 32. [extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)
+33. [xml-cheatsheet.md](./CheatSheets/XML-cheatsheet.md)
 
 ## ___Instructions___
 
