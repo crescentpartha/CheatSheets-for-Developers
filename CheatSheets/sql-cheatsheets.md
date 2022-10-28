@@ -1,3 +1,9 @@
+---
+title: SQL CheatSheet
+description: The most commonly used sql queries are given here.
+created: 2022-10-22
+---
+
 ## Table of Contents
 
 - [SQL CheatSheet for Developers](#sql-cheatsheet-for-developers)

@@ -1,5 +1,10 @@
-Table of Contents
 ---
+title: Git CheatSheet
+description: The most commonly used git commands are given here.
+created: 2022-10-18
+---
+
+## Table of Contents
 
 - [Git CheatSheet for Developers](#git-cheatsheet-for-developers)
   - [Git Configuration](#git-configuration)
@@ -12,7 +17,7 @@ Table of Contents
   - [Setting up Alias](#setting-up-alias)
   - [Rewrite History](#rewrite-history)
   - [Deletion](#deletion)
-  - [Temporary Commits](#Temporary-commits)
+  - [Temporary Commits](#temporary-commits)
 
 # Git CheatSheet for Developers
 
@@ -61,7 +66,8 @@ Table of Contents
 | `gitk` | Shows graphical interface for a local repository |
 | `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
 | `git checkout [file]` | Matches the file with last commit |
-
+| `git help -a` | Shows the list of all available Git commands |
+| `git restore .` | To restore all files in the current directory |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -84,6 +90,7 @@ Table of Contents
 | `git merge [branch-name]` | Merge branchs |
 | `git merge [source branch] [target branch]` | Merge a branch into a target branch |
 | `git merge --allow-unrelated-histories`| Merge unrelated histories |
+| `git cherry-pick [commit-ID]` | Bring in changes from one (or more) particular commit to the current branch. |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -94,6 +101,8 @@ Table of Contents
 | `git push origin [branch name]` | Push a branch to your remote repository |
 | `git pull origin [branch name]` | Pull a branch from your remote repository |
 | `git remote origin [branch name]` | Connect repository to local server |
+| `git push <remote> --force` | Forces the push even if it results in a non-fast-forward merge. Be sure that nobody has pulled the commits before using the `--force` option. |
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -114,7 +123,11 @@ Table of Contents
 | `git diff branchB...branchA` | View the differences of what is in branchA that are not on branchB |
 | `git blame [file name]` | Display the modification on each line of a file |
 | `git diff --name-only` | Show only names of changed files |
-
+| `git bisect start` | Starts the bisection search process to find that bad commit which introduced the bug we're facing right now |
+| `git bisect good` <br /> `git bisect good [Commit ID]` | Takes up the good commit, which is that one where the bug was not there |
+| `git bisect bad [Commit ID]` | Takes up the bad commit, which is that one where the bug was there. If commit ID is not provided, then it takes up the current commit as the bad commit |
+| `git grep "hello"` | A text search on all files in the directory |
+| `git bugreport` | Created new report at `git-bugreport-2022-10-25-1228.txt` |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -123,10 +136,11 @@ Table of Contents
 | Command | Description |
 | ------- | ----------- |
 | `git rm [file]` | Delete the file from project and stage the removal for commit |
-| `git mv [existing-path] [new-path]`  | Change an existing file path and stage the move |
-| `git log --stat -M`  | Show all commit logs with indication of any paths that moved |
+| `git mv [existing-path] [new-path]` | Change an existing file path and stage the move |
+| `git log --stat -M` | Show all commit logs with indication of any paths that moved |
 
 **[🔼Back to Top](#table-of-contents)**
+
 ## Setting up Alias
 
 | Command | Description |
@@ -136,10 +150,11 @@ Table of Contents
 **[🔼Back to Top](#table-of-contents)**
 
 ## Rewrite History
+
 | Command | Description |
 | ------- | ----------- |
-| ` git rebase [branch]`  | Apply any commits of current branch ahead of specified one |
-| `git reset --hard [commit]`  | Clear staging area, rewrite working tree from specified commit |
+| `git rebase [branch]` | Apply any commits of current branch ahead of specified one |
+| `git reset --hard [commit]` | Clear staging area, rewrite working tree from specified commit |
 | `git reset HEAD "file-name"` | Go back to the pointer I'm already at, remove from staged |
 | `git reset --soft "commit-hash"` | Take my changes and go back/kill the commit I made but the file will be staged with the change ready to be committed again |
 | `git reset --mixed "commit-hash"` | Return/Kill the commit too but it returns the files to before staged i.e. modified but it will still return |
@@ -148,6 +163,7 @@ Table of Contents
 **[🔼Back to Top](#table-of-contents)**
 
 ## Deletion
+
 | Command | Description |
 | ------- | ----------- |
 | `git gc` | Cleans unnecessary files and optimizes the local repository |
@@ -156,11 +172,12 @@ Table of Contents
 **[🔼Back to Top](#table-of-contents)**
 
 ## Temporary Commits
+
 | command | Description |
 | ------- | ----------- |
-| `git stash`| Save modified and staged changes|
-|`git stash list`| list stack-order of stashed file changes|
-|`git stash pop`| write working from top of stash stack|
-|`git stash drop` | discard the changes from top of stash stack|
+| `git stash` | Save modified and staged changes|
+| `git stash list` | list stack-order of stashed file changes|
+| `git stash pop` | write working from top of stash stack|
+| `git stash drop` | discard the changes from top of stash stack|
 
 **[🔼Back to Top](#table-of-contents)**

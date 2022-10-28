@@ -1,3 +1,9 @@
+---
+title: Windows CheatSheet
+description: The most commonly used windows keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [Windows Keyboard Shortcuts for Developers](#windows-keyboard-shortcuts-for-developers)
@@ -14,7 +20,7 @@
   - [App Rearrangement Shortcuts (Metro)](#app-rearrangement-shortcuts-metro)
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
-  - [Touchpad Shortcuts](#touchpad-shortcuts)
+  - [TouchPad Shortcuts](#touchpad-shortcuts)
   - [Take Screenshot Shortcut](#take-screenshot-shortcut)
   - [Command Prompt Shortcuts](#command-prompt-shortcuts)
 
@@ -34,6 +40,7 @@
 | `Ctrl + F` | Find |
 | `Ctrl + P` | Print |
 | `Ctrl + S` | Save |
+| `Ctrl + T` | Open New Tab |
 | `Ctrl + O` | Open |
 | `Ctrl` + `+` | to increase the size |
 | `Ctrl` + `-` | to decrease the size |
@@ -60,6 +67,15 @@
 | `Win + V` | to see clipboard and emoji |
 |` Win + X`| Open the Quick Link menu|
 |` Win + Tab`| Open task view|
+|` Win + M`| Minimize all windows |
+|` Win + R`| Open the Run dialog box |
+|` Win + A`| Open the Action Center |
+|` Win + C`| Launch Cortona in listening mode (used for voice commands) |
+|` Win + S`| Search/Launch Cortona (listening mode) |
+|` Win + Ctrl + D`| Create New Virtual Desktop |
+|` Win + Ctrl + F4`| Close the Current Desktop |
+| `Win + Ctrl + Left Arrow Key` <br /> `Win + Ctrl + Right Arrow Key` | Switch between Virtual Desktops |
+| `Win + Left Arrow Key` <br /> `Win + Right Arrow Key` | Snap Current Windows to left or right |
 |` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
 |` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
@@ -167,7 +183,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Touchpad Shortcuts
+## TouchPad Shortcuts
 
 | Gesture | Description |
 | ------- | ----------- |
