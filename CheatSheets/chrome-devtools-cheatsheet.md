@@ -43,6 +43,8 @@ created: 2022-10-20
 | `Ctrl + Shift + +` | `Cmd(⌘) + Shift + +` | Zoom in |  
 | `Ctrl + -` | `Cmd(⌘) + -` |Zoom out |  
 | `Ctrl + 0` | `Cmd(⌘) + 0` | Restore default zoom level |
+| `Ctrl+Shift+P` | `Cmd(⌘)+Shift+P` | Open the Command Menu |
+| `Ctrl+F` | `Cmd(⌘)+F` |Search for text within the current panel. Supported only in the Elements, Console, Sources, Performance, Memory, JavaScript Profiler, and Quick Source panels. |
 
 **[🔼Back to Top](#table-of-contents)**
 
