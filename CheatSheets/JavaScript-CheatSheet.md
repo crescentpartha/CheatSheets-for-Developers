@@ -57,6 +57,7 @@ created: 2022-10-21
       - [Setting Dates](#setting-dates)
       - [Pulling Date and Time Values](#pulling-date-and-time-values)
       - [Setting Part of a Date](#setting-part-of-a-date)
+      - [Format Date Object](#format-date-object)
   - [DOM (Document Object Modulation)](#dom-document-object-modulation)
     - [Element Methods](#element-methods)
   - [Events](#events)
