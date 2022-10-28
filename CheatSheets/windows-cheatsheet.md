@@ -1,3 +1,9 @@
+---
+title: Windows CheatSheet
+description: The most commonly used windows keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [Windows Keyboard Shortcuts for Developers](#windows-keyboard-shortcuts-for-developers)
@@ -14,6 +20,9 @@
   - [App Rearrangement Shortcuts (Metro)](#app-rearrangement-shortcuts-metro)
   - [Open Task Manager](#open-task-manager)
   - [Settings Shortcuts](#settings-shortcuts)
+  - [TouchPad Shortcuts](#touchpad-shortcuts)
+  - [Take Screenshot Shortcut](#take-screenshot-shortcut)
+  - [Command Prompt Shortcuts](#command-prompt-shortcuts)
 
 # Windows Keyboard Shortcuts for Developers
 
@@ -31,7 +40,18 @@
 | `Ctrl + F` | Find |
 | `Ctrl + P` | Print |
 | `Ctrl + S` | Save |
+| `Ctrl + T` | Open New Tab |
 | `Ctrl + O` | Open |
+| `Ctrl` + `+` | to increase the size |
+| `Ctrl` + `-` | to decrease the size |
+|` Ctrl + D`| Delete the selected item and move it to the Recycle Bin|
+|` Ctrl + E`| Open Search(in most apps)|
+|` Ctrl + R`| To refresh the active window|
+|` Ctrl + Right arrow`| Move the cursor to the beginning of the next word|
+|` Ctrl + Left arrow`| Move the cursor to the beginning of the previous word|
+|` Ctrl + Down arrow `| Move the cursor to the beginning of the next paragraph|
+|` Ctrl + up arrow`| Move the cursor to the beginning of the previous paragraph|
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -40,7 +60,27 @@
 | Command | Description |
 | ------- | ----------- |
 | `Win` | Display or hide the Start screen |
+| `Win + ,` | see your desktop until you hold keys |
+|` Win + D`| Display and hide the desktop|
 | `Win + E` | Open File Explorer |
+|` Win + L`| Lock your PC|
+| `Win + V` | to see clipboard and emoji |
+|` Win + X`| Open the Quick Link menu|
+|` Win + Tab`| Open task view|
+|` Win + M`| Minimize all windows |
+|` Win + R`| Open the Run dialog box |
+|` Win + A`| Open the Action Center |
+|` Win + C`| Launch Cortona in listening mode (used for voice commands) |
+|` Win + S`| Search/Launch Cortona (listening mode) |
+|` Win + Ctrl + D`| Create New Virtual Desktop |
+|` Win + Ctrl + F4`| Close the Current Desktop |
+| `Win + Ctrl + Left Arrow Key` <br /> `Win + Ctrl + Right Arrow Key` | Switch between Virtual Desktops |
+| `Win + Left Arrow Key` <br /> `Win + Right Arrow Key` | Snap Current Windows to left or right |
+|` Win + PrtScn` <br/> ` Fn + Win + Spacebar`| For taking screenshot|
+|` Win + Shift + S`| Take Screenshot of selected area|
+|` Win + Upper Arrow key`| Maximize windows|
+| `Win + number key` | to open application from taskbar with numbered key position
+
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -105,6 +145,8 @@
 | Command | Description |
 | ------- | ----------- |
 | `Alt + PgUp` <br /> `Alt + Page Up` | Move between apps, left to right |
+| `Alt + F4` | to close the current program window |
+| `Alt + Tab` | lets you switch between open windows by holding Alt and using tab to change |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -138,5 +180,43 @@
 | ------- | ----------- |
 | `Win + I` | Open settings |
 | `Backspace` | Go back to the settings home page |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## TouchPad Shortcuts
+
+| Gesture | Description |
+| ------- | ----------- |
+| `Single Tap` | Single click |
+| `Tap with two fingers` | Right click |
+| `Tap twice and drag` | Multi Select |
+| `Drag two fingers` | Scroll |
+| `Pinch`🤏 | Zoom |
+| `Drag Three/Four fingers up` | Multitasking view |
+| `Drag Three/Four fingers down` | Show Desktop |
+| `Drag Three fingers left/right` | Switch apps |
+| `Drag Three fingers left/right` | Switch Desktops |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Take Screenshot Shortcut
+
+| Command | Description |
+| ------- | ----------- |
+| `Win + Shift + S` | Open Windows Snipping Tool |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Command Prompt Shortcuts
+
+| Gesture | Description |
+| ------- | ----------- |
+| `Ctrl + Up arrow` | Move up one line in the output history. |
+| `Ctrl + Down arrow` | Move down one line in the output history. |
+| `Ctrl + M` | Enter Mark mode. |
+| `Ctrl + Home (Mark mode)` | Move the cursor to the beginning of the buffer |
+| `Ctrl + End (Mark mode)` | Move the cursor to the end of the buffer. |
+| `Ctrl + Home (History navigation)` | If the command line is empty, move the viewport to the top of the buffer. Otherwise, delete all the characters to the left of the cursor in the command line. |
+| `Ctrl + End (History navigation)` | If the command line is empty, move the viewport to the command line. Otherwise, delete all the characters to the right of the cursor in the command line. |
 
 **[🔼Back to Top](#table-of-contents)**

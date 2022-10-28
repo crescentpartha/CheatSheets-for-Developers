@@ -1,5 +1,6 @@
 # CheatSheets-for-Developers
-A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to quick review while working.
+
+A Collection of programming [CheatSheets](./CheatSheets/) for developers to quick review while working.
 
 <div align="center">
 
@@ -33,33 +34,53 @@ A Collections of programming [Cheat Sheets](./CheatSheets/) for developers to qu
 1. [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
 2. [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
 3. [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
-4. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
-5. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
-6. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
-7. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
-8. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-9.  [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
-10. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
-11. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
+4. [cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)
+5. [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
+6. [bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)
+7. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
+8. [vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)
+9. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
+10. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
+11. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
+12. [npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)
+13. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
+14. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
+15. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
+16. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
+17. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+18. [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
+19. [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
+20. [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
+21. [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)
+22. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
+23. [kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)
+24. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
+25. [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
+26. [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
+27. [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
+28. [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
+29. [terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)
+30. [nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)
+31. [mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)
 
 ## ___Instructions___
 
-- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md)
-- If you are new to Open Source Contributions, checkout [How-To at a glance](docs/HOW-TO.md)
-- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md)
+- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md).
+- If you are new to open source contributions, check out [How-To at a glance](docs/HOW-TO.md).
+- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md).
 
-## Contribution
+## ___Contribution___
 
-> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets
+> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets.
 
 - Add content to CheatSheets
 - Add new CheatSheets
 - Suggest changes to existing CheatSheets
 - Discuss ideas in issues
 
-## Thanks to all contributors ❤
+## ___Thanks to all the contributors ❤___
 
-___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on Github, made ___suggestions___, given a ___Star___, and generally helped make this a better repository for developers.
+___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on GitHub, made ___suggestions___, given a ___star___, and generally helped make this a better repository for developers.
 
 <!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
 
