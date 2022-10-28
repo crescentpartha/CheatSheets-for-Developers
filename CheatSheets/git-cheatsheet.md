@@ -68,6 +68,12 @@ created: 2022-10-18
 | `git checkout [file]` | Matches the file with last commit |
 | `git help -a` | Shows the list of all available Git commands |
 | `git restore .` | To restore all files in the current directory |
+| `logs/
+*.notes
+pattern*/` | Save a file with desired paterns as .gitignore with either direct string
+matches or wildcard globs. (Preventing unintentional staging or commiting of files) |
+| `git config --global core.excludesfile [file]` | system wide ignore patern for all local repositories
+ |
 
 **[🔼Back to Top](#table-of-contents)**
 
