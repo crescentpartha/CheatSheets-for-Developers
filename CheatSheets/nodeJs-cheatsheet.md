@@ -9,6 +9,25 @@ created: 2022-10-27
 - [NodeJS CheatSheet for Developers](#nodejs-cheatsheet-for-developers)
   - [NodeJS Basic Commands](#nodejs-basic-commands)
   - [Built In Methods](#built-in-methods)
+  - [Important keyword](#important-keyword)
+  - [Console](#console)
+  - [Timers](#timers)
+  - [Modules](#modules)
+  - [Process](#process)
+  - [Child Process](#child-Process)
+  - [UTIL](#UTIL)
+  - [EVENTS](#EVENTS)
+  - [STREAM](#STREAM)
+    - [Read](#Read)
+    - [Write](#Write)
+  - [FILE SYSTEM](#FILE-SYSTEM)
+  - [PATH](#PATH)
+  - [HTTP](#HTTP)
+  - [URL](#URL)
+  - [QUERY STRING](#QUERY-STRING)
+  - [ASSERT](#ASSERT)
+  - [OS](#OS)
+  - [BUFFER](#BUFFER)
 
 # NodeJS CheatSheet for Developers
 
@@ -37,6 +56,7 @@ created: 2022-10-27
 **[🔼Back to Top](#table-of-contents)**
  
 
+## Important keyword
 
 |keyword|description|
 |---------|----------|
@@ -48,11 +68,11 @@ created: 2022-10-27
 |`Buffer`|The Buffer class is a global type for dealing with binary data directly.|
 
 
+**[🔼Back to Top](#table-of-contents)**
 
-/* *******************************************************************************************
- * CONSOLE
- * http://nodejs.org/api/console.html
- * ******************************************************************************************* */
+
+ ## Console
+
 
 |keyword|description|
 |---------|----------|
@@ -66,10 +86,10 @@ created: 2022-10-27
 |`console.trace(label)`|                 Print a stack trace to stderr of the current position.|
 |`console.assert(expression, [message])`|   Same as assert.ok() where if the expression evaluates as false throw an AssertionError with message.|
 
-/* *******************************************************************************************
- * TIMERS
- * http:nodejs.org/api/timers.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
+
+
+ ## Timers
 
 |keyword|description|
 |---------|----------|
@@ -83,10 +103,10 @@ created: 2022-10-27
 |`ref()`|     If you had previously unref()d a timer you can call ref() to explicitly request the timer hold the program open.|
 
 
-/* *******************************************************************************************
- * MODULES
- * http:nodejs.org/api/modules.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
+
+
+ ## Modules 
 
 |keyword|description|
 |---------|----------|
@@ -98,12 +118,10 @@ created: 2022-10-27
 |`module.parent`|     The module that required this one.|
 |`module.children`|   The module objects required by this one.|
 
+**[🔼Back to Top](#table-of-contents)**
 
 
-/* *******************************************************************************************
- * PROCESS
- * http:nodejs.org/api/process.html
- * ******************************************************************************************* */
+## Process
 
 |keyword|description|
 |---------|----------|
@@ -142,13 +160,10 @@ created: 2022-10-27
 |`process.uptime()`|                      Number of seconds Node has been running.|
 |`process.hrtime()`|                      Returns the current high-resolution real time in a [seconds, nanoseconds] tuple Array.|
 
-
-/* *******************************************************************************************
- * CHILD PROCESS
- * http://nodejs.org/api/child_process.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
 
 
+ ## Child Process
 
 |keyword|description|
 |---------|----------|
@@ -167,13 +182,10 @@ created: 2022-10-27
 |`child_process.fork(modulePath, [args], [options])|`             This is a special case of the spawn() functionality for spawning Node processes. In addition to having all the methods in a normal ChildProcess instance, the returned object has a communication channel built-in. |
 
 
-/* *******************************************************************************************
- * UTIL
- * http://nodejs.org/api/util.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
 
+## UTIL
 
-// These functions are in the module 'util'. Use require('util') to access them.
 |keyword|description|
 |---------|----------|
 |`util.format(format, [...])`|   Returns a formatted string using the first argument as a printf-like format. (%s, %d, %j)|
@@ -190,15 +202,11 @@ created: 2022-10-27
 |`util.promisify(fn)`|              Takes a function whose last argument is a callback and returns a version that returns promises.|
 |`util.inherits(constructor, superConstructor)`|   Inherit the prototype methods from one constructor into another.|
 
-/* *******************************************************************************************
- * EVENTS
- * http://nodejs.org/api/events.html
- * ******************************************************************************************* */
+
+**[🔼Back to Top](#table-of-contents)**
 
 
-// All objects which emit events are instances of events.EventEmitter. You can access this module by doing: require("events");
-// To access the EventEmitter class, require('events').EventEmitter.
-// All EventEmitters emit the event 'newListener' when new listeners are added and 'removeListener' when a listener is removed.
+## EVENTS
 
 
 |keyword|description|
@@ -213,13 +221,12 @@ created: 2022-10-27
 |`emitter.emit(event, [arg1], [arg2], [...])`|   Execute each of the listeners in order with the supplied arguments. Returns true if event had listeners, false otherwise.|
 |`EventEmitter.listenerCount(emitter, event)`|   Return the number of listeners for a given event.|
 
-
-/* *******************************************************************************************
- * STREAM
- * http://nodejs.org/api/stream.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
 
 
+ ## STREAM
+
+## Read
 
 |keyword|description|
 |---------|----------|
@@ -237,6 +244,9 @@ created: 2022-10-27
 |`readable.unpipe([destination])`|            This method will remove the hooks set up for a previous pipe() call. If the destination is not specified, then all pipes are removed.|
 |`readable.unshift(chunk)`|                   This is useful in certain cases where a stream is being consumed by a parser, which needs to "un-consume" some data that it has optimistically pulled out of the source, so that the stream can be passed on to some other party.|
 
+**[🔼Back to Top](#table-of-contents)**
+
+## Write 
 
 |keyword|description|
 |---------|----------|
@@ -249,15 +259,10 @@ created: 2022-10-27
 |`writer.on('unpipe', function(src) {})`|           This is emitted whenever the unpipe() method is called on a readable stream, removing this writable from its set of destinations.| 
 |`writer.on('error', function(src) {})`|            Emitted if there was an error when writing or piping data.| 
 
-
-/* *******************************************************************************************
- * FILE SYSTEM
- * http://nodejs.org/api/fs.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
 
 
-// To use this module do require('fs').
-// All the methods have asynchronous and synchronous forms.
+ ## FILE SYSTEM
 
 |keyword|description|
 |---------|----------|
@@ -327,18 +332,10 @@ created: 2022-10-27
 |`fs.createReadStream(path, [options])`|    Returns a new ReadStream object.|
 |`fs.createWriteStream(path, [options])`|   Returns a new WriteStream object.|
 
+**[🔼Back to Top](#table-of-contents)**
 
-/* *******************************************************************************************
- * PATH
- * http://nodejs.org/api/fs.html
- * ******************************************************************************************* */
-
-
-// Use require('path') to use this module.
-// This module contains utilities for handling and transforming file paths.
-// Almost all these methods perform only string transformations.
-// The file system is not consulted to check whether paths are valid.
-
+ ## PATH
+ 
 |keyword|description|
 |---------|----------|
 |`path.normalize(p)`|                     Normalize a string path, taking care of '..' and '.' parts.|
@@ -351,14 +348,10 @@ created: 2022-10-27
 |`path.sep`|                              The platform-specific file separator. '\\' or '/'.|
 |`path.delimiter`|                        The platform-specific path delimiter, '`|' or ':'.|
 
-
-/* *******************************************************************************************
- * HTTP
- * http://nodejs.org/api/http.html
- * ******************************************************************************************* */
+**[🔼Back to Top](#table-of-contents)**
 
 
-// To use the HTTP server and client one must require('http').
+ ## HTTP
 
 |keyword|description|
 |---------|----------|
@@ -414,14 +407,10 @@ created: 2022-10-27
 |`message.socket`|                          The net.Socket object associated with the connection.|
 |`message.setTimeout(msecs, callback)`|     Calls message.connection.setTimeout(msecs, callback).|
 
-
-/* *******************************************************************************************
- * URL
- * http://nodejs.org/api/url.html
- * ******************************************************************************************* */
+  **[🔼Back to Top](#table-of-contents)**
 
 
-// This module has utilities for URL resolution and parsing. Call require('url') to use it.
+ ## URL
 
 |keyword|description|
 |---------|----------|
@@ -429,29 +418,19 @@ created: 2022-10-27
 |`url.format(urlObj)`|                                           Take a parsed URL object, and return a formatted URL string.|
 |`url.resolve(from, to)`|                                        Take a base URL, and a href URL, and resolve them as a browser would for an anchor tag.|
 
+**[🔼Back to Top](#table-of-contents)**
 
-/* *******************************************************************************************
- * QUERY STRING
- * http://nodejs.org/api/querystring.html
- * ******************************************************************************************* */
-
-
-// This module provides utilities for dealing with query strings. Call require('querystring') to use it.
+ ## QUERY STRING
 
 |keyword|description|
 |---------|----------|
 |`querystring.stringify(obj, [sep], [eq])`|         Serialize an object to a query string. Optionally override the default separator ('&') and assignment ('=') characters.|
 |`querystring.parse(str, [sep], [eq], [options])`|  Deserialize a query string to an object. Optionally override the default separator ('&') and assignment ('=') characters.|
 
-
-/* *******************************************************************************************
- * ASSERT
- * http://nodejs.org/api/assert.html
- * ******************************************************************************************* */
-
-
-// This module is used for writing unit tests for your applications, you can access it with require('assert').
-
+**[🔼Back to Top](#table-of-contents)**
+ 
+  ## ASSERT
+ 
 |keyword|description|
 |---------|----------|
 |`assert.fail(actual, expected, message, operator)`|      Throws an exception that displays the values for actual and expected separated by the provided operator.|
@@ -466,15 +445,9 @@ created: 2022-10-27
 |`assert.doesNotThrow(block, [message])`|                 Expects block not to throw an error, see assert.throws for details.|
 |`assert.ifError(value)`|                                 Tests if value is not a false value, throws if it is a true value. Useful when testing the first argument, error in callbacks.|
 
+**[🔼Back to Top](#table-of-contents)**
 
-/* *******************************************************************************************
- * OS
- * http://nodejs.org/api/os.html
- * ******************************************************************************************* */
-
-
-// Provides a few basic operating-system related utility functions.
-// Use require('os') to access this module.
+## OS
 
 |keyword|description|
 |---------|----------|
@@ -493,15 +466,10 @@ created: 2022-10-27
 |`os.networkInterfaces()`|   Get a list of network interfaces.|
 |`os.EOL`|                   A constant defining the appropriate End-of-line marker for the operating system.|
 
+**[🔼Back to Top](#table-of-contents)**
 
-/* *******************************************************************************************
- * BUFFER
- * http://nodejs.org/api/buffer.html
- * ******************************************************************************************* */
-
-
-// Buffer is used to dealing with binary data
-// Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap
+ ## BUFFER
+ 
 |keyword|description|
 |---------|----------|
 |`Buffer.from(size)`|                                                   Allocates a new buffer of size octets.|
@@ -521,4 +489,4 @@ created: 2022-10-27
 |`buf.length`|                                                          The size of the buffer in bytes, Note that this is not necessarily the size of the contents|
 |`buffer.INSPECT_MAX_BYTES`|                                            How many bytes will be returned when buffer.inspect() is called. This can be overridden by user modules.|
 
-
+**[🔼Back to Top](#table-of-contents)**
