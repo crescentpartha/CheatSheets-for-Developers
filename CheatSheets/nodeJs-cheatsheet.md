@@ -339,16 +339,17 @@ created: 2022-10-27
 // Almost all these methods perform only string transformations.
 // The file system is not consulted to check whether paths are valid.
 
-path.normalize(p);                    // Normalize a string path, taking care of '..' and '.' parts.
-path.join([path1], [path2], [...]);   // Join all arguments together and normalize the resulting path.
-path.resolve([from ...], to);         // Resolves 'to' to an absolute path.
-path.relative(from, to);              // Solve the relative path from 'from' to 'to'.
-path.dirname(p);                      // Return the directory name of a path. Similar to the Unix dirname command.
-path.basename(p, [ext]);              // Return the last portion of a path. Similar to the Unix basename command.
-path.extname(p);                      // Return the extension of the path, from the last '.' to end of string in the last portion of the path.
-
-path.sep;                             // The platform-specific file separator. '\\' or '/'.
-path.delimiter;                       // The platform-specific path delimiter, ';' or ':'.
+|keyword|description|
+|---------|----------|
+|`path.normalize(p)`|                     Normalize a string path, taking care of '..' and '.' parts.|
+|`path.join([path1], [path2], [...])`|    Join all arguments together and normalize the resulting path.|
+|`path.resolve([from ...], to)`|          Resolves 'to' to an absolute path.|
+|`path.relative(from, to)`|               Solve the relative path from 'from' to 'to'.|
+|`path.dirname(p)`|                       Return the directory name of a path. Similar to the Unix dirname command.|
+|`path.basename(p, [ext])`|               Return the last portion of a path. Similar to the Unix basename command.|
+|`path.extname(p)`|                       Return the extension of the path, from the last '.' to end of string in the last portion of the path.|
+|`path.sep`|                              The platform-specific file separator. '\\' or '/'.|
+|`path.delimiter`|                        The platform-specific path delimiter, '`|' or ':'.|
 
 
 /* *******************************************************************************************
@@ -359,67 +360,59 @@ path.delimiter;                       // The platform-specific path delimiter, '
 
 // To use the HTTP server and client one must require('http').
 
-http.STATUS_CODES;                                             // A collection of all the standard HTTP response status codes, and the short description of each.
-http.request(options, [callback]);                             // This function allows one to transparently issue requests.
-http.get(options, [callback]);                                 // Set the method to GET and calls req.end() automatically.
-
-server = http.createServer([requestListener]);                 // Returns a new web server object. The requestListener is a function which is automatically added to the 'request' event.
-server.listen(port, [hostname], [backlog], [callback]);        // Begin accepting connections on the specified port and hostname.
-server.listen(path, [callback]);                               // Start a UNIX socket server listening for connections on the given path.
-server.listen(handle, [callback]);                             // The handle object can be set to either a server or socket (anything with an underlying _handle member), or a {fd: <n>} object.
-server.close([callback]);                                      // Stops the server from accepting new connections. 
-server.setTimeout(msecs, callback);                            // Sets the timeout value for sockets, and emits a 'timeout' event on the Server object, passing the socket as an argument, if a timeout occurs.
-
-server.maxHeadersCount;  // Limits maximum incoming headers count, equal to 1000 by default. If set to 0 - no limit will be applied.
-server.timeout;          // The number of milliseconds of inactivity before a socket is presumed to have timed out.
-
-server.on('request', function (request, response) { });        // Emitted each time there is a request.
-server.on('connection', function (socket) { });                // When a new TCP stream is established.
-server.on('close', function () { });                           // Emitted when the server closes.
-server.on('checkContinue', function (request, response) { });  // Emitted each time a request with an http Expect: 100-continue is received.
-server.on('connect', function (request, socket, head) { });    // Emitted each time a client requests a http CONNECT method.
-server.on('upgrade', function (request, socket, head) { });    // Emitted each time a client requests a http upgrade.
-server.on('clientError', function (exception, socket) { });    // If a client connection emits an 'error' event - it will forwarded here.
-
-request.write(chunk, [encoding]);                              // Sends a chunk of the body.
-request.end([data], [encoding]);                               // Finishes sending the request. If any parts of the body are unsent, it will flush them to the stream.
-request.abort();                                               // Aborts a request.
-request.setTimeout(timeout, [callback]);                       // Once a socket is assigned to this request and is connected socket.setTimeout() will be called.
-request.setNoDelay([noDelay]);                                 // Once a socket is assigned to this request and is connected socket.setNoDelay() will be called.
-request.setSocketKeepAlive([enable], [initialDelay]);          // Once a socket is assigned to this request and is connected socket.setKeepAlive() will be called.
-
-request.on('response', function(response) { });                // Emitted when a response is received to this request. This event is emitted only once.
-request.on('socket', function(socket) { });                    // Emitted after a socket is assigned to this request.
-request.on('connect', function(response, socket, head) { });   // Emitted each time a server responds to a request with a CONNECT method. If this event isn't being listened for, clients receiving a CONNECT method will have their connections closed.
-request.on('upgrade', function(response, socket, head) { });   // Emitted each time a server responds to a request with an upgrade. If this event isn't being listened for, clients receiving an upgrade header will have their connections closed.
-request.on('continue', function() { });                        // Emitted when the server sends a '100 Continue' HTTP response, usually because the request contained 'Expect: 100-continue'. This is an instruction that the client should send the request body.
-
-response.write(chunk, [encoding]);                             // This sends a chunk of the response body. If this method is called and response.writeHead() has not been called, it will switch to implicit header mode and flush the implicit headers.
-response.writeContinue();                                      // Sends a HTTP/1.1 100 Continue message to the client, indicating that the request body should be sent.
-response.writeHead(statusCode, [reasonPhrase], [headers]);     // Sends a response header to the request.
-response.setTimeout(msecs, callback);                          // Sets the Socket's timeout value to msecs. If a callback is provided, then it is added as a listener on the 'timeout' event on the response object.
-response.setHeader(name, value);                               // Sets a single header value for implicit headers. If this header already exists in the to-be-sent headers, its value will be replaced. Use an array of strings here if you need to send multiple headers with the same name.
-response.getHeader(name);                                      // Reads out a header that's already been queued but not sent to the client. Note that the name is case insensitive.
-response.removeHeader(name);                                   // Removes a header that's queued for implicit sending.
-response.addTrailers(headers);                                 // This method adds HTTP trailing headers (a header but at the end of the message) to the response.
-response.end([data], [encoding]);                              // This method signals to the server that all of the response headers and body have been sent; that server should consider this message complete. The method, response.end(), MUST be called on each response.
-
-response.statusCode;                                           // When using implicit headers (not calling response.writeHead() explicitly), this property controls the status code that will be sent to the client when the headers get flushed.
-response.headersSent;                                          // Boolean (read-only). True if headers were sent, false otherwise.
-response.sendDate;                                             // When true, the Date header will be automatically generated and sent in the response if it is not already present in the headers. Defaults to true.
-
-response.on('close', function () { });  // Indicates that the underlying connection was terminated before response.end() was called or able to flush.
-response.on('finish', function() { });  // Emitted when the response has been sent. 
-
-message.httpVersion;                    // In case of server request, the HTTP version sent by the client. In the case of client response, the HTTP version of the connected-to server.
-message.headers;                        // The request/response headers object.
-message.trailers;                       // The request/response trailers object. Only populated after the 'end' event.
-message.method;                         // The request method as a string. Read only. Example: 'GET', 'DELETE'.
-message.url;                            // Request URL string. This contains only the URL that is present in the actual HTTP request.
-message.statusCode;                     // The 3-digit HTTP response status code. E.G. 404.
-message.socket;                         // The net.Socket object associated with the connection.
-
-message.setTimeout(msecs, callback);    // Calls message.connection.setTimeout(msecs, callback).
+|keyword|description|
+|---------|----------|
+|`http.STATUS_CODES`|                                              A collection of all the standard HTTP response status codes, and the short description of each.|
+|`http.request(options, [callback])`|                              This function allows one to transparently issue requests.|
+|`http.get(options, [callback])`|                                  Set the method to GET and calls req.end() automatically.|
+|`server = http.createServer([requestListener])`|                  Returns a new web server object. The requestListener is a function which is automatically added to the 'request' event.|
+|`server.listen(port, [hostname], [backlog], [callback])`|         Begin accepting connections on the specified port and hostname.|
+|`server.listen(path, [callback])`|                                Start a UNIX socket server listening for connections on the given path.|
+|`server.listen(handle, [callback])`|                              The handle object can be set to either a server or socket (anything with an underlying _handle member), or a {fd: <n>} object.|
+|`server.close([callback])`|                                       Stops the server from accepting new connections.| 
+|`server.setTimeout(msecs, callback)`|                             Sets the timeout value for sockets, and emits a 'timeout' event on the Server object, passing the socket as an argument, if a timeout occurs.|
+|`server.maxHeadersCount`|   Limits maximum incoming headers count, equal to 1000 by default. If set to 0 - no limit will be applied.|
+|`server.timeout`|           The number of milliseconds of inactivity before a socket is presumed to have timed out.|
+|`server.on('request', function (request, response) { })`|         Emitted each time there is a request.|
+|`server.on('connection', function (socket) { })`|                 When a new TCP stream is established.|
+|`server.on('close', function () { })`|                            Emitted when the server closes.|
+|`server.on('checkContinue', function (request, response) { })`|   Emitted each time a request with an http Expect: 100-continue is received.|
+|`server.on('connect', function (request, socket, head) { })`|     Emitted each time a client requests a http CONNECT method.|
+|`server.on('upgrade', function (request, socket, head) { })`|     Emitted each time a client requests a http upgrade.|
+|`server.on('clientError', function (exception, socket) { })`|     If a client connection emits an 'error' event - it will forwarded here.|
+|`request.write(chunk, [encoding])`|                               Sends a chunk of the body.|
+|`request.end([data], [encoding])`|                                Finishes sending the request. If any parts of the body are unsent, it will flush them to the stream.|
+|`request.abort()`|                                                Aborts a request.|
+|`request.setTimeout(timeout, [callback])`|                        Once a socket is assigned to this request and is connected socket.setTimeout() will be called.|
+|`request.setNoDelay([noDelay])`|                                  Once a socket is assigned to this request and is connected socket.setNoDelay() will be called.|
+|`request.setSocketKeepAlive([enable], [initialDelay])`|           Once a socket is assigned to this request and is connected socket.setKeepAlive() will be called.|
+|`request.on('response', function(response) { })`|                 Emitted when a response is received to this request. This event is emitted only once.|
+|`request.on('socket', function(socket) { })`|                     Emitted after a socket is assigned to this request.|
+|`request.on('connect', function(response, socket, head) { })`|    Emitted each time a server responds to a request with a CONNECT method. If this event isn't being listened for, clients receiving a CONNECT method will have their connections closed.|
+|`request.on('upgrade', function(response, socket, head) { })`|    Emitted each time a server responds to a request with an upgrade. If this event isn't being listened for, clients receiving an upgrade header will have their connections closed.|
+|`request.on('continue', function() { })`|                         Emitted when the server sends a '100 Continue' HTTP response, usually because the request contained 'Expect: 100-continue'. This is an instruction that the client should send the request body.|
+|`response.write(chunk, [encoding])`|                              This sends a chunk of the response body. If this method is called and response.writeHead() has not been called, it will switch to implicit header mode and flush the implicit headers.|
+|`response.writeContinue()`|                                       Sends a HTTP/1.1 100 Continue message to the client, indicating that the request body should be sent.|
+|`response.writeHead(statusCode, [reasonPhrase], [headers])`|      Sends a response header to the request.|
+|`response.setTimeout(msecs, callback)`|                           Sets the Socket's timeout value to msecs. If a callback is provided, then it is added as a listener on the 'timeout' event on the response object.|
+|`response.setHeader(name, value)`|                                Sets a single header value for implicit headers. If this header already exists in the to-be-sent headers, its value will be replaced. Use an array of strings here if you need to send multiple headers with the same name.|
+|`response.getHeader(name)`|                                       Reads out a header that's already been queued but not sent to the client. Note that the name is case insensitive.|
+|`response.removeHeader(name)`|                                    Removes a header that's queued for implicit sending.|
+|`response.addTrailers(headers)`|                                  This method adds HTTP trailing headers (a header but at the end of the message) to the response.|
+|`response.end([data], [encoding])`|                               This method signals to the server that all of the response headers and body have been sent that server should consider this message complete. The method, response.end(), MUST be called on each response.|
+|`response.statusCode`|                                            When using implicit headers (not calling response.writeHead() explicitly), this property controls the status code that will be sent to the client when the headers get flushed.|
+|`response.headersSent`|                                           Boolean (read-only). True if headers were sent, false otherwise.|
+|`response.sendDate`|                                              When true, the Date header will be automatically generated and sent in the response if it is not already present in the headers. Defaults to true.|
+|`response.on('close', function () { })`|   Indicates that the underlying connection was terminated before response.end() was called or able to flush.|
+|`response.on('finish', function() { })`|   Emitted when the response has been sent. |
+|`message.httpVersion`|                     In case of server request, the HTTP version sent by the client. In the case of client response, the HTTP version of the connected-to server.|
+|`message.headers`|                         The request/response headers object.|
+|`message.trailers`|                        The request/response trailers object. Only populated after the 'end' event.|
+|`message.method`|                          The request method as a string. Read only. Example: 'GET', 'DELETE'.|
+|`message.url`|                             Request URL string. This contains only the URL that is present in the actual HTTP request.|
+|`message.statusCode`|                      The 3-digit HTTP response status code. E.G. 404.|
+|`message.socket`|                          The net.Socket object associated with the connection.|
+|`message.setTimeout(msecs, callback)`|     Calls message.connection.setTimeout(msecs, callback).|
 
 
 /* *******************************************************************************************
@@ -430,9 +423,11 @@ message.setTimeout(msecs, callback);    // Calls message.connection.setTimeout(m
 
 // This module has utilities for URL resolution and parsing. Call require('url') to use it.
 
-url.parse(urlStr, [parseQueryString], [slashesDenoteHost]);  // Take a URL string, and return an object.
-url.format(urlObj);                                          // Take a parsed URL object, and return a formatted URL string.
-url.resolve(from, to);                                       // Take a base URL, and a href URL, and resolve them as a browser would for an anchor tag.
+|keyword|description|
+|---------|----------|
+|`url.parse(urlStr, [parseQueryString], [slashesDenoteHost])`|  Take a URL string, and return an object.|
+|`url.format(urlObj)`|                                           Take a parsed URL object, and return a formatted URL string.|
+|`url.resolve(from, to)`|                                        Take a base URL, and a href URL, and resolve them as a browser would for an anchor tag.|
 
 
 /* *******************************************************************************************
@@ -443,8 +438,10 @@ url.resolve(from, to);                                       // Take a base URL,
 
 // This module provides utilities for dealing with query strings. Call require('querystring') to use it.
 
-querystring.stringify(obj, [sep], [eq]);         // Serialize an object to a query string. Optionally override the default separator ('&') and assignment ('=') characters.
-querystring.parse(str, [sep], [eq], [options]);  // Deserialize a query string to an object. Optionally override the default separator ('&') and assignment ('=') characters.
+|keyword|description|
+|---------|----------|
+|`querystring.stringify(obj, [sep], [eq])`|         Serialize an object to a query string. Optionally override the default separator ('&') and assignment ('=') characters.|
+|`querystring.parse(str, [sep], [eq], [options])`|  Deserialize a query string to an object. Optionally override the default separator ('&') and assignment ('=') characters.|
 
 
 /* *******************************************************************************************
@@ -455,17 +452,19 @@ querystring.parse(str, [sep], [eq], [options]);  // Deserialize a query string t
 
 // This module is used for writing unit tests for your applications, you can access it with require('assert').
 
-assert.fail(actual, expected, message, operator);     // Throws an exception that displays the values for actual and expected separated by the provided operator.
-assert(value, message); assert.ok(value, [message]);  // Tests if value is truthy, it is equivalent to assert.equal(true, !!value, message);
-assert.equal(actual, expected, [message]);            // Tests shallow, coercive equality with the equal comparison operator ( == ).
-assert.notEqual(actual, expected, [message]);         // Tests shallow, coercive non-equality with the not equal comparison operator ( != ).
-assert.deepEqual(actual, expected, [message]);        // Tests for deep equality.
-assert.notDeepEqual(actual, expected, [message]);     // Tests for any deep inequality.
-assert.strictEqual(actual, expected, [message]);      // Tests strict equality, as determined by the strict equality operator ( === )
-assert.notStrictEqual(actual, expected, [message]);   // Tests strict non-equality, as determined by the strict not equal operator ( !== )
-assert.throws(block, [error], [message]);             // Expects block to throw an error. error can be constructor, RegExp or validation function.
-assert.doesNotThrow(block, [message]);                // Expects block not to throw an error, see assert.throws for details.
-assert.ifError(value);                                // Tests if value is not a false value, throws if it is a true value. Useful when testing the first argument, error in callbacks.
+|keyword|description|
+|---------|----------|
+|`assert.fail(actual, expected, message, operator)`|      Throws an exception that displays the values for actual and expected separated by the provided operator.|
+|`assert(value, message)`| assert.ok(value, [message])`|   Tests if value is truthy, it is equivalent to assert.equal(true, !!value, message)|
+|`assert.equal(actual, expected, [message])`|             Tests shallow, coercive equality with the equal comparison operator ( == ).|
+|`assert.notEqual(actual, expected, [message])`|          Tests shallow, coercive non-equality with the not equal comparison operator ( != ).|
+|`assert.deepEqual(actual, expected, [message])`|         Tests for deep equality.|
+|`assert.notDeepEqual(actual, expected, [message])`|      Tests for any deep inequality.|
+|`assert.strictEqual(actual, expected, [message])`|       Tests strict equality, as determined by the strict equality operator ( === )|
+|`assert.notStrictEqual(actual, expected, [message])`|    Tests strict non-equality, as determined by the strict not equal operator ( !== )|
+|`assert.throws(block, [error], [message])`|              Expects block to throw an error. error can be constructor, RegExp or validation function.|
+|`assert.doesNotThrow(block, [message])`|                 Expects block not to throw an error, see assert.throws for details.|
+|`assert.ifError(value)`|                                 Tests if value is not a false value, throws if it is a true value. Useful when testing the first argument, error in callbacks.|
 
 
 /* *******************************************************************************************
@@ -477,20 +476,22 @@ assert.ifError(value);                                // Tests if value is not a
 // Provides a few basic operating-system related utility functions.
 // Use require('os') to access this module.
 
-os.tmpdir();             // Returns the operating system's default directory for temp files.
-os.endianness();         // Returns the endianness of the CPU. Possible values are "BE" or "LE".
-os.hostname();           // Returns the hostname of the operating system.
-os.type();               // Returns the operating system name.
-os.platform();           // Returns the operating system platform.
-os.arch();               // Returns the operating system CPU architecture.
-os.release();            // Returns the operating system release.
-os.uptime();             // Returns the system uptime in seconds.
-os.loadavg();            // Returns an array containing the 1, 5, and 15 minute load averages.
-os.totalmem();           // Returns the total amount of system memory in bytes.
-os.freemem();            // Returns the amount of free system memory in bytes.
-os.cpus();               // Returns an array of objects containing information about each CPU/core installed: model, speed (in MHz), and times (an object containing the number of milliseconds the CPU/core spent in: user, nice, sys, idle, and irq).
-os.networkInterfaces();  // Get a list of network interfaces.
-os.EOL;                  // A constant defining the appropriate End-of-line marker for the operating system.
+|keyword|description|
+|---------|----------|
+|`os.tmpdir()`|              Returns the operating system's default directory for temp files.|
+|`os.endianness()`|          Returns the endianness of the CPU. Possible values are "BE" or "LE".|
+|`os.hostname()`|            Returns the hostname of the operating system.|
+|`os.type()`|                Returns the operating system name.|
+|`os.platform()`|            Returns the operating system platform.|
+|`os.arch()`|                Returns the operating system CPU architecture.|
+|`os.release()`|             Returns the operating system release.|
+|`os.uptime()`|              Returns the system uptime in seconds.|
+|`os.loadavg()`|             Returns an array containing the 1, 5, and 15 minute load averages.|
+|`os.totalmem()`|            Returns the total amount of system memory in bytes.|
+|`os.freemem()`|             Returns the amount of free system memory in bytes.|
+|`os.cpus()`|                Returns an array of objects containing information about each CPU/core installed: model, speed (in MHz), and times (an object containing the number of milliseconds the CPU/core spent in: user, nice, sys, idle, and irq).|
+|`os.networkInterfaces()`|   Get a list of network interfaces.|
+|`os.EOL`|                   A constant defining the appropriate End-of-line marker for the operating system.|
 
 
 /* *******************************************************************************************
@@ -501,25 +502,23 @@ os.EOL;                  // A constant defining the appropriate End-of-line mark
 
 // Buffer is used to dealing with binary data
 // Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap
+|keyword|description|
+|---------|----------|
+|`Buffer.from(size)`|                                                   Allocates a new buffer of size octets.|
+|`Buffer.from(array)`|                                                  Allocates a new buffer using an array of octets.|
+|`Buffer.from(str, [encoding])`|                                        Allocates a new buffer containing the given str. encoding defaults to 'utf8'.|
+|`Buffer.isEncoding(encoding)`|                                         Returns true if the encoding is a valid encoding argument, or false otherwise.|
+|`Buffer.isBuffer(obj)`|                                                Tests if obj is a Buffer|
+|`Buffer.concat(list, [totalLength])`|                                  Returns a buffer which is the result of concatenating all the buffers in the list together.|
+|`Buffer.byteLength(string, [encoding])`|                               Gives the actual byte length of a string.|
+|`buf.write(string, [offset], [length], [encoding])`|                   Writes string to the buffer at offset using the given encoding|
+|`buf.toString([encoding], [start], [end])`|                            Decodes and returns a string from buffer data encoded with encoding (defaults to 'utf8') beginning at start (defaults to 0) and ending at end (defaults to buffer.length).|
+|`buf.toJSON()`|                                                        Returns a JSON-representation of the Buffer instance, which is identical to the output for JSON Arrays|
+|`buf.copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd])`|   Does copy between buffers. The source and target regions can be overlapped|
+|`buf.slice([start], [end])`|                                           Returns a new buffer which references the same memory as the old, but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes. Negative indexes start from the end of the buffer.|   
+|`buf.fill(value, [offset], [end])`|                                    Fills the buffer with the specified value|
+|`buf[index]`|                                                          Get and set the octet at index|
+|`buf.length`|                                                          The size of the buffer in bytes, Note that this is not necessarily the size of the contents|
+|`buffer.INSPECT_MAX_BYTES`|                                            How many bytes will be returned when buffer.inspect() is called. This can be overridden by user modules.|
 
-Buffer.from(size);                                                  // Allocates a new buffer of size octets.
-Buffer.from(array);                                                 // Allocates a new buffer using an array of octets.
-Buffer.from(str, [encoding]);                                       // Allocates a new buffer containing the given str. encoding defaults to 'utf8'.
-
-Buffer.isEncoding(encoding);                                        // Returns true if the encoding is a valid encoding argument, or false otherwise.
-Buffer.isBuffer(obj);                                               // Tests if obj is a Buffer
-Buffer.concat(list, [totalLength]);                                 // Returns a buffer which is the result of concatenating all the buffers in the list together.
-Buffer.byteLength(string, [encoding]);                              // Gives the actual byte length of a string.
-
-buf.write(string, [offset], [length], [encoding]);                  // Writes string to the buffer at offset using the given encoding
-buf.toString([encoding], [start], [end]);                           // Decodes and returns a string from buffer data encoded with encoding (defaults to 'utf8') beginning at start (defaults to 0) and ending at end (defaults to buffer.length).
-buf.toJSON();                                                       // Returns a JSON-representation of the Buffer instance, which is identical to the output for JSON Arrays
-buf.copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd]);  // Does copy between buffers. The source and target regions can be overlapped
-buf.slice([start], [end]);                                          // Returns a new buffer which references the same memory as the old, but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes. Negative indexes start from the end of the buffer.   
-buf.fill(value, [offset], [end]);                                   // Fills the buffer with the specified value
-buf[index];                                                         // Get and set the octet at index
-buf.length;                                                         // The size of the buffer in bytes, Note that this is not necessarily the size of the contents
-
-buffer.INSPECT_MAX_BYTES;                                           // How many bytes will be returned when buffer.inspect() is called. This can be overridden by user modules.
-Footer
 
