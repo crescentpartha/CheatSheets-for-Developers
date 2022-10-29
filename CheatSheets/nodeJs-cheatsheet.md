@@ -149,23 +149,22 @@ created: 2022-10-27
  * ******************************************************************************************* */
 
 
-// Node provides a tri-directional popen facility through the child_process module.
-// It is possible to stream data through a child's stdin, stdout, and stderr in a fully non-blocking way.
 
-ChildProcess;                                                 // Class. ChildProcess is an EventEmitter.
-
-child.stdin;                                                  // A Writable Stream that represents the child process's stdin
-child.stdout;                                                 // A Readable Stream that represents the child process's stdout
-child.stderr;                                                 // A Readable Stream that represents the child process's stderr.
-child.pid;                                                    // The PID of the child process
-child.connected;                                              // If .connected is false, it is no longer possible to send messages
-child.kill([signal]);                                         // Send a signal to the child process
-child.send(message, [sendHandle]);                            // When using child_process.fork() you can write to the child using child.send(message, [sendHandle]) and messages are received by a 'message' event on the child.
-child.disconnect();                                           // Close the IPC channel between parent and child, allowing the child to exit gracefully once there are no other connections keeping it alive.
-child_process.spawn(command, [args], [options]);              // Launches a new process with the given command, with command line arguments in args. If omitted, args defaults to an empty Array.
-child_process.exec(command, [options], callback);             // Runs a command in a shell and buffers the output.
-child_process.execFile(file, [args], [options], [callback]);  // Runs a command in a shell and buffers the output.
-child_process.fork(modulePath, [args], [options]);            // This is a special case of the spawn() functionality for spawning Node processes. In addition to having all the methods in a normal ChildProcess instance, the returned object has a communication channel built-in. 
+|keyword|description|
+|---------|----------|
+|`ChildProcess|`                                                  Class. ChildProcess is an EventEmitter.|
+|`child.stdin|`                                                   A Writable Stream that represents the child process's stdin|
+|`child.stdout|`                                                  A Readable Stream that represents the child process's stdout|
+|`child.stderr|`                                                  A Readable Stream that represents the child process's stderr.|
+|`child.pid|`                                                     The PID of the child process|
+|`child.connected|`                                               If .connected is false, it is no longer possible to send messages|
+|`child.kill([signal])|`                                          Send a signal to the child process|
+|`child.send(message, [sendHandle])|`                             When using child_process.fork() you can write to the child using child.send(message, [sendHandle]) and messages are received by a 'message' event on the child.|
+|`child.disconnect()|`                                            Close the IPC channel between parent and child, allowing the child to exit gracefully once there are no other connections keeping it alive.|
+|`child_process.spawn(command, [args], [options])|`              Launches a new process with the given command, with command line arguments in args. If omitted, args defaults to an empty Array.|
+|`child_process.exec(command, [options], callback)|`              Runs a command in a shell and buffers the output.|
+|`child_process.execFile(file, [args], [options], [callback])|`  Runs a command in a shell and buffers the output.|
+|`child_process.fork(modulePath, [args], [options])|`             This is a special case of the spawn() functionality for spawning Node processes. In addition to having all the methods in a normal ChildProcess instance, the returned object has a communication channel built-in. |
 
 
 /* *******************************************************************************************
@@ -175,22 +174,21 @@ child_process.fork(modulePath, [args], [options]);            // This is a speci
 
 
 // These functions are in the module 'util'. Use require('util') to access them.
-
-util.format(format, [...]);    // Returns a formatted string using the first argument as a printf-like format. (%s, %d, %j)
-util.debug(string);            // A synchronous output function. Will block the process and output string immediately to stderr.
-util.error([...]);             // Same as util.debug() except this will output all arguments immediately to stderr.
-util.puts([...]);              // A synchronous output function. Will block the process and output all arguments to stdout with newlines after each argument.
-util.print([...]);             // A synchronous output function. Will block the process, cast each argument to a string then output to stdout. (no newlines)
-util.log(string);              // Output with timestamp on stdout.
-util.inspect(object, [opts]);  // Return a string representation of object, which is useful for debugging. (options: showHidden, depth, colors, customInspect)
-util.isArray(object);          // Returns true if the given "object" is an Array. false otherwise.
-util.isRegExp(object);         // Returns true if the given "object" is a RegExp. false otherwise.
-util.isDate(object);           // Returns true if the given "object" is a Date. false otherwise.
-util.isError(object);          // Returns true if the given "object" is an Error. false otherwise.
-util.promisify(fn)             // Takes a function whose last argument is a callback and returns a version that returns promises.
-
-util.inherits(constructor, superConstructor);  // Inherit the prototype methods from one constructor into another.
-
+|keyword|description|
+|---------|----------|
+|`util.format(format, [...])`|   Returns a formatted string using the first argument as a printf-like format. (%s, %d, %j)|
+|`util.debug(string)`|             A synchronous output function. Will block the process and output string immediately to stderr.|
+|`util.error([...])`|              Same as util.debug() except this will output all arguments immediately to stderr.|
+|`util.puts([...])`|               A synchronous output function. Will block the process and output all arguments to stdout with newlines after each argument.|
+|`util.print([...])`|              A synchronous output function. Will block the process, cast each argument to a string then output to stdout. (no newlines)|
+|`util.log(string)`|               Output with timestamp on stdout.||
+|`util.inspect(object, [opts])`|   Return a string representation of object, which is useful for debugging. (options: showHidden, depth, colors, customInspect)|
+|`util.isArray(object)`|           Returns true if the given "object" is an Array. false otherwise.|
+|`util.isRegExp(object)`|          Returns true if the given "object" is a RegExp. false otherwise.|
+|`util.isDate(object)`|            Returns true if the given "object" is a Date. false otherwise.|
+|`|`util.isError(object)`|           Returns true if the given "object" is an Error. false otherwise.|
+|`util.promisify(fn)`|              Takes a function whose last argument is a callback and returns a version that returns promises.|
+|`util.inherits(constructor, superConstructor)`|   Inherit the prototype methods from one constructor into another.|
 
 /* *******************************************************************************************
  * EVENTS
@@ -202,16 +200,18 @@ util.inherits(constructor, superConstructor);  // Inherit the prototype methods 
 // To access the EventEmitter class, require('events').EventEmitter.
 // All EventEmitters emit the event 'newListener' when new listeners are added and 'removeListener' when a listener is removed.
 
-emitter.addListener(event, listener);        // Adds a listener to the end of the listeners array for the specified event.
-emitter.on(event, listener);                 // Same as emitter.addListener().
-emitter.once(event, listener);               // Adds a one time listener for the event. This listener is invoked only the next time the event is fired, after which it is removed.
-emitter.removeListener(event, listener);     // Remove a listener from the listener array for the specified event.
-emitter.removeAllListeners([event]);         // Removes all listeners, or those of the specified event.
-emitter.setMaxListeners(n);                  // By default EventEmitters will print a warning if more than 10 listeners are added for a particular event.
-emitter.listeners(event);                    // Returns an array of listeners for the specified event.
-emitter.emit(event, [arg1], [arg2], [...]);  // Execute each of the listeners in order with the supplied arguments. Returns true if event had listeners, false otherwise.
 
-EventEmitter.listenerCount(emitter, event);  // Return the number of listeners for a given event.
+|keyword|description|
+|---------|----------|
+|`emitter.addListener(event, listener)`|        Adds a listener to the end of the listeners array for the specified event.|
+|`emitter.on(event, listener)`|                  Same as emitter.addListener().|
+|`emitter.once(event, listener)`|                Adds a one time listener for the event. This listener is invoked only the next time the event is fired, after which it is removed.|
+|`emitter.removeListener(event, listener)`|      Remove a listener from the listener array for the specified event.|
+|`emitter.removeAllListeners([event])`|          Removes all listeners, or those of the specified event.|
+|`emitter.setMaxListeners(n)`|                   By default EventEmitters will print a warning if more than 10 listeners are added for a particular event.|
+|`emitter.listeners(event)`|                     Returns an array of listeners for the specified event.|
+|`emitter.emit(event, [arg1], [arg2], [...])`|   Execute each of the listeners in order with the supplied arguments. Returns true if event had listeners, false otherwise.|
+|`EventEmitter.listenerCount(emitter, event)`|   Return the number of listeners for a given event.|
 
 
 /* *******************************************************************************************
