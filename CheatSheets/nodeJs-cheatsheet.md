@@ -220,56 +220,34 @@ created: 2022-10-27
  * ******************************************************************************************* */
 
 
-// A stream is an abstract interface implemented by various objects in Node. For example a request to an HTTP server is a stream, as is stdout.
-// Streams are readable, writable, or both. All streams are instances of EventEmitter.
 
-// The Readable stream interface is the abstraction for a source of data that you are reading from.
-// In other words, data comes out of a Readable stream.
-// A Readable stream will not start emitting data until you indicate that you are ready to receive it.
-// Examples of readable streams include: http responses on the client, http requests on the server, fs read streams
-// zlib streams, crypto streams, tcp sockets, child process stdout and stderr, process.stdin.
-
-var readable = getReadableStreamSomehow();
-
-readable.on('readable', function() {});   // When a chunk of data can be read from the stream, it will emit a 'readable' event.
-readable.on('data', function(chunk) {});  // If you attach a data event listener, then it will switch the stream into flowing mode, and data will be passed to your handler as soon as it is available.
-readable.on('end', function() {});        // This event fires when there will be no more data to read.
-readable.on('close', function() {});      // Emitted when the underlying resource (for example, the backing file descriptor) has been closed. Not all streams will emit this.
-readable.on('error', function() {});      // Emitted if there was an error receiving data.
-
-// The read() method pulls some data out of the internal buffer and returns it. If there is no data available, then it will return null.
-// This method should only be called in non-flowing mode. In flowing-mode, this method is called automatically until the internal buffer is drained.
-readable.read([size]);
-
-readable.setEncoding(encoding);           // Call this function to cause the stream to return strings of the specified encoding instead of Buffer objects.
-readable.resume();                        // This method will cause the readable stream to resume emitting data events.
-readable.pause();                         // This method will cause a stream in flowing-mode to stop emitting data events.
-readable.pipe(destination, [options]);    // This method pulls all the data out of a readable stream, and writes it to the supplied destination, automatically managing the flow so that the destination is not overwhelmed by a fast readable stream.
-readable.unpipe([destination]);           // This method will remove the hooks set up for a previous pipe() call. If the destination is not specified, then all pipes are removed.
-readable.unshift(chunk);                  // This is useful in certain cases where a stream is being consumed by a parser, which needs to "un-consume" some data that it has optimistically pulled out of the source, so that the stream can be passed on to some other party.
+|keyword|description|
+|---------|----------|
+|`var readable = getReadableStreamSomehow()`|
+|`readable.on('readable', function() {})`|    When a chunk of data can be read from the stream, it will emit a 'readable' event.|
+|`readable.on('data', function(chunk) {})`|   If you attach a data event listener, then it will switch the stream into flowing mode, and data will be passed to your handler as soon as it is available.|
+|`readable.on('end', function() {})`|         This event fires when there will be no more data to read.|
+|`readable.on('close', function() {})`|       Emitted when the underlying resource (for example, the backing file descriptor) has been closed. Not all streams will emit this.|
+|`readable.on('error', function() {})`|       Emitted if there was an error receiving data.|
+|`readable.read([size])`|  The read() method pulls some data out of the internal buffer and returns it. If there is no data available, then it will return null.|
+|`readable.setEncoding(encoding)`|            Call this function to cause the stream to return strings of the specified encoding instead of Buffer objects.|
+|`readable.resume()`|                         This method will cause the readable stream to resume emitting data events.|
+|`readable.pause()`|                          This method will cause a stream in flowing-mode to stop emitting data events.|
+|`readable.pipe(destination, [options])`|     This method pulls all the data out of a readable stream, and writes it to the supplied destination, automatically managing the flow so that the destination is not overwhelmed by a fast readable stream.|
+|`readable.unpipe([destination])`|            This method will remove the hooks set up for a previous pipe() call. If the destination is not specified, then all pipes are removed.|
+|`readable.unshift(chunk)`|                   This is useful in certain cases where a stream is being consumed by a parser, which needs to "un-consume" some data that it has optimistically pulled out of the source, so that the stream can be passed on to some other party.|
 
 
-// The Writable stream interface is an abstraction for a destination that you are writing data to.
-// Examples of writable streams include: http requests on the client, http responses on the server, fs write streams,
-// zlib streams, crypto streams, tcp sockets, child process stdin, process.stdout, process.stderr.
-
-var writer = getWritableStreamSomehow();
-
-writable.write(chunk, [encoding], [callback]);  // This method writes some data to the underlying system, and calls the supplied callback once the data has been fully handled.
-writer.once('drain', write);                    // If a writable.write(chunk) call returns false, then the drain event will indicate when it is appropriate to begin writing more data to the stream.
-
-writable.end([chunk], [encoding], [callback]);  // Call this method when no more data will be written to the stream.
-writer.on('finish', function() {});             // When the end() method has been called, and all data has been flushed to the underlying system, this event is emitted.
-writer.on('pipe', function(src) {});            // This is emitted whenever the pipe() method is called on a readable stream, adding this writable to its set of destinations.
-writer.on('unpipe', function(src) {});          // This is emitted whenever the unpipe() method is called on a readable stream, removing this writable from its set of destinations.
-writer.on('error', function(src) {});           // Emitted if there was an error when writing or piping data.
-
-
-// Duplex streams are streams that implement both the Readable and Writable interfaces. See above for usage.
-// Examples of Duplex streams include: tcp sockets, zlib streams, crypto streams.
-
-// Transform streams are Duplex streams where the output is in some way computed from the input. They implement both the Readable and Writable interfaces. See above for usage.
-// Examples of Transform streams include: zlib streams, crypto streams.
+|keyword|description|
+|---------|----------|
+|`var writer = getWritableStreamSomehow()`| The Writable stream interface is an abstraction for a destination that you are writing data to.|
+|`writable.write(chunk, [encoding], [callback])`|   This method writes some data to the underlying system, and calls the supplied callback once the data has been fully handled.| 
+|`writer.once('drain', write)`|                     If a writable.write(chunk) call returns false, then the drain event will indicate when it is appropriate to begin writing more data to the stream.| 
+|`writable.end([chunk], [encoding], [callback])`|   Call this method when no more data will be written to the stream.| 
+|`writer.on('finish', function() {})`|              When the end() method has been called, and all data has been flushed to the underlying system, this event is emitted.| 
+|`writer.on('pipe', function(src) {})`|             This is emitted whenever the pipe() method is called on a readable stream, adding this writable to its set of destinations.| 
+|`writer.on('unpipe', function(src) {})`|           This is emitted whenever the unpipe() method is called on a readable stream, removing this writable from its set of destinations.| 
+|`writer.on('error', function(src) {})`|            Emitted if there was an error when writing or piping data.| 
 
 
 /* *******************************************************************************************
@@ -281,90 +259,73 @@ writer.on('error', function(src) {});           // Emitted if there was an error
 // To use this module do require('fs').
 // All the methods have asynchronous and synchronous forms.
 
-fs.rename(oldPath, newPath, callback);  // Asynchronous rename. No arguments other than a possible exception are given to the completion callback.Asynchronous ftruncate. No arguments other than a possible exception are given to the completion callback.
-fs.renameSync(oldPath, newPath);        // Synchronous rename.
-
-fs.ftruncate(fd, len, callback);        // Asynchronous ftruncate. No arguments other than a possible exception are given to the completion callback.
-fs.ftruncateSync(fd, len);              // Synchronous ftruncate.
-fs.truncate(path, len, callback);       // Asynchronous truncate. No arguments other than a possible exception are given to the completion callback.
-fs.truncateSync(path, len);             // Synchronous truncate.
-
-fs.chown(path, uid, gid, callback);     // Asynchronous chown. No arguments other than a possible exception are given to the completion callback.
-fs.chownSync(path, uid, gid);           // Synchronous chown.
-fs.fchown(fd, uid, gid, callback);      // Asynchronous fchown. No arguments other than a possible exception are given to the completion callback.
-fs.fchownSync(fd, uid, gid);            // Synchronous fchown.
-fs.lchown(path, uid, gid, callback);    // Asynchronous lchown. No arguments other than a possible exception are given to the completion callback.
-fs.lchownSync(path, uid, gid);          // Synchronous lchown.
-
-fs.chmod(path, mode, callback);         // Asynchronous chmod. No arguments other than a possible exception are given to the completion callback.
-fs.chmodSync(path, mode);               // Synchronous chmod.
-fs.fchmod(fd, mode, callback);          // Asynchronous fchmod. No arguments other than a possible exception are given to the completion callback.
-fs.fchmodSync(fd, mode);                // Synchronous fchmod.
-fs.lchmod(path, mode, callback);        // Asynchronous lchmod. No arguments other than a possible exception are given to the completion callback.
-fs.lchmodSync(path, mode);              // Synchronous lchmod.
-
-fs.stat(path, callback);                // Asynchronous stat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. 
-fs.statSync(path);                      // Synchronous stat. Returns an instance of fs.Stats.
-fs.lstat(path, callback);               // Asynchronous lstat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. lstat() is identical to stat(), except that if path is a symbolic link, then the link itself is stat-ed, not the file that it refers to.
-fs.lstatSync(path);                     // Synchronous lstat. Returns an instance of fs.Stats.
-fs.fstat(fd, callback);                 // Asynchronous fstat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. fstat() is identical to stat(), except that the file to be stat-ed is specified by the file descriptor fd.
-fs.fstatSync(fd);                       // Synchronous fstat. Returns an instance of fs.Stats.
-
-fs.link(srcpath, dstpath, callback);             // Asynchronous link. No arguments other than a possible exception are given to the completion callback.
-fs.linkSync(srcpath, dstpath);                   // Synchronous link.
-fs.symlink(srcpath, dstpath, [type], callback);  // Asynchronous symlink. No arguments other than a possible exception are given to the completion callback. The type argument can be set to 'dir', 'file', or 'junction' (default is 'file') and is only available on Windows (ignored on other platforms)
-fs.symlinkSync(srcpath, dstpath, [type]);        // Synchronous symlink.
-fs.readlink(path, callback);                     // Asynchronous readlink. The callback gets two arguments (err, linkString).
-fs.readlinkSync(path);                           // Synchronous readlink. Returns the symbolic link's string value.
-fs.unlink(path, callback);                       // Asynchronous unlink. No arguments other than a possible exception are given to the completion callback.
-fs.unlinkSync(path);                             // Synchronous unlink.
-
-fs.realpath(path, [cache], callback);     // Asynchronous realpath. The callback gets two arguments (err, resolvedPath).
-fs.realpathSync(path, [cache]);           // Synchronous realpath. Returns the resolved path.
-
-fs.rmdir(path, callback);                 // Asynchronous rmdir. No arguments other than a possible exception are given to the completion callback.
-fs.rmdirSync(path);                       // Synchronous rmdir.
-fs.mkdir(path, [mode], callback);         // Asynchronous mkdir. No arguments other than a possible exception are given to the completion callback. mode defaults to 0777.
-fs.mkdirSync(path, [mode]);               // Synchronous mkdir.
-fs.readdir(path, callback);               // Asynchronous readdir. Reads the contents of a directory. The callback gets two arguments (err, files) where files is an array of the names of the files in the directory excluding '.' and '..'.
-fs.readdirSync(path);                     // Synchronous readdir. Returns an array of filenames excluding '.' and '..'.
-fs.close(fd, callback);                   // Asynchronous close. No arguments other than a possible exception are given to the completion callback.
-fs.closeSync(fd);                         // Synchronous close.
-fs.open(path, flags, [mode], callback);   // Asynchronous file open.
-fs.openSync(path, flags, [mode]);         // Synchronous version of fs.open().
-fs.utimes(path, atime, mtime, callback);  // Change file timestamps of the file referenced by the supplied path.
-fs.utimesSync(path, atime, mtime);        // Synchronous version of fs.utimes().
-fs.futimes(fd, atime, mtime, callback);   // Change the file timestamps of a file referenced by the supplied file descriptor.
-fs.futimesSync(fd, atime, mtime);         // Synchronous version of fs.futimes().
-fs.fsync(fd, callback);                   // Asynchronous fsync. No arguments other than a possible exception are given to the completion callback.
-fs.fsyncSync(fd);                         // Synchronous fsync.
-
-fs.write(fd, buffer, offset, length, position, callback);  // Write buffer to the file specified by fd.
-fs.writeSync(fd, buffer, offset, length, position);        // Synchronous version of fs.write(). Returns the number of bytes written.
-fs.read(fd, buffer, offset, length, position, callback);   // Read data from the file specified by fd.
-fs.readSync(fd, buffer, offset, length, position);         // Synchronous version of fs.read. Returns the number of bytesRead.
-fs.readFile(filename, [options], callback);                // Asynchronously reads the entire contents of a file.
-fs.readFileSync(filename, [options]);                      // Synchronous version of fs.readFile. Returns the contents of the filename. If the encoding option is specified then this function returns a string. Otherwise it returns a buffer.
-
-fs.writeFile(filename, data, [options], callback);   // Asynchronously writes data to a file, replacing the file if it already exists. data can be a string or a buffer.
-fs.writeFileSync(filename, data, [options]);         // The synchronous version of fs.writeFile.
-fs.appendFile(filename, data, [options], callback);  // Asynchronously append data to a file, creating the file if it not yet exists. data can be a string or a buffer.
-fs.appendFileSync(filename, data, [options]);        // The synchronous version of fs.appendFile.
-fs.watch(filename, [options], [listener]);           // Watch for changes on filename, where filename is either a file or a directory. The returned object is a fs.FSWatcher. The listener callback gets two arguments (event, filename). event is either 'rename' or 'change', and filename is the name of the file which triggered the event.
-fs.exists(path, callback);                           // Test whether or not the given path exists by checking with the file system. Then call the callback argument with either true or false. (should not be used)
-fs.existsSync(path);                                 // Synchronous version of fs.exists. (should not be used)
-
-// fs.Stats: objects returned from fs.stat(), fs.lstat() and fs.fstat() and their synchronous counterparts are of this type.
-stats.isFile();
-stats.isDirectory()
-stats.isBlockDevice()
-stats.isCharacterDevice()
-stats.isSymbolicLink()  // (only valid with fs.lstat())
-stats.isFIFO()
-stats.isSocket()
-
-fs.createReadStream(path, [options]);   // Returns a new ReadStream object.
-fs.createWriteStream(path, [options]);  // Returns a new WriteStream object.
+|keyword|description|
+|---------|----------|
+|`fs.rename(oldPath, newPath, callback)`|   Asynchronous rename. No arguments other than a possible exception are given to the completion callback.Asynchronous ftruncate. No arguments other than a possible exception are given to the completion callback.|
+|`fs.renameSync(oldPath, newPath)`|         Synchronous rename.|
+|`fs.ftruncate(fd, len, callback)`|         Asynchronous ftruncate. No arguments other than a possible exception are given to the completion callback.|
+|`fs.ftruncateSync(fd, len)`|               Synchronous ftruncate.|
+|`fs.truncate(path, len, callback)`|        Asynchronous truncate. No arguments other than a possible exception are given to the completion callback.|
+|`fs.truncateSync(path, len)`|              Synchronous truncate.|
+|`fs.chown(path, uid, gid, callback)`|      Asynchronous chown. No arguments other than a possible exception are given to the completion callback.|
+|`fs.chownSync(path, uid, gid)`|            Synchronous chown.|
+|`fs.fchown(fd, uid, gid, callback)`|       Asynchronous fchown. No arguments other than a possible exception are given to the completion callback.|
+|`fs.fchownSync(fd, uid, gid)`|             Synchronous fchown.|
+|`fs.lchown(path, uid, gid, callback)`|     Asynchronous lchown. No arguments other than a possible exception are given to the completion callback.|
+|`fs.lchownSync(path, uid, gid)`|           Synchronous lchown.|
+|`fs.chmod(path, mode, callback)`|          Asynchronous chmod. No arguments other than a possible exception are given to the completion callback.|
+|`fs.chmodSync(path, mode)`|                Synchronous chmod.|
+|`fs.fchmod(fd, mode, callback)`|           Asynchronous fchmod. No arguments other than a possible exception are given to the completion callback.|
+|`fs.fchmodSync(fd, mode)`|                 Synchronous fchmod.|
+|`fs.lchmod(path, mode, callback)`|         Asynchronous lchmod. No arguments other than a possible exception are given to the completion callback.|
+|`fs.lchmodSync(path, mode)`|               Synchronous lchmod.|
+|`fs.stat(path, callback)`|                 Asynchronous stat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. |
+|`fs.statSync(path)`|                       Synchronous stat. Returns an instance of fs.Stats.|
+|`fs.lstat(path, callback)`|                Asynchronous lstat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. lstat() is identical to stat(), except that if path is a symbolic link, then the link itself is stat-ed, not the file that it refers to.|
+|`fs.lstatSync(path)`|                      Synchronous lstat. Returns an instance of fs.Stats.|
+|`fs.fstat(fd, callback)`|                  Asynchronous fstat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. fstat() is identical to stat(), except that the file to be stat-ed is specified by the file descriptor fd.|
+|`fs.fstatSync(fd)`|                        Synchronous fstat. Returns an instance of fs.Stats.|
+|`fs.link(srcpath, dstpath, callback)`|              Asynchronous link. No arguments other than a possible exception are given to the completion callback.|
+|`fs.linkSync(srcpath, dstpath)`|                    Synchronous link.|
+|`fs.symlink(srcpath, dstpath, [type], callback)`|   Asynchronous symlink. No arguments other than a possible exception are given to the completion callback. The type argument can be set to 'dir', 'file', or 'junction' (default is 'file') and is only available on Windows (ignored on other platforms)
+|`fs.symlinkSync(srcpath, dstpath, [type])`|         Synchronous symlink.|
+|`fs.readlink(path, callback)`|                      Asynchronous readlink. The callback gets two arguments (err, linkString).|
+|`fs.readlinkSync(path)`|                            Synchronous readlink. Returns the symbolic link's string value.|
+|`fs.unlink(path, callback)`|                        Asynchronous unlink. No arguments other than a possible exception are given to the completion callback.|
+|`fs.unlinkSync(path)`|                              Synchronous unlink.|
+|`fs.realpath(path, [cache], callback)`|      Asynchronous realpath. The callback gets two arguments (err, resolvedPath).|
+|`fs.realpathSync(path, [cache])`|            Synchronous realpath. Returns the resolved path.|
+|`fs.rmdir(path, callback)`|                  Asynchronous rmdir. No arguments other than a possible exception are given to the completion callback.|
+|`fs.rmdirSync(path)`|                        Synchronous rmdir.|
+|`fs.mkdir(path, [mode], callback)`|          Asynchronous mkdir. No arguments other than a possible exception are given to the completion callback. mode defaults to 0777.|
+|`fs.mkdirSync(path, [mode])`|                Synchronous mkdir.|
+|`fs.readdir(path, callback)`|                Asynchronous readdir. Reads the contents of a directory. The callback gets two arguments (err, files) where files is an array of the names of the files in the directory excluding '.' and '..'.|
+|`fs.readdirSync(path)`|                      Synchronous readdir. Returns an array of filenames excluding '.' and '..'.|
+|`fs.close(fd, callback)`|                    Asynchronous close. No arguments other than a possible exception are given to the completion callback.|
+|`fs.closeSync(fd)`|                          Synchronous close.|
+|`fs.open(path, flags, [mode], callback)`|    Asynchronous file open.|
+|`fs.openSync(path, flags, [mode])`|          Synchronous version of fs.open().|
+|`fs.utimes(path, atime, mtime, callback)`|   Change file timestamps of the file referenced by the supplied path.|
+|`fs.utimesSync(path, atime, mtime)`|         Synchronous version of fs.utimes().|
+|`fs.futimes(fd, atime, mtime, callback)`|    Change the file timestamps of a file referenced by the supplied file descriptor.|
+|`fs.futimesSync(fd, atime, mtime)`|          Synchronous version of fs.futimes().|
+|`fs.fsync(fd, callback)`|                    Asynchronous fsync. No arguments other than a possible exception are given to the completion callback.|
+|`fs.fsyncSync(fd)`|                          Synchronous fsync.|
+|`fs.write(fd, buffer, offset, length, position, callback)`|   Write buffer to the file specified by fd.|
+|`fs.writeSync(fd, buffer, offset, length, position)`|         Synchronous version of fs.write(). Returns the number of bytes written.|
+|`fs.read(fd, buffer, offset, length, position, callback)`|    Read data from the file specified by fd.|
+|`fs.readSync(fd, buffer, offset, length, position)`|          Synchronous version of fs.read. Returns the number of bytesRead.|
+|`fs.readFile(filename, [options], callback)`|                 Asynchronously reads the entire contents of a file.|
+|`fs.readFileSync(filename, [options])`|                       Synchronous version of fs.readFile. Returns the contents of the filename. If the encoding option is specified then this function returns a string. Otherwise it returns a buffer.|
+|`fs.writeFile(filename, data, [options], callback)`|    Asynchronously writes data to a file, replacing the file if it already exists. data can be a string or a buffer.|
+|`fs.writeFileSync(filename, data, [options])`|          The synchronous version of fs.writeFile.|
+|`fs.appendFile(filename, data, [options], callback)`|   Asynchronously append data to a file, creating the file if it not yet exists. data can be a string or a buffer.|
+|`fs.appendFileSync(filename, data, [options])`|         The synchronous version of fs.appendFile.|
+|`fs.watch(filename, [options], [listener])`|            Watch for changes on filename, where filename is either a file or a directory. The returned object is a fs.|FSWatcher. The listener callback gets two arguments (event, filename). event is either 'rename' or 'change', and filename is the name of the file which triggered the event.|
+|`fs.exists(path, callback)`|                            Test whether or not the given path exists by checking with the file system. Then call the callback argument with either true or false. (should not be used)|
+|`fs.existsSync(path)`|                                  Synchronous version of fs.exists. (should not be used)|
+|`fs.createReadStream(path, [options])`|    Returns a new ReadStream object.|
+|`fs.createWriteStream(path, [options])`|   Returns a new WriteStream object.|
 
 
 /* *******************************************************************************************
