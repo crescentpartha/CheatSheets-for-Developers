@@ -51,7 +51,6 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 - [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
 </details>
 
-
 <details>
 <summary>Frontend 🌐</summary>
 
@@ -110,16 +109,6 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 - [extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)
 - [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
 </details>
-
-
-
-
-
-
-
-
-
-
 
 ## ___Instructions___
 
