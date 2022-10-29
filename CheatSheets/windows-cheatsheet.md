@@ -29,7 +29,7 @@ created: 2022-10-20
 ## General Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `F1` | Display Help |
 | `Ctrl + X` | Cut the selected item |
 | `Ctrl + C` | Copy the selected item |
@@ -58,7 +58,7 @@ created: 2022-10-20
 ## Windows Keys Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Win` | Display or hide the Start screen |
 | `Win + ,` | see your desktop until you hold keys |
 |` Win + D`| Display and hide the desktop|
@@ -80,15 +80,14 @@ created: 2022-10-20
 |` Win + Shift + S`| Take Screenshot of selected area|
 |` Win + Upper Arrow key`| Maximize windows|
 | `Win + number key` | to open application from taskbar with numbered key position
-| `Win + Alt + R` | to start in-built screen recording |
-
+| `Win + Alt + R` | Allows you to instantly start or stop recording your screen |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Dialog Box Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Ctrl + Tab` | Move forward through tabs |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -96,7 +95,7 @@ created: 2022-10-20
 ## File Explorer Shortcuts
 
 | Command | Description                 |
-|---------|-----------------------------|
+| :-----: | --------------------------- |
 | `Ctrl + W` | Close the current window    |
 | `Shift + Tab`| Set Focus on Side Bar       |
 | `Ctrl + N`| Duplicate the File Explorer |
@@ -111,7 +110,7 @@ created: 2022-10-20
 ## Taskbar Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Shift + Taskbar` | Open an app or quickly open another instance of an app |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -119,7 +118,7 @@ created: 2022-10-20
 ## Ease of Access Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Win + U` | Open the Ease of Access Center |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -127,7 +126,7 @@ created: 2022-10-20
 ## Magnifier Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Win` + `+` | Zoom in |
 | `Win` + `-` | Zoom out |
 
@@ -136,7 +135,7 @@ created: 2022-10-20
 ## Narrator Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Caps Lock + F1` | Review the full set of Narrator commands |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -144,7 +143,7 @@ created: 2022-10-20
 ## Remote Desktop Connection Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Alt + PgUp` <br /> `Alt + Page Up` | Move between apps, left to right |
 | `Alt + F4` | to close the current program window |
 | `Alt + Tab` | lets you switch between open windows by holding Alt and using tab to change |
@@ -154,7 +153,7 @@ created: 2022-10-20
 ## Help Viewer Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Home` | Move to the beginning of a topic |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -162,7 +161,7 @@ created: 2022-10-20
 ## App Rearrangement Shortcuts (Metro)
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Win + .` | Use emoji in any App |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -170,7 +169,7 @@ created: 2022-10-20
 ## Open Task Manager
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Ctrl + Shift + Esc` | Open Task Manager|
 
 **[🔼Back to Top](#table-of-contents)**
@@ -178,7 +177,7 @@ created: 2022-10-20
 ## Settings Shortcuts
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Win + I` | Open settings |
 | `Backspace` | Go back to the settings home page |
 
@@ -187,7 +186,7 @@ created: 2022-10-20
 ## TouchPad Shortcuts
 
 | Gesture | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Single Tap` | Single click |
 | `Tap with two fingers` | Right click |
 | `Tap twice and drag` | Multi Select |
@@ -203,7 +202,7 @@ created: 2022-10-20
 ## Take Screenshot Shortcut
 
 | Command | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Win + Shift + S` | Open Windows Snipping Tool |
 
 **[🔼Back to Top](#table-of-contents)**
@@ -211,7 +210,7 @@ created: 2022-10-20
 ## Command Prompt Shortcuts
 
 | Gesture | Description |
-| ------- | ----------- |
+| :-----: | ----------- |
 | `Ctrl + Up arrow` | Move up one line in the output history. |
 | `Ctrl + Down arrow` | Move down one line in the output history. |
 | `Ctrl + M` | Enter Mark mode. |
