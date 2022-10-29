@@ -7,10 +7,26 @@ created: 2022-10-28
 ## Table of Contents
 
 - [Configure-React CheatSheet for Developers](#configure-react-cheatsheet-for-developers)
-  - [React Commands to Configure React App Faster (Specially for Beginners)](#react-commands-to-configure-react-app-faster-specially-for-beginners)
   - [Create React Cluster App (Multiple React App in One Project) Build new React App in Second](#create-react-cluster-app-multiple-react-app-in-one-project-build-new-react-app-in-second)
+  - [React Commands to Configure React App Faster (Specially for Beginners)](#react-commands-to-configure-react-app-faster-specially-for-beginners)
 
 # Configure-React CheatSheet for Developers
+
+
+## Create React Cluster App (Multiple React App in One Project) Build new React App in Second
+Watch this video to create React Cluster App (Multiple React App in One Project) 
+
+| Command | Description |
+| :-------: | :-----------: |
+|`npx configure-react create-cluster <clustername>`|Create Big React Project with Tailwind, React Router Dom, Chakra UI, Context API, Redux, Redux Thunk, Redux Saga, Redux Persist, Utils, Axios |
+|`npx configure-react cluster-app <projectname>`|Create Cluster App with Tailwind, React Router Dom, Chakra UI, Context API, Redux, Redux Thunk, Redux Saga, Redux Persist, Utils, Axios |
+|`npx configure-react ic <package-name>`|Install package in Cluster App |
+|`npx configure-react help`|Display help for command |
+
+For more information about the package visit [Configure-React](https://www.npmjs.com/package/configure-react)
+Watch the video on [Youtube](https://www.youtube.com/watch?v=2MO1_mCXuds&t=3s)
+
+**[🔼Back to Top](#table-of-contents)**
 
 
 ## React Commands to Configure React App Faster (Specially for Beginners)
@@ -28,27 +44,8 @@ created: 2022-10-28
 |`npx configure-react redux-saga . `|Configure Exsisting React App with Redux Saga Configuration to use Redux Saga also create a folder named `redux` and create a file named `store.js` and `actions.js` and `reducers.js` and `types.js` |
 |`npx configure-react redux-persist . `|Configure Exsisting React App with Redux Persist Configuration to use Redux Persist also create a folder named `redux` and create a file named `store.js` and `actions.js` and `reducers.js` and `types.js` |
 |`npx configure-react refresh . `|Refresh the files and update the files if any changes in the package |
-|`npx configure-react create-cluster <projectname>`|Create Big React Project with Tailwind, React Router Dom, Chakra UI, Context API, Redux, Redux Thunk, Redux Saga, Redux Persist, Utils, Axios |
-|`npx configure-react cluster-app <projectname>`|Create Cluster App with Tailwind, React Router Dom, Chakra UI, Context API, Redux, Redux Thunk, Redux Saga, Redux Persist, Utils, Axios |
-|`npx configure-react ic <package-name>`|Install package in Cluster App |
 |`npx configure-react help`|Display help for command |
 
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Create React Cluster App (Multiple React App in One Project) Build new React App in Second
-Watch this video to create React Cluster App (Multiple React App in One Project) 
-
-[React Cluster](https://www.youtube.com/watch?v=2MO1_mCXuds&t=3s)
-
-| Command | Description |
-| :-------: | :-----------: |
-|`npx configure-react create-cluster <clustername>`|Create Big React Project with Tailwind, React Router Dom, Chakra UI, Context API, Redux, Redux Thunk, Redux Saga, Redux Persist, Utils, Axios |
-|`npx configure-react cluster-app <projectname>`|Create Cluster App with Tailwind, React Router Dom, Chakra UI, Context API, Redux, Redux Thunk, Redux Saga, Redux Persist, Utils, Axios |
-|`npx configure-react ic <package-name>`|Install package in Cluster App |
-|`npx configure-react help`|Display help for command |
-
-For more information about the package visit [Configure-React](https://www.npmjs.com/package/configure-react)
-Watch the video on [Youtube](https://www.youtube.com/watch?v=2MO1_mCXuds&t=3s)
-
-**[🔼Back to Top](#table-of-contents)**
