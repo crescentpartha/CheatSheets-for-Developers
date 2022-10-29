@@ -31,6 +31,8 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 
 ## ___CheatSheets Table Views___
 
+<div align="center">
+
 | __[git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)__ | __[markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)__ | __[windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)__ |
 | :-------: | :-------: | :-------: |
 | __[cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)__ | __[linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)__ | __[bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)__ |
@@ -43,6 +45,8 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 | __[docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)__ | __[terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)__ | __[regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)__ |
 | __[conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)__ | __[pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)__ | __[numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)__ |
 | __[configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)__ | __[angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)__ | __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ |
+
+</div>
 
 ## ___CheatSheets List___
 
