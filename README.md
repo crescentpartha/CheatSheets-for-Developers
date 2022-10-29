@@ -57,6 +57,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 - [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
 - [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
 - [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
+- [configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)
 - [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
 </details>
 
