@@ -16,10 +16,24 @@ Everyone is welcome to `CheatSheets-for-Developers`!
 ## How to Create a Pull Request
 
 - ___Fork___ this repo and ___git clone___ your fork.
-- Create your ___new branch___.
-- Make your ___changes and commit___ them with a quick message of what was added.
+- Create a ___new branch___.
+- Make some ___changes and commit___ them with a meaningful message of what was added.
 - ___Push___ your changes to the remote repository.
 - ___Open a PR___ so that your changes can be ___reviewed___ and ___merged___ into the original repository.
+
+## Introduce/Add a new CheatSheet
+
+- Put a name like `git-cheatsheet.md` which has some convention
+  - Use `lowercase` letter
+  - Use `dash(-)` symbol between two words
+  - It must be a `markdown file` with `.md` extension
+- Add your cheat sheet file in `README.md` file.
+- Follow the cheatsheet structure like [this template](../docs/CheatSheet-Template.md) when you will introduce a new cheatsheet.
+- Try to give a [tabular format](../docs/CheatSheet-Template.md#1st-section), if it is possible.
+- Give a [Table of Contents](../docs/CheatSheet-Template.md#table-of-contents) section which contains all the navigation links section-wise.
+- Keep your cheatsheet `simple, readable, and understandable` so that developers could review it quickly and find their desired commands, keyboard shortcuts, or anything else easily.
+- Never add `unnecessary commits` (Not more than 5 commits).
+- Finally, make sure you read the [contributing guidelines](https://github.com/crescentpartha/CheatSheets-for-Developers/blob/main/docs/CONTRIBUTING.md) before your final submission.
 
 ## General Instructions
 
@@ -29,7 +43,9 @@ Everyone is welcome to `CheatSheets-for-Developers`!
 - Always ___make little changes___ and ___make a PR___.
 - Discuss your ___idea(s) or doubt(s)___ in the ___conversation___ section in GitHub.
 - Always try to maintain the `tabular format`.
-- Try to ___avoid creating unnecessary issues___.
+- Try to ___avoid creating unnecessary issues or pull requests___.
+- Never add `unnecessary commits` (Not more than 5 commits).
+- Try to work on one feature/file at a time, if possible.
 - After creating a pull request, ___be patient___ to merge your PR.
 
 > If you are new to open source, follow [How-To at a glance](./HOW-TO.md)
