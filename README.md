@@ -29,7 +29,23 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 
 </div>
 
+## ___CheatSheets Table Views___
+
+| __[git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)__ | __[markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)__ | __[windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)__ |
+| :-------: | :-------: | :-------: |
+| __[cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)__ | __[linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)__ | __[bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)__ |
+| __[vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)__ | __[vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)__ | __[chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)__ |
+| __[npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)__ | __[nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)__ | __[npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)__ |
+| __[yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)__ | __[html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)__ | __[css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)__ |
+| __[javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)__ | __[python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)__ | __[java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)__ |
+| __[php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)__ | __[sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)__ | __[mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)__ |
+| __[nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)__ | __[cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)__ | __[kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)__ |
+| __[docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)__ | __[terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)__ | __[regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)__ |
+| __[conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)__ | __[pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)__ | __[numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)__ |
+| __[configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)__ | __[angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)__ | __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ |
+
 ## ___CheatSheets List___
+
 <details>
 <summary>Languages 📄</summary>
 
