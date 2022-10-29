@@ -30,39 +30,95 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 </div>
 
 ## ___CheatSheets List___
+<details>
+<summary>Languages 📄</summary>
 
-1. [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
-2. [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
-3. [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
-4. [cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)
-5. [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
-6. [bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)
-7. [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
-8. [vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)
-9. [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
-10. [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
-11. [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
-12. [npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)
-13. [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-14. [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
-15. [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
-16. [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
-17. [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
-18. [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
-19. [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
-20. [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
-21. [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)
-22. [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
-23. [kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)
-24. [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
-25. [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
-26. [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
-27. [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
-28. [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
-29. [terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)
-30. [nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)
-31. [mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)
-32. [extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)
+- [bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)
+- [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
+- [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
+- [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
+- [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
+- [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)
+- [kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)
+
+</details>
+
+<details>
+<summary>Operating Systems 🖥️</summary>
+
+- [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
+- [cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)
+- [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
+</details>
+
+
+<details>
+<summary>Frontend 🌐</summary>
+
+- [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
+- [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
+- [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
+- [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
+</details>
+
+<details>
+<summary>Backend 🖧</summary>
+
+- [nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)
+</details>
+
+<details>
+<summary>Databases 🗃️</summary>
+
+- [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
+- [mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)
+</details>
+
+<details>
+<summary>Tools 🧰</summary>
+
+- [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
+- [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
+- [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
+- [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
+- [npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)
+- [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
+- [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
+- [terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)
+</details>
+
+<details>
+<summary>IDE / Text Editors 📝</summary>
+
+- [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
+- [vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)
+</details>
+
+<details>
+
+<summary>Libraries 📚</summary>
+
+- [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
+- [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
+- [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
+</details>
+
+<details>
+<summary>Other 💡</summary>
+
+- [extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)
+- [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
+</details>
+
+
+
+
+
+
+
+
+
+
 
 ## ___Instructions___
 
