@@ -98,6 +98,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 
 <summary>Libraries 📚</summary>
 
+### Python
 - [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
 - [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
 - [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
