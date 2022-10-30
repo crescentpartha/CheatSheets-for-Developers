@@ -44,7 +44,8 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 | __[nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)__ | __[cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)__ | __[kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)__ |
 | __[docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)__ | __[terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)__ | __[regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)__ |
 | __[conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)__ | __[pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)__ | __[numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)__ |
-| __[configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)__ | __[angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)__ | __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ |
+| __[configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)__ | __[react-cheatsheet.md](./CheatSheets/react-cheatsheet.md)__ | __[angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)__ |
+| __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ |  |  |
 
 </div>
 
@@ -78,6 +79,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 - [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
 - [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
 - [configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)
+- [react-cheatsheet.md](./CheatSheets/react-cheatsheet.md)
 - [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
 </details>
 
