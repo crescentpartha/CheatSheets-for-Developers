@@ -45,7 +45,7 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 | __[docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)__ | __[terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)__ | __[regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)__ |
 | __[conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)__ | __[pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)__ | __[numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)__ |
 | __[configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)__ | __[react-cheatsheet.md](./CheatSheets/react-cheatsheet.md)__ | __[angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)__ |
-| __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ |  |  |
+| __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ | __[sklearn-cheatsheet.md](./CheatSheets/sklearn-cheatsheet.md)__ |  |
 
 </div>
 
@@ -121,9 +121,15 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 <summary>Libraries 📚</summary>
 
 ### Python
+
 - [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
 - [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
 - [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
+
+### Machine Learning
+
+- [sklearn-cheatsheet.md](./CheatSheets/sklearn-cheatsheet.md)
+
 </details>
 
 <details>
