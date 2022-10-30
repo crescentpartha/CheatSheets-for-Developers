@@ -43,8 +43,8 @@ created: 2022-10-20
 | `Ctrl + Shift + +` | `Cmd(⌘) + Shift + +` | Zoom in |  
 | `Ctrl + -` | `Cmd(⌘) + -` |Zoom out |  
 | `Ctrl + 0` | `Cmd(⌘) + 0` | Restore default zoom level |
-| `Ctrl+Shift+P` | `Cmd(⌘)+Shift+P` | Open the Command Menu |
-| `Ctrl+F` | `Cmd(⌘)+F` |Search for text within the current panel. Supported only in the Elements, Console, Sources, Performance, Memory, JavaScript Profiler, and Quick Source panels. |
+| `Ctrl +Shift + P` | `Cmd(⌘) + Shift + P` | Open the Command Menu |
+| `Ctrl + F` | `Cmd(⌘) + F` |Search for text within the current panel. Supported only in the ___Elements___, ___Console___, ___Sources___, ___Performance___, ___Memory___, ___JavaScript Profiler___, and ___Quick Source___ panels. |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -98,11 +98,9 @@ created: 2022-10-20
 | :-------------: | :-: | :---------: |
 | `Ctrl + Delete(del)` | `Option(⌥) + Delete(del)` | Delete all characters in the last word, up to the cursor | 
 | `Ctrl + M` | `Ctrl + M` | Go to matching bracket |
-| `Ctrl+B` | `Cmd + B` | Add or remove a line-of-code breakpoint |
-| `Ctrl+D / Ctrl+U` | `Cmd+D / Cmd+U` | Select / de-select the next occurrence of whatever word the cursor is on. Each occurrence is highlighted simultaneously |
-| `Ctrl + /` | `Cmd(⌘) + /` | Toggle single-line comment.<br />If multiple lines are selected, DevTools adds a comment to the start of each line |
-
-
+| `Ctrl + B` | `Cmd + B` | Add or remove a line-of-code breakpoint |
+| `Ctrl + D` or <br /> `Ctrl + U` | `Cmd + D` or <br /> `Cmd + U` | Select / de-select the next occurrence of whatever word the cursor is on. Each occurrence is highlighted simultaneously |
+| `Ctrl + /` | `Cmd(⌘) + /` | Toggle single-line comment. <br /> If multiple lines are selected, DevTools adds a comment to the start of each line |
 
 **[🔼Back to Top](#table-of-contents)**
 
