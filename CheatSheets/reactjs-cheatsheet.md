@@ -1,8 +1,18 @@
 --- 
 title: "ReactJS Cheatsheet"
-description: "..."
-created: date
+description: "The most important and useful methods of React are given here"
+created: 2022-10-30
 ---
+
+## Table of Contents
+
+- [Create React App](#create-react-app)
+- [React Components](#react-components)
+- [React Props](#react-props)
+- [React Children Props](#react-children-props)
+- [React Conditionals](#react-conditionals)
+- [React Context](#react-context)
+- [React useEffect Hooks](#react-useEffect-hooks)
 
 ## Create React App
 
