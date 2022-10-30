@@ -102,6 +102,9 @@ created: 2022-10-20
 | `Crtl + Shift + N`| Create a New Folder         |
 | `Alt + ←`| Navigate to previous folder |
 | `Ctrl + L` | Navigate to the address bar |
+| `⊞(Window key) + E ` | Opening File Explorer |
+| `Backspace` | Move to the previous folder |
+| `F2` |  Renaming Files and Folders |
 
 
 
@@ -112,6 +115,9 @@ created: 2022-10-20
 | Command | Description |
 | :-----: | ----------- |
 | `Shift + Taskbar` | Open an app or quickly open another instance of an app |
+| `Ctrl + Shift + click a taskbar button` | Open an app as an administrator. |
+| `Shift + right-click a taskbar button` | Show the window menu for the app. |
+| `Shift + right-click a grouped taskbar button` | Show the window menu for the group. |
 
 **[🔼Back to Top](#table-of-contents)**
 
