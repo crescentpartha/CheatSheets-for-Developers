@@ -1,3 +1,10 @@
+---
+title: sklearn cheatsheet
+description: The most important and useful methods and functions of scikit learn are given here.
+created: 2022-10-30
+---
+## Table of Contents
+
 * [Training, Validation, and Test Sets](#datasplits)
 * [Preprocessing](#preprocessing)
 * [Modeling](#models)
@@ -11,7 +18,7 @@
     * [PCA](#models_pca)
     * [k-Means](#models_kmeans)
 
-
+# Scikit Learn Cheatsheet
 
 <a name="datasplits"></a>
 # Training, Validation, and Test Sets
