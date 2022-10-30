@@ -1,6 +1,7 @@
----
-layout: ../../layouts/BlogLayout.astro
+--- 
 title: "ReactJS Cheatsheet"
+description: "..."
+created: date
 ---
 
 ## Create React App
