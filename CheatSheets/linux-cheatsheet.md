@@ -1,4 +1,4 @@
-﻿<!-- Heading section doesn't work -->
+<!-- Heading section doesn't work -->
 <!-- ---
 title: Linux CheatSheet
 description: The most commonly used linux commands are given here.
@@ -19,6 +19,7 @@ created: 2022-10-21
   - [Disk Usage](#disk-usage)
   - [Search](#search)
   - [Networking](#networking)
+  - [Environment Variables command](#environment-variables-command)
 
 # Linux CheatSheet for Developers
 
@@ -38,8 +39,9 @@ created: 2022-10-21
 | `ls -al` | Formatted list of contents for the directory including hidden files |
 | `rm file` | Delete file | 
 | `rm -r dir` | Delete directory *dir* | 
-| `rm -f file` |Force delete file | 
-| `rm -rf dir` | Force delete directory *dir* | 
+| `rm -f file` | Forcibly delete the file | 
+| `rm -rf dir` | Forcibly delete the directory *dir* | 
+| `rm -rfv dir` | Forcibly delete the directory *dir* with verbose output |
 | `cp file1 dir` | Copy *file1* to inside of *dir*| 
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
 | `touch file` | Create *file*|
@@ -169,5 +171,13 @@ created: 2022-10-21
 | `hostname -I` | Display all local IP addresses of the host|
 | `wget http://domain.com/file` |Download http[]()://domain.com/file |
 | `netstat -nutlp` |Display listening tcp and udp ports and corresponding programs|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Environment variables command
+| Command | Description |
+| ------- | ----------- |
+| `env` | Displays all environment variables |
+| `echo $VARIABLE` | Displays value of variable |
 
 **[🔼Back to Top](#table-of-contents)**
