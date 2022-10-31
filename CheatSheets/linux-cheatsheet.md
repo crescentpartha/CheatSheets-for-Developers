@@ -1,4 +1,4 @@
-f﻿## Table of Contents
+## Table of Contents
 
 - [Linux CheatSheet for Developers](#linux-cheatsheet-for-developers)
   - [File Commands](#file-commands)
