@@ -1,4 +1,4 @@
-﻿## Table of Contents
+f﻿## Table of Contents
 
 - [Linux CheatSheet for Developers](#linux-cheatsheet-for-developers)
   - [File Commands](#file-commands)
@@ -30,9 +30,9 @@
 | `ls -al` | Formatted list of contents for the directory including hidden files |
 | `rm file` | Delete file | 
 | `rm -r dir` | Delete directory *dir* | 
-| `rm -f file` |Force deletes file | 
-| `rm -rf dir` | Force deletes the directory *dir* | 
-| `rm -rfv fir` | Force deletes the directory *dir* with verbose output |
+| `rm -f file` | Forcibly delete the file | 
+| `rm -rf dir` | Forcibly delete the directory *dir* | 
+| `rm -rfv dir` | Forcibly delete the directory *dir* with verbose output |
 | `cp file1 dir` | Copy *file1* to inside of *dir*| 
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
 | `touch file` | Create *file*| 
