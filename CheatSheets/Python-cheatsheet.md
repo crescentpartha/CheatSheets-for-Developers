@@ -1,4 +1,10 @@
-# Python Cheatsheet for Developers
+---
+title: Python CheatSheet
+description: The most commonly used Python concepts are given here.
+created: 2022-10-20
+---
+
+# Python CheatSheet for Developers
 
 ## Content Outlines
 
@@ -9,7 +15,7 @@
 **&nbsp;&nbsp;&nbsp;** **5. Data:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`JSON`](#json)**__,__ **[`Pickle`](#pickle)**__,__ **[`CSV`](#csv)**__,__ **[`SQLite`](#sqlite)**__,__ **[`Bytes`](#bytes)**__,__ **[`Struct`](#struct)**__,__ **[`Array`](#array)**__,__ **[`Memory_View`](#memory-view)**__,__ **[`Deque`](#deque)**__.__  
 **&nbsp;&nbsp;&nbsp;** **6. Advanced:** **&nbsp;&nbsp;&nbsp;**  **[`Threading`](#threading)**__,__ **[`Operator`](#operator)**__,__ **[`Introspection`](#introspection)**__,__ **[`Metaprograming`](#metaprogramming)**__,__ **[`Eval`](#eval)**__,__ **[`Coroutines`](#coroutines)**__.__  
 **&nbsp;&nbsp;&nbsp;** **7. Libraries:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Progress_Bar`](#progress-bar)**__,__ **[`Plot`](#plot)**__,__ **[`Table`](#table)**__,__ **[`Curses`](#curses)**__,__ **[`Logging`](#logging)**__,__ **[`Scraping`](#scraping)**__,__ **[`Web`](#web)**__,__ **[`Profile`](#profiling)**__,__  
-**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** **[`NumPy`](#numpy)**__,__ **[`Image`](#image)**__,__ **[`Audio`](#audio)**__,__ **[`Games`](#pygame)**__,__ **[`Data`](#pandas)**__.__
+**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** **[`NumPy`](#numpy)**__,__ **[`Image`](#image)**__,__ **[`Audio`](#audio)**__,__ **[`PyGames`](#pygame)**__,__ **[`Pandas`](#pandas)**__,__ **[`OpenCV`](#opencv)**__,__ **[`DataFrame`](#dataframe)**__.__
 
 
 Main
@@ -18,6 +24,19 @@ Main
 if __name__ == '__main__':     # Runs main() if file wasn't imported.
     main()
 ```
+
+**[🔼Back to Top](#content-outlines)**
+
+Shortcut to comment/uncomment the selected code
+----
+
+| Editor       | Shortcut Block Comment	  | Shortcut Block Uncomment |
+| :----------: | :----------------------: | :----------------------: | 
+| Eclipse      |  `CTRL + /`	          |     `CTRL + /`           | 
+| PyDev	       |  `CTRL + /`	          |     `CTRL + /`           | 
+| PyCharm	   |  `CTRL + /`	          |     `CTRL + /`           | 
+| Notepad++    |  `CTRL + K`	          |     `CTRL + SHIFT + K`   | 
+| IDLE	       |  `ALT + 3`	              |     `ALT + 4`            | 
 
 **[🔼Back to Top](#content-outlines)**
 
@@ -3248,13 +3267,81 @@ y    2
 
 **[🔼Back to Top](#content-outlines)**
 
+## OpenCV
 
+```python
+# Importing an Image & Viewing it
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+cv2.imshow("Image", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 
+Croping an image
+```python 
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+crop_img = image[y:y+h, x:x+w]
+cv2.imshow("cropped", crop_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Resizing an image
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+resized_image = cv2.resize(image, (100, 100))
+cv2.imshow("Resized image", resized_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Saving an image
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+cv2.imwrite("./path/to/save/image.jpg", image)
+```
+Converting an image to grayscale
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imshow("Grayscale image", gray_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Converting an image to HSV
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+cv2.imshow("HSV image", hsv_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Converting an image to LAB
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+cv2.imshow("LAB image", lab_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+Converting an image to RGB
+```python
+import cv2
+image = cv2.imread("./path/to/image.jpg")
+rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+cv2.imshow("RGB image", rgb_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 
+**[🔼Back to Top](#content-outlines)**
 
-
-
-### DataFrame
+## DataFrame
 **Table with labeled rows and columns.**
 
 ```python
@@ -3627,3 +3714,4 @@ Index
 * **Ctrl+F / ⌘F is usually sufficient.**
 * **Searching `'#<title>'` on the [webpage](https://gto76.github.io/python-cheatsheet/) will limit the search to the titles.**
 
+**[🔼Back to Top](#content-outlines)**

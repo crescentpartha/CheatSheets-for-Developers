@@ -1,3 +1,9 @@
+---
+title: Chrome DevTools CheatSheet
+description: The most commonly used keyboard shortcuts are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [Chrome DevTools Keyboard Shortcuts for Developers](#chrome-devtools-keyboard-shortcuts-for-developers)
@@ -17,131 +23,133 @@
 
 ## Keyboard shortcuts for opening DevTools
 
-| Action | Mac  | Windows/Linux  | 
-| :----: | :--: | :------------: |
-| Open the ___Console___ panel | `cmd(⌘)+option(⌥)+j` | `ctrl+shift+j` | 
-| Open the ___Elements___ panel | `cmd(⌘)+shift+c` or<br />`cmd(⌘)+option(⌥)+c`   | `ctrl+shift+c` | 
-| Open whatever panel you used last | `cmd(⌘)+option(⌥)+i` | `F12` or<br /> `ctrl+shift+i` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + Shift+ J` | `Cmd(⌘) + Option(⌥) + J`  | Open the ___Console___ panel |  
+| `Ctrl + Shift + C` | `Cmd(⌘) + Shift + C` or<br />`Cmd(⌘) + Option(⌥) + C` | Open the ___Elements___ panel |
+| `F12` or<br /> `Ctrl + Shift + I` | `Cmd(⌘) + Option(⌥) + I` |  Open whatever panel you used last |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Global keyboard shortcuts
 
-| Action                     | Mac           | Windows/Linux        | 
-| :----:                     | :---:         | :-----------:        |
-| Focus the next panel       | `cmd(⌘)+]`       | `ctrl+]`     |
-| Focus the previous panel   | `cmd(⌘)+[`       | `ctrl+[`     |
-| Toggle Device Mode         | `cmd(⌘)+shift+m` | `ctrl+shift+m` |
-| Normal Reload              | `cmd(⌘)+r`       | `F5` or<br /> `ctrl+r` |
-| Hard Reload                | `cmd(⌘)+shift+r` | `ctrl+F5` or<br /> `ctrl+shift+r` | 
-| Zoom in                    | `cmd(⌘)+shift++` | `ctrl+shift++` |
-| Zoom out                   | `cmd(⌘)+-`       | `ctrl+-` |
-| Restore default zoom level | `cmd(⌘)+0`       | `ctrl+0` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + ]` | `Cmd(⌘) + ]` | Focus the next panel |
+| `Ctrl + [` | `Cmd(⌘) + [` | Focus the previous panel |
+| `Ctrl + Shift + M` | `Cmd(⌘) + Shift + M` | Toggle Device Mode |
+| `F5` or<br /> `Ctrl + R` | `Cmd(⌘) + R` | Normal Reload | 
+| `Ctrl + F5` or<br /> `Ctrl + Shift + R` | `Cmd(⌘) + Shift + R` | Hard Reload | 
+| `Ctrl + Shift + +` | `Cmd(⌘) + Shift + +` | Zoom in |  
+| `Ctrl + -` | `Cmd(⌘) + -` |Zoom out |  
+| `Ctrl + 0` | `Cmd(⌘) + 0` | Restore default zoom level |
+| `Ctrl +Shift + P` | `Cmd(⌘) + Shift + P` | Open the Command Menu |
+| `Ctrl + F` | `Cmd(⌘) + F` |Search for text within the current panel. Supported only in the ___Elements___, ___Console___, ___Sources___, ___Performance___, ___Memory___, ___JavaScript Profiler___, and ___Quick Source___ panels. |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Elements panel keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Undo change | `cmd(⌘)+z`       | `ctrl+z`       |
-| Redo change | `cmd(⌘)+shift+z` | `ctrl+y` | 
-| Expand the currently-selected node. <br />If the node is already expanded, this shortcut selects the element below it | `right arrow(→)` | `right arrow(→)` | 
-| Collapse the currently-selected node. <br />If the node is already collapsed, this shortcut selects the element above it | `left arrow(←)` | `left arrow(←)` | 
-| Toggle **Edit Attributes** mode on the currently-selected element | `enter(↵)` | `enter(↵)` | 
-| Hide the currently-selected element | `h` | `h` | 
-| Toggle **Edit as HTML** mode on the currently-selected element | `function+F2` | `F2` | 
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + Z` | `Cmd(⌘) + Z` | Undo change | 
+| `Ctrl + Y` | `Cmd(⌘) + Shift + Z` | Redo change |
+| `Right Arrow(→)` | `Right Arrow(→)` |Expand the currently-selected node. <br />If the node is already expanded, this shortcut selects the element below it |  
+| `Left arrow(←)` | `Left arrow(←)` | Collapse the currently-selected node. <br />If the node is already collapsed, this shortcut selects the element above it |  
+| `Enter(↵)` | `Enter(↵)` | Toggle **Edit Attributes** mode on the currently-selected element | 
+| `H` | `H` | Hide the currently-selected element |
+| `Function + F2` | `F2` | Toggle **Edit as HTML** mode on the currently-selected element | 
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Styles pane keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Go to the line where a property value is declared | Hold `cmd(⌘)` then click the property value | Hold `ctrl` then click the property value |
-| Cycle through the RBGA, HSLA, and Hex representations of a color value | Hold `shift` then click the <br />**Color Preview** box next to the value | Hold `shift` then click the <br />**Color Preview** box next to the value |
-| Select the next / previous property or value | Click a property name or value then press `tab(↹)` or `shift+tab(↹)` | Click a property name or value then press `tab(↹)`or `shift+tab(↹)` |
-| Increment / decrement a property value by 1 | Click a value then press the `up arrow(↑)` or `down arrow(↓)` | Click a value then press the `up arrow(↑)` or `down arrow(↓)` |
-| Increment / decrement a property value by 10 | Click a value then press the `shift+up arrow(↑)` or `shift+down arrow(↓)` | Click a value then press the `shift+up arrow(↑)` or `shift+down arrow(↓)` |
-| Increment / decrement a property value by 100 | Click a value then press the `cmd(⌘)+up arrow(↑)` or `cmd(⌘)+down arrow(↓)` | Click a value then press the `ctrl+up arrow(↑)` or `ctrl+down arrow(↓)` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| Hold `Ctrl` then click the property value | Hold `Cmd(⌘)` then click the property value | Go to the line where a property value is declared |
+| Hold `Chift` then click the <br />**Color Preview** box next to the value | Hold `Shift` then click the <br />**Color Preview** box next to the value | Cycle through the RBGA, HSLA, and Hex representations of a color value |
+| Click a property name or value then press `Tab(↹)` or `Shift + Tab(↹)` | Click a property name or value then press `Tab(↹)`or `Shift + Tab(↹)` | Select the next / previous property or value |
+| Click a value then press the `Up Arrow(↑)` or `Down Arrow(↓)` | Click a value then press the `Up Arrow(↑)` or `Down Arrow(↓)` | Increment / decrement a property value by 1 |
+| Click a value then press the `Shift + Up Arrow(↑)` or `Shift + Down Arrow(↓)` | Click a value then press the `Shift + Up Arrow(↑)` or `Shift+ Down Arrow(↓)` | Increment / decrement a property value by 10 | 
+| Click a value then press the `Ctrl + Up Arrow(↑)` or `Ctrl + Down Arrow(↓)` | Click a value then press the `Cmd(⌘) + Up Arrow(↑)` or `Cmd(⌘) + Down Arrow(↓)` | Increment / decrement a property value by 100 |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Sources panel keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Pause script execution (if currently running) or<br />resume (if currently paused) | `F8` or<br />`cmd(⌘)+\` | `F8` or<br />`ctrl+\` |
-| Step over next function call | `F10` or<br />`cmd(⌘)+'` | `F10` or<br />`ctrl+'` |
-| Step into next function call | `F11` or<br />`cmd(⌘)+;` | `F11` or<br />`ctrl+;` |
-| Step out of current function | `shift+F11` or<br />`cmd(⌘)+shift+;` | `shift+F11` or<br />`ctrl+shift+;` |
-| Save changes to local modifications | `cmd(⌘)+s`  | `ctrl+s` |
-| Save all changes | `cmd(⌘)+option(⌥)+s`  | `ctrl+alt+s` |
-| Go to line | `ctrl+g`  | `ctrl+g` |
-| Close the active tab | `option(⌥)+w`  | `alt+w` |
-| Toggle the **Navigation** sidebar on the left | `cmd(⌘)+shift+y`  | `ctrl+shift+y` |
-| Toggle the **Debugger** sidebar on the right | `cmd(⌘)+shift+h`  | `ctrl+shift+h` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `F8` or<br />`Ctrl + \` | `F8` or<br />`Cmd(⌘) + \` | Pause script execution (if currently running) or<br />resume (if currently paused) | 
+| `F10` or<br />`Ctrl + '` | `F10` or<br />`Cmd(⌘) + '` | Step over next function call | 
+| `F11` or<br />`Ctrl + ;` | `F11` or<br />`Cmd(⌘) + ;` | Step into next function call | 
+| `Shift + F11` or<br />`Ctrl + Shift + ;` | `Shift + F11` or<br />`Cmd(⌘) + Shift + ;` | Step out of current function | 
+| `Ctrl + S` | `Cmd(⌘) + S`  | Save changes to local modifications |
+| `Ctrl + Alt + S` | `Cmd(⌘) + Option(⌥) + S`  | Save all changes |
+| `Ctrl + G`  | `Ctrl + G` | Go to line |
+| `Alt + W` | `Option(⌥) + W`  | Close the active tab |  
+| `Ctrl + Shift + Y` | `Cmd(⌘) + Shift + Y` | Toggle the **Navigation** sidebar on the left |
+| `Ctrl + Shift + H` |  `Cmd(⌘)+ Shift + H`  |Toggle the **Debugger** sidebar on the right |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Code Editor keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Delete all characters in the last word, up to the cursor | `option(⌥)+delete(del)` | `ctrl+delete(del)` |
-| Go to matching bracket | `ctrl+m` | `ctrl+m` |
-| Toggle single-line comment.<br />If multiple lines are selected, DevTools adds a comment to the start of each line | `cmd(⌘)+/` | `ctrl+/` |
-
-
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + Delete(del)` | `Option(⌥) + Delete(del)` | Delete all characters in the last word, up to the cursor | 
+| `Ctrl + M` | `Ctrl + M` | Go to matching bracket |
+| `Ctrl + B` | `Cmd + B` | Add or remove a line-of-code breakpoint |
+| `Ctrl + D` or <br /> `Ctrl + U` | `Cmd + D` or <br /> `Cmd + U` | Select / de-select the next occurrence of whatever word the cursor is on. Each occurrence is highlighted simultaneously |
+| `Ctrl + /` | `Cmd(⌘) + /` | Toggle single-line comment. <br /> If multiple lines are selected, DevTools adds a comment to the start of each line |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Network panel keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Start/stop recording | `cmd(⌘)+e` | `ctrl+e` |
-| Record a reload | `cmd(⌘)+r` | `ctrl+r` |
-| Replay a selected XHR request | `r` | `r` |
-| Hide the details of a selected request | `escape(esc)` | `escape(esc)` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + E` | `Cmd(⌘) + E` | Start/stop recording | 
+| `Ctrl + R` | `Cmd(⌘) + R` | Record a reload | 
+| `R` | `R` | Replay a selected XHR request |
+| `Escape(esc)` | `Escape(esc)` | Hide the details of a selected request |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Performance panel keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Start/stop recording | `cmd(⌘)+e` | `ctrl+e` |
-| Save recording | `cmd(⌘)+s` | `ctrl+s` |
-| Load recording | `cmd(⌘)+o` | `ctrl+o` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + E` | `Cmd(⌘) + E` | Start/stop recording |
+| `Ctrl + S` | `Cmd(⌘) + S` | Save recording |
+| `Ctrl + O` | `Cmd(⌘) + O` | Load recording | 
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Memory panel keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Start/stop recording | `cmd(⌘)+e` | `ctrl+e` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + E` | `Cmd(⌘)+ E` | Start/stop recording |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Console panel keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Accept autocomplete suggestion | `right arrow(→)` or<br />`tab(↹)` | `right arrow(→)` or<br />`tab(↹)` |
-| Reject autocomplete suggestion | `escape(esc)` | `escape(esc)` |
-| Get previous statement | `up arrow(↑)` | `up arrow(↑)` |
-| Get next statement | `down arrow(↓)` | `down arrow(↓)` |
-| Focus the **Console** | `ctrl+\` | `down arrow(↓)` |
-| Clear the **Console** | `down arrow(↓)` | `down arrow(↓)` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Right Arrow(→)` or<br />`Tab(↹)` | `Right Arrow(→)` or<br />`Tab(↹)` |Accept autocomplete suggestion | 
+| `Escape(esc)` | `Escape(esc)` | Reject autocomplete suggestion |
+| `Up Arrow(↑)` | `Up Arrow(↑)` | Get previous statement |
+| `Down Arrow(↓)` | `Down Arrow(↓)` | Get next statement |
+| `Ctrl + `\` | `Ctrl + `\` | Focus the **Console** |
+| `Ctrl + L` | `Cmd(⌘) + K` or<br />`Option(⌥) + L` | Clear the **Console** |
 
 **[🔼Back to Top](#table-of-contents)**
 
 ## Search tab keyboard shortcuts
 
-| Action      | Mac           | Windows/Linux  | 
-| :----:      | :---:         | :-----------:  |
-| Expand/collapse all search results | `cmd(⌘)+option(⌥)+{` or<br />`cmd(⌘)+option(⌥)+}` | `ctrl+shift+{` or<br />`ctrl+shift+}` |
+| Windows / Linux | Mac | Description |   
+| :-------------: | :-: | :---------: |
+| `Ctrl + Shift + {` or<br />`Ctrl + Shift + }` | `Cmd(⌘) + Option(⌥) + {` or<br />`Cmd(⌘) + Option(⌥) + }` | Expand/collapse all search results |
 
 **[🔼Back to Top](#table-of-contents)**

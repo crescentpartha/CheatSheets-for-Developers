@@ -1,3 +1,9 @@
+---
+title: VIM-Editor CheatSheet
+description: The most commonly used vim-editor keyboard shortcuts are given here.
+created: 2022-10-23
+---
+
 ## Table of Contents
 
 - [VIM-Editor CheatSheet for Developers](#vim-editor-cheatsheet-for-developers)

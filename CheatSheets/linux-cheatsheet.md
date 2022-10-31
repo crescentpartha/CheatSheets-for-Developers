@@ -1,3 +1,10 @@
+<!-- Heading section doesn't work -->
+<!-- ---
+title: Linux CheatSheet
+description: The most commonly used linux commands are given here.
+created: 2022-10-21
+--- -->
+
 ## Table of Contents
 
 - [Linux CheatSheet for Developers](#linux-cheatsheet-for-developers)
@@ -8,7 +15,7 @@
   - [System Info](#system-info)
   - [Shortcuts](#shortcuts)
   - [Text Editors](#text-editors)
-  - [Archives(Tar Files)](#archives)
+  - [Archives](#archives)
   - [Disk Usage](#disk-usage)
   - [Search](#search)
   - [Networking](#networking)
@@ -27,6 +34,8 @@
 | `cd ..` | Go up a directory | 
 | `cd` | Change to home directory |
 | `ls` | List contents of directory|
+| `ls -r` | Reverse list contents of directory |
+| `ls -t` | List contents of directory based on time |
 | `ls -al` | Formatted list of contents for the directory including hidden files |
 | `rm file` | Delete file | 
 | `rm -r dir` | Delete directory *dir* | 
@@ -35,7 +44,13 @@
 | `rm -rfv dir` | Forcibly delete the directory *dir* with verbose output |
 | `cp file1 dir` | Copy *file1* to inside of *dir*| 
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
-| `touch file` | Create *file*| 
+| `touch file` | Create *file*|
+| `cat file` | Show the Contents of file | 
+| `head file` | Display first 10 lines of files | 
+| `tail file` | Display last 10 lines of files | 
+| `gpg -c file` | Encrypt a file | 
+| `gpg file` | Decrypt a file | 
+| `wc` | Show the Number of words,lines,bytes in file |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -86,11 +101,11 @@
 
 | Command | Description |
 | ------- | ----------- |
-| `Ctrl + A` | Move to the start of command line |
-| `Ctrl + E` | Move to the end of command line |
+| `Ctrl + A` | Moves the cursor to the start of a line |
+| `Ctrl + E` | Moves the cursor to the end of the line |
 | `Ctrl + F` | Move one character forward |
 | `Ctrl + B` | Move one character backward |
-| `Ctrl + L` | Clears the terminal screen |
+| `Ctrl + L` | Clear the terminal screen |
 | `Ctrl + C` | Halts the current command |
 | `Ctrl + D` | Log out of current session |
 | `Ctrl + W` | Erases one word in current line |

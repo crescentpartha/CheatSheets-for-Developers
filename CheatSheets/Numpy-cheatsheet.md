@@ -1,9 +1,15 @@
+---
+title: NumPy CheatSheet
+description: The most commonly used NumPy commands are given here.
+created: 2022-10-23
+---
+
 ## Table of Contents
 
 - [NumPy CheatSheet for Developers](#numpy-cheatsheet-for-developers)
   - [Introduction-What-is-NumPy?](#introduction-what-is-numpy)
   - [Key and Imports](#key-and-imports)
-  - [Data Types In Numpy](#data-types-in-numpy)
+  - [Data Types In NumPy](#data-types-in-numpy)
   - [Save And Load Data](#save-and-load-data)
     - [Text/CSV files:](#textcsv-files)
     - [Properties:](#properties)
@@ -39,7 +45,7 @@
 
 **[🔼Back to Top](#table-of-contents)**
 
-## Data Types In Numpy
+## Data Types In NumPy
 
 > NumPy has some extra data types, and refer to data types with one character, like i for integers, u for unsigned integers etc.
 

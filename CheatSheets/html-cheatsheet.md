@@ -1,3 +1,9 @@
+---
+title: HTML CheatSheet
+description: The most commonly used html tags nds are given here.
+created: 2022-10-20
+---
+
 ## Table of Contents
 
 - [HTML CheatSheet for Developers](#html-cheatsheet-for-developers)
@@ -9,7 +15,8 @@
   - [Images](#images)
   - [Lists](#lists)
   - [Forms](#forms)
-  - [Inputs](#inputs)
+  - [Important Attributes](#important-attributes)
+  - [Input Types](#input-Types)
   - [Tables](#tables)
   - [Graphics](#graphics)
   - [Media](#media)
@@ -90,7 +97,7 @@
 | `<strong> ... </strong>` | Defines important text                               |
 | `<sub> ... </sub>`       | Defines subscripted text                             |
 | `<sup> ... </sup>`       | Defines superscripted text                           |
-| `<ins> ... </i>`         | Defines inserted text                                |
+| `<ins> ... </ins>`       | Defines inserted text                                |
 | `<del> ... </del>`       | Defines deleted text                                 |
 | `<mark> ... </mark>`     | Defines marked/highlighted text                      |
 
@@ -99,7 +106,6 @@
 ## Links
 
 > Links allow users to click their way from page to page.
-
 
 | Command                         | Description                                                                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -155,7 +161,71 @@
 | ------------------ | -------------------------------------------------------------------------------- |
 | `<form> … </form>` | The parent tag for an HTML form.                                                 |
 | `action=”url”`     | The URL listed here is where the form data will be submitted once user fills it. |
-| `method=””`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+| `method=”POST”`        | It specifies which HTTP method (POST or GET) would be used to submit the form.   |
+| `accept-charset`   | It specifies the character encodings used for form submission.                   |
+| `autocomplete`        | It specifies whether a form should have autocomplete on or off.   |
+| `enctype`        | It specifies how the form-data should be encoded when submitting it to the server (only for method="post")   |
+| `name`        | It specifies the name of the form.   |
+| `novalidate`        | It specifies that the form should not be validated when submitted   |
+| `target`        | It specifies where to display the response that is received after submitting the form  |
+
+
+| Form Elements           | Description                                                                      |
+| ------------------ | -------------------------------------------------------------------------------- |
+| `<input>` | Used to take input from user, can be shown in different ways depending upon 'type' attribute.       |
+| `<label>`     | It defines a label for several form elements. |
+| `<select>`        | It element defines a drop-down list  |
+| `<textarea>`   | It element defines a multi-line input field (a text area)                   |
+| `<button>`        | It element defines a clickable button   |
+
+**Example:**
+
+```html
+<form method="POST" action="/page">
+  <label for="name">Page Name</label>
+  <input id="name" type="text" name="page_name" />
+  <input type="submit" value="Create" />
+</form>
+```
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Input Types
+
+| Field Type | HTML Code  Notes |
+| :---: |----- |
+| plain text | `<input type="text">` | the type attribute can be omitted |
+| password field | `<input type="password">`  | echoes dots instead of characters |
+| text area | `<textarea></textarea>` |  a more customizable plain text area |
+| checkbox | `<input type="checkbox">` | can be toggled on or off |
+| radio button | `<input type="radio">`  can be grouped with other inputs |
+| drop-down lists | `<select><option>` | [check here for more info](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) |
+| file picker | `<input type="file">`  | pops up an “open file” dialog |
+| hidden field | `<input type="hidden">`   | nothing there!
+| submit button | `<input type="submit">`  | activates the form's submission <br/>(a `POST` request or <br/>Javascript action) |
+
+**[🔼Back to Top](#table-of-contents)**
+
+### Important Attributes
+
+**Input Tags Attributes:**
+
+|keyword|description|
+|--------|---------|
+| `type` | the type of data that is being input (affects the "widget" that is used to display this element by the browser).|
+| `name` | the key used to describe this data in the HTTP request.|
+| `id` | the unique identifier that other HTML elements, JavaScript and CSS use to access this element in the browser.|
+| `value` | the default data that is assigned to the element.|
+| `placeholder` | not a default value, but a useful HTML5 addition of a data "prompt" for an input.|
+| `disabled` | a Boolean attribute indicating that the "widget" is not available for interaction.|
+
+**Radio Buttons or Checkboxes Attributes:**
+
+|keyword|description|
+|--------|---------|
+| `checked` | a Boolean that indicates whether the control is selected by default (is false unless).|
+| `name` | the group to which this element is connected. For radio buttons, only one element per group (or name) can be checked.|
+| `value` | the data or value that is returned for a specific group (a multi-element control), if this element is checked.|
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -209,6 +279,8 @@
 | -------------------------- | ------------------------------------------------ |
 | `<video> … </video>`       | Used to show a video on a web page.              |
 | `<audio> … </audio>`       | Used to play an audio file on a web page.        |
+| `<object>`       | It defines an embedded object within an HTML document. |
+| `<iframe>`       | It helps to play video directly from youtube.                       |
 
 **[🔼Back to Top](#table-of-contents)**
 
