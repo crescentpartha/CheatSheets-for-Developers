@@ -11,13 +11,14 @@ created: 2022-10-28
   - [Chrome Extensions](#chrome-extensions)
   - [Codeforces Extensions](#codeforces-extensions)
   - [LeetCode Extensions](#leetcode-extensions)
+  - [GitHub Extensions](#github-extensions)
 
 # Extension CheatSheet for Developers
 
 ## VSCode Extensions
 
 | Extension | Description |
-| :--------: | :---------- |
+| :--------: | ----------- |
 | `Auto Import` | Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX. |
 | `C/C++` | C/C++ IntelliSense, debugging, and code browsing. |
 | `Code Runner` | Run code snippet or code file for multiple languages: C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6, Ruby, Go, Lua, Groovy, PowerShell, BAT/CMD, BASH/SH, F# Script, F# (.NET Core), C# Script, C# (.NET Core), VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml Script, R, AppleScript, Elixir, Visual Basic .NET, Clojure, Haxe, Objective-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Free Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran, Ring, Standard ML, and custom command |
@@ -48,7 +49,7 @@ created: 2022-10-28
 ## Chrome Extensions
 
 | Extension | Description | Link |
-| :--------: | :---------- | :-------: |
+| :--------: | ----------- | :-------: |
 | `Color by Fardos - Color Picker` | Pick colors from websites, save colors & gradients, get matching shades and tints and create beautiful gradients. | [here](https://chrome.google.com/webstore/detail/color-by-fardos-color-pic/iibpgpkhpfggipbacjfeijkloidhmiei) |
 | `ColorPick Eyedropper` | A zoomed eyedropper & color chooser tool that allows you to select color values from webpages and more. | [here](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en) |
 | `Facebook Screen Sharing` | Share your screen in video calls on Facebook, Messenger and Workplace | [here](https://chrome.google.com/webstore/detail/screen-sharing/onnpnbcklmahhoajlilopflaandmlooa?hl=en) |
@@ -73,7 +74,7 @@ created: 2022-10-28
 ## Codeforces Extensions
 
 | Extension | Description | Link |
-| :--------: | :---------- | :-------: |
+| :--------: | ----------- | :-------: |
 | `CF Analytics` | Analyse Codeforces profiles | [here](https://chrome.google.com/webstore/detail/cf-analytics/hhljbjodjdbjbggddjaidojnlmaobcpo) |
 | `CF World Standings` | This extension filters the standings for a given contest on Codeforces to show only active competitors of a specific country. | [here](https://chrome.google.com/webstore/detail/cf-world-standings/caginmipmmelcmijagfppgdljepiioak) |
 
@@ -82,11 +83,19 @@ created: 2022-10-28
 ## LeetCode Extensions
 
 | Extension | Description | Link |
-| :--------: | :---------- | :-------: |
+| :--------: | ----------- | :-------: |
 | `Leethub` | It integrates a GitHub repository with leetcode and automatically pushes your solution to GitHub with all stats. | [here](https://lnkd.in/gH26_KHJ) |
 | `Leetcode Formatter` | It formats your code into a neat and readable form. | [here](https://lnkd.in/dMB9Akji) |
 | `Leetcode Enhancer` | This extension can boost your productivity by hiding unnecessary visual elements from the screen, enabling you to focus on what is important. | [here](https://lnkd.in/dfS4TPPS) |
 | `LeetCode Video Solutions` | Watching free helpful LeetCode video solutions on the problem page itself and not being distracted by watching cat videos on YouTube when you should be solving a LeetCode problem. | [here](https://lnkd.in/dSgBBF_H) |
 | `CodingBuddy` | Never miss a Coding contest again! Displays live and upcoming Programming Contests happening on a variety of popular platforms. | [here](https://lnkd.in/dnUtTD_C) |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## GitHub Extensions
+
+| Extension | Description | Link |
+| :--------: | ----------- | :-------: |
+| `GitHub Contribution Color Graph` | Change colors of contribution graph in GitHub. | [here](https://chrome.google.com/webstore/detail/github-contribution-color/cfilkjdlgdiclmdfdggjommndffiibbe) |
 
 **[🔼Back to Top](#table-of-contents)**
