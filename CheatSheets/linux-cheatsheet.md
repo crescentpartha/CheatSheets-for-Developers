@@ -29,8 +29,9 @@
 | `ls -al` | Formatted list of contents for the directory including hidden files |
 | `rm file` | Delete file | 
 | `rm -r dir` | Delete directory *dir* | 
-| `rm -f file` |Force delete file | 
-| `rm -rf dir` | Force delete directory *dir* | 
+| `rm -f file` |Force deletes file | 
+| `rm -rf dir` | Force deletes the directory *dir* | 
+| `rm -rfv fir` | Force deletes the directory *dir* with verbose output |
 | `cp file1 dir` | Copy *file1* to inside of *dir*| 
 | `mv file1 dir` | Move/Cut *file1* to inside of *dir*| 
 | `touch file` | Create *file*| 
