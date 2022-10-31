@@ -12,6 +12,7 @@
   - [Disk Usage](#disk-usage)
   - [Search](#search)
   - [Networking](#networking)
+  - [Environment Variables command](#environment-variables-command)
 
 # Linux CheatSheet for Developers
 
@@ -155,5 +156,13 @@
 | `hostname -I` | Display all local IP addresses of the host|
 | `wget http://domain.com/file` |Download http[]()://domain.com/file |
 | `netstat -nutlp` |Display listening tcp and udp ports and corresponding programs|
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Environment variables command
+| Command | Description |
+| ------- | ----------- |
+| `env` | Displays all environment variables |
+| `echo $VARIABLE` | Displays value of variable |
 
 **[🔼Back to Top](#table-of-contents)**
