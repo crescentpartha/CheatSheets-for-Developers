@@ -11,6 +11,8 @@ created: 2022-10-18
   - [Getting & Creating Projects](#getting--creating-projects)
   - [Basic Commands](#basic-commands)
   - [Branching & Merging](#branching--merging)
+  - [Discard Changes](#discard-changes)
+  - [Set Upstream Branch](#set-upstream-branch)
   - [Sharing & Updating Projects](#sharing--updating-projects)
   - [Inspection & Comparison](#inspection--comparison)
   - [Tracking Path Changes](#tracking-path-changes)
@@ -64,10 +66,6 @@ created: 2022-10-18
 | `git remote add origin [url]` | Adding a remote repository | 
 | `git show` | Shows information about any git object |
 | `gitk` | Shows graphical interface for a local repository |
-| `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit |
-| `git checkout [file]` | Matches the file with last commit |
-| `git help -a` | Shows the list of all available Git commands |
-| `git restore .` | To restore all files in the current directory |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -84,13 +82,33 @@ created: 2022-10-18
 | `git checkout [branch-name]` | Switch to another branch |
 | `git checkout -b "branch name"` | Create a new branch and switch to that branch |
 | `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
-| `git checkout -` | Switch to the branch last checked out |
-| `git checkout -- [file-name.txt]` | Discard changes to a file |
 | `git switch [branch-name]` | Switch to another branch |
 | `git merge [branch-name]` | Merge branchs |
 | `git merge [source branch] [target branch]` | Merge a branch into a target branch |
 | `git merge --allow-unrelated-histories`| Merge unrelated histories |
 | `git cherry-pick [commit-ID]` | Bring in changes from one (or more) particular commit to the current branch. |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Discard Changes
+
+| Command | Description |
+| :-----: | ----------- |
+| `git checkout -` | Switch to the branch last checked out |
+| `git checkout -- [file-name.txt]` | Discard changes to a file |
+| `git checkout [file]` | Matches the file with last commit |
+| `git restore .` | To restore all files in the current directory |
+| `git revert [commit-ID]` | Create new commit, reverting the changes from a specified commit in remote branch |
+| `git help -a` | Shows the list of all available Git commands |
+
+**[🔼Back to Top](#table-of-contents)**
+
+## Set Upstream Branch
+
+| Command | Description |
+| :-----: | ----------- |
+| `git push --set-upstream origin current-branch-name` <br /> or <br /> `git push -u origin current-branch-name` | - To push the current branch and set the remote as upstream <br /> - `git push --set-upstream origin development` <br /> - `git push -u origin development` |
+| `git pull origin main` <br /> or <br /> `git pull origin development` | - Update the ___current branch___ from `main` branch <br /> - Update the ___current branch___ from `development` branch <br /> - Before updating, ___push___ you all modification to ___remote brach___ <br /> - Otherwise every ___modification will be removed___ |
 
 **[🔼Back to Top](#table-of-contents)**
 
