@@ -70,6 +70,8 @@ created: 2022-10-28
 | `React Developer Tools` | Adds React debugging tools to the Chrome Developer Tools. | [here](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) |
 | `Web Developer` | Adds a toolbar button with various web developer tools. | [here](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) |
 | `Video Screenshots and Notes - Video Notebook` | Take Screenshots and Notes on YouTube videos, Google Meet, Udemy, Coursera & more! | [here](https://chrome.google.com/webstore/detail/video-screenshots-and-not/hbklahkfbghjgbclbfcnhpfmajkagnci) |
+| `Taskade - Team Tasks, Notes, Video Chat` | Team task lists, notes, and video chat. Get work done faster and smarter with Taskade. | [here](https://chrome.google.com/webstore/detail/taskade-team-tasks-notes/hcobdfnjjaceclfdjpmmpiknimccjpmf) |
+| `Todoist for Chrome` | Organize work and life with Todoist for Chrome | [here](https://chrome.google.com/webstore/detail/todoist-for-chrome/jldhpllghnbhlbpcmnajkpdmadaolakh) |
 
 **[🔼Back to Top](#table-of-contents)**
 
