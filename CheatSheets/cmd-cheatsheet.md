@@ -69,6 +69,8 @@ created: 2022-10-25
 | `Recover`                | Recovers data from a bad or damaged disk.                                |
 | `sfc`                    | - System file checker, scans all system files and repairs them if required <br /> - `sfc /scannow` |
 | `vol`                    |  Displays volume label and serial number for the disk.                   |
+| `wmic logicaldisk get name` | Get all the drive name                                                |
+| `diskmgmt.msc`           | Open disk-management system from command prompt                          |
 
 **[🔼Back to Top](#table-of-contents)**
 
