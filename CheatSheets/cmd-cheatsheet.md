@@ -42,6 +42,10 @@ created: 2022-10-25
 | `tree`                   | Show all system folder in tree manner.                                   |
 | `type`                   | Displays the contents of text files.                                     |
 | `xcopy`                  | The xcopy command can copy one or more files or directory trees from one location to another. |
+| `ls`                     | By using this command showing all the folder's in any directory          |
+| `dir /a`                 | This command is help to find all the hidden directories                  |
+| `rm`                     | - File remove from any directory <br /> - `rm file-name`.                |
+| `rmdir /s`               | - Remove all the Subfolder from any Main-Folder <br /> - `rmdir /s folder-name`. |
 
 **[🔼Back to Top](#table-of-contents)**
 
