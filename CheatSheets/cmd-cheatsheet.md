@@ -42,6 +42,10 @@ created: 2022-10-25
 | `tree`                   | Show all system folder in tree manner.                                   |
 | `type`                   | Displays the contents of text files.                                     |
 | `xcopy`                  | The xcopy command can copy one or more files or directory trees from one location to another. |
+| `ls`                     | By using this command showing all the folder's in any directory          |
+| `dir /a`                 | This command is help to find all the hidden directories                  |
+| `rm`                     | - File remove from any directory <br /> - `rm file-name`.                |
+| `rmdir /s`               | - Remove all the Subfolder from any Main-Folder <br /> - `rmdir /s folder-name`. |
 
 **[🔼Back to Top](#table-of-contents)**
 
@@ -69,6 +73,8 @@ created: 2022-10-25
 | `Recover`                | Recovers data from a bad or damaged disk.                                |
 | `sfc`                    | - System file checker, scans all system files and repairs them if required <br /> - `sfc /scannow` |
 | `vol`                    |  Displays volume label and serial number for the disk.                   |
+| `wmic logicaldisk get name` | Get all the drive name                                                |
+| `diskmgmt.msc`           | Open disk-management system from command prompt                          |
 
 **[🔼Back to Top](#table-of-contents)**
 
