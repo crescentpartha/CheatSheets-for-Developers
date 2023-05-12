@@ -1,178 +1,332 @@
-# CheatSheets-for-Developers
-
-A Collection of programming [CheatSheets](./CheatSheets/) for developers to quick review while working.
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/hacktoberfest-2022-blueviolet" alt="Hacktober Badge"/>
-<a href="https://github.com/ossamamehmood" ><img src="https://img.shields.io/badge/Contributions-welcome-orangered.svg?style=flat&logo=git" alt="Contributions" /></a>
-
-<a href="https://github.com/crescentpartha/CheatSheets-for-Developers/pulls"><img src="https://img.shields.io/github/issues-pr/crescentpartha/CheatSheets-for-Developers" alt="Pull Requests Badge"/></a>
+---
+layout: page
+---
+<h1 id="cheatsheets-for-developers">CheatSheets-for-Developers</h1>
+<p>A Collection of programming <a href="./CheatSheets/">CheatSheets</a>
+for developers to quick review while working.</p>
+<div data-align="center">
+<p><img src="https://img.shields.io/badge/hacktoberfest-2022-blueviolet" alt="Hacktober Badge"/>
+<a href="https://github.com/ossamamehmood" ><img src="https://img.shields.io/badge/Contributions-welcome-orangered.svg?style=flat&logo=git" alt="Contributions" /></a></p>
+<p><a href="https://github.com/crescentpartha/CheatSheets-for-Developers/pulls"><img src="https://img.shields.io/github/issues-pr/crescentpartha/CheatSheets-for-Developers" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/crescentpartha/CheatSheets-for-Developers?color=2b9348&style=flat&logo=github"></a>
-<a href="https://github.com/crescentpartha/CheatSheets-for-Developers/blob/main/LICENSE"><img src="https://img.shields.io/github/license/crescentpartha/CheatSheets-for-Developers?color=2b9348" alt="License Badge"/></a>
-
+<a href="https://github.com/crescentpartha/CheatSheets-for-Developers/blob/main/LICENSE"><img src="https://img.shields.io/github/license/crescentpartha/CheatSheets-for-Developers?color=2b9348" alt="License Badge"/></a></p>
 </div>
-
-<div align="center" markdown="1">
-
-[![GitHub repo forks](https://img.shields.io/github/forks/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=whitesmoke&label=Forks)](https://github.com/crescentpartha/CheatSheets-for-Developers/network)&#160;
-[![GitHub repo stars](https://img.shields.io/github/stars/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=whitesmoke&label=Stars)](https://github.com/crescentpartha/CheatSheets-for-Developers/stargazers)&#160;
-[![GitHub org sponsors](https://img.shields.io/github/sponsors/crescentpartha?style=flat&logo=github&logoColor=whitesmoke&label=Sponsors)](https://github.com/sponsors/crescentpartha)&#160;
-[![GitHub repo watchers](https://img.shields.io/github/watchers/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=whitesmoke&label=Watchers)](https://github.com/crescentpartha/CheatSheets-for-Developers/watchers)&#160;
-[![GitHub repo size](https://img.shields.io/github/repo-size/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=whitesmoke&label=Repo%20Size)](https://github.com/crescentpartha/CheatSheets-for-Developers/archive/refs/heads/main.zip)
-[![GitHub repo Issues](https://img.shields.io/github/issues/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=red&label=Issues)](https://github.com/crescentpartha/CheatSheets-for-Developers/issues)&#160;
-[![GitHub repo Good Issues for newbies](https://img.shields.io/github/issues/crescentpartha/CheatSheets-for-Developers/good%20first%20issue?style=flat&logo=github&logoColor=green&label=Good%20First%20issues)](https://github.com/crescentpartha/CheatSheets-for-Developers/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)&#160;
-[![GitHub repo PRs](https://img.shields.io/github/issues-pr/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=orange&label=PRs)](https://github.com/crescentpartha/CheatSheets-for-Developers/pulls)&#160;
-[![GitHub repo Merged PRs](https://img.shields.io/github/issues-search/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=green&label=Merged%20PRs&query=is%3Amerged)](https://github.com/crescentpartha/CheatSheets-for-Developers/pulls?q=is%3Apr+is%3Amerged)&#160;
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)&#160;
-[![Hacktoberfest 2022 stats](https://img.shields.io/github/hacktoberfest/2022/crescentpartha/CheatSheets-for-Developers?label=Hacktoberfest+2022)](https://github.com/crescentpartha/CheatSheets-for-Developers/pulls?q=is%3Apr+is%3Amerged+created%3A2022-10-01..2022-10-31)
-
+<div data-align="center" data-markdown="1">
+<p><a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/network"><img
+src="https://img.shields.io/github/forks/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=whitesmoke&amp;label=Forks"
+alt="GitHub repo forks" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/stargazers"><img
+src="https://img.shields.io/github/stars/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=whitesmoke&amp;label=Stars"
+alt="GitHub repo stars" /></a>  <a
+href="https://github.com/sponsors/crescentpartha"><img
+src="https://img.shields.io/github/sponsors/crescentpartha?style=flat&amp;logo=github&amp;logoColor=whitesmoke&amp;label=Sponsors"
+alt="GitHub org sponsors" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/watchers"><img
+src="https://img.shields.io/github/watchers/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=whitesmoke&amp;label=Watchers"
+alt="GitHub repo watchers" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/archive/refs/heads/main.zip"><img
+src="https://img.shields.io/github/repo-size/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=whitesmoke&amp;label=Repo%20Size"
+alt="GitHub repo size" /></a> <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/issues"><img
+src="https://img.shields.io/github/issues/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=red&amp;label=Issues"
+alt="GitHub repo Issues" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22"><img
+src="https://img.shields.io/github/issues/crescentpartha/CheatSheets-for-Developers/good%20first%20issue?style=flat&amp;logo=github&amp;logoColor=green&amp;label=Good%20First%20issues"
+alt="GitHub repo Good Issues for newbies" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/pulls"><img
+src="https://img.shields.io/github/issues-pr/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=orange&amp;label=PRs"
+alt="GitHub repo PRs" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/pulls?q=is%3Apr+is%3Amerged"><img
+src="https://img.shields.io/github/issues-search/crescentpartha/CheatSheets-for-Developers?style=flat&amp;logo=github&amp;logoColor=green&amp;label=Merged%20PRs&amp;query=is%3Amerged"
+alt="GitHub repo Merged PRs" /></a>  <a
+href="https://github.com/sindresorhus/awesome"><img
+src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"
+alt="Awesome" /></a>  <a
+href="https://github.com/crescentpartha/CheatSheets-for-Developers/pulls?q=is%3Apr+is%3Amerged+created%3A2022-10-01..2022-10-31"><img
+src="https://img.shields.io/github/hacktoberfest/2022/crescentpartha/CheatSheets-for-Developers?label=Hacktoberfest+2022"
+alt="Hacktoberfest 2022 stats" /></a></p>
 </div>
-
-## ___CheatSheets Table Views___
-
-<div align="center">
-
-| __[git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)__ | __[markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)__ | __[windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)__ |
-| :-------: | :-------: | :-------: |
-| __[cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)__ | __[linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)__ | __[bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)__ |
-| __[vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)__ | __[vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)__ | __[chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)__ |
-| __[npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)__ | __[nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)__ | __[npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)__ |
-| __[yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)__ | __[html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)__ | __[css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)__ |
-| __[javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)__ | __[python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)__ | __[java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)__ |
-| __[php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)__ | __[sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)__ | __[mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)__ |
-| __[nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)__ | __[cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)__ | __[kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)__ |
-| __[docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)__ | __[terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)__ | __[regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)__ |
-| __[conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)__ | __[pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)__ | __[numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)__ |
-| __[configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)__ | __[react-cheatsheet.md](./CheatSheets/react-cheatsheet.md)__ | __[angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)__ |
-| __[extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)__ | __[sklearn-cheatsheet.md](./CheatSheets/sklearn-cheatsheet.md)__ |  |
-
+<h2 id="cheatsheets-table-views"><strong><em>CheatSheets Table
+Views</em></strong></h2>
+<div data-align="center">
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong><a
+href="./CheatSheets/git-cheatsheet.md">git-cheatsheet.md</a></strong></th>
+<th style="text-align: center;"><strong><a
+href="./CheatSheets/markdown-cheatsheet.md">markdown-cheatsheet.md</a></strong></th>
+<th style="text-align: center;"><strong><a
+href="./CheatSheets/windows-cheatsheet.md">windows-cheatsheet.md</a></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/cmd-cheatsheet.md">cmd-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/linux-cheatsheet.md">linux-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/bash_cheatsheet.md">bash-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/vscode-cheatsheet.md">vscode-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/vim-editor-cheatsheet.md">vim-editor-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/chrome-devtools-cheatsheet.md">chrome-devtools-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/npm-cheatsheet.md">npm-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/nvm-cheatsheet.md">nvm-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/npx-cheetsheet.md">npx-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/yarn-cheatsheet.md">yarn-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/html-cheatsheet.md">html-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/css-cheatsheet.md">css-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/JavaScript-CheatSheet.md">javascript-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/Python-cheatsheet.md">python-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/java-cheatsheet.md">java-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/php-cheatsheet.md">php-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/sql-cheatsheets.md">sql-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/mongodb-cheatsheet.md">mongodb-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/nodeJs-cheatsheet.md">nodejs-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/cpp-stl-cheatsheet.md">cpp-stl-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/kotlin-cheatsheet.md">kotlin-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/docker-cheatsheet.md">docker-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/terraform-cheatsheet.md">terraform-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/regex-cheatsheet.md">regex-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/conda-cheatsheet.md">conda-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/pandas-cheatsheet.md">pandas-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/Numpy-cheatsheet.md">numpy-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/configure-react-cheatsheet.md">configure-react-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/react-cheatsheet.md">react-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/angular-cheatsheet.md">angular-cheatsheet.md</a></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/extension-cheatsheet.md">extension-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"><strong><a
+href="./CheatSheets/sklearn-cheatsheet.md">sklearn-cheatsheet.md</a></strong></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </div>
-
-## ___CheatSheets List___
-
+<h2 id="cheatsheets-list"><strong><em>CheatSheets
+List</em></strong></h2>
 <details>
-<summary>Languages 📄</summary>
-
-- [bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)
-- [javascript-cheatsheet.md](./CheatSheets/JavaScript-CheatSheet.md)
-- [python-cheatsheet.md](./CheatSheets/Python-cheatsheet.md)
-- [java-cheatsheet.md](./CheatSheets/java-cheatsheet.md)
-- [php-cheatsheet.md](./CheatSheets/php-cheatsheet.md)
-- [cpp-stl-cheatsheet.md](./CheatSheets/cpp-stl-cheatsheet.md)
-- [kotlin-cheatsheet.md](./CheatSheets/kotlin-cheatsheet.md)
-
+<summary>
+Languages 📄
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/bash_cheatsheet.md">bash-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/JavaScript-CheatSheet.md">javascript-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/Python-cheatsheet.md">python-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/java-cheatsheet.md">java-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/php-cheatsheet.md">php-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/cpp-stl-cheatsheet.md">cpp-stl-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/kotlin-cheatsheet.md">kotlin-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>Operating Systems 🖥️</summary>
-
-- [windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)
-- [cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)
-- [linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)
+<summary>
+Operating Systems 🖥️
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/windows-cheatsheet.md">windows-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/cmd-cheatsheet.md">cmd-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/linux-cheatsheet.md">linux-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>Frontend 🌐</summary>
-
-- [html-cheatsheet.md](./CheatSheets/html-cheatsheet.md)
-- [css-cheatsheet.md](./CheatSheets/css-cheatsheet.md)
-- [markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)
-- [configure-react-cheatsheet.md](./CheatSheets/configure-react-cheatsheet.md)
-- [react-cheatsheet.md](./CheatSheets/react-cheatsheet.md)
-- [angular-cheatsheet.md](./CheatSheets/angular-cheatsheet.md)
+<summary>
+Frontend 🌐
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/html-cheatsheet.md">html-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/css-cheatsheet.md">css-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/markdown-cheatsheet.md">markdown-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/configure-react-cheatsheet.md">configure-react-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/react-cheatsheet.md">react-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/angular-cheatsheet.md">angular-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>Backend 🖧</summary>
-
-- [nodejs-cheatsheet.md](./CheatSheets/nodeJs-cheatsheet.md)
+<summary>
+Backend 🖧
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/nodeJs-cheatsheet.md">nodejs-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>Databases 🗃️</summary>
-
-- [sql-cheatsheet.md](./CheatSheets/sql-cheatsheets.md)
-- [mongodb-cheatsheet.md](./CheatSheets/mongodb-cheatsheet.md)
+<summary>
+Databases 🗃️
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/sql-cheatsheets.md">sql-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/mongodb-cheatsheet.md">mongodb-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>Tools 🧰</summary>
-
-- [chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)
-- [git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)
-- [npm-cheatsheet.md](./CheatSheets/npm-cheatsheet.md)
-- [nvm-cheatsheet.md](./CheatSheets/nvm-cheatsheet.md)
-- [npx-cheatsheet.md](./CheatSheets/npx-cheetsheet.md)
-- [yarn-cheatsheet.md](./CheatSheets/yarn-cheatsheet.md)
-- [docker-cheatsheet.md](./CheatSheets/docker-cheatsheet.md)
-- [terraform-cheatsheet.md](./CheatSheets/terraform-cheatsheet.md)
+<summary>
+Tools 🧰
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/chrome-devtools-cheatsheet.md">chrome-devtools-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/git-cheatsheet.md">git-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/npm-cheatsheet.md">npm-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/nvm-cheatsheet.md">nvm-cheatsheet.md</a></li>
+<li><a href="./CheatSheets/npx-cheetsheet.md">npx-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/yarn-cheatsheet.md">yarn-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/docker-cheatsheet.md">docker-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/terraform-cheatsheet.md">terraform-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>IDE / Text Editors 📝</summary>
-
-- [vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)
-- [vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)
+<summary>
+IDE / Text Editors 📝
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/vscode-cheatsheet.md">vscode-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/vim-editor-cheatsheet.md">vim-editor-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-
-<summary>Libraries 📚</summary>
-
-### Python
-
-- [conda-cheatsheet.md](./CheatSheets/conda-cheatsheet.md)
-- [pandas-cheatsheet.md](./CheatSheets/pandas-cheatsheet.md)
-- [numpy-cheatsheet.md](./CheatSheets/Numpy-cheatsheet.md)
-
-### Machine Learning
-
-- [sklearn-cheatsheet.md](./CheatSheets/sklearn-cheatsheet.md)
-
+<summary>
+Libraries 📚
+</summary>
+<h3 id="python">Python</h3>
+<ul>
+<li><a
+href="./CheatSheets/conda-cheatsheet.md">conda-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/pandas-cheatsheet.md">pandas-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/Numpy-cheatsheet.md">numpy-cheatsheet.md</a></li>
+</ul>
+<h3 id="machine-learning">Machine Learning</h3>
+<ul>
+<li><a
+href="./CheatSheets/sklearn-cheatsheet.md">sklearn-cheatsheet.md</a></li>
+</ul>
 </details>
-
 <details>
-<summary>Other 💡</summary>
-
-- [extension-cheatsheet.md](./CheatSheets/extension-cheatsheet.md)
-- [regex-cheatsheet.md](./CheatSheets/regex-cheatsheet.md)
+<summary>
+Other 💡
+</summary>
+<ul>
+<li><a
+href="./CheatSheets/extension-cheatsheet.md">extension-cheatsheet.md</a></li>
+<li><a
+href="./CheatSheets/regex-cheatsheet.md">regex-cheatsheet.md</a></li>
+</ul>
 </details>
-
-## ___Instructions___
-
-- Before contributions, please read our [contributing guidelines](docs/CONTRIBUTING.md).
-- If you are new to open source contributions, check out [How-To at a glance](docs/HOW-TO.md).
-- Always follow and maintain the [code-of-conduct](docs/CODE-OF-CONDUCT.md).
-
-## ___Contribution___
-
-> Have a look at [contribution docs](./docs/CONTRIBUTING.md) for how to update any of the CheatSheets.
-
-- Add content to CheatSheets
-- Add new CheatSheets
-- Suggest changes to existing CheatSheets
-- Discuss ideas in issues
-
-## ___Thanks to all the contributors ❤___
-
-___Thanks to everyone___ who has submitted ___pull requests___ and ___issues___ on GitHub, made ___suggestions___, given a ___star___, and generally helped make this a better repository for developers.
-
+<h2 id="instructions"><strong><em>Instructions</em></strong></h2>
+<ul>
+<li>Before contributions, please read our <a
+href="docs/CONTRIBUTING.md">contributing guidelines</a>.</li>
+<li>If you are new to open source contributions, check out <a
+href="docs/HOW-TO.md">How-To at a glance</a>.</li>
+<li>Always follow and maintain the <a
+href="docs/CODE-OF-CONDUCT.md">code-of-conduct</a>.</li>
+</ul>
+<h2 id="contribution"><strong><em>Contribution</em></strong></h2>
+<blockquote>
+<p>Have a look at <a href="./docs/CONTRIBUTING.md">contribution docs</a>
+for how to update any of the CheatSheets.</p>
+</blockquote>
+<ul>
+<li>Add content to CheatSheets</li>
+<li>Add new CheatSheets</li>
+<li>Suggest changes to existing CheatSheets</li>
+<li>Discuss ideas in issues</li>
+</ul>
+<h2 id="thanks-to-all-the-contributors"><strong><em>Thanks to all the
+contributors ❤</em></strong></h2>
+<p><strong><em>Thanks to everyone</em></strong> who has submitted
+<strong><em>pull requests</em></strong> and
+<strong><em>issues</em></strong> on GitHub, made
+<strong><em>suggestions</em></strong>, given a
+<strong><em>star</em></strong>, and generally helped make this a better
+repository for developers.</p>
 <!-- ![Contributors](https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers) -->
-
-<a href = "https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers"/>
-</a>
-
-## License
-
-Each file included in this repository is licensed under the [MIT License](./LICENSE).
-
+<p><a href = "https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors">
+<img src = "https://contrib.rocks/image?repo=crescentpartha/CheatSheets-for-Developers"/>
+</a></p>
+<h2 id="license">License</h2>
+<p>Each file included in this repository is licensed under the <a
+href="./LICENSE">MIT License</a>.</p>
 <!-- Never delete this div container -->
-<div align="center" markdown="1">
-
+<div data-align="center" data-markdown="1">
 <!-- [![GitHub Help Wanted issues](https://img.shields.io/github/issues/crescentpartha/CheatSheets-for-Developers/help%20wanted?style=flat&logo=github&logoColor=b545d1&label=%22Help%20Wanted%22%20issues)](https://github.com/crescentpartha/CheatSheets-for-Developers/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)     -->
 <!-- [![GitHub Help Wanted PRs](https://img.shields.io/github/issues-pr/crescentpartha/CheatSheets-for-Developers/help%20wanted?style=flat&logo=github&logoColor=b545d1&label=%22Help%20Wanted%22%20PRs)](https://github.com/crescentpartha/CheatSheets-for-Developers/pulls?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) -->
 <!-- [![GitHub repo contributors](https://img.shields.io/github/contributors-anon/crescentpartha/CheatSheets-for-Developers?style=flat&logo=github&logoColor=whitesmoke&label=Contributors)](https://github.com/crescentpartha/CheatSheets-for-Developers/graphs/contributors) -->
-
 </div>
