@@ -30,10 +30,26 @@ A Collection of programming [CheatSheets](./CheatSheets/) for developers to quic
 </div>
 
 ## ___CheatSheets Table Views___
-
+<table>
+  <tr>
+    <th>[git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)y</th>
+    <th>[markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)</th>
+    <th>[windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
 <div align="center">
 
-| __[git-cheatsheet.md](./CheatSheets/git-cheatsheet.md)__ | __[markdown-cheatsheet.md](./CheatSheets/markdown-cheatsheet.md)__ | __[windows-cheatsheet.md](./CheatSheets/windows-cheatsheet.md)__ |
+| ____ | ____ | ____ |
 | :-------: | :-------: | :-------: |
 | __[cmd-cheatsheet.md](./CheatSheets/cmd-cheatsheet.md)__ | __[linux-cheatsheet.md](./CheatSheets/linux-cheatsheet.md)__ | __[bash-cheatsheet.md](./CheatSheets/bash_cheatsheet.md)__ |
 | __[vscode-cheatsheet.md](./CheatSheets/vscode-cheatsheet.md)__ | __[vim-editor-cheatsheet.md](./CheatSheets/vim-editor-cheatsheet.md)__ | __[chrome-devtools-cheatsheet.md](./CheatSheets/chrome-devtools-cheatsheet.md)__ |
