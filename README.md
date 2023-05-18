@@ -1,6 +1,3 @@
----
-layout: page
----
 <h1 id="cheatsheets-for-developers">CheatSheets-for-Developers</h1>
 <p>A Collection of programming <a href="./CheatSheets/">CheatSheets</a>
 for developers to quick review while working.</p>
