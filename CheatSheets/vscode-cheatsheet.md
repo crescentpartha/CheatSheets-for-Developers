@@ -21,6 +21,8 @@ created: 2022-10-20
 
 # VSCode Keyboard Shortcuts for Developers
 
+If you're looking for a visual [VSCode cheat sheet](https://www.git-tower.com/learn/cheat-sheets/vscode), here are two different versions for download: one for macOS and one for Windows.
+
 ## General Shortcuts
 
 | Command | Description |
