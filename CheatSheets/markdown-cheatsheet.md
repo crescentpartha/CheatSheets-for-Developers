@@ -12,7 +12,7 @@ created: 2022-10-18
 
 # Markdown CheatSheet for Developers
 
-If you're more visual person, here's a comprehensive [Markdown cheat sheet](https://www.git-tower.com/learn/cheat-sheets/markdown) in light and dark modes.
+If you're more a visual person, here's a comprehensive [Markdown cheat sheet](https://www.git-tower.com/learn/cheat-sheets/markdown) in light and dark modes.
 
 ## Basic Syntax
 
