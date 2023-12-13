@@ -23,7 +23,7 @@ created: 2022-10-18
 
 # Git CheatSheet for Developers
 
-If you're more visual person, here's a nice [cheat sheet for Git](https://www.git-tower.com/learn/cheat-sheets/git) in multiple languages, light and dark mode.
+If you're a more visual person, here's a nice [cheat sheet for Git](https://www.git-tower.com/learn/cheat-sheets/git) in multiple languages, light and dark mode.
 
 ## Git Configuration
 
