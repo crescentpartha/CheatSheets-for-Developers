@@ -69,6 +69,8 @@ created: 2022-10-21
 
 # JavaScript CheatSheet for Developers
 
+If you're a more visual person, check out this visual [JavaScript cheat sheet](https://www.git-tower.com/learn/cheat-sheets/javascript) available in light and dark modes.
+
 ## JavaScript Basics
 
 ### JavaScript Code in the HTML Page

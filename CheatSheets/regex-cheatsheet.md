@@ -20,6 +20,8 @@ Created: 2022-10-27
 
 # Regular Expressions (RegEx) CheatSheet for Developers
 
+If you're a more visual person, check out this visual [Regex cheat sheet](https://www.git-tower.com/learn/cheat-sheets/regex).
+
 ## Regular Expressions Introduction
 
 > Regular expressions (also referred to as rational expressions) are sequences of characters that specify a search pattern in the text. Such patterns are often used in string-searching algorithms to perform "find" and "find and replace" operations on strings, or to validate inputs. 
