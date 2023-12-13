@@ -23,6 +23,8 @@ created: 2022-10-20
 
 # HTML CheatSheet for Developers
 
+If you're more visual person, check out this visual [HTML cheat sheet](https://www.git-tower.com/learn/cheat-sheets/git) available in light and dark mode.
+
 ## Basic Tags of HTML
 
 > Tags are like keywords which defines that how web browser will format and display the content.
